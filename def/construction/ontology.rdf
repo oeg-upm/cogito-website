@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://cogito.iot.linkeddata.es/def/construction#"
+     xml:base="https://cogito.iot.linkeddata.es/def/construction"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://cogito.iot.linkeddata.es/def/construction#">
+        <dc:creator>Alba Fernández Izquierdo</dc:creator>
+        <dc:creator>Raúl García Castro</dc:creator>
+        <dc:creator>Socorro  Bernardos Galindo</dc:creator>
+        <dc:description>The COGITO Construction ontology aims at modelling the construction domain.</dc:description>
+        <dc:title>Construction Ontology</dc:title>
+        <owl:versionInfo>0.0.1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#hasElement -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/construction#hasElement">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/bot#hasElement"/>
+        <rdfs:label>has element</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#hasQualityInformation -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/construction#hasQualityInformation">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/construction#QualityInformation"/>
+        <rdfs:label>has quality information</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#isRelatedToBuilding -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#isRelatedToBuilding">
+        <rdfs:domain rdf:resource="https://cogito.iot.linkeddata.es/def/process#Process"/>
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Construction"/>
+        <rdfs:label>is related to building</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#relatesToElement -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#relatesToElement">
+        <rdfs:domain rdf:resource="https://cogito.iot.linkeddata.es/def/process#Task"/>
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Element"/>
+        <rdfs:label>relates to element</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/core#assesses -->
+
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/core#assesses">
+        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/core#FeatureOfInterest"/>
+        <rdfs:label>assesses</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4city#quantifiesKPI -->
+
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4city#quantifiesKPI">
+        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/saref4city#KeyPerformanceIndicator"/>
+        <rdfs:label>quantifies KPI</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/bot#containsZone -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/bot#containsZone">
+        <rdfs:domain rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Zone"/>
+        <rdfs:label>contains zone</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/bot#hasElement -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasElement">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Element"/>
+        <rdfs:label>has element</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/bot#hasSpace -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasSpace">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Space"/>
+        <rdfs:label>has space</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/bot#hasSubElement -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasSubElement">
+        <rdfs:label>has sub-element</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#ifcIdentifier -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/construction#ifcIdentifier">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>IFC identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">
+        <rdfs:label>Spatial Thing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#Construction -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#Construction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Zone"/>
+        <rdfs:label>Construction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#Element -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#Element">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Element"/>
+        <rdfs:label>Element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#QualityInformation -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#QualityInformation">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4city#KeyPerformanceIndicator"/>
+        <rdfs:label>Quality Information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#Space -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#Space">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Space"/>
+        <rdfs:label>Space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#Zone -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#Zone">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Zone"/>
+        <rdfs:label>Zone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#Process -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/process#Process">
+        <rdfs:label>Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#Task -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/process#Task">
+        <rdfs:label>Task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/core#Feature -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/core#Feature">
+        <rdfs:label>Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/core#FeatureOfInterest -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/core#FeatureOfInterest">
+        <rdfs:label>Feature of Interest</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4city#KeyPerformanceIndicator -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4city#KeyPerformanceIndicator">
+        <rdfs:label>Key Performance Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment">
+        <rdfs:label>Key Performance Indicator Assessment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/bot#Element -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bot#Element">
+        <rdfs:label>Element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/bot#Space -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bot#Space">
+        <rdfs:label>Space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/bot#Zone -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bot#Zone">
+        <rdfs:label>Zone</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
+

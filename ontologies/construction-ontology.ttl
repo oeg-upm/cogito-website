@@ -1,0 +1,196 @@
+@prefix : <https://cogito.iot.linkeddata.es/def/construction#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://cogito.iot.linkeddata.es/def/construction#> .
+
+<https://cogito.iot.linkeddata.es/def/construction#> rdf:type owl:Ontology ;
+                                                      <http://purl.org/dc/elements/1.1/creator> "Alba Fernández Izquierdo" ,
+                                                                                                "Raúl García Castro" ,
+                                                                                                "Socorro  Bernardos Galindo" ;
+                                                      <http://purl.org/dc/elements/1.1/description> "The COGITO Construction ontology aims at modelling the construction domain." ;
+                                                      <http://purl.org/dc/elements/1.1/title> "Construction Ontology" ;
+                                                      owl:versionInfo "0.0.1" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://cogito.iot.linkeddata.es/def/construction#hasElement
+:hasElement rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <https://w3id.org/bot#hasElement> ;
+            rdfs:label "has element" .
+
+
+###  https://cogito.iot.linkeddata.es/def/construction#hasQualityInformation
+:hasQualityInformation rdf:type owl:ObjectProperty ;
+                       rdfs:range :QualityInformation ;
+                       rdfs:label "has quality information" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#isRelatedToBuilding
+<https://cogito.iot.linkeddata.es/def/process#isRelatedToBuilding> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:domain <https://cogito.iot.linkeddata.es/def/process#Process> ;
+                                                                   rdfs:range :Construction ;
+                                                                   rdfs:label "is related to building" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#relatesToElement
+<https://cogito.iot.linkeddata.es/def/process#relatesToElement> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <https://cogito.iot.linkeddata.es/def/process#Task> ;
+                                                                rdfs:range :Element ;
+                                                                rdfs:label "relates to element" .
+
+
+###  https://saref.etsi.org/core#assesses
+<https://saref.etsi.org/core#assesses> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment> ;
+                                       rdfs:range <https://saref.etsi.org/core#FeatureOfInterest> ;
+                                       rdfs:label "assesses" .
+
+
+###  https://saref.etsi.org/saref4city#quantifiesKPI
+<https://saref.etsi.org/saref4city#quantifiesKPI> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment> ;
+                                                  rdfs:range <https://saref.etsi.org/saref4city#KeyPerformanceIndicator> ;
+                                                  rdfs:label "quantifies KPI" .
+
+
+###  https://w3id.org/bot#containsZone
+<https://w3id.org/bot#containsZone> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :Zone ;
+                                    rdfs:label "contains zone" .
+
+
+###  https://w3id.org/bot#hasElement
+<https://w3id.org/bot#hasElement> rdf:type owl:ObjectProperty ;
+                                  rdfs:range :Element ;
+                                  rdfs:label "has element" .
+
+
+###  https://w3id.org/bot#hasSpace
+<https://w3id.org/bot#hasSpace> rdf:type owl:ObjectProperty ;
+                                rdfs:range :Space ;
+                                rdfs:label "has space" .
+
+
+###  https://w3id.org/bot#hasSubElement
+<https://w3id.org/bot#hasSubElement> rdf:type owl:ObjectProperty ;
+                                     rdfs:label "has sub-element" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://cogito.iot.linkeddata.es/def/construction#ifcIdentifier
+:ifcIdentifier rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:string ;
+               rdfs:label "IFC identifier" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> rdf:type owl:Class ;
+                                                       rdfs:label "Spatial Thing" .
+
+
+###  https://cogito.iot.linkeddata.es/def/construction#Construction
+:Construction rdf:type owl:Class ;
+              rdfs:subClassOf <https://w3id.org/bot#Zone> ;
+              rdfs:label "Construction" .
+
+
+###  https://cogito.iot.linkeddata.es/def/construction#Element
+:Element rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ,
+                         <https://w3id.org/bot#Element> ;
+         rdfs:label "Element" .
+
+
+###  https://cogito.iot.linkeddata.es/def/construction#QualityInformation
+:QualityInformation rdf:type owl:Class ;
+                    rdfs:subClassOf <https://saref.etsi.org/saref4city#KeyPerformanceIndicator> ;
+                    rdfs:label "Quality Information" .
+
+
+###  https://cogito.iot.linkeddata.es/def/construction#Space
+:Space rdf:type owl:Class ;
+       rdfs:subClassOf <https://w3id.org/bot#Space> ;
+       rdfs:label "Space" .
+
+
+###  https://cogito.iot.linkeddata.es/def/construction#Zone
+:Zone rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ,
+                      <https://w3id.org/bot#Zone> ;
+      rdfs:label "Zone" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#Process
+<https://cogito.iot.linkeddata.es/def/process#Process> rdf:type owl:Class ;
+                                                       rdfs:label "Process" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#Task
+<https://cogito.iot.linkeddata.es/def/process#Task> rdf:type owl:Class ;
+                                                    rdfs:label "Task" .
+
+
+###  https://saref.etsi.org/core#Feature
+<https://saref.etsi.org/core#Feature> rdf:type owl:Class ;
+                                      rdfs:label "Feature" .
+
+
+###  https://saref.etsi.org/core#FeatureOfInterest
+<https://saref.etsi.org/core#FeatureOfInterest> rdf:type owl:Class ;
+                                                rdfs:label "Feature of Interest" .
+
+
+###  https://saref.etsi.org/saref4city#KeyPerformanceIndicator
+<https://saref.etsi.org/saref4city#KeyPerformanceIndicator> rdf:type owl:Class ;
+                                                            rdfs:label "Key Performance Indicator" .
+
+
+###  https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment
+<https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment> rdf:type owl:Class ;
+                                                                      rdfs:label "Key Performance Indicator Assessment" .
+
+
+###  https://w3id.org/bot#Element
+<https://w3id.org/bot#Element> rdf:type owl:Class ;
+                               rdfs:label "Element" .
+
+
+###  https://w3id.org/bot#Space
+<https://w3id.org/bot#Space> rdf:type owl:Class ;
+                             rdfs:label "Space" .
+
+
+###  https://w3id.org/bot#Zone
+<https://w3id.org/bot#Zone> rdf:type owl:Class ;
+                            rdfs:label "Zone" .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
