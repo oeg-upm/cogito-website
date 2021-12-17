@@ -1,0 +1,242 @@
+@prefix : <https://cogito.iot.linkeddata.es/quality#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://cogito.iot.linkeddata.es/quality#> .
+
+<https://cogito.iot.linkeddata.es/quality#> rdf:type owl:Ontology ;
+                                             <http://purl.org/dc/elements/1.1/creator> "Raúl García Castro" ,
+                                                                                       "Socorro  Bernardos Galindo" ;
+                                             <http://purl.org/dc/elements/1.1/description> "The COGITO Quality ontology aims at modelling the construction quality domain." ;
+                                             <http://purl.org/dc/elements/1.1/title> "Quality Ontology" ;
+                                             <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
+                                             owl:versionInfo "0.0.1" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://cogito.iot.linkeddata.es/quality#containsGQI
+:containsGQI rdf:type owl:ObjectProperty ;
+             rdfs:label "contains geometric quality information" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:label "has location" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#isOn
+:isOn rdf:type owl:ObjectProperty ;
+      rdfs:label "is on" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#refersToRule
+:refersToRule rdf:type owl:ObjectProperty ;
+              rdfs:label "refers to rule" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#reflectsDefect
+:reflectsDefect rdf:type owl:ObjectProperty ;
+                rdfs:label "reflects defect" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#reflectsList
+:reflectsList rdf:type owl:ObjectProperty ;
+              rdfs:label "reflects list of geometric quality information" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#takenAtLocation
+:takenAtLocation rdf:type owl:ObjectProperty ;
+                 rdfs:label "taken at location" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#takenAtTIme
+:takenAtTIme rdf:type owl:ObjectProperty ;
+             rdfs:label "taken at time" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#takenByCamera
+:takenByCamera rdf:type owl:ObjectProperty ;
+               rdfs:label "taken by camera" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://cogito.iot.linkeddata.es/def/construction#ifcIdentifier
+<https://cogito.iot.linkeddata.es/def/construction#ifcIdentifier> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:range xsd:string ;
+                                                                  rdfs:label "IFC identifier" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:label "id" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#phase
+:phase rdf:type owl:DatatypeProperty ;
+       rdfs:range xsd:string ;
+       rdfs:label "phase" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#problem
+:problem rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string ;
+         rdfs:label "problem" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#processed
+:processed rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:boolean ;
+           rdfs:label "processed" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#severity
+:severity rdf:type owl:DatatypeProperty ;
+          rdfs:label "severity" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#text
+:text rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:string ;
+      rdfs:label "text" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#typeOfDefect
+:typeOfDefect rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              rdfs:label "type of defect" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#typeOfProcessing
+:typeOfProcessing rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "type of processing" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#value
+:value rdf:type owl:DatatypeProperty ;
+       rdfs:range xsd:string ;
+       rdfs:label "value" .
+
+
+###  https://w3id.org/props#hasArea
+<https://w3id.org/props#hasArea> rdf:type owl:DatatypeProperty ;
+                                 rdfs:label "has area" .
+
+
+###  https://w3id.org/props#hasCompressedGuid
+<https://w3id.org/props#hasCompressedGuid> rdf:type owl:DatatypeProperty ;
+                                           rdfs:label "has compressed guid" .
+
+
+###  https://w3id.org/props#hasVolume
+<https://w3id.org/props#hasVolume> rdf:type owl:DatatypeProperty ;
+                                   rdfs:label "has volume" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2006/time#Interval
+<http://www.w3.org/2006/time#Interval> rdf:type owl:Class ;
+                                       rdfs:label "Interval" .
+
+
+###  https://cogito.iot.linkeddata.es/def/construction#Element
+<https://cogito.iot.linkeddata.es/def/construction#Element> rdf:type owl:Class ;
+                                                            rdfs:label "Element" .
+
+
+###  https://cogito.iot.linkeddata.es/def/construction#Space
+<https://cogito.iot.linkeddata.es/def/construction#Space> rdf:type owl:Class ;
+                                                          rdfs:label "Space" .
+
+
+###  https://cogito.iot.linkeddata.es/def/construction#Zone
+<https://cogito.iot.linkeddata.es/def/construction#Zone> rdf:type owl:Class ;
+                                                         rdfs:label "Zone" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#Camera
+:Camera rdf:type owl:Class ;
+        rdfs:label "Camera" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#Defect
+:Defect rdf:type owl:Class ;
+        rdfs:label "Defect" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#FixedCamera
+:FixedCamera rdf:type owl:Class ;
+             rdfs:label "Fixed camera" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation
+:GeometricQualityInformation rdf:type owl:Class ;
+                             rdfs:label "Geometric quality information" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#Image
+:Image rdf:type owl:Class ;
+       rdfs:label "Image" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#ListOfGeometricQualityInformation
+:ListOfGeometricQualityInformation rdf:type owl:Class ;
+                                   rdfs:label "List of geometric quality information" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#Location
+:Location rdf:type owl:Class ;
+          rdfs:label "Location" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#MobileCamera
+:MobileCamera rdf:type owl:Class ;
+              rdfs:label "Mobile camera" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#PointCoud
+:PointCoud rdf:type owl:Class ;
+           rdfs:label "Point cloud" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#Rule
+:Rule rdf:type owl:Class ;
+      rdfs:label "Rule" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#SafetyMeasure
+:SafetyMeasure rdf:type owl:Class ;
+               rdfs:label "Safety measure" .
+
+
+###  Generated by the OWL API (version 5.1.14.2020-04-18T20:17:57Z) https://github.com/owlcs/owlapi/

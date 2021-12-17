@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/def/construction#> <http://purl.org/dc/elements/1.1/description> "The COGITO Construction ontology aims at modelling the construction domain." .
 <https://cogito.iot.linkeddata.es/def/construction#> <http://purl.org/dc/elements/1.1/title> "Construction Ontology" .
 <https://cogito.iot.linkeddata.es/def/construction#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/def/construction#> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.1" .
+<https://cogito.iot.linkeddata.es/def/construction#> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.2" .
 # 
 # 
 # #################################################################
@@ -36,10 +36,13 @@
 # #################################################################
 # 
 # 
-# https://cogito.iot.linkeddata.es/def/construction#hasElement
-<https://cogito.iot.linkeddata.es/def/construction#hasElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/construction#hasElement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/bot#hasElement> .
-<https://cogito.iot.linkeddata.es/def/construction#hasElement> <http://www.w3.org/2000/01/rdf-schema#label> "has element" .
+# https://brickschema.org/schema/1.1/Brick#hasPart
+<https://brickschema.org/schema/1.1/Brick#hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://brickschema.org/schema/1.1/Brick#hasPart> <http://www.w3.org/2000/01/rdf-schema#label> "has part" .
+# 
+# https://brickschema.org/schema/1.1/Brick#isPartOf
+<https://brickschema.org/schema/1.1/Brick#isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://brickschema.org/schema/1.1/Brick#isPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is part of" .
 # 
 # https://cogito.iot.linkeddata.es/def/construction#hasQualityInformation
 <https://cogito.iot.linkeddata.es/def/construction#hasQualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -60,20 +63,34 @@
 # 
 # https://saref.etsi.org/core#assesses
 <https://saref.etsi.org/core#assesses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://saref.etsi.org/core#assesses> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment> .
-<https://saref.etsi.org/core#assesses> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core#FeatureOfInterest> .
 <https://saref.etsi.org/core#assesses> <http://www.w3.org/2000/01/rdf-schema#label> "assesses" .
 # 
 # https://saref.etsi.org/saref4city#quantifiesKPI
 <https://saref.etsi.org/saref4city#quantifiesKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://saref.etsi.org/saref4city#quantifiesKPI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment> .
-<https://saref.etsi.org/saref4city#quantifiesKPI> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/saref4city#KeyPerformanceIndicator> .
 <https://saref.etsi.org/saref4city#quantifiesKPI> <http://www.w3.org/2000/01/rdf-schema#label> "quantifies KPI" .
+# 
+# https://w3id.org/bot#containsElement
+<https://w3id.org/bot#containsElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#containsElement> <http://www.w3.org/2000/01/rdf-schema#label> "contains element" .
 # 
 # https://w3id.org/bot#containsZone
 <https://w3id.org/bot#containsZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/bot#containsZone> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cogito.iot.linkeddata.es/def/construction#Zone> .
 <https://w3id.org/bot#containsZone> <http://www.w3.org/2000/01/rdf-schema#label> "contains zone" .
+# 
+# https://w3id.org/bot#hasAdjacentElement
+<https://w3id.org/bot#hasAdjacentElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#hasAdjacentElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/construction#Element> .
+# 
+# https://w3id.org/bot#hasAdjacentZone
+<https://w3id.org/bot#hasAdjacentZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#hasAdjacentZone> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/construction#Zone> .
+<https://w3id.org/bot#hasAdjacentZone> <http://www.w3.org/2000/01/rdf-schema#label> "has adjacent zone" .
+# 
+# https://w3id.org/bot#hasBuilding
+<https://w3id.org/bot#hasBuilding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/construction#Building> .
+<https://w3id.org/bot#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#label> "has building" .
 # 
 # https://w3id.org/bot#hasElement
 <https://w3id.org/bot#hasElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -84,6 +101,10 @@
 <https://w3id.org/bot#hasSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/bot#hasSpace> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/construction#Space> .
 <https://w3id.org/bot#hasSpace> <http://www.w3.org/2000/01/rdf-schema#label> "has space" .
+# 
+# https://w3id.org/bot#hasStorey
+<https://w3id.org/bot#hasStorey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#hasStorey> <http://www.w3.org/2000/01/rdf-schema#label> "has storey" .
 # 
 # https://w3id.org/bot#hasSubElement
 <https://w3id.org/bot#hasSubElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -103,6 +124,18 @@
 <https://cogito.iot.linkeddata.es/def/construction#ifcIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://cogito.iot.linkeddata.es/def/construction#ifcIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "IFC identifier" .
 # 
+# https://w3id.org/props#hasArea
+<https://w3id.org/props#hasArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/props#hasArea> <http://www.w3.org/2000/01/rdf-schema#label> "has area" .
+# 
+# https://w3id.org/props#hasCompressedGuid
+<https://w3id.org/props#hasCompressedGuid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/props#hasCompressedGuid> <http://www.w3.org/2000/01/rdf-schema#label> "has compressed guid" .
+# 
+# https://w3id.org/props#hasVolume
+<https://w3id.org/props#hasVolume> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/props#hasVolume> <http://www.w3.org/2000/01/rdf-schema#label> "has volume" .
+# 
 # 
 # 
 # #################################################################
@@ -116,6 +149,29 @@
 <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> <http://www.w3.org/2000/01/rdf-schema#label> "Spatial Thing" .
 # 
+# https://brickschema.org/schema/1.1/Brick#Building
+<https://brickschema.org/schema/1.1/Brick#Building> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://brickschema.org/schema/1.1/Brick#Building> <http://www.w3.org/2000/01/rdf-schema#label> "Building" .
+# 
+# https://brickschema.org/schema/1.1/Brick#Floor
+<https://brickschema.org/schema/1.1/Brick#Floor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://brickschema.org/schema/1.1/Brick#Floor> <http://www.w3.org/2000/01/rdf-schema#label> "Floor" .
+# 
+# https://brickschema.org/schema/1.1/Brick#Location
+<https://brickschema.org/schema/1.1/Brick#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://brickschema.org/schema/1.1/Brick#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location" .
+# 
+# https://brickschema.org/schema/1.1/Brick#Space
+<https://brickschema.org/schema/1.1/Brick#Space> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://brickschema.org/schema/1.1/Brick#Space> <http://www.w3.org/2000/01/rdf-schema#label> "Space" .
+# 
+# https://cogito.iot.linkeddata.es/def/construction#Building
+<https://cogito.iot.linkeddata.es/def/construction#Building> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/construction#Building> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://brickschema.org/schema/1.1/Brick#Building> .
+<https://cogito.iot.linkeddata.es/def/construction#Building> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/construction#Construction> .
+<https://cogito.iot.linkeddata.es/def/construction#Building> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Building> .
+<https://cogito.iot.linkeddata.es/def/construction#Building> <http://www.w3.org/2000/01/rdf-schema#label> "Building" .
+# 
 # https://cogito.iot.linkeddata.es/def/construction#Construction
 <https://cogito.iot.linkeddata.es/def/construction#Construction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/construction#Construction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Zone> .
@@ -124,18 +180,31 @@
 # https://cogito.iot.linkeddata.es/def/construction#Element
 <https://cogito.iot.linkeddata.es/def/construction#Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/construction#Element> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+<https://cogito.iot.linkeddata.es/def/construction#Element> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://pi.pauwel.be/voc/buildingelement#Products> .
 <https://cogito.iot.linkeddata.es/def/construction#Element> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Element> .
 <https://cogito.iot.linkeddata.es/def/construction#Element> <http://www.w3.org/2000/01/rdf-schema#label> "Element" .
 # 
 # https://cogito.iot.linkeddata.es/def/construction#QualityInformation
 <https://cogito.iot.linkeddata.es/def/construction#QualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/construction#QualityInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/saref4city#KeyPerformanceIndicator> .
 <https://cogito.iot.linkeddata.es/def/construction#QualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Quality Information" .
+# 
+# https://cogito.iot.linkeddata.es/def/construction#Site
+<https://cogito.iot.linkeddata.es/def/construction#Site> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/construction#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://brickschema.org/schema/1.1/Brick#Location> .
+<https://cogito.iot.linkeddata.es/def/construction#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Site> .
+<https://cogito.iot.linkeddata.es/def/construction#Site> <http://www.w3.org/2000/01/rdf-schema#label> "Site" .
 # 
 # https://cogito.iot.linkeddata.es/def/construction#Space
 <https://cogito.iot.linkeddata.es/def/construction#Space> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/construction#Space> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://brickschema.org/schema/1.1/Brick#Space> .
 <https://cogito.iot.linkeddata.es/def/construction#Space> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Space> .
 <https://cogito.iot.linkeddata.es/def/construction#Space> <http://www.w3.org/2000/01/rdf-schema#label> "Space" .
+# 
+# https://cogito.iot.linkeddata.es/def/construction#Storey
+<https://cogito.iot.linkeddata.es/def/construction#Storey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/construction#Storey> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://brickschema.org/schema/1.1/Brick#Floor> .
+<https://cogito.iot.linkeddata.es/def/construction#Storey> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Storey> .
+<https://cogito.iot.linkeddata.es/def/construction#Storey> <http://www.w3.org/2000/01/rdf-schema#label> "Storey" .
 # 
 # https://cogito.iot.linkeddata.es/def/construction#Zone
 <https://cogito.iot.linkeddata.es/def/construction#Zone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -151,32 +220,32 @@
 <https://cogito.iot.linkeddata.es/def/process#Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#Task> <http://www.w3.org/2000/01/rdf-schema#label> "Task" .
 # 
-# https://saref.etsi.org/core#Feature
-<https://saref.etsi.org/core#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://saref.etsi.org/core#Feature> <http://www.w3.org/2000/01/rdf-schema#label> "Feature" .
+# https://pi.pauwel.be/voc/buildingelement#Products
+<https://pi.pauwel.be/voc/buildingelement#Products> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://pi.pauwel.be/voc/buildingelement#Products> <http://www.w3.org/2000/01/rdf-schema#label> "Products" .
 # 
-# https://saref.etsi.org/core#FeatureOfInterest
-<https://saref.etsi.org/core#FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://saref.etsi.org/core#FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Feature of Interest" .
-# 
-# https://saref.etsi.org/saref4city#KeyPerformanceIndicator
-<https://saref.etsi.org/saref4city#KeyPerformanceIndicator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://saref.etsi.org/saref4city#KeyPerformanceIndicator> <http://www.w3.org/2000/01/rdf-schema#label> "Key Performance Indicator" .
-# 
-# https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment
-<https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment> <http://www.w3.org/2000/01/rdf-schema#label> "Key Performance Indicator Assessment" .
+# https://w3id.org/bot#Building
+<https://w3id.org/bot#Building> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/bot#Building> <http://www.w3.org/2000/01/rdf-schema#label> "Building" .
 # 
 # https://w3id.org/bot#Element
 <https://w3id.org/bot#Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/bot#Element> <http://www.w3.org/2000/01/rdf-schema#label> "Element" .
 # 
+# https://w3id.org/bot#Site
+<https://w3id.org/bot#Site> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/bot#Site> <http://www.w3.org/2000/01/rdf-schema#label> "Site" .
+# 
 # https://w3id.org/bot#Space
 <https://w3id.org/bot#Space> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/bot#Space> <http://www.w3.org/2000/01/rdf-schema#label> "Space" .
+# 
+# https://w3id.org/bot#Storey
+<https://w3id.org/bot#Storey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/bot#Storey> <http://www.w3.org/2000/01/rdf-schema#label> "Storey" .
 # 
 # https://w3id.org/bot#Zone
 <https://w3id.org/bot#Zone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/bot#Zone> <http://www.w3.org/2000/01/rdf-schema#label> "Zone" .
 # 
-# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
+# Generated by the OWL API (version 5.1.14.2020-04-18T20:17:57Z) https://github.com/owlcs/owlapi/

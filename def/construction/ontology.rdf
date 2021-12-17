@@ -15,7 +15,7 @@
         <dc:description>The COGITO Construction ontology aims at modelling the construction domain.</dc:description>
         <dc:title>Construction Ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.0.1</owl:versionInfo>
+        <owl:versionInfo>0.0.2</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -72,12 +72,20 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/def/construction#hasElement -->
+    <!-- https://brickschema.org/schema/1.1/Brick#hasPart -->
 
 
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/construction#hasElement">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/bot#hasElement"/>
-        <rdfs:label>has element</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://brickschema.org/schema/1.1/Brick#hasPart">
+        <rdfs:label>has part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://brickschema.org/schema/1.1/Brick#isPartOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://brickschema.org/schema/1.1/Brick#isPartOf">
+        <rdfs:label>is part of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -118,8 +126,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://saref.etsi.org/core#assesses">
-        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment"/>
-        <rdfs:range rdf:resource="https://saref.etsi.org/core#FeatureOfInterest"/>
         <rdfs:label>assesses</rdfs:label>
     </owl:ObjectProperty>
     
@@ -129,9 +135,16 @@
 
 
     <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4city#quantifiesKPI">
-        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment"/>
-        <rdfs:range rdf:resource="https://saref.etsi.org/saref4city#KeyPerformanceIndicator"/>
         <rdfs:label>quantifies KPI</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/bot#containsElement -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/bot#containsElement">
+        <rdfs:label>contains element</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -142,6 +155,35 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/bot#containsZone">
         <rdfs:domain rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Zone"/>
         <rdfs:label>contains zone</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/bot#hasAdjacentElement -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasAdjacentElement">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Element"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/bot#hasAdjacentZone -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasAdjacentZone">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Zone"/>
+        <rdfs:label>has adjacent zone</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/bot#hasBuilding -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasBuilding">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Building"/>
+        <rdfs:label>has building</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -162,6 +204,15 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasSpace">
         <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Space"/>
         <rdfs:label>has space</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/bot#hasStorey -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasStorey">
+        <rdfs:label>has storey</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -197,6 +248,33 @@
     
 
 
+    <!-- https://w3id.org/props#hasArea -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/props#hasArea">
+        <rdfs:label>has area</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/props#hasCompressedGuid -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/props#hasCompressedGuid">
+        <rdfs:label>has compressed guid</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/props#hasVolume -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/props#hasVolume">
+        <rdfs:label>has volume</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -218,6 +296,54 @@
     
 
 
+    <!-- https://brickschema.org/schema/1.1/Brick#Building -->
+
+
+    <owl:Class rdf:about="https://brickschema.org/schema/1.1/Brick#Building">
+        <rdfs:label>Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://brickschema.org/schema/1.1/Brick#Floor -->
+
+
+    <owl:Class rdf:about="https://brickschema.org/schema/1.1/Brick#Floor">
+        <rdfs:label>Floor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://brickschema.org/schema/1.1/Brick#Location -->
+
+
+    <owl:Class rdf:about="https://brickschema.org/schema/1.1/Brick#Location">
+        <rdfs:label>Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://brickschema.org/schema/1.1/Brick#Space -->
+
+
+    <owl:Class rdf:about="https://brickschema.org/schema/1.1/Brick#Space">
+        <rdfs:label>Space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#Building -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#Building">
+        <rdfs:subClassOf rdf:resource="https://brickschema.org/schema/1.1/Brick#Building"/>
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/construction#Construction"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Building"/>
+        <rdfs:label>Building</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://cogito.iot.linkeddata.es/def/construction#Construction -->
 
 
@@ -233,6 +359,7 @@
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#Element">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#Products"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Element"/>
         <rdfs:label>Element</rdfs:label>
     </owl:Class>
@@ -243,8 +370,18 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#QualityInformation">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4city#KeyPerformanceIndicator"/>
         <rdfs:label>Quality Information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#Site -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#Site">
+        <rdfs:subClassOf rdf:resource="https://brickschema.org/schema/1.1/Brick#Location"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Site"/>
+        <rdfs:label>Site</rdfs:label>
     </owl:Class>
     
 
@@ -253,8 +390,20 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#Space">
+        <rdfs:subClassOf rdf:resource="https://brickschema.org/schema/1.1/Brick#Space"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Space"/>
         <rdfs:label>Space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/construction#Storey -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/construction#Storey">
+        <rdfs:subClassOf rdf:resource="https://brickschema.org/schema/1.1/Brick#Floor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Storey"/>
+        <rdfs:label>Storey</rdfs:label>
     </owl:Class>
     
 
@@ -288,38 +437,20 @@
     
 
 
-    <!-- https://saref.etsi.org/core#Feature -->
+    <!-- https://pi.pauwel.be/voc/buildingelement#Products -->
 
 
-    <owl:Class rdf:about="https://saref.etsi.org/core#Feature">
-        <rdfs:label>Feature</rdfs:label>
+    <owl:Class rdf:about="https://pi.pauwel.be/voc/buildingelement#Products">
+        <rdfs:label>Products</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://saref.etsi.org/core#FeatureOfInterest -->
+    <!-- https://w3id.org/bot#Building -->
 
 
-    <owl:Class rdf:about="https://saref.etsi.org/core#FeatureOfInterest">
-        <rdfs:label>Feature of Interest</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4city#KeyPerformanceIndicator -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4city#KeyPerformanceIndicator">
-        <rdfs:label>Key Performance Indicator</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4city#KeyPerformanceIndicatorAssessment">
-        <rdfs:label>Key Performance Indicator Assessment</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/bot#Building">
+        <rdfs:label>Building</rdfs:label>
     </owl:Class>
     
 
@@ -333,11 +464,29 @@
     
 
 
+    <!-- https://w3id.org/bot#Site -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bot#Site">
+        <rdfs:label>Site</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/bot#Space -->
 
 
     <owl:Class rdf:about="https://w3id.org/bot#Space">
         <rdfs:label>Space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/bot#Storey -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bot#Storey">
+        <rdfs:label>Storey</rdfs:label>
     </owl:Class>
     
 
@@ -352,6 +501,6 @@
 
 
 
-<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+<!-- Generated by the OWL API (version 5.1.14.2020-04-18T20:17:57Z) https://github.com/owlcs/owlapi/ -->
 
 
