@@ -1,0 +1,8 @@
+Identifier,Component,Competency Question/Assertion,Answer,Status
+CONS-1,PMS,A construction can contain one or several zones,,
+CONS-2,"PMS,WODM",A construction can have one or several spaces,,
+CONS-3,PMS,A zone can have one or several spaces,,
+CONS-4,PMS,A (construction) element has quality information,,
+CONS-5,PMS,A (construction) element is a spatial thing,,
+CONS-6,WODM,A construction is composed by elements,,
+CONS-7,WODM,Each (construction) element has a location,,

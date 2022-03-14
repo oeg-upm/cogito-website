@@ -1,17 +1,25 @@
 @prefix : <https://cogito.iot.linkeddata.es/def/resource#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix saref: <https://saref.etsi.org/core#> .
+@prefix process: <https://cogito.iot.linkeddata.es/def/process#> .
+@prefix resource: <https://cogito.iot.linkeddata.es/def/resource#> .
+@prefix Identifier: <http://www.owl-ontologies.com/Identifier#> .
 @base <https://cogito.iot.linkeddata.es/def/resource#> .
 
 <https://cogito.iot.linkeddata.es/def/resource#> rdf:type owl:Ontology ;
-                                                  <http://purl.org/dc/elements/1.1/creator> "Alba Fernández Izquierdo" ,
-                                                                                            "Raúl García Castro" ,
-                                                                                            "Socorro  Bernardos Galindo" ;
-                                                  <http://purl.org/dc/elements/1.1/description> "The COGITO Resource ontology aims at modelling resources in the construction domain." ;
-                                                  <http://purl.org/dc/elements/1.1/title> "Resource ontology" ;
+                                                  dc:creator "Alba Fernández Izquierdo" ,
+                                                             "Raúl García Castro" ,
+                                                             "Socorro  Bernardos Galindo" ;
+                                                  dc:description "The COGITO Resource ontology aims at modelling resources in the construction domain." ;
+                                                  dc:title "Resource ontology" ;
+                                                  <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
                                                   owl:versionInfo "0.0.1" .
 
 #################################################################
@@ -19,15 +27,19 @@
 #################################################################
 
 ###  http://purl.org/dc/elements/1.1/creator
-<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+dc:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/description
-<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+dc:description rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/title
-<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -35,57 +47,57 @@
 #################################################################
 
 ###  https://cogito.iot.linkeddata.es/def/resource#executesForTask
-:executesForTask rdf:type owl:ObjectProperty ;
-                 rdfs:domain :WorkerInTask ;
-                 rdfs:range :Action ;
-                 rdfs:label "executes for task" .
+resource:executesForTask rdf:type owl:ObjectProperty ;
+                         rdfs:domain resource:WorkerInTask ;
+                         rdfs:range resource:Action ;
+                         rdfs:label "executes for task" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#involvesResource
-:involvesResource rdf:type owl:ObjectProperty ;
-                  rdfs:domain <https://cogito.iot.linkeddata.es/def/process#Task> ;
-                  rdfs:range :Resource ;
-                  rdfs:label "involves resource" .
+resource:involvesResource rdf:type owl:ObjectProperty ;
+                          rdfs:domain process:Task ;
+                          rdfs:range resource:Resource ;
+                          rdfs:label "involves resource" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#isAssignedToTask
-:isAssignedToTask rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Resource ;
-                  rdfs:label "is assigned to task" .
+resource:isAssignedToTask rdf:type owl:ObjectProperty ;
+                          rdfs:domain resource:Resource ;
+                          rdfs:label "is assigned to task" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#measuredAt
-:measuredAt rdf:type owl:ObjectProperty ;
-            rdfs:domain :LocationProperty ;
-            rdfs:range <http://www.w3.org/2006/time#Interval> ;
-            rdfs:label "measured at" .
+resource:measuredAt rdf:type owl:ObjectProperty ;
+                    rdfs:domain resource:LocationProperty ;
+                    rdfs:range time:Interval ;
+                    rdfs:label "measured at" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#playsRole
-:playsRole rdf:type owl:ObjectProperty ;
-           rdfs:domain :WorkerInTask ;
-           rdfs:range :WorkerRole ;
-           rdfs:label "plays role" .
+resource:playsRole rdf:type owl:ObjectProperty ;
+                   rdfs:domain resource:WorkerInTask ;
+                   rdfs:range resource:WorkerRole ;
+                   rdfs:label "plays role" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#relatedTo
-:relatedTo rdf:type owl:ObjectProperty ;
-           rdfs:range :WorkerInTask ;
-           rdfs:label "related to" .
+resource:relatedTo rdf:type owl:ObjectProperty ;
+                   rdfs:range resource:WorkerInTask ;
+                   rdfs:label "related to" .
 
 
 ###  https://saref.etsi.org/core#isPropertyOf
-<https://saref.etsi.org/core#isPropertyOf> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain :LocationProperty ;
-                                           rdfs:range :Resource ;
-                                           rdfs:label "is property of" .
+saref:isPropertyOf rdf:type owl:ObjectProperty ;
+                   rdfs:domain resource:LocationProperty ;
+                   rdfs:range resource:Resource ;
+                   rdfs:label "is property of" .
 
 
 ###  https://saref.etsi.org/core#relatesToProperty
-<https://saref.etsi.org/core#relatesToProperty> rdf:type owl:ObjectProperty ;
-                                                rdfs:domain <https://saref.etsi.org/core#Sensor> ;
-                                                rdfs:range <https://saref.etsi.org/core#Property> ;
-                                                rdfs:label "relates to property" .
+saref:relatesToProperty rdf:type owl:ObjectProperty ;
+                        rdfs:domain saref:Sensor ;
+                        rdfs:range saref:Property ;
+                        rdfs:label "relates to property" .
 
 
 #################################################################
@@ -93,69 +105,69 @@
 #################################################################
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#alt
-<http://www.w3.org/2003/01/geo/wgs84_pos#alt> rdf:type owl:DatatypeProperty ;
-                                              rdfs:range xsd:float ;
-                                              rdfs:label "alt" .
+geo:alt rdf:type owl:DatatypeProperty ;
+        rdfs:range xsd:float ;
+        rdfs:label "alt" .
 
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
-<http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdf:type owl:DatatypeProperty ;
-                                              rdfs:range xsd:float ;
-                                              rdfs:label "lat" .
+geo:lat rdf:type owl:DatatypeProperty ;
+        rdfs:range xsd:float ;
+        rdfs:label "lat" .
 
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#long
-<http://www.w3.org/2003/01/geo/wgs84_pos#long> rdf:type owl:DatatypeProperty ;
-                                               rdfs:range xsd:float ;
-                                               rdfs:label "long" .
+geo:long rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:float ;
+         rdfs:label "long" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#hasCreationDate
-<https://cogito.iot.linkeddata.es/def/process#hasCreationDate> rdf:type owl:DatatypeProperty ;
-                                                               rdfs:range xsd:dateTime ;
-                                                               rdfs:label "has creation date" .
+process:hasCreationDate rdf:type owl:DatatypeProperty ;
+                        rdfs:range xsd:dateTime ;
+                        rdfs:label "has creation date" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#hasName
-<https://cogito.iot.linkeddata.es/def/process#hasName> rdf:type owl:DatatypeProperty ;
-                                                       rdfs:range xsd:string ;
-                                                       rdfs:label "has name" .
+process:hasName rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:string ;
+                rdfs:label "has name" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#hasPriority
-<https://cogito.iot.linkeddata.es/def/process#hasPriority> rdf:type owl:DatatypeProperty ;
-                                                           rdfs:range xsd:integer ;
-                                                           rdfs:label "has priority" .
+process:hasPriority rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:integer ;
+                    rdfs:label "has priority" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#hasProgress
-<https://cogito.iot.linkeddata.es/def/process#hasProgress> rdf:type owl:DatatypeProperty ;
-                                                           rdfs:range xsd:string ;
-                                                           rdfs:label "has progress" .
+process:hasProgress rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "has progress" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#hasStatus
-<https://cogito.iot.linkeddata.es/def/process#hasStatus> rdf:type owl:DatatypeProperty ;
-                                                         rdfs:range xsd:string ;
-                                                         rdfs:label "has status" .
+process:hasStatus rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "has status" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#hasAccuracy
-:hasAccuracy rdf:type owl:DatatypeProperty ;
-             rdfs:range xsd:float ;
-             rdfs:label "has accuracy" .
+resource:hasAccuracy rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:float ;
+                     rdfs:label "has accuracy" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#hasIdentifier
-:hasIdentifier rdf:type owl:DatatypeProperty ;
-               rdfs:range xsd:string ;
-               rdfs:label "has identifier" .
+resource:hasIdentifier rdf:type owl:DatatypeProperty ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "has identifier" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#hasStatus
-:hasStatus rdf:type owl:DatatypeProperty ;
-           rdfs:range xsd:string ;
-           rdfs:label "has status" .
+resource:hasStatus rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "has status" .
 
 
 #################################################################
@@ -163,85 +175,85 @@
 #################################################################
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
-<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> rdf:type owl:Class ;
-                                                       rdfs:label "Spatial Thing" .
+geo:SpatialThing rdf:type owl:Class ;
+                 rdfs:label "Spatial Thing" .
 
 
 ###  http://www.w3.org/2006/time#Interval
-<http://www.w3.org/2006/time#Interval> rdf:type owl:Class ;
-                                       rdfs:label "Interval" .
+time:Interval rdf:type owl:Class ;
+              rdfs:label "Interval" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#Task
-<https://cogito.iot.linkeddata.es/def/process#Task> rdf:type owl:Class ;
-                                                    rdfs:label "Task" .
+process:Task rdf:type owl:Class ;
+             rdfs:label "Task" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#Action
-:Action rdf:type owl:Class ;
-        rdfs:label "Action" .
+resource:Action rdf:type owl:Class ;
+                rdfs:label "Action" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#Equipment
-:Equipment rdf:type owl:Class ;
-           rdfs:subClassOf :Resource ;
-           rdfs:label "Equipment" .
+resource:Equipment rdf:type owl:Class ;
+                   rdfs:subClassOf resource:Resource ;
+                   rdfs:label "Equipment" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#LocationProperty
-:LocationProperty rdf:type owl:Class ;
-                  rdfs:subClassOf <https://saref.etsi.org/core#Property> ;
-                  rdfs:label "Location Property" .
+resource:LocationProperty rdf:type owl:Class ;
+                          rdfs:subClassOf saref:Property ;
+                          rdfs:label "Location Property" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#Material
-:Material rdf:type owl:Class ;
-          rdfs:subClassOf :Resource ;
-          rdfs:label "Material" .
+resource:Material rdf:type owl:Class ;
+                  rdfs:subClassOf resource:Resource ;
+                  rdfs:label "Material" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#Resource
-:Resource rdf:type owl:Class ;
-          rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ,
-                          <https://saref.etsi.org/core#FeatureOfInterest> ;
-          rdfs:label "Resource" .
+resource:Resource rdf:type owl:Class ;
+                  rdfs:subClassOf geo:SpatialThing ,
+                                  saref:FeatureOfInterest ;
+                  rdfs:label "Resource" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#Worker
-:Worker rdf:type owl:Class ;
-        rdfs:subClassOf :Resource ;
-        rdfs:label "Worker" .
+resource:Worker rdf:type owl:Class ;
+                rdfs:subClassOf resource:Resource ;
+                rdfs:label "Worker" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#WorkerInTask
-:WorkerInTask rdf:type owl:Class ;
-              rdfs:label "Worker in Task" .
+resource:WorkerInTask rdf:type owl:Class ;
+                      rdfs:label "Worker in Task" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#WorkerRole
-:WorkerRole rdf:type owl:Class ;
-            rdfs:label "Worker Role" .
+resource:WorkerRole rdf:type owl:Class ;
+                    rdfs:label "Worker Role" .
 
 
 ###  https://saref.etsi.org/core#FeatureOfInterest
-<https://saref.etsi.org/core#FeatureOfInterest> rdf:type owl:Class ;
-                                                rdfs:label "Feature of Interest" .
+saref:FeatureOfInterest rdf:type owl:Class ;
+                        rdfs:label "Feature of Interest" .
 
 
 ###  https://saref.etsi.org/core#IMUSensor
-<https://saref.etsi.org/core#IMUSensor> rdf:type owl:Class ;
-                                        rdfs:subClassOf <https://saref.etsi.org/core#Sensor> ;
-                                        rdfs:label "IMU Sensor" .
+saref:IMUSensor rdf:type owl:Class ;
+                rdfs:subClassOf saref:Sensor ;
+                rdfs:label "IMU Sensor" .
 
 
 ###  https://saref.etsi.org/core#Property
-<https://saref.etsi.org/core#Property> rdf:type owl:Class ;
-                                       rdfs:label "Property" .
+saref:Property rdf:type owl:Class ;
+               rdfs:label "Property" .
 
 
 ###  https://saref.etsi.org/core#Sensor
-<https://saref.etsi.org/core#Sensor> rdf:type owl:Class ;
-                                     rdfs:label "Sensor" .
+saref:Sensor rdf:type owl:Class ;
+             rdfs:label "Sensor" .
 
 
-###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
