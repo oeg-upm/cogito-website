@@ -1,0 +1,294 @@
+<https://cogito.iot.linkeddata.es/def/facility#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://cogito.iot.linkeddata.es/def/facility#> <http://www.w3.org/2002/07/owl#imports> <https://pi.pauwel.be/voc/buildingelement> .
+<https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/elements/1.1/creator> "Alba Fernández Izquierdo" .
+<https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/elements/1.1/creator> "Raúl García Castro" .
+<https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/elements/1.1/creator> "Socorro  Bernardos Galindo" .
+<https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/elements/1.1/description> "The COGITO Construction ontology aims at modelling the construction domain." .
+<https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/elements/1.1/title> "Construction Ontology" .
+<https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
+<https://cogito.iot.linkeddata.es/def/facility#> <http://www.w3.org/2002/07/owl#versionInfo> "0.2.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://cogito.iot.linkeddata.es/def/facility#hasFacilityPart
+<https://cogito.iot.linkeddata.es/def/facility#hasFacilityPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#hasFacilityPart> <http://www.w3.org/2000/01/rdf-schema#label> "has facility part" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#hasSubFacilityPart
+<https://cogito.iot.linkeddata.es/def/facility#hasSubFacilityPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#hasSubFacilityPart> <http://www.w3.org/2000/01/rdf-schema#label> "has sub facility part" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#involvesTask
+<https://cogito.iot.linkeddata.es/def/facility#involvesTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#involvesTask> <http://www.w3.org/2000/01/rdf-schema#label> "involves task" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#isRelatedToProcess
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProcess> <http://www.w3.org/2000/01/rdf-schema#label> "is related to process" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite> <http://www.w3.org/2000/01/rdf-schema#label> "is ralated to site" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#relatesToElement
+<https://cogito.iot.linkeddata.es/def/process#relatesToElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#relatesToElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
+<https://cogito.iot.linkeddata.es/def/process#relatesToElement> <http://www.w3.org/2000/01/rdf-schema#label> "relates to element" .
+# 
+# https://cogito.iot.linkeddata.es/def/quality#refersToElement
+<https://cogito.iot.linkeddata.es/def/quality#refersToElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/quality#refersToElement> <http://www.w3.org/2000/01/rdf-schema#label> "refers to element" .
+# 
+# https://cogito.iot.linkeddata.es/def/quality#refersToZone
+<https://cogito.iot.linkeddata.es/def/quality#refersToZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/quality#refersToZone> <http://www.w3.org/2000/01/rdf-schema#label> "refers to zone" .
+# 
+# https://cogito.iot.linkeddata.es/def/quality#relatedToProject
+<https://cogito.iot.linkeddata.es/def/quality#relatedToProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/quality#relatedToProject> <http://www.w3.org/2000/01/rdf-schema#label> "related to project" .
+# 
+# https://cogito.iot.linkeddata.es/def/resource#assignedToTrackedZone
+<https://cogito.iot.linkeddata.es/def/resource#assignedToTrackedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/resource#assignedToTrackedZone> <http://www.w3.org/2000/01/rdf-schema#label> "assigned to tracked zone" .
+# 
+# https://w3id.org/bot#containsElement
+<https://w3id.org/bot#containsElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#containsElement> <http://www.w3.org/2000/01/rdf-schema#label> "contains element" .
+# 
+# https://w3id.org/bot#containsZone
+<https://w3id.org/bot#containsZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#containsZone> <http://www.w3.org/2000/01/rdf-schema#label> "contains zone" .
+# 
+# https://w3id.org/bot#hasBuilding
+<https://w3id.org/bot#hasBuilding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Building> .
+<https://w3id.org/bot#hasBuilding> <http://www.w3.org/2000/01/rdf-schema#label> "has building" .
+# 
+# https://w3id.org/bot#hasElement
+<https://w3id.org/bot#hasElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#hasElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
+<https://w3id.org/bot#hasElement> <http://www.w3.org/2000/01/rdf-schema#label> "has element" .
+# 
+# https://w3id.org/bot#hasSpace
+<https://w3id.org/bot#hasSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#hasSpace> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Space> .
+<https://w3id.org/bot#hasSpace> <http://www.w3.org/2000/01/rdf-schema#label> "has space" .
+# 
+# https://w3id.org/bot#hasStorey
+<https://w3id.org/bot#hasStorey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#hasStorey> <http://www.w3.org/2000/01/rdf-schema#label> "has storey" .
+# 
+# https://w3id.org/bot#hasSubElement
+<https://w3id.org/bot#hasSubElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/bot#hasSubElement> <http://www.w3.org/2000/01/rdf-schema#label> "has sub-element" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://cogito.iot.linkeddata.es/def/facility#accuracy
+<https://cogito.iot.linkeddata.es/def/facility#accuracy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#accuracy> <http://www.w3.org/2000/01/rdf-schema#label> "accuracy" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#coordOrigin
+<https://cogito.iot.linkeddata.es/def/facility#coordOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#coordOrigin> <http://www.w3.org/2000/01/rdf-schema#label> "coordinates origin" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#name
+<https://cogito.iot.linkeddata.es/def/facility#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://cogito.iot.linkeddata.es/def/facility#name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#projectId
+<https://cogito.iot.linkeddata.es/def/facility#projectId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#projectId> <http://www.w3.org/2000/01/rdf-schema#label> "project identifier" .
+# 
+# https://w3id.org/props#hasCompressedGuid
+<https://w3id.org/props#hasCompressedGuid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/props#hasCompressedGuid> <http://www.w3.org/2000/01/rdf-schema#label> "has compressed guid" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> <http://www.w3.org/2000/01/rdf-schema#label> "Spatial Thing" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#Bridge
+<https://cogito.iot.linkeddata.es/def/facility#Bridge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Bridge> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#Facility> .
+<https://cogito.iot.linkeddata.es/def/facility#Bridge> <http://www.w3.org/2000/01/rdf-schema#label> "Bridge" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#Building
+<https://cogito.iot.linkeddata.es/def/facility#Building> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Building> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#Facility> .
+<https://cogito.iot.linkeddata.es/def/facility#Building> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Building> .
+<https://cogito.iot.linkeddata.es/def/facility#Building> <http://www.w3.org/2000/01/rdf-schema#label> "Building" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#ConstructionZone
+<https://cogito.iot.linkeddata.es/def/facility#ConstructionZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#ConstructionZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#SpatialZone> .
+<https://cogito.iot.linkeddata.es/def/facility#ConstructionZone> <http://www.w3.org/2000/01/rdf-schema#label> "Construction Zone" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#Element
+<https://cogito.iot.linkeddata.es/def/facility#Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Element> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+<https://cogito.iot.linkeddata.es/def/facility#Element> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Element> .
+<https://cogito.iot.linkeddata.es/def/facility#Element> <http://www.w3.org/2000/01/rdf-schema#label> "Element" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#Facility
+<https://cogito.iot.linkeddata.es/def/facility#Facility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Facility> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Zone> .
+<https://cogito.iot.linkeddata.es/def/facility#Facility> <http://www.w3.org/2000/01/rdf-schema#label> "Facility" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#FacilityPart
+<https://cogito.iot.linkeddata.es/def/facility#FacilityPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#FacilityPart> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Zone> .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#FallZone
+<https://cogito.iot.linkeddata.es/def/facility#FallZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#FallZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#ConstructionZone> .
+<https://cogito.iot.linkeddata.es/def/facility#FallZone> <http://www.w3.org/2000/01/rdf-schema#label> "Fall Zone" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#PointCloud
+<https://cogito.iot.linkeddata.es/def/facility#PointCloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#PointCloud> <http://www.w3.org/2000/01/rdf-schema#label> "Point Cloud" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#Project
+<https://cogito.iot.linkeddata.es/def/facility#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/2019/wot/td#Thing> .
+<https://cogito.iot.linkeddata.es/def/facility#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#Railway
+<https://cogito.iot.linkeddata.es/def/facility#Railway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Railway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#Facility> .
+<https://cogito.iot.linkeddata.es/def/facility#Railway> <http://www.w3.org/2000/01/rdf-schema#label> "Railway" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#Road
+<https://cogito.iot.linkeddata.es/def/facility#Road> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Road> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#Facility> .
+<https://cogito.iot.linkeddata.es/def/facility#Road> <http://www.w3.org/2000/01/rdf-schema#label> "Road" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#Site
+<https://cogito.iot.linkeddata.es/def/facility#Site> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Site> .
+<https://cogito.iot.linkeddata.es/def/facility#Site> <http://www.w3.org/2000/01/rdf-schema#label> "Site" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#Space
+<https://cogito.iot.linkeddata.es/def/facility#Space> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Space> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Space> .
+<https://cogito.iot.linkeddata.es/def/facility#Space> <http://www.w3.org/2000/01/rdf-schema#label> "Space" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#SpatialZone
+<https://cogito.iot.linkeddata.es/def/facility#SpatialZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#SpatialZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+<https://cogito.iot.linkeddata.es/def/facility#SpatialZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Zone> .
+<https://cogito.iot.linkeddata.es/def/facility#SpatialZone> <http://www.w3.org/2000/01/rdf-schema#label> "Spatial Zone" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#Storey
+<https://cogito.iot.linkeddata.es/def/facility#Storey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Storey> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Storey> .
+<https://cogito.iot.linkeddata.es/def/facility#Storey> <http://www.w3.org/2000/01/rdf-schema#label> "Storey" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#TrackedZone
+<https://cogito.iot.linkeddata.es/def/facility#TrackedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#TrackedZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#SpatialZone> .
+<https://cogito.iot.linkeddata.es/def/facility#TrackedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Tracked Zone" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#WalkableZone
+<https://cogito.iot.linkeddata.es/def/facility#WalkableZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#WalkableZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#ConstructionZone> .
+<https://cogito.iot.linkeddata.es/def/facility#WalkableZone> <http://www.w3.org/2000/01/rdf-schema#label> "Walkable Zone" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#Process
+<https://cogito.iot.linkeddata.es/def/process#Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#Task
+<https://cogito.iot.linkeddata.es/def/process#Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#Task> <http://www.w3.org/2000/01/rdf-schema#label> "Task" .
+# 
+# https://cogito.iot.linkeddata.es/def/quality#GeometricQualityInformation
+<https://cogito.iot.linkeddata.es/def/quality#GeometricQualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/quality#GeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Geometric Quality Information" .
+# 
+# https://cogito.iot.linkeddata.es/def/quality#Image
+<https://cogito.iot.linkeddata.es/def/quality#Image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/quality#Image> <http://www.w3.org/2000/01/rdf-schema#label> "Image" .
+# 
+# https://cogito.iot.linkeddata.es/def/quality#SafetyInformation
+<https://cogito.iot.linkeddata.es/def/quality#SafetyInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/quality#SafetyInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Safety Information" .
+# 
+# https://cogito.iot.linkeddata.es/def/resource#TrackingTag
+<https://cogito.iot.linkeddata.es/def/resource#TrackingTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/resource#TrackingTag> <http://www.w3.org/2000/01/rdf-schema#label> "Tracking Tag" .
+# 
+# https://w3id.org/bot#Building
+<https://w3id.org/bot#Building> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/bot#Building> <http://www.w3.org/2000/01/rdf-schema#label> "Building" .
+# 
+# https://w3id.org/bot#Element
+<https://w3id.org/bot#Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/bot#Element> <http://www.w3.org/2000/01/rdf-schema#label> "Element" .
+# 
+# https://w3id.org/bot#Site
+<https://w3id.org/bot#Site> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/bot#Site> <http://www.w3.org/2000/01/rdf-schema#label> "Site" .
+# 
+# https://w3id.org/bot#Space
+<https://w3id.org/bot#Space> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/bot#Space> <http://www.w3.org/2000/01/rdf-schema#label> "Space" .
+# 
+# https://w3id.org/bot#Storey
+<https://w3id.org/bot#Storey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/bot#Storey> <http://www.w3.org/2000/01/rdf-schema#label> "Storey" .
+# 
+# https://w3id.org/bot#Zone
+<https://w3id.org/bot#Zone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/bot#Zone> <http://www.w3.org/2000/01/rdf-schema#label> "Zone" .
+# 
+# https://www.w3.org/2019/wot/td#Thing
+<https://www.w3.org/2019/wot/td#Thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.w3.org/2019/wot/td#Thing> <http://www.w3.org/2000/01/rdf-schema#label> "Thing" .
+# 
+# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

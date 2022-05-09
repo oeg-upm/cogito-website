@@ -11,37 +11,22 @@
   "@id" : "http://purl.org/dc/terms/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.w3.org/2006/time#Interval",
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#ConstructionZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Interval"
+    "@value" : "Construction Zone"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/construction#Element",
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Element"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/construction#Space",
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#Project",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Space"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/construction#Zone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Zone"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/construction#ifcIdentifier",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "IFC identifier"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@value" : "Project"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#",
@@ -61,25 +46,13 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.0.1"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#Camera",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Camera"
+    "@value" : "0.1.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#Defect",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Defect"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#FixedCamera",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Fixed camera"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation",
@@ -106,12 +79,6 @@
     "@value" : "Location"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#MobileCamera",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Mobile camera"
-  } ]
-}, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#PointCoud",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
@@ -124,43 +91,58 @@
     "@value" : "Rule"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#SafetyMeasure",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#SafetyInformation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Safety measure"
+    "@value" : "Safety information"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#containsGQI",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#TagData",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "tag data"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#TrackingTag",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Tracking Tag"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#belongsToCloud",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "belongs to point cloud"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#containsGeometricQualityInformation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "contains geometric quality information"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#hasLocation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has location"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#id",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#coordinates",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "id"
+    "@value" : "coordinates"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#isOn",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "is on"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#phase",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#description",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "phase"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@value" : "description"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#generatesData",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "generates data"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#material",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "material"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#problem",
@@ -174,17 +156,26 @@
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#processed",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "processed"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#refersToElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "refers to element"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#refersToRule",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "refers to rule"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#refersToZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "refers to zone"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#reflectsDefect",
@@ -196,7 +187,28 @@
   "@id" : "https://cogito.iot.linkeddata.es/quality#reflectsList",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "reflects list of geometric quality information"
+    "@value" : "reflects list"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#relatedToProject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "related to project"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#reviewPhase",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "review phase"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#ruleId",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "rule identifier"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#severity",
@@ -205,31 +217,34 @@
     "@value" : "severity"
   } ]
 }, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#storedAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "stored at"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#takenAtLocation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "taken at location"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#takenAtTIme",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#takenAtLocationKF",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "taken at time"
+    "@value" : "taken at location KF"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#takenByCamera",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#takenAtLocationMA",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "taken by camera"
+    "@value" : "taken at location MA"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#text",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#takenAtTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "text"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@value" : "taken at time"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#typeOfDefect",
@@ -257,23 +272,5 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "https://w3id.org/props#hasArea",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has area"
-  } ]
-}, {
-  "@id" : "https://w3id.org/props#hasCompressedGuid",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has compressed guid"
-  } ]
-}, {
-  "@id" : "https://w3id.org/props#hasVolume",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has volume"
   } ]
 } ]
