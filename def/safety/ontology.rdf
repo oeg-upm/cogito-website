@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://cogito.iot.linkeddata.es/safety#"
+     xml:base="https://cogito.iot.linkeddata.es/safety"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://cogito.iot.linkeddata.es/safety#">
+        <dc:creator>Raúl García Castro</dc:creator>
+        <dc:creator>Socorro  Bernardos Galindo</dc:creator>
+        <dc:description>The COGITO Safety ontology aims at modelling the safety of the construction  domain.</dc:description>
+        <dc:title>Safety Ontology</dc:title>
+        <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
+        <owl:versionInfo>0.1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/facility#Project"/>
+        <rdfs:label>is related to project</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#isRelatedToWorkOrder -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/safety#isRelatedToWorkOrder">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/process#WorkOrder"/>
+        <rdfs:label>is related to work order</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#refersToElement -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/safety#refersToElement">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/facility#Element"/>
+        <rdfs:label>refers to element</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#refersToZone -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/safety#refersToZone">
+        <rdfs:label>refers to zone</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#description -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/safety#description">
+        <rdfs:label>description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#issueId -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/safety#issueId">
+        <rdfs:label>issue id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#mitigation -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/safety#mitigation">
+        <rdfs:label>mitigation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#severity -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/safety#severity">
+        <rdfs:label>severity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/facility#Element -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/facility#Element">
+        <rdfs:label>Element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/facility#Project -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/facility#Project">
+        <rdfs:label>Project</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/process#WorkOrder -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/process#WorkOrder">
+        <rdfs:label>Work order</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#SafetyInformation -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/safety#SafetyInformation">
+        <rdfs:label>Safety information</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
+

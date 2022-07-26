@@ -4,7 +4,7 @@
 <https://cogito.iot.linkeddata.es/quality#> <http://purl.org/dc/elements/1.1/description> "The COGITO Quality ontology aims at modelling the construction quality domain." .
 <https://cogito.iot.linkeddata.es/quality#> <http://purl.org/dc/elements/1.1/title> "Quality Ontology" .
 <https://cogito.iot.linkeddata.es/quality#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/quality#> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
+<https://cogito.iot.linkeddata.es/quality#> <http://www.w3.org/2002/07/owl#versionInfo> "0.4.0" .
 # 
 # 
 # #################################################################
@@ -35,53 +35,35 @@
 # #################################################################
 # 
 # 
-# https://cogito.iot.linkeddata.es/quality#belongsToCloud
-<https://cogito.iot.linkeddata.es/quality#belongsToCloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#belongsToCloud> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to point cloud" .
+# https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Project> .
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#label> "is related to project" .
 # 
-# https://cogito.iot.linkeddata.es/quality#containsGeometricQualityInformation
-<https://cogito.iot.linkeddata.es/quality#containsGeometricQualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#containsGeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "contains geometric quality information" .
-# 
-# https://cogito.iot.linkeddata.es/quality#generatesData
-<https://cogito.iot.linkeddata.es/quality#generatesData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#generatesData> <http://www.w3.org/2000/01/rdf-schema#label> "generates data" .
+# https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder
+<https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/process#WorkOrder> .
+<https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder> <http://www.w3.org/2000/01/rdf-schema#label> "is related to work order" .
 # 
 # https://cogito.iot.linkeddata.es/quality#refersToElement
 <https://cogito.iot.linkeddata.es/quality#refersToElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#refersToElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
 <https://cogito.iot.linkeddata.es/quality#refersToElement> <http://www.w3.org/2000/01/rdf-schema#label> "refers to element" .
 # 
 # https://cogito.iot.linkeddata.es/quality#refersToRule
 <https://cogito.iot.linkeddata.es/quality#refersToRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#refersToRule> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/quality#Rule> .
 <https://cogito.iot.linkeddata.es/quality#refersToRule> <http://www.w3.org/2000/01/rdf-schema#label> "refers to rule" .
-# 
-# https://cogito.iot.linkeddata.es/quality#refersToZone
-<https://cogito.iot.linkeddata.es/quality#refersToZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#refersToZone> <http://www.w3.org/2000/01/rdf-schema#label> "refers to zone" .
 # 
 # https://cogito.iot.linkeddata.es/quality#reflectsDefect
 <https://cogito.iot.linkeddata.es/quality#reflectsDefect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#reflectsDefect> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/quality#Defect> .
 <https://cogito.iot.linkeddata.es/quality#reflectsDefect> <http://www.w3.org/2000/01/rdf-schema#label> "reflects defect" .
 # 
-# https://cogito.iot.linkeddata.es/quality#reflectsList
-<https://cogito.iot.linkeddata.es/quality#reflectsList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#reflectsList> <http://www.w3.org/2000/01/rdf-schema#label> "reflects list" .
-# 
-# https://cogito.iot.linkeddata.es/quality#relatedToProject
-<https://cogito.iot.linkeddata.es/quality#relatedToProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#relatedToProject> <http://www.w3.org/2000/01/rdf-schema#label> "related to project" .
-# 
-# https://cogito.iot.linkeddata.es/quality#takenAtLocation
-<https://cogito.iot.linkeddata.es/quality#takenAtLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#takenAtLocation> <http://www.w3.org/2000/01/rdf-schema#label> "taken at location" .
-# 
-# https://cogito.iot.linkeddata.es/quality#takenAtLocationKF
-<https://cogito.iot.linkeddata.es/quality#takenAtLocationKF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#takenAtLocationKF> <http://www.w3.org/2000/01/rdf-schema#label> "taken at location KF" .
-# 
-# https://cogito.iot.linkeddata.es/quality#takenAtLocationMA
-<https://cogito.iot.linkeddata.es/quality#takenAtLocationMA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#takenAtLocationMA> <http://www.w3.org/2000/01/rdf-schema#label> "taken at location MA" .
+# https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality
+<https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality> <http://www.w3.org/2000/01/rdf-schema#label> "reflects geometric quality" .
 # 
 # 
 # 
@@ -92,17 +74,49 @@
 # #################################################################
 # 
 # 
-# https://cogito.iot.linkeddata.es/quality#coordinates
-<https://cogito.iot.linkeddata.es/quality#coordinates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/quality#coordinates> <http://www.w3.org/2000/01/rdf-schema#label> "coordinates" .
+# https://cogito.iot.linkeddata.es/quality#OriginDocument
+<https://cogito.iot.linkeddata.es/quality#OriginDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#OriginDocument> <http://www.w3.org/2000/01/rdf-schema#label> "origin document" .
+# 
+# https://cogito.iot.linkeddata.es/quality#confidenceLevel
+<https://cogito.iot.linkeddata.es/quality#confidenceLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#confidenceLevel> <http://www.w3.org/2000/01/rdf-schema#label> "confidence level" .
 # 
 # https://cogito.iot.linkeddata.es/quality#description
 <https://cogito.iot.linkeddata.es/quality#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/quality#description> <http://www.w3.org/2000/01/rdf-schema#label> "description" .
 # 
-# https://cogito.iot.linkeddata.es/quality#material
-<https://cogito.iot.linkeddata.es/quality#material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/quality#material> <http://www.w3.org/2000/01/rdf-schema#label> "material" .
+# https://cogito.iot.linkeddata.es/quality#deviceOrientation
+<https://cogito.iot.linkeddata.es/quality#deviceOrientation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#deviceOrientation> <http://www.w3.org/2000/01/rdf-schema#label> "device orientation" .
+# 
+# https://cogito.iot.linkeddata.es/quality#devicePosition
+<https://cogito.iot.linkeddata.es/quality#devicePosition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#devicePosition> <http://www.w3.org/2000/01/rdf-schema#label> "device position" .
+# 
+# https://cogito.iot.linkeddata.es/quality#elementTypeKeyword
+<https://cogito.iot.linkeddata.es/quality#elementTypeKeyword> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#elementTypeKeyword> <http://www.w3.org/2000/01/rdf-schema#label> "element type keyword" .
+# 
+# https://cogito.iot.linkeddata.es/quality#identifier
+<https://cogito.iot.linkeddata.es/quality#identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier" .
+# 
+# https://cogito.iot.linkeddata.es/quality#label
+<https://cogito.iot.linkeddata.es/quality#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#label> <http://www.w3.org/2000/01/rdf-schema#label> "label" .
+# 
+# https://cogito.iot.linkeddata.es/quality#materialTypeKeyword
+<https://cogito.iot.linkeddata.es/quality#materialTypeKeyword> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#materialTypeKeyword> <http://www.w3.org/2000/01/rdf-schema#label> "material type keyword" .
+# 
+# https://cogito.iot.linkeddata.es/quality#name
+<https://cogito.iot.linkeddata.es/quality#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
+# 
+# https://cogito.iot.linkeddata.es/quality#performedTimestamp
+<https://cogito.iot.linkeddata.es/quality#performedTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#performedTimestamp> <http://www.w3.org/2000/01/rdf-schema#label> "performed timestamp" .
 # 
 # https://cogito.iot.linkeddata.es/quality#problem
 <https://cogito.iot.linkeddata.es/quality#problem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -113,41 +127,50 @@
 <https://cogito.iot.linkeddata.es/quality#processed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/quality#processed> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 # 
-# https://cogito.iot.linkeddata.es/quality#reviewPhase
-<https://cogito.iot.linkeddata.es/quality#reviewPhase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/quality#reviewPhase> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://cogito.iot.linkeddata.es/quality#reviewPhase> <http://www.w3.org/2000/01/rdf-schema#label> "review phase" .
+# https://cogito.iot.linkeddata.es/quality#relationshipTypeKeyword
+<https://cogito.iot.linkeddata.es/quality#relationshipTypeKeyword> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#relationshipTypeKeyword> <http://www.w3.org/2000/01/rdf-schema#label> "relationship type keyword" .
+# 
+# https://cogito.iot.linkeddata.es/quality#result
+<https://cogito.iot.linkeddata.es/quality#result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#result> <http://www.w3.org/2000/01/rdf-schema#label> "result" .
 # 
 # https://cogito.iot.linkeddata.es/quality#ruleId
 <https://cogito.iot.linkeddata.es/quality#ruleId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/quality#ruleId> <http://www.w3.org/2000/01/rdf-schema#label> "rule identifier" .
 # 
+# https://cogito.iot.linkeddata.es/quality#scalarResult
+<https://cogito.iot.linkeddata.es/quality#scalarResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#scalarResult> <http://www.w3.org/2000/01/rdf-schema#label> "scalar result" .
+# 
+# https://cogito.iot.linkeddata.es/quality#scheduledTimestamp
+<https://cogito.iot.linkeddata.es/quality#scheduledTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#scheduledTimestamp> <http://www.w3.org/2000/01/rdf-schema#label> "scheduled timestamp" .
+# 
 # https://cogito.iot.linkeddata.es/quality#severity
 <https://cogito.iot.linkeddata.es/quality#severity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/quality#severity> <http://www.w3.org/2000/01/rdf-schema#label> "severity" .
 # 
-# https://cogito.iot.linkeddata.es/quality#storedAt
-<https://cogito.iot.linkeddata.es/quality#storedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/quality#storedAt> <http://www.w3.org/2000/01/rdf-schema#label> "stored at" .
+# https://cogito.iot.linkeddata.es/quality#status
+<https://cogito.iot.linkeddata.es/quality#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#status> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://cogito.iot.linkeddata.es/quality#status> <http://www.w3.org/2000/01/rdf-schema#label> "status" .
+# 
+# https://cogito.iot.linkeddata.es/quality#structureType
+<https://cogito.iot.linkeddata.es/quality#structureType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#structureType> <http://www.w3.org/2000/01/rdf-schema#label> "structure type" .
 # 
 # https://cogito.iot.linkeddata.es/quality#takenAtTime
 <https://cogito.iot.linkeddata.es/quality#takenAtTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/quality#takenAtTime> <http://www.w3.org/2000/01/rdf-schema#label> "taken at time" .
 # 
-# https://cogito.iot.linkeddata.es/quality#typeOfDefect
-<https://cogito.iot.linkeddata.es/quality#typeOfDefect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/quality#typeOfDefect> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://cogito.iot.linkeddata.es/quality#typeOfDefect> <http://www.w3.org/2000/01/rdf-schema#label> "type of defect" .
+# https://cogito.iot.linkeddata.es/quality#toleranceReference
+<https://cogito.iot.linkeddata.es/quality#toleranceReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#toleranceReference> <http://www.w3.org/2000/01/rdf-schema#label> "tolerance reference" .
 # 
-# https://cogito.iot.linkeddata.es/quality#typeOfProcessing
-<https://cogito.iot.linkeddata.es/quality#typeOfProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/quality#typeOfProcessing> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://cogito.iot.linkeddata.es/quality#typeOfProcessing> <http://www.w3.org/2000/01/rdf-schema#label> "type of processing" .
-# 
-# https://cogito.iot.linkeddata.es/quality#value
-<https://cogito.iot.linkeddata.es/quality#value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/quality#value> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://cogito.iot.linkeddata.es/quality#value> <http://www.w3.org/2000/01/rdf-schema#label> "value" .
+# https://cogito.iot.linkeddata.es/quality#unit
+<https://cogito.iot.linkeddata.es/quality#unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#unit> <http://www.w3.org/2000/01/rdf-schema#label> "unit" .
 # 
 # 
 # 
@@ -158,10 +181,6 @@
 # #################################################################
 # 
 # 
-# https://cogito.iot.linkeddata.es/def/facility#ConstructionZone
-<https://cogito.iot.linkeddata.es/def/facility#ConstructionZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/facility#ConstructionZone> <http://www.w3.org/2000/01/rdf-schema#label> "Construction Zone" .
-# 
 # https://cogito.iot.linkeddata.es/def/facility#Element
 <https://cogito.iot.linkeddata.es/def/facility#Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/facility#Element> <http://www.w3.org/2000/01/rdf-schema#label> "Element" .
@@ -169,6 +188,10 @@
 # https://cogito.iot.linkeddata.es/def/facility#Project
 <https://cogito.iot.linkeddata.es/def/facility#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/facility#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project" .
+# 
+# https://cogito.iot.linkeddata.es/process#WorkOrder
+<https://cogito.iot.linkeddata.es/process#WorkOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/process#WorkOrder> <http://www.w3.org/2000/01/rdf-schema#label> "Work order" .
 # 
 # https://cogito.iot.linkeddata.es/quality#Defect
 <https://cogito.iot.linkeddata.es/quality#Defect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -182,13 +205,9 @@
 <https://cogito.iot.linkeddata.es/quality#Image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/quality#Image> <http://www.w3.org/2000/01/rdf-schema#label> "Image" .
 # 
-# https://cogito.iot.linkeddata.es/quality#ListOfGeometricQualityInformation
-<https://cogito.iot.linkeddata.es/quality#ListOfGeometricQualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#ListOfGeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "List of geometric quality information" .
-# 
-# https://cogito.iot.linkeddata.es/quality#Location
-<https://cogito.iot.linkeddata.es/quality#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location" .
+# https://cogito.iot.linkeddata.es/quality#ImageJob
+<https://cogito.iot.linkeddata.es/quality#ImageJob> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/quality#ImageJob> <http://www.w3.org/2000/01/rdf-schema#label> "Image job" .
 # 
 # https://cogito.iot.linkeddata.es/quality#PointCoud
 <https://cogito.iot.linkeddata.es/quality#PointCoud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -197,17 +216,5 @@
 # https://cogito.iot.linkeddata.es/quality#Rule
 <https://cogito.iot.linkeddata.es/quality#Rule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/quality#Rule> <http://www.w3.org/2000/01/rdf-schema#label> "Rule" .
-# 
-# https://cogito.iot.linkeddata.es/quality#SafetyInformation
-<https://cogito.iot.linkeddata.es/quality#SafetyInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#SafetyInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Safety information" .
-# 
-# https://cogito.iot.linkeddata.es/quality#TagData
-<https://cogito.iot.linkeddata.es/quality#TagData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#TagData> <http://www.w3.org/2000/01/rdf-schema#label> "tag data" .
-# 
-# https://cogito.iot.linkeddata.es/quality#TrackingTag
-<https://cogito.iot.linkeddata.es/quality#TrackingTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#TrackingTag> <http://www.w3.org/2000/01/rdf-schema#label> "Tracking Tag" .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

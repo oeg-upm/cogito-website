@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/process#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/process#","name":"Process Ontology", "headline":"The COGITO Process ontology aims at modelling the construction process.", "datePublished":"Fri Apr 15 15:21:17 CEST 2022", "version":"0.2.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"Alba Fernández Izquierdo"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/process#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/process#","name":"Process Ontology", "headline":"The COGITO Process ontology aims at modelling the construction process.", "datePublished":"Mon Jul 25 09:54:22 CEST 2022", "version":"0.5.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"Alba Fernández Izquierdo"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -61,13 +61,13 @@ $(function(){
 <dt>Latest version:</dt>
 <dd><a href="https://cogito.iot.linkeddata.es/def/process#">https://cogito.iot.linkeddata.es/def/process#</a></dd>
 <dt>Revision:</dt>
-<dd>0.2.0</dd>
+<dd>0.5.0</dd>
 <dt>Authors:</dt>
 <dd>Alba Fernández Izquierdo</dd><dd>Raúl García Castro</dd><dd>Socorro  Bernardos Galindo</dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Alba Fernández Izquierdo,Raúl García Castro,Socorro  Bernardos Galindo. Process Ontology. Revision: 0.2.0.</dd>
+<dd>Alba Fernández Izquierdo,Raúl García Castro,Socorro  Bernardos Galindo. Process Ontology. Revision: 0.5.0.</dd>
 </dl>
 
 <hr/>
@@ -77,14 +77,14 @@ $(function(){
 <span>Ontology Specification Draft</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-This document describes the results of the Process ontology for the COGITO project.</span>
+The COGITO Process ontology aims at modelling the construction process.</span>
 </div>
 <div id="toc"></div> 
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+This document describes the results of the Process ontology for the COGITO project.</span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
@@ -98,6 +98,7 @@ This is a place holder text for the introduction. The introduction should briefl
 <tr><td><b>saref</b></td><td>&lt;https://saref.etsi.org/core&gt;</td></tr>
 <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
 <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>quality</b></td><td>&lt;https://cogito.iot.linkeddata.es/def/quality&gt;</td></tr>
 <tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;https://cogito.iot.linkeddata.es/def/process&gt;</td></tr>
 <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
 <tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
@@ -119,12 +120,32 @@ This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
 <ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
+      <a href="#AsIsProcess"
+         title="https://cogito.iot.linkeddata.es/def/process#AsIsProcess">As-is process</a>
+   </li>
+   <li>
+      <a href="#AsPlannedEnrichedProcess"
+         title="https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess">As-planned enriched process</a>
+   </li>
+   <li>
+      <a href="#AsPlannedOriginalProcess"
+         title="https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess">As-planned original process</a>
+   </li>
+   <li>
+      <a href="#ConstructionTask"
+         title="https://cogito.iot.linkeddata.es/def/process#ConstructionTask">Construction task</a>
+   </li>
+   <li>
       <a href="#Cost"
          title="https://cogito.iot.linkeddata.es/def/process#Cost">Cost</a>
    </li>
    <li>
       <a href="#https://cogito.iot.linkeddata.es/def/facility#Element"
          title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
+   </li>
+   <li>
+      <a href="#GeometricQualityTask"
+         title="https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask">Geometric quality task</a>
    </li>
    <li>
       <a href="#Process"
@@ -143,12 +164,24 @@ This ontology has the following classes and properties.</span>
          title="https://cogito.iot.linkeddata.es/def/resource#ResourceType">Resource Type</a>
    </li>
    <li>
+      <a href="#https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment"
+         title="https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment">Resource type assginment</a>
+   </li>
+   <li>
+      <a href="#SatetyTask"
+         title="https://cogito.iot.linkeddata.es/def/process#SatetyTask">Safety task</a>
+   </li>
+   <li>
       <a href="#Task"
          title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
    </li>
    <li>
       <a href="#UnitOfCurrency"
          title="https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency">Unit of Currency</a>
+   </li>
+   <li>
+      <a href="#VisualQualityTask"
+         title="https://cogito.iot.linkeddata.es/def/process#VisualQualityTask">Visual quality task</a>
    </li>
    <li>
       <a href="#WorkOrder"
@@ -160,12 +193,32 @@ This ontology has the following classes and properties.</span>
          title="https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource">has assigned resource</a>
    </li>
    <li>
+      <a href="#hasComponentTask"
+         title="https://cogito.iot.linkeddata.es/def/process#hasComponentTask">has component task</a>
+   </li>
+   <li>
       <a href="#hasCost"
          title="https://cogito.iot.linkeddata.es/def/process#hasCost">has cost</a>
    </li>
    <li>
+      <a href="#hasMainProvider"
+         title="https://cogito.iot.linkeddata.es/def/process#hasMainProvider">has main provider</a>
+   </li>
+   <li>
+      <a href="#hasResourceTypeAssignment"
+         title="https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment">has resource type assignment</a>
+   </li>
+   <li>
+      <a href="#hasSubTask"
+         title="https://cogito.iot.linkeddata.es/def/process#hasSubTask">has sub-task</a>
+   </li>
+   <li>
       <a href="#hasTask"
          title="https://cogito.iot.linkeddata.es/def/process#hasTask">has task</a>
+   </li>
+   <li>
+      <a href="#hasWorkOrder"
+         title="https://cogito.iot.linkeddata.es/def/process#hasWorkOrder">has work order</a>
    </li>
    <li>
       <a href="#involvesResourceType"
@@ -180,6 +233,14 @@ This ontology has the following classes and properties.</span>
          title="https://cogito.iot.linkeddata.es/def/process#isMeasuredIn">is measured in</a>
    </li>
    <li>
+      <a href="#https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject"
+         title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">is related to project</a>
+   </li>
+   <li>
+      <a href="#https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder"
+         title="https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder">is related to work order</a>
+   </li>
+   <li>
       <a href="#isSubTaskOf"
          title="https://cogito.iot.linkeddata.es/def/process#isSubTaskOf">is sub-task of</a>
    </li>
@@ -188,6 +249,14 @@ This ontology has the following classes and properties.</span>
          title="https://cogito.iot.linkeddata.es/def/process#relatesToElement">relates to element</a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#actualEndDate"
+         title="https://cogito.iot.linkeddata.es/def/process#actualEndDate">actual end date</a>
+   </li>
+   <li>
+      <a href="#actualStartDate"
+         title="https://cogito.iot.linkeddata.es/def/process#actualStartDate">actual start date</a>
+   </li>
    <li>
       <a href="#amount"
          title="https://cogito.iot.linkeddata.es/def/process#amount">amount</a>
@@ -201,44 +270,56 @@ This ontology has the following classes and properties.</span>
          title="https://cogito.iot.linkeddata.es/def/process#currencySymbol">currency symbol</a>
    </li>
    <li>
-      <a href="#hasAuthor"
-         title="https://cogito.iot.linkeddata.es/def/process#hasAuthor">has author</a>
-   </li>
-   <li>
-      <a href="#hasBeginningDate"
-         title="https://cogito.iot.linkeddata.es/def/process#hasBeginningDate">has beginning date</a>
+      <a href="#author"
+         title="https://cogito.iot.linkeddata.es/def/process#author">has author</a>
    </li>
    <li>
       <a href="#hasCreationDate"
          title="https://cogito.iot.linkeddata.es/def/process#hasCreationDate">has creation date</a>
    </li>
    <li>
-      <a href="#hasEndDate"
-         title="https://cogito.iot.linkeddata.es/def/process#hasEndDate">has end date</a>
+      <a href="#name"
+         title="https://cogito.iot.linkeddata.es/def/process#name">name</a>
    </li>
    <li>
-      <a href="#hasName"
-         title="https://cogito.iot.linkeddata.es/def/process#hasName">has name</a>
+      <a href="#plannedEndDate"
+         title="https://cogito.iot.linkeddata.es/def/process#plannedEndDate">planned end date</a>
    </li>
    <li>
-      <a href="#hasPriority"
-         title="https://cogito.iot.linkeddata.es/def/process#hasPriority">has priority</a>
+      <a href="#plannedStartDate"
+         title="https://cogito.iot.linkeddata.es/def/process#plannedStartDate">planned start date</a>
    </li>
    <li>
-      <a href="#hasProgress"
-         title="https://cogito.iot.linkeddata.es/def/process#hasProgress">has progress</a>
-   </li>
-   <li>
-      <a href="#hasStatus"
-         title="https://cogito.iot.linkeddata.es/def/process#hasStatus">has status</a>
+      <a href="#priority"
+         title="https://cogito.iot.linkeddata.es/def/process#priority">priority</a>
    </li>
    <li>
       <a href="#processId"
          title="https://cogito.iot.linkeddata.es/def/process#processId">process identifier</a>
    </li>
    <li>
+      <a href="#progress"
+         title="https://cogito.iot.linkeddata.es/def/process#progress">progress</a>
+   </li>
+   <li>
+      <a href="#result"
+         title="https://cogito.iot.linkeddata.es/def/process#result">result</a>
+   </li>
+   <li>
+      <a href="#status"
+         title="https://cogito.iot.linkeddata.es/def/process#status">status</a>
+   </li>
+   <li>
       <a href="#taskId"
          title="https://cogito.iot.linkeddata.es/def/process#taskId">task identifier</a>
+   </li>
+   <li>
+      <a href="#timeStep"
+         title="https://cogito.iot.linkeddata.es/def/process#timeStep">time step</a>
+   </li>
+   <li>
+      <a href="#timeWindow"
+         title="https://cogito.iot.linkeddata.es/def/process#timeWindow">time window</a>
    </li>
 </ul>
 </div>
@@ -249,7 +330,7 @@ This ontology has the following classes and properties.</span>
 <span class="markdown">
 The following diagram reflects how the classes of the ontology are related
 </span>
-<center><img src="resources/images/diagram.png" alt="General overview of the COGITO Construction ontology." width="90%">  </center>
+<center><img src="resources/images/diagram.png" alt="General overview of the COGITO Process ontology." width="90%">  </center>
 
 </div>
    
@@ -261,12 +342,32 @@ This section provides details for each class and property defined by Process Ont
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
+         <a href="#AsIsProcess"
+            title="https://cogito.iot.linkeddata.es/def/process#AsIsProcess">As-is process</a>
+      </li>
+      <li>
+         <a href="#AsPlannedEnrichedProcess"
+            title="https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess">As-planned enriched process</a>
+      </li>
+      <li>
+         <a href="#AsPlannedOriginalProcess"
+            title="https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess">As-planned original process</a>
+      </li>
+      <li>
+         <a href="#ConstructionTask"
+            title="https://cogito.iot.linkeddata.es/def/process#ConstructionTask">Construction task</a>
+      </li>
+      <li>
          <a href="#Cost"
             title="https://cogito.iot.linkeddata.es/def/process#Cost">Cost</a>
       </li>
       <li>
          <a href="#https://cogito.iot.linkeddata.es/def/facility#Element"
             title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
+      </li>
+      <li>
+         <a href="#GeometricQualityTask"
+            title="https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask">Geometric quality task</a>
       </li>
       <li>
          <a href="#Process"
@@ -285,6 +386,14 @@ This section provides details for each class and property defined by Process Ont
             title="https://cogito.iot.linkeddata.es/def/resource#ResourceType">Resource Type</a>
       </li>
       <li>
+         <a href="#https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment"
+            title="https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment">Resource type assginment</a>
+      </li>
+      <li>
+         <a href="#SatetyTask"
+            title="https://cogito.iot.linkeddata.es/def/process#SatetyTask">Safety task</a>
+      </li>
+      <li>
          <a href="#Task"
             title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
       </li>
@@ -293,10 +402,78 @@ This section provides details for each class and property defined by Process Ont
             title="https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency">Unit of Currency</a>
       </li>
       <li>
+         <a href="#VisualQualityTask"
+            title="https://cogito.iot.linkeddata.es/def/process#VisualQualityTask">Visual quality task</a>
+      </li>
+      <li>
          <a href="#WorkOrder"
             title="https://cogito.iot.linkeddata.es/def/process#WorkOrder">Work Order</a>
       </li>
    </ul>
+   <div class="entity" id="AsIsProcess">
+      <h3>As-is process<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#AsIsProcess</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Process"
+               title="https://cogito.iot.linkeddata.es/def/process#Process">Process</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AsPlannedEnrichedProcess">
+      <h3>As-planned enriched process<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Process"
+               title="https://cogito.iot.linkeddata.es/def/process#Process">Process</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AsPlannedOriginalProcess">
+      <h3>As-planned original process<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Process"
+               title="https://cogito.iot.linkeddata.es/def/process#Process">Process</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ConstructionTask">
+      <h3>Construction task<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#ConstructionTask</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Task"
+               title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Cost">
       <h3>Cost<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -305,12 +482,6 @@ This section provides details for each class and property defined by Process Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#Cost</p>
       <dl class="description">
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#isMeasuredIn"
-               title="https://cogito.iot.linkeddata.es/def/process#isMeasuredIn">is measured in</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#hasCost"
@@ -335,6 +506,22 @@ This section provides details for each class and property defined by Process Ont
          </dd>
       </dl>
    </div>
+   <div class="entity" id="GeometricQualityTask">
+      <h3>Geometric quality task<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Task"
+               title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Process">
       <h3>Process<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -343,11 +530,15 @@ This section provides details for each class and property defined by Process Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#Process</p>
       <dl class="description">
-         <dt>is in domain of</dt>
+         <dt>has sub-classes</dt>
          <dd>
-            <a href="#involvesResourceType"
-               title="https://cogito.iot.linkeddata.es/def/process#involvesResourceType">involves resource type</a>
-            <sup class="type-op" title="object property">op</sup>
+            <a href="#AsIsProcess"
+               title="https://cogito.iot.linkeddata.es/def/process#AsIsProcess">As-is process</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#AsPlannedEnrichedProcess"
+               title="https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess">As-planned enriched process</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#AsPlannedOriginalProcess"
+               title="https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess">As-planned original process</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -358,6 +549,14 @@ This section provides details for each class and property defined by Process Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#Project</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject"
+               title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">is related to project</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
    </div>
    <div class="entity" id="https://cogito.iot.linkeddata.es/def/resource#Resource">
       <h3>Resource<sup class="type-c" title="class">c</sup>
@@ -369,8 +568,10 @@ This section provides details for each class and property defined by Process Ont
       <dl class="description">
          <dt>is in range of</dt>
          <dd>
-            <a href="#involvesResourceType"
-               title="https://cogito.iot.linkeddata.es/def/process#involvesResourceType">involves resource type</a>
+            <a href="#https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource"
+               title="https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource">has assigned resource</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMainProvider"
+               title="https://cogito.iot.linkeddata.es/def/process#hasMainProvider">has main provider</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -382,6 +583,46 @@ This section provides details for each class and property defined by Process Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/resource#ResourceType</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#involvesResourceType"
+               title="https://cogito.iot.linkeddata.es/def/process#involvesResourceType">involves resource type</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment">
+      <h3>Resource type assginment<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasResourceTypeAssignment"
+               title="https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment">has resource type assignment</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SatetyTask">
+      <h3>Safety task<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#SatetyTask</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Task"
+               title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
    </div>
    <div class="entity" id="Task">
       <h3>Task<sup class="type-c" title="class">c</sup>
@@ -391,20 +632,38 @@ This section provides details for each class and property defined by Process Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#Task</p>
       <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#ConstructionTask"
+               title="https://cogito.iot.linkeddata.es/def/process#ConstructionTask">Construction task</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#GeometricQualityTask"
+               title="https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask">Geometric quality task</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SatetyTask"
+               title="https://cogito.iot.linkeddata.es/def/process#SatetyTask">Safety task</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#VisualQualityTask"
+               title="https://cogito.iot.linkeddata.es/def/process#VisualQualityTask">Visual quality task</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#involvesResourceType"
-               title="https://cogito.iot.linkeddata.es/def/process#involvesResourceType">involves resource type</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isExecutedAfter"
+            <a href="#isExecutedAfter"
                title="https://cogito.iot.linkeddata.es/def/process#isExecutedAfter">is executed after</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#relatesToElement"
-               title="https://cogito.iot.linkeddata.es/def/process#relatesToElement">relates to element</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isSubTaskOf"
+               title="https://cogito.iot.linkeddata.es/def/process#isSubTaskOf">is sub-task of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#isExecutedAfter"
+            <a href="#hasComponentTask"
+               title="https://cogito.iot.linkeddata.es/def/process#hasComponentTask">has component task</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSubTask"
+               title="https://cogito.iot.linkeddata.es/def/process#hasSubTask">has sub-task</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasTask"
+               title="https://cogito.iot.linkeddata.es/def/process#hasTask">has task</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isExecutedAfter"
                title="https://cogito.iot.linkeddata.es/def/process#isExecutedAfter">is executed after</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isSubTaskOf"
+               title="https://cogito.iot.linkeddata.es/def/process#isSubTaskOf">is sub-task of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -425,6 +684,22 @@ This section provides details for each class and property defined by Process Ont
          </dd>
       </dl>
    </div>
+   <div class="entity" id="VisualQualityTask">
+      <h3>Visual quality task<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#VisualQualityTask</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Task"
+               title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="WorkOrder">
       <h3>Work Order<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -432,6 +707,16 @@ This section provides details for each class and property defined by Process Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#WorkOrder</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasWorkOrder"
+               title="https://cogito.iot.linkeddata.es/def/process#hasWorkOrder">has work order</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder"
+               title="https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder">is related to work order</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
    </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
@@ -441,12 +726,32 @@ This section provides details for each class and property defined by Process Ont
             title="https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource">has assigned resource</a>
       </li>
       <li>
+         <a href="#hasComponentTask"
+            title="https://cogito.iot.linkeddata.es/def/process#hasComponentTask">has component task</a>
+      </li>
+      <li>
          <a href="#hasCost"
             title="https://cogito.iot.linkeddata.es/def/process#hasCost">has cost</a>
       </li>
       <li>
+         <a href="#hasMainProvider"
+            title="https://cogito.iot.linkeddata.es/def/process#hasMainProvider">has main provider</a>
+      </li>
+      <li>
+         <a href="#hasResourceTypeAssignment"
+            title="https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment">has resource type assignment</a>
+      </li>
+      <li>
+         <a href="#hasSubTask"
+            title="https://cogito.iot.linkeddata.es/def/process#hasSubTask">has sub-task</a>
+      </li>
+      <li>
          <a href="#hasTask"
             title="https://cogito.iot.linkeddata.es/def/process#hasTask">has task</a>
+      </li>
+      <li>
+         <a href="#hasWorkOrder"
+            title="https://cogito.iot.linkeddata.es/def/process#hasWorkOrder">has work order</a>
       </li>
       <li>
          <a href="#involvesResourceType"
@@ -459,6 +764,14 @@ This section provides details for each class and property defined by Process Ont
       <li>
          <a href="#isMeasuredIn"
             title="https://cogito.iot.linkeddata.es/def/process#isMeasuredIn">is measured in</a>
+      </li>
+      <li>
+         <a href="#https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject"
+            title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">is related to project</a>
+      </li>
+      <li>
+         <a href="#https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder"
+            title="https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder">is related to work order</a>
       </li>
       <li>
          <a href="#isSubTaskOf"
@@ -476,6 +789,34 @@ This section provides details for each class and property defined by Process Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://cogito.iot.linkeddata.es/def/resource#Resource"
+                  title="https://cogito.iot.linkeddata.es/def/resource#Resource">Resource</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasComponentTask">
+      <h3>has component task<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasComponentTask</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Task"
+                  title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="hasCost">
       <h3>has cost<sup class="type-op" title="object property">op</sup>
@@ -495,6 +836,60 @@ This section provides details for each class and property defined by Process Ont
          </dl>
       </div>
    </div>
+   <div class="entity" id="hasMainProvider">
+      <h3>has main provider<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasMainProvider</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://cogito.iot.linkeddata.es/def/resource#Resource"
+                  title="https://cogito.iot.linkeddata.es/def/resource#Resource">Resource</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasResourceTypeAssignment">
+      <h3>has resource type assignment<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment"
+                  title="https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment">Resource type assginment</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSubTask">
+      <h3>has sub-task<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasSubTask</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Task"
+                  title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasTask">
       <h3>has task<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -502,6 +897,34 @@ This section provides details for each class and property defined by Process Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasTask</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Task"
+                  title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasWorkOrder">
+      <h3>has work order<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasWorkOrder</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#WorkOrder"
+                  title="https://cogito.iot.linkeddata.es/def/process#WorkOrder">Work Order</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="involvesResourceType">
       <h3>involves resource type<sup class="type-op" title="object property">op</sup>
@@ -512,21 +935,10 @@ This section provides details for each class and property defined by Process Ont
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#involvesResourceType</p>
       <div class="description">
          <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Process"
-                  title="https://cogito.iot.linkeddata.es/def/process#Process">Process</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dd>
-               <a href="#Task"
-                  title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#https://cogito.iot.linkeddata.es/def/resource#Resource"
-                  title="https://cogito.iot.linkeddata.es/def/resource#Resource">Resource</a>
+               <a href="#https://cogito.iot.linkeddata.es/def/resource#ResourceType"
+                  title="https://cogito.iot.linkeddata.es/def/resource#ResourceType">Resource Type</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -565,16 +977,46 @@ This section provides details for each class and property defined by Process Ont
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#isMeasuredIn</p>
       <div class="description">
          <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cost"
-                  title="https://cogito.iot.linkeddata.es/def/process#Cost">Cost</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
             <dt>has range</dt>
             <dd>
                <a href="#UnitOfCurrency"
                   title="https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency">Unit of Currency</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">
+      <h3>is related to project<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://cogito.iot.linkeddata.es/def/facility#Project"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Project">Project</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder">
+      <h3>is related to work order<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#WorkOrder"
+                  title="https://cogito.iot.linkeddata.es/def/process#WorkOrder">Work Order</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -587,6 +1029,22 @@ This section provides details for each class and property defined by Process Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#isSubTaskOf</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Task"
+                  title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Task"
+                  title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="relatesToElement">
       <h3>relates to element<sup class="type-op" title="object property">op</sup>
@@ -597,12 +1055,6 @@ This section provides details for each class and property defined by Process Ont
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#relatesToElement</p>
       <div class="description">
          <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Task"
-                  title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
             <dt>has range</dt>
             <dd>
                <a href="#https://cogito.iot.linkeddata.es/def/facility#Element"
@@ -616,6 +1068,14 @@ This section provides details for each class and property defined by Process Ont
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
+         <a href="#actualEndDate"
+            title="https://cogito.iot.linkeddata.es/def/process#actualEndDate">actual end date</a>
+      </li>
+      <li>
+         <a href="#actualStartDate"
+            title="https://cogito.iot.linkeddata.es/def/process#actualStartDate">actual start date</a>
+      </li>
+      <li>
          <a href="#amount"
             title="https://cogito.iot.linkeddata.es/def/process#amount">amount</a>
       </li>
@@ -628,46 +1088,74 @@ This section provides details for each class and property defined by Process Ont
             title="https://cogito.iot.linkeddata.es/def/process#currencySymbol">currency symbol</a>
       </li>
       <li>
-         <a href="#hasAuthor"
-            title="https://cogito.iot.linkeddata.es/def/process#hasAuthor">has author</a>
-      </li>
-      <li>
-         <a href="#hasBeginningDate"
-            title="https://cogito.iot.linkeddata.es/def/process#hasBeginningDate">has beginning date</a>
+         <a href="#author"
+            title="https://cogito.iot.linkeddata.es/def/process#author">has author</a>
       </li>
       <li>
          <a href="#hasCreationDate"
             title="https://cogito.iot.linkeddata.es/def/process#hasCreationDate">has creation date</a>
       </li>
       <li>
-         <a href="#hasEndDate"
-            title="https://cogito.iot.linkeddata.es/def/process#hasEndDate">has end date</a>
+         <a href="#name"
+            title="https://cogito.iot.linkeddata.es/def/process#name">name</a>
       </li>
       <li>
-         <a href="#hasName"
-            title="https://cogito.iot.linkeddata.es/def/process#hasName">has name</a>
+         <a href="#plannedEndDate"
+            title="https://cogito.iot.linkeddata.es/def/process#plannedEndDate">planned end date</a>
       </li>
       <li>
-         <a href="#hasPriority"
-            title="https://cogito.iot.linkeddata.es/def/process#hasPriority">has priority</a>
+         <a href="#plannedStartDate"
+            title="https://cogito.iot.linkeddata.es/def/process#plannedStartDate">planned start date</a>
       </li>
       <li>
-         <a href="#hasProgress"
-            title="https://cogito.iot.linkeddata.es/def/process#hasProgress">has progress</a>
-      </li>
-      <li>
-         <a href="#hasStatus"
-            title="https://cogito.iot.linkeddata.es/def/process#hasStatus">has status</a>
+         <a href="#priority"
+            title="https://cogito.iot.linkeddata.es/def/process#priority">priority</a>
       </li>
       <li>
          <a href="#processId"
             title="https://cogito.iot.linkeddata.es/def/process#processId">process identifier</a>
       </li>
       <li>
+         <a href="#progress"
+            title="https://cogito.iot.linkeddata.es/def/process#progress">progress</a>
+      </li>
+      <li>
+         <a href="#result"
+            title="https://cogito.iot.linkeddata.es/def/process#result">result</a>
+      </li>
+      <li>
+         <a href="#status"
+            title="https://cogito.iot.linkeddata.es/def/process#status">status</a>
+      </li>
+      <li>
          <a href="#taskId"
             title="https://cogito.iot.linkeddata.es/def/process#taskId">task identifier</a>
       </li>
+      <li>
+         <a href="#timeStep"
+            title="https://cogito.iot.linkeddata.es/def/process#timeStep">time step</a>
+      </li>
+      <li>
+         <a href="#timeWindow"
+            title="https://cogito.iot.linkeddata.es/def/process#timeWindow">time window</a>
+      </li>
    </ul>
+   <div class="entity" id="actualEndDate">
+      <h3>actual end date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#actualEndDate</p>
+   </div>
+   <div class="entity" id="actualStartDate">
+      <h3>actual start date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#actualStartDate</p>
+   </div>
    <div class="entity" id="amount">
       <h3>amount<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -702,21 +1190,13 @@ This section provides details for each class and property defined by Process Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#currencySymbol</p>
    </div>
-   <div class="entity" id="hasAuthor">
+   <div class="entity" id="author">
       <h3>has author<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasAuthor</p>
-   </div>
-   <div class="entity" id="hasBeginningDate">
-      <h3>has beginning date<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasBeginningDate</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#author</p>
    </div>
    <div class="entity" id="hasCreationDate">
       <h3>has creation date<sup class="type-dp" title="data property">dp</sup>
@@ -736,21 +1216,13 @@ This section provides details for each class and property defined by Process Ont
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasEndDate">
-      <h3>has end date<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="name">
+      <h3>name<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasEndDate</p>
-   </div>
-   <div class="entity" id="hasName">
-      <h3>has name<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasName</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#name</p>
       <div class="description">
          <dl>
             <dt>has range</dt>
@@ -762,13 +1234,29 @@ This section provides details for each class and property defined by Process Ont
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasPriority">
-      <h3>has priority<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="plannedEndDate">
+      <h3>planned end date<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasPriority</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#plannedEndDate</p>
+   </div>
+   <div class="entity" id="plannedStartDate">
+      <h3>planned start date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#plannedStartDate</p>
+   </div>
+   <div class="entity" id="priority">
+      <h3>priority<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#priority</p>
       <div class="description">
          <dl>
             <dt>has range</dt>
@@ -780,13 +1268,21 @@ This section provides details for each class and property defined by Process Ont
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasProgress">
-      <h3>has progress<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="processId">
+      <h3>process identifier<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasProgress</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#processId</p>
+   </div>
+   <div class="entity" id="progress">
+      <h3>progress<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#progress</p>
       <div class="description">
          <dl>
             <dt>has range</dt>
@@ -798,21 +1294,21 @@ This section provides details for each class and property defined by Process Ont
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasStatus">
-      <h3>has status<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="result">
+      <h3>result<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#hasStatus</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#result</p>
    </div>
-   <div class="entity" id="processId">
-      <h3>process identifier<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="status">
+      <h3>status<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#processId</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#status</p>
    </div>
    <div class="entity" id="taskId">
       <h3>task identifier<sup class="type-dp" title="data property">dp</sup>
@@ -821,6 +1317,22 @@ This section provides details for each class and property defined by Process Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#taskId</p>
+   </div>
+   <div class="entity" id="timeStep">
+      <h3>time step<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#timeStep</p>
+   </div>
+   <div class="entity" id="timeWindow">
+      <h3>time window<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#timeWindow</p>
    </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>

@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/quality#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/quality#","name":"Quality Ontology", "headline":"The COGITO Construction ontology aims at modelling the construction domain.", "datePublished":"Fri Apr 15 15:22:45 CEST 2022", "version":"0.1.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/quality#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/quality#","name":"Quality Ontology", "headline":"The COGITO Facility ontology aims at modelling facilities in the construction domain.", "datePublished":"Mon Jul 25 10:51:33 CEST 2022", "version":"0.4.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -61,13 +61,13 @@ $(function(){
 <dt>Latest version:</dt>
 <dd><a href="https://cogito.iot.linkeddata.es/quality#">https://cogito.iot.linkeddata.es/quality#</a></dd>
 <dt>Revision:</dt>
-<dd>0.1.0</dd>
+<dd>0.4.0</dd>
 <dt>Authors:</dt>
 <dd>Raúl García Castro</dd><dd>Socorro  Bernardos Galindo</dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Raúl García Castro,Socorro  Bernardos Galindo. Quality Ontology. Revision: 0.1.0.</dd>
+<dd>Raúl García Castro,Socorro  Bernardos Galindo. Quality Ontology. Revision: 0.4.0.</dd>
 </dl>
 
 <hr/>
@@ -92,6 +92,7 @@ This document describes the results of the Quality ontology for the COGITO proje
 <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
 <tbody>
 <tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;https://cogito.iot.linkeddata.es/quality#&gt;</td></tr>
+<tr><td><b>process</b></td><td>&lt;https://cogito.iot.linkeddata.es/process&gt;</td></tr>
 <tr><td><b>s4city</b></td><td>&lt;https://saref.etsi.org/saref4city&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
 <tr><td><b>resource</b></td><td>&lt;https://cogito.iot.linkeddata.es/def/resource&gt;</td></tr>
@@ -124,10 +125,6 @@ This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
 <ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
-      <a href="#https://cogito.iot.linkeddata.es/def/facility#ConstructionZone"
-         title="https://cogito.iot.linkeddata.es/def/facility#ConstructionZone">Construction Zone</a>
-   </li>
-   <li>
       <a href="#Defect" title="https://cogito.iot.linkeddata.es/quality#Defect">Defect</a>
    </li>
    <li>
@@ -142,12 +139,8 @@ This ontology has the following classes and properties.</span>
       <a href="#Image" title="https://cogito.iot.linkeddata.es/quality#Image">Image</a>
    </li>
    <li>
-      <a href="#ListOfGeometricQualityInformation"
-         title="https://cogito.iot.linkeddata.es/quality#ListOfGeometricQualityInformation">List of geometric quality information</a>
-   </li>
-   <li>
-      <a href="#Location"
-         title="https://cogito.iot.linkeddata.es/quality#Location">Location</a>
+      <a href="#ImageJob"
+         title="https://cogito.iot.linkeddata.es/quality#ImageJob">Image job</a>
    </li>
    <li>
       <a href="#PointCoud"
@@ -161,28 +154,17 @@ This ontology has the following classes and properties.</span>
       <a href="#Rule" title="https://cogito.iot.linkeddata.es/quality#Rule">Rule</a>
    </li>
    <li>
-      <a href="#SafetyInformation"
-         title="https://cogito.iot.linkeddata.es/quality#SafetyInformation">Safety information</a>
-   </li>
-   <li>
-      <a href="#TagData" title="https://cogito.iot.linkeddata.es/quality#TagData">tag data</a>
-   </li>
-   <li>
-      <a href="#TrackingTag"
-         title="https://cogito.iot.linkeddata.es/quality#TrackingTag">Tracking Tag</a>
+      <a href="#https://cogito.iot.linkeddata.es/process#WorkOrder"
+         title="https://cogito.iot.linkeddata.es/process#WorkOrder">Work order</a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
-      <a href="#belongsToCloud"
-         title="https://cogito.iot.linkeddata.es/quality#belongsToCloud">belongs to point cloud</a>
+      <a href="#https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject"
+         title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">is related to project</a>
    </li>
    <li>
-      <a href="#containsGeometricQualityInformation"
-         title="https://cogito.iot.linkeddata.es/quality#containsGeometricQualityInformation">contains geometric quality information</a>
-   </li>
-   <li>
-      <a href="#generatesData"
-         title="https://cogito.iot.linkeddata.es/quality#generatesData">generates data</a>
+      <a href="#isRelatedToWorkOrder"
+         title="https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder">is related to work order</a>
    </li>
    <li>
       <a href="#refersToElement"
@@ -193,45 +175,55 @@ This ontology has the following classes and properties.</span>
          title="https://cogito.iot.linkeddata.es/quality#refersToRule">refers to rule</a>
    </li>
    <li>
-      <a href="#refersToZone"
-         title="https://cogito.iot.linkeddata.es/quality#refersToZone">refers to zone</a>
-   </li>
-   <li>
       <a href="#reflectsDefect"
          title="https://cogito.iot.linkeddata.es/quality#reflectsDefect">reflects defect</a>
    </li>
    <li>
-      <a href="#reflectsList"
-         title="https://cogito.iot.linkeddata.es/quality#reflectsList">reflects list</a>
-   </li>
-   <li>
-      <a href="#relatedToProject"
-         title="https://cogito.iot.linkeddata.es/quality#relatedToProject">related to project</a>
-   </li>
-   <li>
-      <a href="#takenAtLocation"
-         title="https://cogito.iot.linkeddata.es/quality#takenAtLocation">taken at location</a>
-   </li>
-   <li>
-      <a href="#takenAtLocationKF"
-         title="https://cogito.iot.linkeddata.es/quality#takenAtLocationKF">taken at location KF</a>
-   </li>
-   <li>
-      <a href="#takenAtLocationMA"
-         title="https://cogito.iot.linkeddata.es/quality#takenAtLocationMA">taken at location MA</a>
+      <a href="#reflectsGeometricQuality"
+         title="https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality">reflects geometric quality</a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
-      <a href="#coordinates"
-         title="https://cogito.iot.linkeddata.es/quality#coordinates">coordinates</a>
+      <a href="#confidenceLevel"
+         title="https://cogito.iot.linkeddata.es/quality#confidenceLevel">confidence level</a>
    </li>
    <li>
       <a href="#description"
          title="https://cogito.iot.linkeddata.es/quality#description">description</a>
    </li>
    <li>
-      <a href="#material"
-         title="https://cogito.iot.linkeddata.es/quality#material">material</a>
+      <a href="#deviceOrientation"
+         title="https://cogito.iot.linkeddata.es/quality#deviceOrientation">device orientation</a>
+   </li>
+   <li>
+      <a href="#devicePosition"
+         title="https://cogito.iot.linkeddata.es/quality#devicePosition">device position</a>
+   </li>
+   <li>
+      <a href="#elementTypeKeyword"
+         title="https://cogito.iot.linkeddata.es/quality#elementTypeKeyword">element type keyword</a>
+   </li>
+   <li>
+      <a href="#identifier"
+         title="https://cogito.iot.linkeddata.es/quality#identifier">identifier</a>
+   </li>
+   <li>
+      <a href="#label" title="https://cogito.iot.linkeddata.es/quality#label">label</a>
+   </li>
+   <li>
+      <a href="#materialTypeKeyword"
+         title="https://cogito.iot.linkeddata.es/quality#materialTypeKeyword">material type keyword</a>
+   </li>
+   <li>
+      <a href="#name" title="https://cogito.iot.linkeddata.es/quality#name">name</a>
+   </li>
+   <li>
+      <a href="#OriginDocument"
+         title="https://cogito.iot.linkeddata.es/quality#OriginDocument">origin document</a>
+   </li>
+   <li>
+      <a href="#performedTimestamp"
+         title="https://cogito.iot.linkeddata.es/quality#performedTimestamp">performed timestamp</a>
    </li>
    <li>
       <a href="#problem" title="https://cogito.iot.linkeddata.es/quality#problem">problem</a>
@@ -243,34 +235,44 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#reviewPhase"
-         title="https://cogito.iot.linkeddata.es/quality#reviewPhase">review phase</a>
+      <a href="#relationshipTypeKeyword"
+         title="https://cogito.iot.linkeddata.es/quality#relationshipTypeKeyword">relationship type keyword</a>
+   </li>
+   <li>
+      <a href="#result" title="https://cogito.iot.linkeddata.es/quality#result">result</a>
    </li>
    <li>
       <a href="#ruleId" title="https://cogito.iot.linkeddata.es/quality#ruleId">rule identifier</a>
+   </li>
+   <li>
+      <a href="#scalarResult"
+         title="https://cogito.iot.linkeddata.es/quality#scalarResult">scalar result</a>
+   </li>
+   <li>
+      <a href="#scheduledTimestamp"
+         title="https://cogito.iot.linkeddata.es/quality#scheduledTimestamp">scheduled timestamp</a>
    </li>
    <li>
       <a href="#severity"
          title="https://cogito.iot.linkeddata.es/quality#severity">severity</a>
    </li>
    <li>
-      <a href="#storedAt"
-         title="https://cogito.iot.linkeddata.es/quality#storedAt">stored at</a>
+      <a href="#status" title="https://cogito.iot.linkeddata.es/quality#status">status</a>
+   </li>
+   <li>
+      <a href="#structureType"
+         title="https://cogito.iot.linkeddata.es/quality#structureType">structure type</a>
    </li>
    <li>
       <a href="#takenAtTime"
          title="https://cogito.iot.linkeddata.es/quality#takenAtTime">taken at time</a>
    </li>
    <li>
-      <a href="#typeOfDefect"
-         title="https://cogito.iot.linkeddata.es/quality#typeOfDefect">type of defect</a>
+      <a href="#toleranceReference"
+         title="https://cogito.iot.linkeddata.es/quality#toleranceReference">tolerance reference</a>
    </li>
    <li>
-      <a href="#typeOfProcessing"
-         title="https://cogito.iot.linkeddata.es/quality#typeOfProcessing">type of processing</a>
-   </li>
-   <li>
-      <a href="#value" title="https://cogito.iot.linkeddata.es/quality#value">value</a>
+      <a href="#unit" title="https://cogito.iot.linkeddata.es/quality#unit">unit</a>
    </li>
 </ul>
 </div>
@@ -281,8 +283,7 @@ This ontology has the following classes and properties.</span>
 <span class="markdown">
 The following diagram reflects how the classes of the ontology are related
 </span>
-<center><img src="resources/images/diagram.png" alt="General overview of the COGITO Construction ontology." width="90%">  </center>
-
+<center><img src="resources/images/diagram.png" alt="General overview of the COGITO Quality ontology." width="90%">  </center>
 
 </div>
    
@@ -293,10 +294,6 @@ This section provides details for each class and property defined by Quality Ont
 <div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
-      <li>
-         <a href="#https://cogito.iot.linkeddata.es/def/facility#ConstructionZone"
-            title="https://cogito.iot.linkeddata.es/def/facility#ConstructionZone">Construction Zone</a>
-      </li>
       <li>
          <a href="#Defect" title="https://cogito.iot.linkeddata.es/quality#Defect">Defect</a>
       </li>
@@ -312,12 +309,8 @@ This section provides details for each class and property defined by Quality Ont
          <a href="#Image" title="https://cogito.iot.linkeddata.es/quality#Image">Image</a>
       </li>
       <li>
-         <a href="#ListOfGeometricQualityInformation"
-            title="https://cogito.iot.linkeddata.es/quality#ListOfGeometricQualityInformation">List of geometric quality information</a>
-      </li>
-      <li>
-         <a href="#Location"
-            title="https://cogito.iot.linkeddata.es/quality#Location">Location</a>
+         <a href="#ImageJob"
+            title="https://cogito.iot.linkeddata.es/quality#ImageJob">Image job</a>
       </li>
       <li>
          <a href="#PointCoud"
@@ -331,25 +324,10 @@ This section provides details for each class and property defined by Quality Ont
          <a href="#Rule" title="https://cogito.iot.linkeddata.es/quality#Rule">Rule</a>
       </li>
       <li>
-         <a href="#SafetyInformation"
-            title="https://cogito.iot.linkeddata.es/quality#SafetyInformation">Safety information</a>
-      </li>
-      <li>
-         <a href="#TagData" title="https://cogito.iot.linkeddata.es/quality#TagData">tag data</a>
-      </li>
-      <li>
-         <a href="#TrackingTag"
-            title="https://cogito.iot.linkeddata.es/quality#TrackingTag">Tracking Tag</a>
+         <a href="#https://cogito.iot.linkeddata.es/process#WorkOrder"
+            title="https://cogito.iot.linkeddata.es/process#WorkOrder">Work order</a>
       </li>
    </ul>
-   <div class="entity" id="https://cogito.iot.linkeddata.es/def/facility#ConstructionZone">
-      <h3>Construction Zone<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#ConstructionZone</p>
-   </div>
    <div class="entity" id="Defect">
       <h3>Defect<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -357,6 +335,14 @@ This section provides details for each class and property defined by Quality Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#Defect</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#reflectsDefect"
+               title="https://cogito.iot.linkeddata.es/quality#reflectsDefect">reflects defect</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
    </div>
    <div class="entity" id="https://cogito.iot.linkeddata.es/def/facility#Element">
       <h3>Element<sup class="type-c" title="class">c</sup>
@@ -365,6 +351,14 @@ This section provides details for each class and property defined by Quality Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#Element</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#refersToElement"
+               title="https://cogito.iot.linkeddata.es/quality#refersToElement">refers to element</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
    </div>
    <div class="entity" id="GeometricQualityInformation">
       <h3>Geometric quality information<sup class="type-c" title="class">c</sup>
@@ -373,6 +367,14 @@ This section provides details for each class and property defined by Quality Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#reflectsGeometricQuality"
+               title="https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality">reflects geometric quality</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
    </div>
    <div class="entity" id="Image">
       <h3>Image<sup class="type-c" title="class">c</sup>
@@ -382,21 +384,13 @@ This section provides details for each class and property defined by Quality Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#Image</p>
    </div>
-   <div class="entity" id="ListOfGeometricQualityInformation">
-      <h3>List of geometric quality information<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="ImageJob">
+      <h3>Image job<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#ListOfGeometricQualityInformation</p>
-   </div>
-   <div class="entity" id="Location">
-      <h3>Location<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#Location</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#ImageJob</p>
    </div>
    <div class="entity" id="PointCoud">
       <h3>Point cloud<sup class="type-c" title="class">c</sup>
@@ -413,6 +407,14 @@ This section provides details for each class and property defined by Quality Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#Project</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject"
+               title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">is related to project</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
    </div>
    <div class="entity" id="Rule">
       <h3>Rule<sup class="type-c" title="class">c</sup>
@@ -421,45 +423,41 @@ This section provides details for each class and property defined by Quality Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#Rule</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#refersToRule"
+               title="https://cogito.iot.linkeddata.es/quality#refersToRule">refers to rule</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
    </div>
-   <div class="entity" id="SafetyInformation">
-      <h3>Safety information<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="https://cogito.iot.linkeddata.es/process#WorkOrder">
+      <h3>Work order<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#SafetyInformation</p>
-   </div>
-   <div class="entity" id="TagData">
-      <h3>tag data<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#TagData</p>
-   </div>
-   <div class="entity" id="TrackingTag">
-      <h3>Tracking Tag<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#TrackingTag</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/process#WorkOrder</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#isRelatedToWorkOrder"
+               title="https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder">is related to work order</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
    </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#belongsToCloud"
-            title="https://cogito.iot.linkeddata.es/quality#belongsToCloud">belongs to point cloud</a>
+         <a href="#https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject"
+            title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">is related to project</a>
       </li>
       <li>
-         <a href="#containsGeometricQualityInformation"
-            title="https://cogito.iot.linkeddata.es/quality#containsGeometricQualityInformation">contains geometric quality information</a>
-      </li>
-      <li>
-         <a href="#generatesData"
-            title="https://cogito.iot.linkeddata.es/quality#generatesData">generates data</a>
+         <a href="#isRelatedToWorkOrder"
+            title="https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder">is related to work order</a>
       </li>
       <li>
          <a href="#refersToElement"
@@ -470,57 +468,49 @@ This section provides details for each class and property defined by Quality Ont
             title="https://cogito.iot.linkeddata.es/quality#refersToRule">refers to rule</a>
       </li>
       <li>
-         <a href="#refersToZone"
-            title="https://cogito.iot.linkeddata.es/quality#refersToZone">refers to zone</a>
-      </li>
-      <li>
          <a href="#reflectsDefect"
             title="https://cogito.iot.linkeddata.es/quality#reflectsDefect">reflects defect</a>
       </li>
       <li>
-         <a href="#reflectsList"
-            title="https://cogito.iot.linkeddata.es/quality#reflectsList">reflects list</a>
-      </li>
-      <li>
-         <a href="#relatedToProject"
-            title="https://cogito.iot.linkeddata.es/quality#relatedToProject">related to project</a>
-      </li>
-      <li>
-         <a href="#takenAtLocation"
-            title="https://cogito.iot.linkeddata.es/quality#takenAtLocation">taken at location</a>
-      </li>
-      <li>
-         <a href="#takenAtLocationKF"
-            title="https://cogito.iot.linkeddata.es/quality#takenAtLocationKF">taken at location KF</a>
-      </li>
-      <li>
-         <a href="#takenAtLocationMA"
-            title="https://cogito.iot.linkeddata.es/quality#takenAtLocationMA">taken at location MA</a>
+         <a href="#reflectsGeometricQuality"
+            title="https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality">reflects geometric quality</a>
       </li>
    </ul>
-   <div class="entity" id="belongsToCloud">
-      <h3>belongs to point cloud<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">
+      <h3>is related to project<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#belongsToCloud</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://cogito.iot.linkeddata.es/def/facility#Project"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Project">Project</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
-   <div class="entity" id="containsGeometricQualityInformation">
-      <h3>contains geometric quality information<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="isRelatedToWorkOrder">
+      <h3>is related to work order<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#containsGeometricQualityInformation</p>
-   </div>
-   <div class="entity" id="generatesData">
-      <h3>generates data<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#generatesData</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://cogito.iot.linkeddata.es/process#WorkOrder"
+                  title="https://cogito.iot.linkeddata.es/process#WorkOrder">Work order</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="refersToElement">
       <h3>refers to element<sup class="type-op" title="object property">op</sup>
@@ -529,6 +519,16 @@ This section provides details for each class and property defined by Quality Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#refersToElement</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://cogito.iot.linkeddata.es/def/facility#Element"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="refersToRule">
       <h3>refers to rule<sup class="type-op" title="object property">op</sup>
@@ -537,14 +537,15 @@ This section provides details for each class and property defined by Quality Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#refersToRule</p>
-   </div>
-   <div class="entity" id="refersToZone">
-      <h3>refers to zone<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#refersToZone</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Rule" title="https://cogito.iot.linkeddata.es/quality#Rule">Rule</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="reflectsDefect">
       <h3>reflects defect<sup class="type-op" title="object property">op</sup>
@@ -553,61 +554,78 @@ This section provides details for each class and property defined by Quality Ont
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#reflectsDefect</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Defect" title="https://cogito.iot.linkeddata.es/quality#Defect">Defect</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
-   <div class="entity" id="reflectsList">
-      <h3>reflects list<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="reflectsGeometricQuality">
+      <h3>reflects geometric quality<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#reflectsList</p>
-   </div>
-   <div class="entity" id="relatedToProject">
-      <h3>related to project<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#relatedToProject</p>
-   </div>
-   <div class="entity" id="takenAtLocation">
-      <h3>taken at location<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#takenAtLocation</p>
-   </div>
-   <div class="entity" id="takenAtLocationKF">
-      <h3>taken at location KF<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#takenAtLocationKF</p>
-   </div>
-   <div class="entity" id="takenAtLocationMA">
-      <h3>taken at location MA<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#takenAtLocationMA</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#GeometricQualityInformation"
+                  title="https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation">Geometric quality information</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#coordinates"
-            title="https://cogito.iot.linkeddata.es/quality#coordinates">coordinates</a>
+         <a href="#confidenceLevel"
+            title="https://cogito.iot.linkeddata.es/quality#confidenceLevel">confidence level</a>
       </li>
       <li>
          <a href="#description"
             title="https://cogito.iot.linkeddata.es/quality#description">description</a>
       </li>
       <li>
-         <a href="#material"
-            title="https://cogito.iot.linkeddata.es/quality#material">material</a>
+         <a href="#deviceOrientation"
+            title="https://cogito.iot.linkeddata.es/quality#deviceOrientation">device orientation</a>
+      </li>
+      <li>
+         <a href="#devicePosition"
+            title="https://cogito.iot.linkeddata.es/quality#devicePosition">device position</a>
+      </li>
+      <li>
+         <a href="#elementTypeKeyword"
+            title="https://cogito.iot.linkeddata.es/quality#elementTypeKeyword">element type keyword</a>
+      </li>
+      <li>
+         <a href="#identifier"
+            title="https://cogito.iot.linkeddata.es/quality#identifier">identifier</a>
+      </li>
+      <li>
+         <a href="#label" title="https://cogito.iot.linkeddata.es/quality#label">label</a>
+      </li>
+      <li>
+         <a href="#materialTypeKeyword"
+            title="https://cogito.iot.linkeddata.es/quality#materialTypeKeyword">material type keyword</a>
+      </li>
+      <li>
+         <a href="#name" title="https://cogito.iot.linkeddata.es/quality#name">name</a>
+      </li>
+      <li>
+         <a href="#OriginDocument"
+            title="https://cogito.iot.linkeddata.es/quality#OriginDocument">origin document</a>
+      </li>
+      <li>
+         <a href="#performedTimestamp"
+            title="https://cogito.iot.linkeddata.es/quality#performedTimestamp">performed timestamp</a>
       </li>
       <li>
          <a href="#problem" title="https://cogito.iot.linkeddata.es/quality#problem">problem</a>
@@ -619,43 +637,53 @@ This section provides details for each class and property defined by Quality Ont
          </a>
       </li>
       <li>
-         <a href="#reviewPhase"
-            title="https://cogito.iot.linkeddata.es/quality#reviewPhase">review phase</a>
+         <a href="#relationshipTypeKeyword"
+            title="https://cogito.iot.linkeddata.es/quality#relationshipTypeKeyword">relationship type keyword</a>
+      </li>
+      <li>
+         <a href="#result" title="https://cogito.iot.linkeddata.es/quality#result">result</a>
       </li>
       <li>
          <a href="#ruleId" title="https://cogito.iot.linkeddata.es/quality#ruleId">rule identifier</a>
+      </li>
+      <li>
+         <a href="#scalarResult"
+            title="https://cogito.iot.linkeddata.es/quality#scalarResult">scalar result</a>
+      </li>
+      <li>
+         <a href="#scheduledTimestamp"
+            title="https://cogito.iot.linkeddata.es/quality#scheduledTimestamp">scheduled timestamp</a>
       </li>
       <li>
          <a href="#severity"
             title="https://cogito.iot.linkeddata.es/quality#severity">severity</a>
       </li>
       <li>
-         <a href="#storedAt"
-            title="https://cogito.iot.linkeddata.es/quality#storedAt">stored at</a>
+         <a href="#status" title="https://cogito.iot.linkeddata.es/quality#status">status</a>
+      </li>
+      <li>
+         <a href="#structureType"
+            title="https://cogito.iot.linkeddata.es/quality#structureType">structure type</a>
       </li>
       <li>
          <a href="#takenAtTime"
             title="https://cogito.iot.linkeddata.es/quality#takenAtTime">taken at time</a>
       </li>
       <li>
-         <a href="#typeOfDefect"
-            title="https://cogito.iot.linkeddata.es/quality#typeOfDefect">type of defect</a>
+         <a href="#toleranceReference"
+            title="https://cogito.iot.linkeddata.es/quality#toleranceReference">tolerance reference</a>
       </li>
       <li>
-         <a href="#typeOfProcessing"
-            title="https://cogito.iot.linkeddata.es/quality#typeOfProcessing">type of processing</a>
-      </li>
-      <li>
-         <a href="#value" title="https://cogito.iot.linkeddata.es/quality#value">value</a>
+         <a href="#unit" title="https://cogito.iot.linkeddata.es/quality#unit">unit</a>
       </li>
    </ul>
-   <div class="entity" id="coordinates">
-      <h3>coordinates<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="confidenceLevel">
+      <h3>confidence level<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#coordinates</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#confidenceLevel</p>
    </div>
    <div class="entity" id="description">
       <h3>description<sup class="type-dp" title="data property">dp</sup>
@@ -665,13 +693,77 @@ This section provides details for each class and property defined by Quality Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#description</p>
    </div>
-   <div class="entity" id="material">
-      <h3>material<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="deviceOrientation">
+      <h3>device orientation<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#material</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#deviceOrientation</p>
+   </div>
+   <div class="entity" id="devicePosition">
+      <h3>device position<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#devicePosition</p>
+   </div>
+   <div class="entity" id="elementTypeKeyword">
+      <h3>element type keyword<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#elementTypeKeyword</p>
+   </div>
+   <div class="entity" id="identifier">
+      <h3>identifier<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#identifier</p>
+   </div>
+   <div class="entity" id="label">
+      <h3>label<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#label</p>
+   </div>
+   <div class="entity" id="materialTypeKeyword">
+      <h3>material type keyword<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#materialTypeKeyword</p>
+   </div>
+   <div class="entity" id="name">
+      <h3>name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#name</p>
+   </div>
+   <div class="entity" id="OriginDocument">
+      <h3>origin document<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#OriginDocument</p>
+   </div>
+   <div class="entity" id="performedTimestamp">
+      <h3>performed timestamp<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#performedTimestamp</p>
    </div>
    <div class="entity" id="problem">
       <h3>problem<sup class="type-dp" title="data property">dp</sup>
@@ -709,23 +801,21 @@ This section provides details for each class and property defined by Quality Ont
          </dl>
       </div>
    </div>
-   <div class="entity" id="reviewPhase">
-      <h3>review phase<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="relationshipTypeKeyword">
+      <h3>relationship type keyword<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#reviewPhase</p>
-      <div class="description">
-         <dl>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
-            </dd>
-         </dl>
-      </div>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#relationshipTypeKeyword</p>
+   </div>
+   <div class="entity" id="result">
+      <h3>result<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#result</p>
    </div>
    <div class="entity" id="ruleId">
       <h3>rule identifier<sup class="type-dp" title="data property">dp</sup>
@@ -735,6 +825,22 @@ This section provides details for each class and property defined by Quality Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#ruleId</p>
    </div>
+   <div class="entity" id="scalarResult">
+      <h3>scalar result<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#scalarResult</p>
+   </div>
+   <div class="entity" id="scheduledTimestamp">
+      <h3>scheduled timestamp<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#scheduledTimestamp</p>
+   </div>
    <div class="entity" id="severity">
       <h3>severity<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -743,13 +849,31 @@ This section provides details for each class and property defined by Quality Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#severity</p>
    </div>
-   <div class="entity" id="storedAt">
-      <h3>stored at<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="status">
+      <h3>status<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#storedAt</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#status</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="structureType">
+      <h3>structure type<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#structureType</p>
    </div>
    <div class="entity" id="takenAtTime">
       <h3>taken at time<sup class="type-dp" title="data property">dp</sup>
@@ -759,59 +883,21 @@ This section provides details for each class and property defined by Quality Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#takenAtTime</p>
    </div>
-   <div class="entity" id="typeOfDefect">
-      <h3>type of defect<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="toleranceReference">
+      <h3>tolerance reference<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#typeOfDefect</p>
-      <div class="description">
-         <dl>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
-            </dd>
-         </dl>
-      </div>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#toleranceReference</p>
    </div>
-   <div class="entity" id="typeOfProcessing">
-      <h3>type of processing<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="unit">
+      <h3>unit<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#typeOfProcessing</p>
-      <div class="description">
-         <dl>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="value">
-      <h3>value<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#value</p>
-      <div class="description">
-         <dl>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
-            </dd>
-         </dl>
-      </div>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#unit</p>
    </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>

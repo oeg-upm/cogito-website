@@ -27,10 +27,10 @@
     "@value" : "Socorro  Bernardos Galindo"
   } ],
   "http://purl.org/dc/elements/1.1/description" : [ {
-    "@value" : "The COGITO Construction ontology aims at modelling the construction domain."
+    "@value" : "The COGITO Facility ontology aims at modelling facilities in the construction domain."
   } ],
   "http://purl.org/dc/elements/1.1/title" : [ {
-    "@value" : "Construction Ontology"
+    "@value" : "Facility Ontology"
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
@@ -39,7 +39,7 @@
     "@id" : "https://pi.pauwel.be/voc/buildingelement"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.2.0"
+    "@value" : "0.5.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Bridge",
@@ -207,28 +207,58 @@
     "@value" : "coordinates origin"
   } ]
 }, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "description"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#hasFacilityPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has facility part"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#FacilityPart"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#hasSubFacilityPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#FacilityPart"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has sub facility part"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#FacilityPart"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#involvesTask",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "involves task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/process#Task"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToProcess",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "is related to process"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/process#Process"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is related to project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Project"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite",
@@ -236,8 +266,8 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "is ralated to site"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Site"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#name",
@@ -298,18 +328,18 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "refers to element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/quality#refersToZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "refers to zone"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/quality#relatedToProject",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "related to project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/bot#Zone"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/resource#TrackingTag",
@@ -322,6 +352,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "assigned to tracked zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#TrackedZone"
   } ]
 }, {
   "@id" : "https://w3id.org/bot#Building",
@@ -364,12 +397,18 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "contains element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
 }, {
   "@id" : "https://w3id.org/bot#containsZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "contains zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/bot#Zone"
   } ]
 }, {
   "@id" : "https://w3id.org/bot#hasBuilding",
@@ -403,12 +442,21 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has storey"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Storey"
   } ]
 }, {
   "@id" : "https://w3id.org/bot#hasSubElement",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has sub-element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
 }, {
   "@id" : "https://w3id.org/props#hasCompressedGuid",

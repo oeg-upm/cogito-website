@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
- <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Construction Ontology</title>
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Facility Ontology</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/facility#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/facility#","name":"Construction Ontology", "headline":"The COGITO Process ontology aims at modelling the construction process.", "datePublished":"Fri Apr 15 15:22:04 CEST 2022", "version":"0.2.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"Alba Fernández Izquierdo"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/facility#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/facility#","name":"Facility Ontology", "headline":"The COGITO Facility ontology aims at modelling facilities in the construction domain.", "datePublished":"Mon Jul 25 10:42:06 CEST 2022", "version":"0.5.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"Alba Fernández Izquierdo"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -54,14 +54,14 @@ $(function(){
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>Construction Ontology</h1>
+<h1>Facility Ontology</h1>
 
 
 <dl>
 <dt>Latest version:</dt>
 <dd><a href="https://cogito.iot.linkeddata.es/def/facility#">https://cogito.iot.linkeddata.es/def/facility#</a></dd>
 <dt>Revision:</dt>
-<dd>0.2.0</dd>
+<dd>0.5.0</dd>
 <dt>Authors:</dt>
 <dd>Alba Fernández Izquierdo</dd><dd>Raúl García Castro</dd><dd>Socorro  Bernardos Galindo</dd>
 
@@ -70,7 +70,7 @@ $(function(){
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Alba Fernández Izquierdo,Raúl García Castro,Socorro  Bernardos Galindo. Construction Ontology. Revision: 0.2.0.</dd>
+<dd>Alba Fernández Izquierdo,Raúl García Castro,Socorro  Bernardos Galindo. Facility Ontology. Revision: 0.5.0.</dd>
 </dl>
 
 <hr/>
@@ -80,7 +80,7 @@ $(function(){
 <span>Ontology Specification Draft</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-The COGITO Facility ontology aims at modelling the construction domain.</span>
+The COGITO Facility ontology aims at modelling facilities in the construction domain.</span>
 </div>
 <div id="toc"></div> 
 
@@ -122,7 +122,7 @@ This document describes the results of the Facility ontology for the COGITO proj
   
 
 <!--OVERVIEW SECTION-->
-    <div id="overview"><h2 id="overv" class="list">Construction Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+    <div id="overview"><h2 id="overv" class="list">Facility Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
@@ -293,16 +293,16 @@ This ontology has the following classes and properties.</span>
          title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProcess">is related to process</a>
    </li>
    <li>
+      <a href="#isRelatedToProject"
+         title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">is related to project</a>
+   </li>
+   <li>
       <a href="#https://cogito.iot.linkeddata.es/def/quality#refersToElement"
          title="https://cogito.iot.linkeddata.es/def/quality#refersToElement">refers to element</a>
    </li>
    <li>
       <a href="#https://cogito.iot.linkeddata.es/def/quality#refersToZone"
          title="https://cogito.iot.linkeddata.es/def/quality#refersToZone">refers to zone</a>
-   </li>
-   <li>
-      <a href="#https://cogito.iot.linkeddata.es/def/quality#relatedToProject"
-         title="https://cogito.iot.linkeddata.es/def/quality#relatedToProject">related to project</a>
    </li>
    <li>
       <a href="#https://cogito.iot.linkeddata.es/def/process#relatesToElement"
@@ -316,6 +316,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#coordOrigin"
          title="https://cogito.iot.linkeddata.es/def/facility#coordOrigin">coordinates origin</a>
+   </li>
+   <li>
+      <a href="#description"
+         title="https://cogito.iot.linkeddata.es/def/facility#description">description</a>
    </li>
    <li>
       <a href="#https://w3id.org/props#hasCompressedGuid" title="https://w3id.org/props#hasCompressedGuid">has compressed guid</a>
@@ -333,7 +337,7 @@ This ontology has the following classes and properties.</span>
   
 
 <!--DESCRIPTION SECTION-->
-    <div id="description"><h2 id="desc" class="list">Construction Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+    <div id="description"><h2 id="desc" class="list">Facility Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 The following diagram reflects how the classes of the ontology are related
 </span>
@@ -343,8 +347,8 @@ The following diagram reflects how the classes of the ontology are related
    
 
 <!--CROSSREF SECTION-->
-   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for Construction Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-This section provides details for each class and property defined by Construction Ontology.
+   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for Facility Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Facility Ontology.
 <div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
@@ -561,9 +565,18 @@ This section provides details for each class and property defined by Constructio
                title="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">Spatial Thing</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/bot#hasSubElement" title="https://w3id.org/bot#hasSubElement">has sub-element</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">has element</a>
+            <a href="#https://w3id.org/bot#containsElement" title="https://w3id.org/bot#containsElement">contains element</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">has element</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/bot#hasSubElement" title="https://w3id.org/bot#hasSubElement">has sub-element</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://cogito.iot.linkeddata.es/def/quality#refersToElement"
+               title="https://cogito.iot.linkeddata.es/def/quality#refersToElement">refers to element</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#https://cogito.iot.linkeddata.es/def/process#relatesToElement"
                title="https://cogito.iot.linkeddata.es/def/process#relatesToElement">relates to element</a>
             <sup class="type-op" title="object property">op</sup>
@@ -626,6 +639,20 @@ This section provides details for each class and property defined by Constructio
             <a href="#https://w3id.org/bot#Zone" title="https://w3id.org/bot#Zone">Zone</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasSubFacilityPart"
+               title="https://cogito.iot.linkeddata.es/def/facility#hasSubFacilityPart">has sub facility part</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasFacilityPart"
+               title="https://cogito.iot.linkeddata.es/def/facility#hasFacilityPart">has facility part</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSubFacilityPart"
+               title="https://cogito.iot.linkeddata.es/def/facility#hasSubFacilityPart">has sub facility part</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="FallZone">
@@ -675,6 +702,14 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#Process</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#isRelatedToProcess"
+               title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProcess">is related to process</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
    </div>
    <div class="entity" id="Project">
       <h3>Project<sup class="type-c" title="class">c</sup>
@@ -688,6 +723,12 @@ This section provides details for each class and property defined by Constructio
          <dd>
             <a href="#https://www.w3.org/2019/wot/td#Thing" title="https://www.w3.org/2019/wot/td#Thing">Thing</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#isRelatedToProject"
+               title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">is related to project</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -743,6 +784,12 @@ This section provides details for each class and property defined by Constructio
          <dd>
             <a href="#https://w3id.org/bot#Site" title="https://w3id.org/bot#Site">Site</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#isRelatedToSite"
+               title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite">is ralated to site</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -854,6 +901,11 @@ This section provides details for each class and property defined by Constructio
             <a href="#https://w3id.org/bot#Storey" title="https://w3id.org/bot#Storey">Storey</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/bot#hasStorey" title="https://w3id.org/bot#hasStorey">has storey</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="https://w3id.org/bot#Storey">
@@ -879,6 +931,14 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#Task</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#involvesTask"
+               title="https://cogito.iot.linkeddata.es/def/facility#involvesTask">involves task</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
    </div>
    <div class="entity" id="https://www.w3.org/2019/wot/td#Thing">
       <h3>Thing<sup class="type-c" title="class">c</sup>
@@ -909,6 +969,12 @@ This section provides details for each class and property defined by Constructio
             <a href="#SpatialZone"
                title="https://cogito.iot.linkeddata.es/def/facility#SpatialZone">Spatial Zone</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://cogito.iot.linkeddata.es/def/resource#assignedToTrackedZone"
+               title="https://cogito.iot.linkeddata.es/def/resource#assignedToTrackedZone">assigned to tracked zone</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -953,6 +1019,13 @@ This section provides details for each class and property defined by Constructio
             <sup class="type-c" title="class">c</sup>, <a href="#FacilityPart"
                title="https://cogito.iot.linkeddata.es/def/facility#FacilityPart">facility part</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/bot#containsZone" title="https://w3id.org/bot#containsZone">contains zone</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://cogito.iot.linkeddata.es/def/quality#refersToZone"
+               title="https://cogito.iot.linkeddata.es/def/quality#refersToZone">refers to zone</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -1005,16 +1078,16 @@ This section provides details for each class and property defined by Constructio
             title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProcess">is related to process</a>
       </li>
       <li>
+         <a href="#isRelatedToProject"
+            title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">is related to project</a>
+      </li>
+      <li>
          <a href="#https://cogito.iot.linkeddata.es/def/quality#refersToElement"
             title="https://cogito.iot.linkeddata.es/def/quality#refersToElement">refers to element</a>
       </li>
       <li>
          <a href="#https://cogito.iot.linkeddata.es/def/quality#refersToZone"
             title="https://cogito.iot.linkeddata.es/def/quality#refersToZone">refers to zone</a>
-      </li>
-      <li>
-         <a href="#https://cogito.iot.linkeddata.es/def/quality#relatedToProject"
-            title="https://cogito.iot.linkeddata.es/def/quality#relatedToProject">related to project</a>
       </li>
       <li>
          <a href="#https://cogito.iot.linkeddata.es/def/process#relatesToElement"
@@ -1028,6 +1101,16 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/resource#assignedToTrackedZone</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#TrackedZone"
+                  title="https://cogito.iot.linkeddata.es/def/facility#TrackedZone">Tracked Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="https://w3id.org/bot#containsElement">
       <h3>contains element<sup class="type-op" title="object property">op</sup>
@@ -1036,6 +1119,16 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/bot#containsElement</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Element"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="https://w3id.org/bot#containsZone">
       <h3>contains zone<sup class="type-op" title="object property">op</sup>
@@ -1044,6 +1137,15 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/bot#containsZone</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/bot#Zone" title="https://w3id.org/bot#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="https://w3id.org/bot#hasBuilding">
       <h3>has building<sup class="type-op" title="object property">op</sup>
@@ -1088,6 +1190,16 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#hasFacilityPart</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#FacilityPart"
+                  title="https://cogito.iot.linkeddata.es/def/facility#FacilityPart">facility part</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="https://w3id.org/bot#hasSpace">
       <h3>has space<sup class="type-op" title="object property">op</sup>
@@ -1114,6 +1226,16 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/bot#hasStorey</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Storey"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Storey">Storey</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="hasSubFacilityPart">
       <h3>has sub facility part<sup class="type-op" title="object property">op</sup>
@@ -1122,6 +1244,22 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#hasSubFacilityPart</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FacilityPart"
+                  title="https://cogito.iot.linkeddata.es/def/facility#FacilityPart">facility part</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#FacilityPart"
+                  title="https://cogito.iot.linkeddata.es/def/facility#FacilityPart">facility part</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="https://w3id.org/bot#hasSubElement">
       <h3>has sub-element<sup class="type-op" title="object property">op</sup>
@@ -1130,6 +1268,22 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/bot#hasSubElement</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Element"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Element"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="involvesTask">
       <h3>involves task<sup class="type-op" title="object property">op</sup>
@@ -1138,6 +1292,16 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#involvesTask</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://cogito.iot.linkeddata.es/def/process#Task"
+                  title="https://cogito.iot.linkeddata.es/def/process#Task">Task</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="isRelatedToSite">
       <h3>is ralated to site<sup class="type-op" title="object property">op</sup>
@@ -1148,11 +1312,11 @@ This section provides details for each class and property defined by Constructio
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite</p>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
+            <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
-                  target="_blank"
-                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+               <a href="#Site"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Site">Site</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
@@ -1164,6 +1328,34 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#isRelatedToProcess</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://cogito.iot.linkeddata.es/def/process#Process"
+                  title="https://cogito.iot.linkeddata.es/def/process#Process">Process</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isRelatedToProject">
+      <h3>is related to project<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Project"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Project">Project</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="https://cogito.iot.linkeddata.es/def/quality#refersToElement">
       <h3>refers to element<sup class="type-op" title="object property">op</sup>
@@ -1172,6 +1364,16 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/quality#refersToElement</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Element"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="https://cogito.iot.linkeddata.es/def/quality#refersToZone">
       <h3>refers to zone<sup class="type-op" title="object property">op</sup>
@@ -1180,14 +1382,15 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/quality#refersToZone</p>
-   </div>
-   <div class="entity" id="https://cogito.iot.linkeddata.es/def/quality#relatedToProject">
-      <h3>related to project<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/quality#relatedToProject</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/bot#Zone" title="https://w3id.org/bot#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="https://cogito.iot.linkeddata.es/def/process#relatesToElement">
       <h3>relates to element<sup class="type-op" title="object property">op</sup>
@@ -1219,6 +1422,10 @@ This section provides details for each class and property defined by Constructio
             title="https://cogito.iot.linkeddata.es/def/facility#coordOrigin">coordinates origin</a>
       </li>
       <li>
+         <a href="#description"
+            title="https://cogito.iot.linkeddata.es/def/facility#description">description</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/props#hasCompressedGuid" title="https://w3id.org/props#hasCompressedGuid">has compressed guid</a>
       </li>
       <li>
@@ -1245,6 +1452,14 @@ This section provides details for each class and property defined by Constructio
       </h3>
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#coordOrigin</p>
+   </div>
+   <div class="entity" id="description">
+      <h3>description<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#description</p>
    </div>
    <div class="entity" id="https://w3id.org/props#hasCompressedGuid">
       <h3>has compressed guid<sup class="type-dp" title="data property">dp</sup>

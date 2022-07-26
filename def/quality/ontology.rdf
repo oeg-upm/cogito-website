@@ -14,7 +14,7 @@
         <dc:description>The COGITO Quality ontology aims at modelling the construction quality domain.</dc:description>
         <dc:title>Quality Ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.1.0</owl:versionInfo>
+        <owl:versionInfo>0.4.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -71,29 +71,22 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#belongsToCloud -->
+    <!-- https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject -->
 
 
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#belongsToCloud">
-        <rdfs:label>belongs to point cloud</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/facility#Project"/>
+        <rdfs:label>is related to project</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#containsGeometricQualityInformation -->
+    <!-- https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder -->
 
 
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#containsGeometricQualityInformation">
-        <rdfs:label>contains geometric quality information</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#generatesData -->
-
-
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#generatesData">
-        <rdfs:label>generates data</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/process#WorkOrder"/>
+        <rdfs:label>is related to work order</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -102,6 +95,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#refersToElement">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/facility#Element"/>
         <rdfs:label>refers to element</rdfs:label>
     </owl:ObjectProperty>
     
@@ -111,16 +105,8 @@
 
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#refersToRule">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/quality#Rule"/>
         <rdfs:label>refers to rule</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#refersToZone -->
-
-
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#refersToZone">
-        <rdfs:label>refers to zone</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -129,52 +115,18 @@
 
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#reflectsDefect">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/quality#Defect"/>
         <rdfs:label>reflects defect</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#reflectsList -->
+    <!-- https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality -->
 
 
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#reflectsList">
-        <rdfs:label>reflects list</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#relatedToProject -->
-
-
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#relatedToProject">
-        <rdfs:label>related to project</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#takenAtLocation -->
-
-
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#takenAtLocation">
-        <rdfs:label>taken at location</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#takenAtLocationKF -->
-
-
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#takenAtLocationKF">
-        <rdfs:label>taken at location KF</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#takenAtLocationMA -->
-
-
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#takenAtLocationMA">
-        <rdfs:label>taken at location MA</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation"/>
+        <rdfs:label>reflects geometric quality</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -191,11 +143,20 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#coordinates -->
+    <!-- https://cogito.iot.linkeddata.es/quality#OriginDocument -->
 
 
-    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#coordinates">
-        <rdfs:label>coordinates</rdfs:label>
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#OriginDocument">
+        <rdfs:label>origin document</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#confidenceLevel -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#confidenceLevel">
+        <rdfs:label>confidence level</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -209,11 +170,74 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#material -->
+    <!-- https://cogito.iot.linkeddata.es/quality#deviceOrientation -->
 
 
-    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#material">
-        <rdfs:label>material</rdfs:label>
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#deviceOrientation">
+        <rdfs:label>device orientation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#devicePosition -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#devicePosition">
+        <rdfs:label>device position</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#elementTypeKeyword -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#elementTypeKeyword">
+        <rdfs:label>element type keyword</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#identifier -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#identifier">
+        <rdfs:label>identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#label -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#label">
+        <rdfs:label>label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#materialTypeKeyword -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#materialTypeKeyword">
+        <rdfs:label>material type keyword</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#name -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#name">
+        <rdfs:label>name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#performedTimestamp -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#performedTimestamp">
+        <rdfs:label>performed timestamp</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -237,12 +261,20 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#reviewPhase -->
+    <!-- https://cogito.iot.linkeddata.es/quality#relationshipTypeKeyword -->
 
 
-    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#reviewPhase">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>review phase</rdfs:label>
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#relationshipTypeKeyword">
+        <rdfs:label>relationship type keyword</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#result -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#result">
+        <rdfs:label>result</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -256,6 +288,24 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/quality#scalarResult -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#scalarResult">
+        <rdfs:label>scalar result</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#scheduledTimestamp -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#scheduledTimestamp">
+        <rdfs:label>scheduled timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://cogito.iot.linkeddata.es/quality#severity -->
 
 
@@ -265,11 +315,21 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#storedAt -->
+    <!-- https://cogito.iot.linkeddata.es/quality#status -->
 
 
-    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#storedAt">
-        <rdfs:label>stored at</rdfs:label>
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#status">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#structureType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#structureType">
+        <rdfs:label>structure type</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -283,32 +343,20 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#typeOfDefect -->
+    <!-- https://cogito.iot.linkeddata.es/quality#toleranceReference -->
 
 
-    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#typeOfDefect">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>type of defect</rdfs:label>
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#toleranceReference">
+        <rdfs:label>tolerance reference</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#typeOfProcessing -->
+    <!-- https://cogito.iot.linkeddata.es/quality#unit -->
 
 
-    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#typeOfProcessing">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>type of processing</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#value -->
-
-
-    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#value">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>value</rdfs:label>
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#unit">
+        <rdfs:label>unit</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -322,15 +370,6 @@
      -->
 
 
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/def/facility#ConstructionZone -->
-
-
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/facility#ConstructionZone">
-        <rdfs:label>Construction Zone</rdfs:label>
-    </owl:Class>
     
 
 
@@ -348,6 +387,15 @@
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/facility#Project">
         <rdfs:label>Project</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/process#WorkOrder -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/process#WorkOrder">
+        <rdfs:label>Work order</rdfs:label>
     </owl:Class>
     
 
@@ -379,20 +427,11 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#ListOfGeometricQualityInformation -->
+    <!-- https://cogito.iot.linkeddata.es/quality#ImageJob -->
 
 
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#ListOfGeometricQualityInformation">
-        <rdfs:label>List of geometric quality information</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#Location -->
-
-
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#Location">
-        <rdfs:label>Location</rdfs:label>
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#ImageJob">
+        <rdfs:label>Image job</rdfs:label>
     </owl:Class>
     
 
@@ -411,33 +450,6 @@
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#Rule">
         <rdfs:label>Rule</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#SafetyInformation -->
-
-
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#SafetyInformation">
-        <rdfs:label>Safety information</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#TagData -->
-
-
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#TagData">
-        <rdfs:label>tag data</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#TrackingTag -->
-
-
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#TrackingTag">
-        <rdfs:label>Tracking Tag</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

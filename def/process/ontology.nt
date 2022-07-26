@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/description> "The COGITO Process ontology aims at modelling the construction process." .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/title> "Process Ontology" .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/def/process#> <http://www.w3.org/2002/07/owl#versionInfo> "0.2.0" .
+<https://cogito.iot.linkeddata.es/def/process#> <http://www.w3.org/2002/07/owl#versionInfo> "0.5.0" .
 # 
 # 
 # #################################################################
@@ -36,20 +36,49 @@
 # #################################################################
 # 
 # 
+# https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Project> .
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#label> "is related to project" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#hasComponentTask
+<https://cogito.iot.linkeddata.es/def/process#hasComponentTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#hasComponentTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#hasComponentTask> <http://www.w3.org/2000/01/rdf-schema#label> "has component task" .
+# 
 # https://cogito.iot.linkeddata.es/def/process#hasCost
 <https://cogito.iot.linkeddata.es/def/process#hasCost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/def/process#hasCost> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Cost> .
 <https://cogito.iot.linkeddata.es/def/process#hasCost> <http://www.w3.org/2000/01/rdf-schema#label> "has cost" .
 # 
+# https://cogito.iot.linkeddata.es/def/process#hasMainProvider
+<https://cogito.iot.linkeddata.es/def/process#hasMainProvider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#hasMainProvider> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#Resource> .
+<https://cogito.iot.linkeddata.es/def/process#hasMainProvider> <http://www.w3.org/2000/01/rdf-schema#label> "has main provider" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment
+<https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment> .
+<https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment> <http://www.w3.org/2000/01/rdf-schema#label> "has resource type assignment" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#hasSubTask
+<https://cogito.iot.linkeddata.es/def/process#hasSubTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#hasSubTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#hasSubTask> <http://www.w3.org/2000/01/rdf-schema#label> "has sub-task" .
+# 
 # https://cogito.iot.linkeddata.es/def/process#hasTask
 <https://cogito.iot.linkeddata.es/def/process#hasTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#hasTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
 <https://cogito.iot.linkeddata.es/def/process#hasTask> <http://www.w3.org/2000/01/rdf-schema#label> "has task" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#hasWorkOrder
+<https://cogito.iot.linkeddata.es/def/process#hasWorkOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#hasWorkOrder> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#WorkOrder> .
+<https://cogito.iot.linkeddata.es/def/process#hasWorkOrder> <http://www.w3.org/2000/01/rdf-schema#label> "has work order" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#involvesResourceType
 <https://cogito.iot.linkeddata.es/def/process#involvesResourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/process#involvesResourceType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cogito.iot.linkeddata.es/def/process#Process> .
-<https://cogito.iot.linkeddata.es/def/process#involvesResourceType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cogito.iot.linkeddata.es/def/process#Task> .
-<https://cogito.iot.linkeddata.es/def/process#involvesResourceType> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#Resource> .
+<https://cogito.iot.linkeddata.es/def/process#involvesResourceType> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#ResourceType> .
 <https://cogito.iot.linkeddata.es/def/process#involvesResourceType> <http://www.w3.org/2000/01/rdf-schema#label> "involves resource type" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#isExecutedAfter
@@ -60,22 +89,28 @@
 # 
 # https://cogito.iot.linkeddata.es/def/process#isMeasuredIn
 <https://cogito.iot.linkeddata.es/def/process#isMeasuredIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/process#isMeasuredIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cogito.iot.linkeddata.es/def/process#Cost> .
 <https://cogito.iot.linkeddata.es/def/process#isMeasuredIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency> .
 <https://cogito.iot.linkeddata.es/def/process#isMeasuredIn> <http://www.w3.org/2000/01/rdf-schema#label> "is measured in" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#isSubTaskOf
 <https://cogito.iot.linkeddata.es/def/process#isSubTaskOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#isSubTaskOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#isSubTaskOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
 <https://cogito.iot.linkeddata.es/def/process#isSubTaskOf> <http://www.w3.org/2000/01/rdf-schema#label> "is sub-task of" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#relatesToElement
 <https://cogito.iot.linkeddata.es/def/process#relatesToElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/process#relatesToElement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cogito.iot.linkeddata.es/def/process#Task> .
 <https://cogito.iot.linkeddata.es/def/process#relatesToElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
 <https://cogito.iot.linkeddata.es/def/process#relatesToElement> <http://www.w3.org/2000/01/rdf-schema#label> "relates to element" .
 # 
+# https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder
+<https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#WorkOrder> .
+<https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder> <http://www.w3.org/2000/01/rdf-schema#label> "is related to work order" .
+# 
 # https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource
 <https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#Resource> .
 <https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource> <http://www.w3.org/2000/01/rdf-schema#label> "has assigned resource" .
 # 
 # 
@@ -87,10 +122,22 @@
 # #################################################################
 # 
 # 
+# https://cogito.iot.linkeddata.es/def/process#actualEndDate
+<https://cogito.iot.linkeddata.es/def/process#actualEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#actualEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "actual end date" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#actualStartDate
+<https://cogito.iot.linkeddata.es/def/process#actualStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#actualStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "actual start date" .
+# 
 # https://cogito.iot.linkeddata.es/def/process#amount
 <https://cogito.iot.linkeddata.es/def/process#amount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/def/process#amount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
 <https://cogito.iot.linkeddata.es/def/process#amount> <http://www.w3.org/2000/01/rdf-schema#label> "amount" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#author
+<https://cogito.iot.linkeddata.es/def/process#author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#author> <http://www.w3.org/2000/01/rdf-schema#label> "has author" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#currencyCode
 <https://cogito.iot.linkeddata.es/def/process#currencyCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -100,49 +147,57 @@
 <https://cogito.iot.linkeddata.es/def/process#currencySymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/def/process#currencySymbol> <http://www.w3.org/2000/01/rdf-schema#label> "currency symbol" .
 # 
-# https://cogito.iot.linkeddata.es/def/process#hasAuthor
-<https://cogito.iot.linkeddata.es/def/process#hasAuthor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#hasAuthor> <http://www.w3.org/2000/01/rdf-schema#label> "has author" .
-# 
-# https://cogito.iot.linkeddata.es/def/process#hasBeginningDate
-<https://cogito.iot.linkeddata.es/def/process#hasBeginningDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#hasBeginningDate> <http://www.w3.org/2000/01/rdf-schema#label> "has beginning date" .
-# 
 # https://cogito.iot.linkeddata.es/def/process#hasCreationDate
 <https://cogito.iot.linkeddata.es/def/process#hasCreationDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/def/process#hasCreationDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
 <https://cogito.iot.linkeddata.es/def/process#hasCreationDate> <http://www.w3.org/2000/01/rdf-schema#label> "has creation date" .
 # 
-# https://cogito.iot.linkeddata.es/def/process#hasEndDate
-<https://cogito.iot.linkeddata.es/def/process#hasEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#hasEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "has end date" .
+# https://cogito.iot.linkeddata.es/def/process#name
+<https://cogito.iot.linkeddata.es/def/process#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://cogito.iot.linkeddata.es/def/process#name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
 # 
-# https://cogito.iot.linkeddata.es/def/process#hasName
-<https://cogito.iot.linkeddata.es/def/process#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#hasName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://cogito.iot.linkeddata.es/def/process#hasName> <http://www.w3.org/2000/01/rdf-schema#label> "has name" .
+# https://cogito.iot.linkeddata.es/def/process#plannedEndDate
+<https://cogito.iot.linkeddata.es/def/process#plannedEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#plannedEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "planned end date" .
 # 
-# https://cogito.iot.linkeddata.es/def/process#hasPriority
-<https://cogito.iot.linkeddata.es/def/process#hasPriority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#hasPriority> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
-<https://cogito.iot.linkeddata.es/def/process#hasPriority> <http://www.w3.org/2000/01/rdf-schema#label> "has priority" .
+# https://cogito.iot.linkeddata.es/def/process#plannedStartDate
+<https://cogito.iot.linkeddata.es/def/process#plannedStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#plannedStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "planned start date" .
 # 
-# https://cogito.iot.linkeddata.es/def/process#hasProgress
-<https://cogito.iot.linkeddata.es/def/process#hasProgress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#hasProgress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://cogito.iot.linkeddata.es/def/process#hasProgress> <http://www.w3.org/2000/01/rdf-schema#label> "has progress" .
-# 
-# https://cogito.iot.linkeddata.es/def/process#hasStatus
-<https://cogito.iot.linkeddata.es/def/process#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status" .
+# https://cogito.iot.linkeddata.es/def/process#priority
+<https://cogito.iot.linkeddata.es/def/process#priority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#priority> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://cogito.iot.linkeddata.es/def/process#priority> <http://www.w3.org/2000/01/rdf-schema#label> "priority" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#processId
 <https://cogito.iot.linkeddata.es/def/process#processId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/def/process#processId> <http://www.w3.org/2000/01/rdf-schema#label> "process identifier" .
 # 
+# https://cogito.iot.linkeddata.es/def/process#progress
+<https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/2000/01/rdf-schema#label> "progress" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#result
+<https://cogito.iot.linkeddata.es/def/process#result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#result> <http://www.w3.org/2000/01/rdf-schema#label> "result" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#status
+<https://cogito.iot.linkeddata.es/def/process#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#status> <http://www.w3.org/2000/01/rdf-schema#label> "status" .
+# 
 # https://cogito.iot.linkeddata.es/def/process#taskId
 <https://cogito.iot.linkeddata.es/def/process#taskId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/def/process#taskId> <http://www.w3.org/2000/01/rdf-schema#label> "task identifier" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#timeStep
+<https://cogito.iot.linkeddata.es/def/process#timeStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#timeStep> <http://www.w3.org/2000/01/rdf-schema#label> "time step" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#timeWindow
+<https://cogito.iot.linkeddata.es/def/process#timeWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#timeWindow> <http://www.w3.org/2000/01/rdf-schema#label> "time window" .
 # 
 # 
 # 
@@ -161,13 +216,43 @@
 <https://cogito.iot.linkeddata.es/def/facility#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/facility#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project" .
 # 
+# https://cogito.iot.linkeddata.es/def/process#AsIsProcess
+<https://cogito.iot.linkeddata.es/def/process#AsIsProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#AsIsProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Process> .
+<https://cogito.iot.linkeddata.es/def/process#AsIsProcess> <http://www.w3.org/2000/01/rdf-schema#label> "As-is process" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess
+<https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Process> .
+<https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess> <http://www.w3.org/2000/01/rdf-schema#label> "As-planned enriched process" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess
+<https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Process> .
+<https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess> <http://www.w3.org/2000/01/rdf-schema#label> "As-planned original process" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#ConstructionTask
+<https://cogito.iot.linkeddata.es/def/process#ConstructionTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#ConstructionTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#ConstructionTask> <http://www.w3.org/2000/01/rdf-schema#label> "Construction task" .
+# 
 # https://cogito.iot.linkeddata.es/def/process#Cost
 <https://cogito.iot.linkeddata.es/def/process#Cost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#Cost> <http://www.w3.org/2000/01/rdf-schema#label> "Cost" .
 # 
+# https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask
+<https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask> <http://www.w3.org/2000/01/rdf-schema#label> "Geometric quality task" .
+# 
 # https://cogito.iot.linkeddata.es/def/process#Process
 <https://cogito.iot.linkeddata.es/def/process#Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#SatetyTask
+<https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/2000/01/rdf-schema#label> "Safety task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#Task
 <https://cogito.iot.linkeddata.es/def/process#Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -177,9 +262,20 @@
 <https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency> <http://www.w3.org/2000/01/rdf-schema#label> "Unit of Currency" .
 # 
+# https://cogito.iot.linkeddata.es/def/process#VisualQualityTask
+<https://cogito.iot.linkeddata.es/def/process#VisualQualityTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#VisualQualityTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#VisualQualityTask> <http://www.w3.org/2000/01/rdf-schema#label> "Visual quality task" .
+# 
 # https://cogito.iot.linkeddata.es/def/process#WorkOrder
 <https://cogito.iot.linkeddata.es/def/process#WorkOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#WorkOrder> <http://www.w3.org/2000/01/rdf-schema#label> "Work Order" .
+# 
+# https://cogito.iot.linkeddata.es/def/quality#ImageJob
+<https://cogito.iot.linkeddata.es/def/quality#ImageJob> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://cogito.iot.linkeddata.es/def/quality#PonitCloud
+<https://cogito.iot.linkeddata.es/def/quality#PonitCloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://cogito.iot.linkeddata.es/def/resource#Resource
 <https://cogito.iot.linkeddata.es/def/resource#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -188,5 +284,9 @@
 # https://cogito.iot.linkeddata.es/def/resource#ResourceType
 <https://cogito.iot.linkeddata.es/def/resource#ResourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/resource#ResourceType> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Type" .
+# 
+# https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment
+<https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment> <http://www.w3.org/2000/01/rdf-schema#label> "Resource type assginment" .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

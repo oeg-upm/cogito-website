@@ -13,7 +13,7 @@
                                                  <http://purl.org/dc/elements/1.1/description> "The COGITO Process ontology aims at modelling the construction process." ;
                                                  <http://purl.org/dc/elements/1.1/title> "Process Ontology" ;
                                                  <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                                 owl:versionInfo "0.2.0" .
+                                                 owl:versionInfo "0.5.0" .
 
 #################################################################
 #    Annotation properties
@@ -39,22 +39,57 @@
 #    Object Properties
 #################################################################
 
+###  https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:range <https://cogito.iot.linkeddata.es/def/facility#Project> ;
+                                                                   rdfs:label "is related to project" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#hasComponentTask
+:hasComponentTask rdf:type owl:ObjectProperty ;
+                  rdfs:range :Task ;
+                  rdfs:label "has component task" .
+
+
 ###  https://cogito.iot.linkeddata.es/def/process#hasCost
 :hasCost rdf:type owl:ObjectProperty ;
          rdfs:range :Cost ;
          rdfs:label "has cost" .
 
 
+###  https://cogito.iot.linkeddata.es/def/process#hasMainProvider
+:hasMainProvider rdf:type owl:ObjectProperty ;
+                 rdfs:range <https://cogito.iot.linkeddata.es/def/resource#Resource> ;
+                 rdfs:label "has main provider" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment
+:hasResourceTypeAssignment rdf:type owl:ObjectProperty ;
+                           rdfs:range <https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment> ;
+                           rdfs:label "has resource type assignment" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#hasSubTask
+:hasSubTask rdf:type owl:ObjectProperty ;
+            rdfs:range :Task ;
+            rdfs:label "has sub-task" .
+
+
 ###  https://cogito.iot.linkeddata.es/def/process#hasTask
 :hasTask rdf:type owl:ObjectProperty ;
+         rdfs:range :Task ;
          rdfs:label "has task" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#hasWorkOrder
+:hasWorkOrder rdf:type owl:ObjectProperty ;
+              rdfs:range :WorkOrder ;
+              rdfs:label "has work order" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#involvesResourceType
 :involvesResourceType rdf:type owl:ObjectProperty ;
-                      rdfs:domain :Process ,
-                                  :Task ;
-                      rdfs:range <https://cogito.iot.linkeddata.es/def/resource#Resource> ;
+                      rdfs:range <https://cogito.iot.linkeddata.es/def/resource#ResourceType> ;
                       rdfs:label "involves resource type" .
 
 
@@ -67,25 +102,32 @@
 
 ###  https://cogito.iot.linkeddata.es/def/process#isMeasuredIn
 :isMeasuredIn rdf:type owl:ObjectProperty ;
-              rdfs:domain :Cost ;
               rdfs:range :UnitOfCurrency ;
               rdfs:label "is measured in" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#isSubTaskOf
 :isSubTaskOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Task ;
+             rdfs:range :Task ;
              rdfs:label "is sub-task of" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#relatesToElement
 :relatesToElement rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Task ;
                   rdfs:range <https://cogito.iot.linkeddata.es/def/facility#Element> ;
                   rdfs:label "relates to element" .
 
 
+###  https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder
+<https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:range :WorkOrder ;
+                                                                    rdfs:label "is related to work order" .
+
+
 ###  https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource
 <https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:range <https://cogito.iot.linkeddata.es/def/resource#Resource> ;
                                                                     rdfs:label "has assigned resource" .
 
 
@@ -93,10 +135,25 @@
 #    Data properties
 #################################################################
 
+###  https://cogito.iot.linkeddata.es/def/process#actualEndDate
+:actualEndDate rdf:type owl:DatatypeProperty ;
+               rdfs:label "actual end date" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#actualStartDate
+:actualStartDate rdf:type owl:DatatypeProperty ;
+                 rdfs:label "actual start date" .
+
+
 ###  https://cogito.iot.linkeddata.es/def/process#amount
 :amount rdf:type owl:DatatypeProperty ;
         rdfs:range xsd:float ;
         rdfs:label "amount" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#author
+:author rdf:type owl:DatatypeProperty ;
+        rdfs:label "has author" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#currencyCode
@@ -109,48 +166,32 @@
                 rdfs:label "currency symbol" .
 
 
-###  https://cogito.iot.linkeddata.es/def/process#hasAuthor
-:hasAuthor rdf:type owl:DatatypeProperty ;
-           rdfs:label "has author" .
-
-
-###  https://cogito.iot.linkeddata.es/def/process#hasBeginningDate
-:hasBeginningDate rdf:type owl:DatatypeProperty ;
-                  rdfs:label "has beginning date" .
-
-
 ###  https://cogito.iot.linkeddata.es/def/process#hasCreationDate
 :hasCreationDate rdf:type owl:DatatypeProperty ;
                  rdfs:range xsd:dateTime ;
                  rdfs:label "has creation date" .
 
 
-###  https://cogito.iot.linkeddata.es/def/process#hasEndDate
-:hasEndDate rdf:type owl:DatatypeProperty ;
-            rdfs:label "has end date" .
+###  https://cogito.iot.linkeddata.es/def/process#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:string ;
+      rdfs:label "name" .
 
 
-###  https://cogito.iot.linkeddata.es/def/process#hasName
-:hasName rdf:type owl:DatatypeProperty ;
-         rdfs:range xsd:string ;
-         rdfs:label "has name" .
+###  https://cogito.iot.linkeddata.es/def/process#plannedEndDate
+:plannedEndDate rdf:type owl:DatatypeProperty ;
+                rdfs:label "planned end date" .
 
 
-###  https://cogito.iot.linkeddata.es/def/process#hasPriority
-:hasPriority rdf:type owl:DatatypeProperty ;
-             rdfs:range xsd:integer ;
-             rdfs:label "has priority" .
+###  https://cogito.iot.linkeddata.es/def/process#plannedStartDate
+:plannedStartDate rdf:type owl:DatatypeProperty ;
+                  rdfs:label "planned start date" .
 
 
-###  https://cogito.iot.linkeddata.es/def/process#hasProgress
-:hasProgress rdf:type owl:DatatypeProperty ;
-             rdfs:range xsd:string ;
-             rdfs:label "has progress" .
-
-
-###  https://cogito.iot.linkeddata.es/def/process#hasStatus
-:hasStatus rdf:type owl:DatatypeProperty ;
-           rdfs:label "has status" .
+###  https://cogito.iot.linkeddata.es/def/process#priority
+:priority rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:integer ;
+          rdfs:label "priority" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#processId
@@ -158,9 +199,35 @@
            rdfs:label "process identifier" .
 
 
+###  https://cogito.iot.linkeddata.es/def/process#progress
+:progress rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string ;
+          rdfs:label "progress" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#result
+:result rdf:type owl:DatatypeProperty ;
+        rdfs:label "result" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:label "status" .
+
+
 ###  https://cogito.iot.linkeddata.es/def/process#taskId
 :taskId rdf:type owl:DatatypeProperty ;
         rdfs:label "task identifier" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#timeStep
+:timeStep rdf:type owl:DatatypeProperty ;
+          rdfs:label "time step" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#timeWindow
+:timeWindow rdf:type owl:DatatypeProperty ;
+            rdfs:label "time window" .
 
 
 #################################################################
@@ -177,14 +244,50 @@
                                                         rdfs:label "Project" .
 
 
+###  https://cogito.iot.linkeddata.es/def/process#AsIsProcess
+:AsIsProcess rdf:type owl:Class ;
+             rdfs:subClassOf :Process ;
+             rdfs:label "As-is process" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess
+:AsPlannedEnrichedProcess rdf:type owl:Class ;
+                          rdfs:subClassOf :Process ;
+                          rdfs:label "As-planned enriched process" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess
+:AsPlannedOriginalProcess rdf:type owl:Class ;
+                          rdfs:subClassOf :Process ;
+                          rdfs:label "As-planned original process" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#ConstructionTask
+:ConstructionTask rdf:type owl:Class ;
+                  rdfs:subClassOf :Task ;
+                  rdfs:label "Construction task" .
+
+
 ###  https://cogito.iot.linkeddata.es/def/process#Cost
 :Cost rdf:type owl:Class ;
       rdfs:label "Cost" .
 
 
+###  https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask
+:GeometricQualityTask rdf:type owl:Class ;
+                      rdfs:subClassOf :Task ;
+                      rdfs:label "Geometric quality task" .
+
+
 ###  https://cogito.iot.linkeddata.es/def/process#Process
 :Process rdf:type owl:Class ;
          rdfs:label "Process" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#SatetyTask
+:SatetyTask rdf:type owl:Class ;
+            rdfs:subClassOf :Task ;
+            rdfs:label "Safety task" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#Task
@@ -197,9 +300,23 @@
                 rdfs:label "Unit of Currency" .
 
 
+###  https://cogito.iot.linkeddata.es/def/process#VisualQualityTask
+:VisualQualityTask rdf:type owl:Class ;
+                   rdfs:subClassOf :Task ;
+                   rdfs:label "Visual quality task" .
+
+
 ###  https://cogito.iot.linkeddata.es/def/process#WorkOrder
 :WorkOrder rdf:type owl:Class ;
            rdfs:label "Work Order" .
+
+
+###  https://cogito.iot.linkeddata.es/def/quality#ImageJob
+<https://cogito.iot.linkeddata.es/def/quality#ImageJob> rdf:type owl:Class .
+
+
+###  https://cogito.iot.linkeddata.es/def/quality#PonitCloud
+<https://cogito.iot.linkeddata.es/def/quality#PonitCloud> rdf:type owl:Class .
 
 
 ###  https://cogito.iot.linkeddata.es/def/resource#Resource
@@ -210,6 +327,11 @@
 ###  https://cogito.iot.linkeddata.es/def/resource#ResourceType
 <https://cogito.iot.linkeddata.es/def/resource#ResourceType> rdf:type owl:Class ;
                                                              rdfs:label "Resource Type" .
+
+
+###  https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment
+<https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment> rdf:type owl:Class ;
+                                                                       rdfs:label "Resource type assginment" .
 
 
 ###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
