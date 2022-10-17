@@ -1,11 +1,11 @@
 <https://cogito.iot.linkeddata.es/def/process#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/creator> "Alba Fernández Izquierdo" .
+<https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/creator> "María Poveda Villalón" .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/creator> "Raúl García Castro" .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/creator> "Socorro  Bernardos Galindo" .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/description> "The COGITO Process ontology aims at modelling the construction process." .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/title> "Process Ontology" .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/def/process#> <http://www.w3.org/2002/07/owl#versionInfo> "0.5.0" .
+<https://cogito.iot.linkeddata.es/def/process#> <http://www.w3.org/2002/07/owl#versionInfo> "0.9.0" .
 # 
 # 
 # #################################################################
@@ -36,81 +36,160 @@
 # #################################################################
 # 
 # 
-# https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject
-<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Project> .
-<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#label> "is related to project" .
+# https://cogito.iot.linkeddata.es/def/process#addsElement
+<https://cogito.iot.linkeddata.es/def/process#addsElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#addsElement> <http://www.w3.org/2002/07/owl#inverseOf> <https://cogito.iot.linkeddata.es/def/process#isAddedByTask> .
+<https://cogito.iot.linkeddata.es/def/process#addsElement> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Task) to the facility:Element it creates" .
+<https://cogito.iot.linkeddata.es/def/process#addsElement> <http://www.w3.org/2000/01/rdf-schema#label> "adds element" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#belongsToProcess
+<https://cogito.iot.linkeddata.es/def/process#belongsToProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#belongsToProcess> <http://www.w3.org/2002/07/owl#inverseOf> <https://cogito.iot.linkeddata.es/def/process#hasTask> .
+<https://cogito.iot.linkeddata.es/def/process#belongsToProcess> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Process> .
+<https://cogito.iot.linkeddata.es/def/process#belongsToProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Task) to the process:Process it belongs to" .
+<https://cogito.iot.linkeddata.es/def/process#belongsToProcess> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to process" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#controlsElement
+<https://cogito.iot.linkeddata.es/def/process#controlsElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#controlsElement> <http://www.w3.org/2002/07/owl#inverseOf> <https://cogito.iot.linkeddata.es/def/process#isControlledByTask> .
+<https://cogito.iot.linkeddata.es/def/process#controlsElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
+<https://cogito.iot.linkeddata.es/def/process#controlsElement> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Task) to the facility:Element it controls" .
+<https://cogito.iot.linkeddata.es/def/process#controlsElement> <http://www.w3.org/2000/01/rdf-schema#label> "controls element" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#hasComponentTask
 <https://cogito.iot.linkeddata.es/def/process#hasComponentTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/def/process#hasComponentTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#hasComponentTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:WorkOrder) to its tasks" .
 <https://cogito.iot.linkeddata.es/def/process#hasComponentTask> <http://www.w3.org/2000/01/rdf-schema#label> "has component task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#hasCost
 <https://cogito.iot.linkeddata.es/def/process#hasCost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/def/process#hasCost> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Cost> .
+<https://cogito.iot.linkeddata.es/def/process#hasCost> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Task or a process:Process) to its cost" .
 <https://cogito.iot.linkeddata.es/def/process#hasCost> <http://www.w3.org/2000/01/rdf-schema#label> "has cost" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#hasMainProvider
 <https://cogito.iot.linkeddata.es/def/process#hasMainProvider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/process#hasMainProvider> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#Resource> .
+<https://cogito.iot.linkeddata.es/def/process#hasMainProvider> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#Worker> .
+<https://cogito.iot.linkeddata.es/def/process#hasMainProvider> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:WorkOrder) to the resource:Worker that acts as its main provider" .
 <https://cogito.iot.linkeddata.es/def/process#hasMainProvider> <http://www.w3.org/2000/01/rdf-schema#label> "has main provider" .
 # 
-# https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment
-<https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment> .
-<https://cogito.iot.linkeddata.es/def/process#hasResourceTypeAssignment> <http://www.w3.org/2000/01/rdf-schema#label> "has resource type assignment" .
+# https://cogito.iot.linkeddata.es/def/process#hasResourceTypeRequirement
+<https://cogito.iot.linkeddata.es/def/process#hasResourceTypeRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#hasResourceTypeRequirement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#ResourceTypeRequirement> .
+<https://cogito.iot.linkeddata.es/def/process#hasResourceTypeRequirement> <http://www.w3.org/2000/01/rdf-schema#comment> "Aproperty that relates an entity (especially a process:Task) to its requirements of resource types:" .
+<https://cogito.iot.linkeddata.es/def/process#hasResourceTypeRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "has resource type requirement" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#hasSubTask
 <https://cogito.iot.linkeddata.es/def/process#hasSubTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#hasSubTask> <http://www.w3.org/2002/07/owl#inverseOf> <https://cogito.iot.linkeddata.es/def/process#isSubTaskOf> .
 <https://cogito.iot.linkeddata.es/def/process#hasSubTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#hasSubTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Task) to the tasks it includes" .
 <https://cogito.iot.linkeddata.es/def/process#hasSubTask> <http://www.w3.org/2000/01/rdf-schema#label> "has sub-task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#hasTask
 <https://cogito.iot.linkeddata.es/def/process#hasTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/def/process#hasTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#hasTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Process) to the tasks it involves" .
 <https://cogito.iot.linkeddata.es/def/process#hasTask> <http://www.w3.org/2000/01/rdf-schema#label> "has task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#hasWorkOrder
 <https://cogito.iot.linkeddata.es/def/process#hasWorkOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/def/process#hasWorkOrder> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#WorkOrder> .
+<https://cogito.iot.linkeddata.es/def/process#hasWorkOrder> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Process) to the work orders it contains" .
 <https://cogito.iot.linkeddata.es/def/process#hasWorkOrder> <http://www.w3.org/2000/01/rdf-schema#label> "has work order" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#involvesResourceType
 <https://cogito.iot.linkeddata.es/def/process#involvesResourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/def/process#involvesResourceType> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#ResourceType> .
+<https://cogito.iot.linkeddata.es/def/process#involvesResourceType> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Process) to the resource types it includes" .
 <https://cogito.iot.linkeddata.es/def/process#involvesResourceType> <http://www.w3.org/2000/01/rdf-schema#label> "involves resource type" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#isAddedByTask
+<https://cogito.iot.linkeddata.es/def/process#isAddedByTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#isAddedByTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#isAddedByTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a  facility:Element) to the process:Task  that creates it" .
+<https://cogito.iot.linkeddata.es/def/process#isAddedByTask> <http://www.w3.org/2000/01/rdf-schema#label> "is added by task" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#isControlledByTask
+<https://cogito.iot.linkeddata.es/def/process#isControlledByTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#isControlledByTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#isControlledByTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a  facility:Element)  to the process:Task  that controls it" .
+<https://cogito.iot.linkeddata.es/def/process#isControlledByTask> <http://www.w3.org/2000/01/rdf-schema#label> "is controlled by task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#isExecutedAfter
 <https://cogito.iot.linkeddata.es/def/process#isExecutedAfter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/def/process#isExecutedAfter> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cogito.iot.linkeddata.es/def/process#Task> .
 <https://cogito.iot.linkeddata.es/def/process#isExecutedAfter> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#isExecutedAfter> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Task) to the task that have to be executed before it" .
 <https://cogito.iot.linkeddata.es/def/process#isExecutedAfter> <http://www.w3.org/2000/01/rdf-schema#label> "is executed after" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#isMeasuredIn
 <https://cogito.iot.linkeddata.es/def/process#isMeasuredIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/def/process#isMeasuredIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency> .
+<https://cogito.iot.linkeddata.es/def/process#isMeasuredIn> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Cost) to the currency it is measured in" .
 <https://cogito.iot.linkeddata.es/def/process#isMeasuredIn> <http://www.w3.org/2000/01/rdf-schema#label> "is measured in" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#isRelatedToProcess
+<https://cogito.iot.linkeddata.es/def/process#isRelatedToProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#isRelatedToProcess> <http://www.w3.org/2002/07/owl#inverseOf> <https://cogito.iot.linkeddata.es/def/process#isRelatedToProject> .
+<https://cogito.iot.linkeddata.es/def/process#isRelatedToProcess> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Process> .
+<https://cogito.iot.linkeddata.es/def/process#isRelatedToProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a facility:Project) to its processes" .
+<https://cogito.iot.linkeddata.es/def/process#isRelatedToProcess> <http://www.w3.org/2000/01/rdf-schema#label> "is related to process" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#isRelatedToProject
+<https://cogito.iot.linkeddata.es/def/process#isRelatedToProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Project> .
+<https://cogito.iot.linkeddata.es/def/process#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Process) to its facility:Project" .
+<https://cogito.iot.linkeddata.es/def/process#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#label> "is related to project" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#isRemovedByTask
+<https://cogito.iot.linkeddata.es/def/process#isRemovedByTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#isRemovedByTask> <http://www.w3.org/2002/07/owl#inverseOf> <https://cogito.iot.linkeddata.es/def/process#removesElement> .
+<https://cogito.iot.linkeddata.es/def/process#isRemovedByTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#isRemovedByTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a  facility:Element)  to the process:Task  that removes it" .
+<https://cogito.iot.linkeddata.es/def/process#isRemovedByTask> <http://www.w3.org/2000/01/rdf-schema#label> "is removed by task" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#isRepairedByTask
+<https://cogito.iot.linkeddata.es/def/process#isRepairedByTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#isRepairedByTask> <http://www.w3.org/2002/07/owl#inverseOf> <https://cogito.iot.linkeddata.es/def/process#repairsElelment> .
+<https://cogito.iot.linkeddata.es/def/process#isRepairedByTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#isRepairedByTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a  facility:Element)  to the process:Task  that repairs it" .
+<https://cogito.iot.linkeddata.es/def/process#isRepairedByTask> <http://www.w3.org/2000/01/rdf-schema#label> "is repaired by task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#isSubTaskOf
 <https://cogito.iot.linkeddata.es/def/process#isSubTaskOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/process#isSubTaskOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cogito.iot.linkeddata.es/def/process#Task> .
 <https://cogito.iot.linkeddata.es/def/process#isSubTaskOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#isSubTaskOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Task) to the task it belongs to" .
 <https://cogito.iot.linkeddata.es/def/process#isSubTaskOf> <http://www.w3.org/2000/01/rdf-schema#label> "is sub-task of" .
 # 
-# https://cogito.iot.linkeddata.es/def/process#relatesToElement
-<https://cogito.iot.linkeddata.es/def/process#relatesToElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/process#relatesToElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
-<https://cogito.iot.linkeddata.es/def/process#relatesToElement> <http://www.w3.org/2000/01/rdf-schema#label> "relates to element" .
+# https://cogito.iot.linkeddata.es/def/process#relatesToResourceType
+<https://cogito.iot.linkeddata.es/def/process#relatesToResourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#relatesToResourceType> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:ResourceTypeRequirement) to the resource type it refers to" .
+<https://cogito.iot.linkeddata.es/def/process#relatesToResourceType> <http://www.w3.org/2000/01/rdf-schema#label> "relates to resource type" .
 # 
-# https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder
-<https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/process#WorkOrder> .
-<https://cogito.iot.linkeddata.es/def/quality#isRelatedToWorkOrder> <http://www.w3.org/2000/01/rdf-schema#label> "is related to work order" .
+# https://cogito.iot.linkeddata.es/def/process#removesElement
+<https://cogito.iot.linkeddata.es/def/process#removesElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#removesElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
+<https://cogito.iot.linkeddata.es/def/process#removesElement> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates a process:Task to the facility:Element it removes" .
+<https://cogito.iot.linkeddata.es/def/process#removesElement> <http://www.w3.org/2000/01/rdf-schema#label> "removes element" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#repairsElelment
+<https://cogito.iot.linkeddata.es/def/process#repairsElelment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/process#repairsElelment> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
+<https://cogito.iot.linkeddata.es/def/process#repairsElelment> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates a process:Task to the facility:Element it repairs" .
+<https://cogito.iot.linkeddata.es/def/process#repairsElelment> <http://www.w3.org/2000/01/rdf-schema#label> "repairs element" .
+# 
+# https://cogito.iot.linkeddata.es/def/resource#belongsToResourceType
+<https://cogito.iot.linkeddata.es/def/resource#belongsToResourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/resource#belongsToResourceType> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#ResourceType> .
+<https://cogito.iot.linkeddata.es/def/resource#belongsToResourceType> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates a resource:Resource to its type" .
+<https://cogito.iot.linkeddata.es/def/resource#belongsToResourceType> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to resource type" .
 # 
 # https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource
 <https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#Resource> .
+<https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates an entity (especially a process:Task) to the resource:Resource it has assigned" .
 <https://cogito.iot.linkeddata.es/def/resource#hasAssignedResource> <http://www.w3.org/2000/01/rdf-schema#label> "has assigned resource" .
 # 
 # 
@@ -122,81 +201,99 @@
 # #################################################################
 # 
 # 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#label> <https://cogito.iot.linkeddata.es/def/created> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#label> "creator" .
+# 
+# http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier" .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#label> "title" .
+# 
 # https://cogito.iot.linkeddata.es/def/process#actualEndDate
 <https://cogito.iot.linkeddata.es/def/process#actualEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#actualEndDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the actual end date of an entity" .
 <https://cogito.iot.linkeddata.es/def/process#actualEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "actual end date" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#actualStartDate
 <https://cogito.iot.linkeddata.es/def/process#actualStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#actualStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the actual start date of an entity" .
 <https://cogito.iot.linkeddata.es/def/process#actualStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "actual start date" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#amount
 <https://cogito.iot.linkeddata.es/def/process#amount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/def/process#amount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<https://cogito.iot.linkeddata.es/def/process#amount> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the amount of an entity" .
 <https://cogito.iot.linkeddata.es/def/process#amount> <http://www.w3.org/2000/01/rdf-schema#label> "amount" .
-# 
-# https://cogito.iot.linkeddata.es/def/process#author
-<https://cogito.iot.linkeddata.es/def/process#author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#author> <http://www.w3.org/2000/01/rdf-schema#label> "has author" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#currencyCode
 <https://cogito.iot.linkeddata.es/def/process#currencyCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#currencyCode> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the currency code of an entity (especially a process:UnitOfCurrency)" .
 <https://cogito.iot.linkeddata.es/def/process#currencyCode> <http://www.w3.org/2000/01/rdf-schema#label> "currency code" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#currencySymbol
 <https://cogito.iot.linkeddata.es/def/process#currencySymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#currencySymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the currency symbol of an entity (especially a process:UnitOfCurrency)" .
 <https://cogito.iot.linkeddata.es/def/process#currencySymbol> <http://www.w3.org/2000/01/rdf-schema#label> "currency symbol" .
-# 
-# https://cogito.iot.linkeddata.es/def/process#hasCreationDate
-<https://cogito.iot.linkeddata.es/def/process#hasCreationDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#hasCreationDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<https://cogito.iot.linkeddata.es/def/process#hasCreationDate> <http://www.w3.org/2000/01/rdf-schema#label> "has creation date" .
-# 
-# https://cogito.iot.linkeddata.es/def/process#name
-<https://cogito.iot.linkeddata.es/def/process#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://cogito.iot.linkeddata.es/def/process#name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#plannedEndDate
 <https://cogito.iot.linkeddata.es/def/process#plannedEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#plannedEndDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://cogito.iot.linkeddata.es/def/process#plannedEndDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the planned end date of an entity" .
 <https://cogito.iot.linkeddata.es/def/process#plannedEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "planned end date" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#plannedStartDate
 <https://cogito.iot.linkeddata.es/def/process#plannedStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#plannedStartDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://cogito.iot.linkeddata.es/def/process#plannedStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the planned start date of an entity" .
 <https://cogito.iot.linkeddata.es/def/process#plannedStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "planned start date" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#priority
 <https://cogito.iot.linkeddata.es/def/process#priority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/def/process#priority> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://cogito.iot.linkeddata.es/def/process#priority> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the priority of an entity" .
 <https://cogito.iot.linkeddata.es/def/process#priority> <http://www.w3.org/2000/01/rdf-schema#label> "priority" .
-# 
-# https://cogito.iot.linkeddata.es/def/process#processId
-<https://cogito.iot.linkeddata.es/def/process#processId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#processId> <http://www.w3.org/2000/01/rdf-schema#label> "process identifier" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#progress
 <https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the progress of an entity (especially a process:Task)" .
 <https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/2000/01/rdf-schema#label> "progress" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#quantityNeeded
+<https://cogito.iot.linkeddata.es/def/process#quantityNeeded> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#quantityNeeded> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the needed quantity of an entity" .
+<https://cogito.iot.linkeddata.es/def/process#quantityNeeded> <http://www.w3.org/2000/01/rdf-schema#label> "quantity needed" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#result
 <https://cogito.iot.linkeddata.es/def/process#result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#result> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the result of an entity (especially a process:Task)" .
 <https://cogito.iot.linkeddata.es/def/process#result> <http://www.w3.org/2000/01/rdf-schema#label> "result" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#status
 <https://cogito.iot.linkeddata.es/def/process#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#status> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the status of an entity (especially a process:WorkOrder)" .
 <https://cogito.iot.linkeddata.es/def/process#status> <http://www.w3.org/2000/01/rdf-schema#label> "status" .
-# 
-# https://cogito.iot.linkeddata.es/def/process#taskId
-<https://cogito.iot.linkeddata.es/def/process#taskId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#taskId> <http://www.w3.org/2000/01/rdf-schema#label> "task identifier" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#timeStep
 <https://cogito.iot.linkeddata.es/def/process#timeStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#timeStep> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the time step of an entity (especially a process:Process)" .
 <https://cogito.iot.linkeddata.es/def/process#timeStep> <http://www.w3.org/2000/01/rdf-schema#label> "time step" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#timeWindow
 <https://cogito.iot.linkeddata.es/def/process#timeWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#timeWindow> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the time window of an entity (especially a process:Process)" .
 <https://cogito.iot.linkeddata.es/def/process#timeWindow> <http://www.w3.org/2000/01/rdf-schema#label> "time window" .
 # 
 # 
@@ -210,83 +307,100 @@
 # 
 # https://cogito.iot.linkeddata.es/def/facility#Element
 <https://cogito.iot.linkeddata.es/def/facility#Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Element> <http://www.w3.org/2000/01/rdf-schema#comment> "A subclass or bot:Element and, as such, a constituent of a construction entity with a characteristic technical function, form, or position" .
 <https://cogito.iot.linkeddata.es/def/facility#Element> <http://www.w3.org/2000/01/rdf-schema#label> "Element" .
 # 
 # https://cogito.iot.linkeddata.es/def/facility#Project
 <https://cogito.iot.linkeddata.es/def/facility#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#Project> <http://www.w3.org/2000/01/rdf-schema#comment> "A large or major undertaking, especially one involving considerable money, personnel, and equipment" .
 <https://cogito.iot.linkeddata.es/def/facility#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#AsIsProcess
 <https://cogito.iot.linkeddata.es/def/process#AsIsProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#AsIsProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Process> .
-<https://cogito.iot.linkeddata.es/def/process#AsIsProcess> <http://www.w3.org/2000/01/rdf-schema#label> "As-is process" .
+<https://cogito.iot.linkeddata.es/def/process#AsIsProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A process in its current condition" .
+<https://cogito.iot.linkeddata.es/def/process#AsIsProcess> <http://www.w3.org/2000/01/rdf-schema#label> "As-is Process" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess
 <https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Process> .
-<https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess> <http://www.w3.org/2000/01/rdf-schema#label> "As-planned enriched process" .
+<https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A planned process after being enriched" .
+<https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess> <http://www.w3.org/2000/01/rdf-schema#label> "As-planned Enriched Process" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess
 <https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Process> .
-<https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess> <http://www.w3.org/2000/01/rdf-schema#label> "As-planned original process" .
+<https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "An initial planned process" .
+<https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess> <http://www.w3.org/2000/01/rdf-schema#label> "As-planned Original Process" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#ConstructionTask
 <https://cogito.iot.linkeddata.es/def/process#ConstructionTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#ConstructionTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
-<https://cogito.iot.linkeddata.es/def/process#ConstructionTask> <http://www.w3.org/2000/01/rdf-schema#label> "Construction task" .
+<https://cogito.iot.linkeddata.es/def/process#ConstructionTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A task related to a construction domain" .
+<https://cogito.iot.linkeddata.es/def/process#ConstructionTask> <http://www.w3.org/2000/01/rdf-schema#label> "Construction Task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#Cost
 <https://cogito.iot.linkeddata.es/def/process#Cost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#Cost> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity representing the cost of another entity" .
 <https://cogito.iot.linkeddata.es/def/process#Cost> <http://www.w3.org/2000/01/rdf-schema#label> "Cost" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask
 <https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
-<https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask> <http://www.w3.org/2000/01/rdf-schema#label> "Geometric quality task" .
+<https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A task related to the geometric quaity domain" .
+<https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask> <http://www.w3.org/2000/01/rdf-schema#label> "Geometric Quality Task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#Process
 <https://cogito.iot.linkeddata.es/def/process#Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#Process> <http://www.w3.org/2000/01/rdf-schema#comment> "A series of actions aimed at accomplishing some result (in this case, related to a facility:Project)" .
 <https://cogito.iot.linkeddata.es/def/process#Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#ResourceTypeRequirement
+<https://cogito.iot.linkeddata.es/def/process#ResourceTypeRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#ResourceTypeRequirement> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity that includes the requitrments that a task has pertaining a resource type" .
+<https://cogito.iot.linkeddata.es/def/process#ResourceTypeRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Type Requirement" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#SatetyTask
 <https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
-<https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/2000/01/rdf-schema#label> "Safety task" .
+<https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A task related to the safety domain" .
+<https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/2000/01/rdf-schema#label> "Safety Task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#Task
 <https://cogito.iot.linkeddata.es/def/process#Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#Task> <http://www.w3.org/2000/01/rdf-schema#comment> "A piece of work, which is performed in a process:Process" .
 <https://cogito.iot.linkeddata.es/def/process#Task> <http://www.w3.org/2000/01/rdf-schema#label> "Task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency
 <https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency> <http://www.w3.org/2000/01/rdf-schema#comment> "The currency used to measure a process:Cost" .
 <https://cogito.iot.linkeddata.es/def/process#UnitOfCurrency> <http://www.w3.org/2000/01/rdf-schema#label> "Unit of Currency" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#VisualQualityTask
 <https://cogito.iot.linkeddata.es/def/process#VisualQualityTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/def/process#VisualQualityTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
-<https://cogito.iot.linkeddata.es/def/process#VisualQualityTask> <http://www.w3.org/2000/01/rdf-schema#label> "Visual quality task" .
+<https://cogito.iot.linkeddata.es/def/process#VisualQualityTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A task related to the visual quality domain" .
+<https://cogito.iot.linkeddata.es/def/process#VisualQualityTask> <http://www.w3.org/2000/01/rdf-schema#label> "Visual Quality Task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#WorkOrder
 <https://cogito.iot.linkeddata.es/def/process#WorkOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#WorkOrder> <http://www.w3.org/2000/01/rdf-schema#comment> "A command or instruction authorizing specific work, repairs, etc., to be done" .
 <https://cogito.iot.linkeddata.es/def/process#WorkOrder> <http://www.w3.org/2000/01/rdf-schema#label> "Work Order" .
-# 
-# https://cogito.iot.linkeddata.es/def/quality#ImageJob
-<https://cogito.iot.linkeddata.es/def/quality#ImageJob> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://cogito.iot.linkeddata.es/def/quality#PonitCloud
-<https://cogito.iot.linkeddata.es/def/quality#PonitCloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://cogito.iot.linkeddata.es/def/resource#Resource
 <https://cogito.iot.linkeddata.es/def/resource#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/resource#Resource> <http://www.w3.org/2000/01/rdf-schema#comment> "A source of supply, support, or aid, especially one that can be readily drawn upon when needed" .
 <https://cogito.iot.linkeddata.es/def/resource#Resource> <http://www.w3.org/2000/01/rdf-schema#label> "Resource" .
 # 
 # https://cogito.iot.linkeddata.es/def/resource#ResourceType
 <https://cogito.iot.linkeddata.es/def/resource#ResourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/resource#ResourceType> <http://www.w3.org/2000/01/rdf-schema#comment> "The kind of resources assigned to a process:Task or involved in a process:Process" .
 <https://cogito.iot.linkeddata.es/def/resource#ResourceType> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Type" .
 # 
-# https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment
-<https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/resource#ResourceTypeAssignment> <http://www.w3.org/2000/01/rdf-schema#label> "Resource type assginment" .
+# https://cogito.iot.linkeddata.es/def/resource#Worker
+<https://cogito.iot.linkeddata.es/def/resource#Worker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/resource#Worker> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/resource#Resource> .
+<https://cogito.iot.linkeddata.es/def/resource#Worker> <http://www.w3.org/2000/01/rdf-schema#comment> "A human resource that works in a project (especially performing a process:Task)" .
+<https://cogito.iot.linkeddata.es/def/resource#Worker> <http://www.w3.org/2000/01/rdf-schema#label> "Worker" .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

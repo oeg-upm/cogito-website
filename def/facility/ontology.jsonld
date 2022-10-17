@@ -8,19 +8,49 @@
   "@id" : "http://purl.org/dc/elements/1.1/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "description"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/identifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "identifier"
+  } ]
+}, {
   "@id" : "http://purl.org/dc/terms/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Spatial Thing"
+    "@value" : "title"
+  } ]
+}, {
+  "@id" : "http://www.opengis.net/ont/geosparql#SpatialObject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Spatial Object"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/elements/1.1/creator" : [ {
-    "@value" : "Alba Fernández Izquierdo"
+    "@value" : "María Poveda Villalón"
   }, {
     "@value" : "Raúl García Castro"
   }, {
@@ -39,11 +69,14 @@
     "@id" : "https://pi.pauwel.be/voc/buildingelement"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.5.0"
+    "@value" : "0.9.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Bridge",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A structure spanning and providing passage over a river, chasm, road, or the like"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Bridge"
   } ],
@@ -53,17 +86,25 @@
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Building",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An independent unit of the built environment with a characteristic spatial structure, intended to serve at least one function or user activity [ISO-12006]"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Building"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Facility"
   }, {
+    "@id" : "https://saref.etsi.org/saref4bldg#Building"
+  }, {
     "@id" : "https://w3id.org/bot#Building"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#ConstructionZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An entity used to represent zones used by the Health and Safety module"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Construction Zone"
   } ],
@@ -73,32 +114,47 @@
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A subclass or bot:Element and, as such, a constituent of a construction entity with a characteristic technical function, form, or position."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Element"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+    "@id" : "http://www.opengis.net/ont/geosparql#SpatialObject"
   }, {
     "@id" : "https://w3id.org/bot#Element"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Facility",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Something designed and built to serve a specific function providing a convenience or a service."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Facility"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/bot#Zone"
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#FacilityPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Something that is contained n a facility:Zone (especially a facility:Facility) and can contain more facility parts"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Facility Part"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/bot#Zone"
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#FallZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A zone where somebody or something can fall through"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Fall Zone"
   } ],
@@ -106,23 +162,20 @@
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#ConstructionZone"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#PointCloud",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Point Cloud"
-  } ]
-}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Project",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A large or major undertaking, especially one involving considerable money, personnel, and equipment."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Project"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#Thing"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Railway",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A permanent track composed of a line of parallel metal rails fixed to sleepers, for transport of passengers and goods in trains"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Railway"
   } ],
@@ -132,6 +185,9 @@
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Road",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A long, narrow stretch with a smoothed or paved surface, made for traveling by motor vehicle, carriage, etc., between two or more points;\nstreet or highway"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Road"
   } ],
@@ -141,44 +197,67 @@
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Site",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Site"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
+  }, {
     "@id" : "https://w3id.org/bot#Site"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Space",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A subclass of bot:Space and, as such, a part of the physical world or a virtual world whose 3D spatial extent is bounded actually or theoretically and provides for certain functions within the zone it is contained in."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Space"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
+  }, {
+    "@id" : "https://saref.etsi.org/saref4bldg#SpaceBuilding"
+  }, {
     "@id" : "https://w3id.org/bot#Space"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A subclass of bot:Zone and, as such, a part of the physical or a virtual world that is inherently both located in this world and has a 3D spatial extent."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Spatial Zone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+    "@id" : "http://www.opengis.net/ont/geosparql#SpatialObject"
   }, {
     "@id" : "https://w3id.org/bot#Zone"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Storey",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A subclass of bot:Storey and, as such, is contained (bot:hasStorey) in one facility:Building, and is intended to contain (bot:hasSpace) one or more facility:Space that are horizontally connected."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Storey"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
+  }, {
     "@id" : "https://w3id.org/bot#Storey"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#TrackedZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Something used to represent zones used by the IoT preprocessing module"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Tracked Zone"
   } ],
@@ -188,6 +267,9 @@
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#WalkableZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A zone where somebody or something can walk along"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Walkable Zone"
   } ],
@@ -195,260 +277,41 @@
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#ConstructionZone"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#accuracy",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#hasFacility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A property relating a facility:Zone (especially a facility:Site) to a facility:Facility"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "accuracy"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#coordOrigin",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "coordinates origin"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#description",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "description"
+    "@value" : "has facility"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/bot#containsZone"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#hasFacilityPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A property relating a facility:Zone (especially a facility:Facility or a facility:FacilityPart) to a facility:FacilityPart"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has facility part"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#FacilityPart"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/bot#containsZone"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#hasSubFacilityPart",
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#hasSubElement",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#FacilityPart"
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A property that relates a facility:Element to another facility:Element it contains"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has sub facility part"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#FacilityPart"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#involvesTask",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "involves task"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/process#Task"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToProcess",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "is related to process"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/process#Process"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "is related to project"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Project"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "is ralated to site"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Site"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "name"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#projectId",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "project identifier"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/process#Process",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Process"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/process#Task",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Task"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/process#relatesToElement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "relates to element"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/quality#GeometricQualityInformation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Geometric Quality Information"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/quality#Image",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Image"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/quality#SafetyInformation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Safety Information"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/quality#refersToElement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "refers to element"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/quality#refersToZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "refers to zone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/bot#Zone"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/resource#TrackingTag",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Tracking Tag"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/resource#assignedToTrackedZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "assigned to tracked zone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#TrackedZone"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#Building",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Building"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#Element",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Element"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#Site",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Site"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#Space",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Space"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#Storey",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Storey"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#Zone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Zone"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#containsElement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "contains element"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#containsZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "contains zone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/bot#Zone"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#hasBuilding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Building"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#hasElement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has element"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#hasSpace",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has space"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Space"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#hasStorey",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has storey"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Storey"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#hasSubElement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ],
@@ -459,15 +322,189 @@
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
 }, {
-  "@id" : "https://w3id.org/props#hasCompressedGuid",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A property that relates an entity (especially, a facility:Project) to a facility:Site"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has compressed guid"
+    "@value" : "is related to site"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Site"
   } ]
 }, {
-  "@id" : "https://www.w3.org/2019/wot/td#Thing",
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#material",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "material"
+  } ]
+}, {
+  "@id" : "https://saref.etsi.org/saref4bldg#Building",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://saref.etsi.org/saref4bldg#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Building"
+  } ]
+}, {
+  "@id" : "https://saref.etsi.org/saref4bldg#SpaceBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://saref.etsi.org/saref4bldg#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Space Building"
+  } ]
+}, {
+  "@id" : "https://saref.etsi.org/saref4bldg#hasSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://saref.etsi.org/saref4bldg#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://saref.etsi.org/saref4bldg#SpaceBuilding"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#Building",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Building"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#Element",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Element"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#Site",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Site"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#Space",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Space"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#Storey",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Storey"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#Zone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Thing"
+    "@value" : "Zone"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#containsZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/bot#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "contains zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/bot#Zone"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#hasBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/bot#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has building"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Building"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/bot#containsZone"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#hasElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/bot#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#hasSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/bot#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/bot#containsZone"
+  } ]
+}, {
+  "@id" : "https://w3id.org/bot#hasStorey",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/bot#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has storey"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Storey"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/bot#containsZone"
   } ]
 } ]

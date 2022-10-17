@@ -7,12 +7,13 @@
 @base <https://cogito.iot.linkeddata.es/safety#> .
 
 <https://cogito.iot.linkeddata.es/safety#> rdf:type owl:Ontology ;
-                                            <http://purl.org/dc/elements/1.1/creator> "Raúl García Castro" ,
+                                            <http://purl.org/dc/elements/1.1/creator> "María Poveda Villalón" ,
+                                                                                      "Raúl García Castro" ,
                                                                                       "Socorro  Bernardos Galindo" ;
                                             <http://purl.org/dc/elements/1.1/description> "The COGITO Safety ontology aims at modelling the safety of the construction  domain." ;
                                             <http://purl.org/dc/elements/1.1/title> "Safety Ontology" ;
                                             <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                            owl:versionInfo "0.1.0" .
+                                            owl:versionInfo "0.3.0" .
 
 #################################################################
 #    Annotation properties
@@ -38,26 +39,9 @@
 #    Object Properties
 #################################################################
 
-###  https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject
-<https://cogito.iot.linkeddata.es/def/facility#isRelatedToProject> rdf:type owl:ObjectProperty ;
-                                                                   rdfs:range <https://cogito.iot.linkeddata.es/def/facility#Project> ;
-                                                                   rdfs:label "is related to project" .
-
-
-###  https://cogito.iot.linkeddata.es/safety#isRelatedToWorkOrder
-:isRelatedToWorkOrder rdf:type owl:ObjectProperty ;
-                      rdfs:range <https://cogito.iot.linkeddata.es/process#WorkOrder> ;
-                      rdfs:label "is related to work order" .
-
-
-###  https://cogito.iot.linkeddata.es/safety#refersToElement
-:refersToElement rdf:type owl:ObjectProperty ;
-                 rdfs:range <https://cogito.iot.linkeddata.es/def/facility#Element> ;
-                 rdfs:label "refers to element" .
-
-
 ###  https://cogito.iot.linkeddata.es/safety#refersToZone
 :refersToZone rdf:type owl:ObjectProperty ;
+              rdfs:comment "Property that relates an entity (especially a safety:SafetyInformation) to a facility:ConstructionZone" ;
               rdfs:label "refers to zone" .
 
 
@@ -65,23 +49,27 @@
 #    Data properties
 #################################################################
 
-###  https://cogito.iot.linkeddata.es/safety#description
-:description rdf:type owl:DatatypeProperty ;
-             rdfs:label "description" .
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty ;
+                                      rdfs:isDefinedBy <http://purl.org/dc/terms> ;
+                                      rdfs:label "identifier" .
 
 
-###  https://cogito.iot.linkeddata.es/safety#issueId
-:issueId rdf:type owl:DatatypeProperty ;
-         rdfs:label "issue id" .
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty ;
+                                 rdfs:isDefinedBy <http://purl.org/dc/terms> ;
+                                 rdfs:label "title" .
 
 
 ###  https://cogito.iot.linkeddata.es/safety#mitigation
 :mitigation rdf:type owl:DatatypeProperty ;
+            rdfs:comment "Property indicating a mitigation (for a risk)" ;
             rdfs:label "mitigation" .
 
 
 ###  https://cogito.iot.linkeddata.es/safety#severity
 :severity rdf:type owl:DatatypeProperty ;
+          rdfs:comment "Property indicating de severity of a safety hazard" ;
           rdfs:label "severity" .
 
 
@@ -89,24 +77,16 @@
 #    Classes
 #################################################################
 
-###  https://cogito.iot.linkeddata.es/def/facility#Element
-<https://cogito.iot.linkeddata.es/def/facility#Element> rdf:type owl:Class ;
-                                                        rdfs:label "Element" .
-
-
-###  https://cogito.iot.linkeddata.es/def/facility#Project
-<https://cogito.iot.linkeddata.es/def/facility#Project> rdf:type owl:Class ;
-                                                        rdfs:label "Project" .
-
-
-###  https://cogito.iot.linkeddata.es/process#WorkOrder
-<https://cogito.iot.linkeddata.es/process#WorkOrder> rdf:type owl:Class ;
-                                                     rdfs:label "Work order" .
+###  https://cogito.iot.linkeddata.es/def/facility#ConstructionZone
+<https://cogito.iot.linkeddata.es/def/facility#ConstructionZone> rdf:type owl:Class ;
+                                                                 rdfs:comment "An entity used to represent zones used by the Health and Safety module" ;
+                                                                 rdfs:label "Construction Zone" .
 
 
 ###  https://cogito.iot.linkeddata.es/safety#SafetyInformation
 :SafetyInformation rdf:type owl:Class ;
-                   rdfs:label "Safety information" .
+                   rdfs:comment "Data regarding the safety" ;
+                   rdfs:label "Safety Information" .
 
 
 ###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
