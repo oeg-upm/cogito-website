@@ -1,0 +1,197 @@
+@prefix : <https://cogito.iot.linkeddata.es/constwinthing#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://cogito.iot.linkeddata.es/constwinthing#> .
+
+<https://cogito.iot.linkeddata.es/constwinthing#> rdf:type owl:Ontology ;
+                                                   <http://purl.org/dc/elements/1.1/creator> "María Poveda Villalón" ,
+                                                                                             "Raúl García Castro" ,
+                                                                                             "Socorro  Bernardos Galindo" ;
+                                                   <http://purl.org/dc/elements/1.1/description> "The COGITO ConstructionTwin Thing ontology aims at modelling the (WoT) things considered in a construction twin." ;
+                                                   <http://purl.org/dc/elements/1.1/title> "Construction Twin Thing Ontology" ;
+                                                   <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
+                                                   owl:versionInfo "0.2.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://cogito.iot.linkeddata.es/constwinthing#hasFile
+:hasFile rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#forms> ;
+         rdfs:comment "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file" ;
+         rdfs:label "has file" .
+
+
+###  https://cogito.iot.linkeddata.es/constwinthing#hasIRI
+:hasIRI rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#forms> ;
+        rdfs:comment "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its IRI" ;
+        rdfs:label "has IRI" .
+
+
+###  https://cogito.iot.linkeddata.es/constwinthing#hasIfc
+:hasIfc rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#links> ;
+        rdfs:comment "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its IFC file" ;
+        rdfs:label "has Ifc" .
+
+
+###  https://cogito.iot.linkeddata.es/constwinthing#hasKnowledgeGraph
+:hasKnowledgeGraph rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#forms> ;
+                   rdfs:comment "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its knowledge graph" ;
+                   rdfs:label "has knowledge graph" .
+
+
+###  https://cogito.iot.linkeddata.es/constwinthing#hasMesh
+:hasMesh rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#links> ;
+         rdfs:comment "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its mesh file" ;
+         rdfs:label "has mesh" .
+
+
+###  https://cogito.iot.linkeddata.es/constwinthing#hasPointCloud
+:hasPointCloud rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#links> ;
+               rdfs:comment "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its point cloud file" ;
+               rdfs:label "has point cloud" .
+
+
+###  https://cogito.iot.linkeddata.es/constwinthing#hasSchedule
+:hasSchedule rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#links> ;
+             rdfs:comment "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its schedule file" ;
+             rdfs:label "has schedule" .
+
+
+###  https://cogito.iot.linkeddata.es/constwinthing#relatedTD
+:relatedTD rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#links> ;
+           rdfs:comment "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating a related thing description" ;
+           rdfs:label "related thing description" .
+
+
+###  https://www.w3.org/2019/wot/td#forms
+<https://www.w3.org/2019/wot/td#forms> rdf:type owl:ObjectProperty ;
+                                       rdfs:range <https://www.w3.org/2019/wot/td#Form> ;
+                                       rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
+                                       rdfs:label "forms" .
+
+
+###  https://www.w3.org/2019/wot/td#links
+<https://www.w3.org/2019/wot/td#links> rdf:type owl:ObjectProperty ;
+                                       rdfs:range <https://www.w3.org/2019/wot/td#Link> ;
+                                       rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
+                                       rdfs:label "links" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://cogito.iot.linkeddata.es/constwinthing#ConstructionTwinThing
+:ConstructionTwinThing rdf:type owl:Class ;
+                       rdfs:subClassOf <https://www.w3.org/2019/wot/td#Thing> ;
+                       rdfs:comment "A subclass of a td:Thing and, as such, an abstraction of a physical or a virtual entity whose metadata and interfaces are described by a WoT Thing Description. In this case, an entity of a construction twin, namely, a facility:Project, a facility:Element, a qual:Image. a qual:PointCloud and a qual:Mesh." ;
+                       rdfs:label "Construction Twin Thing" .
+
+
+###  https://cogito.iot.linkeddata.es/def/facility#Element
+<https://cogito.iot.linkeddata.es/def/facility#Element> rdf:type owl:Class ;
+                                                        rdfs:subClassOf :ConstructionTwinThing ;
+                                                        rdfs:comment "A subclass or bot:Element and, as such, a constituent of a construction entity with a characteristic technical function, form, or position" ;
+                                                        rdfs:label "Element" .
+
+
+###  https://cogito.iot.linkeddata.es/def/facility#Project
+<https://cogito.iot.linkeddata.es/def/facility#Project> rdf:type owl:Class ;
+                                                        rdfs:subClassOf :ConstructionTwinThing ;
+                                                        rdfs:comment "A large or major undertaking, especially one involving considerable money, personnel, and equipment" ;
+                                                        rdfs:label "Project" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#AsBuiltMesh
+<https://cogito.iot.linkeddata.es/quality#AsBuiltMesh> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://cogito.iot.linkeddata.es/quality#Mesh> ;
+                                                       rdfs:comment "A mesh representing a built entity (especially a facility:Element)" ;
+                                                       rdfs:label "As-built Mesh" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud
+<https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <https://cogito.iot.linkeddata.es/quality#PointCoud> ;
+                                                             rdfs:comment "A point cloud representing a built entity (especially a facility:Element)" ;
+                                                             rdfs:label "As-built Point Cloud" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#Image
+<https://cogito.iot.linkeddata.es/quality#Image> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :ConstructionTwinThing ;
+                                                 rdfs:comment "A picture of an entity" ;
+                                                 rdfs:label "Image" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#Mesh
+<https://cogito.iot.linkeddata.es/quality#Mesh> rdf:type owl:Class ;
+                                                rdfs:subClassOf :ConstructionTwinThing ;
+                                                rdfs:comment "A collection of vertices, edges and faces that defines the shape of an object (especially a facility:Element)" ;
+                                                rdfs:label "Mesh" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#PointCoud
+<https://cogito.iot.linkeddata.es/quality#PointCoud> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :ConstructionTwinThing ;
+                                                     rdfs:comment "A set of data points in space" ;
+                                                     rdfs:label "Point Cloud" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#RawImage
+<https://cogito.iot.linkeddata.es/quality#RawImage> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <https://cogito.iot.linkeddata.es/quality#Image> ;
+                                                    rdfs:comment "An image that has not been processed" ;
+                                                    rdfs:label "Raw Image" .
+
+
+###  https://www.w3.org/2019/wot/td#Form
+<https://www.w3.org/2019/wot/td#Form> rdf:type owl:Class ;
+                                      rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
+                                      rdfs:label "Form" .
+
+
+###  https://www.w3.org/2019/wot/td#Link
+<https://www.w3.org/2019/wot/td#Link> rdf:type owl:Class ;
+                                      rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
+                                      rdfs:label "Link" .
+
+
+###  https://www.w3.org/2019/wot/td#Thing
+<https://www.w3.org/2019/wot/td#Thing> rdf:type owl:Class ;
+                                       rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
+                                       rdfs:label "Thing" .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

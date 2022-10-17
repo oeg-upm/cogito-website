@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>IoT ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/iot#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/iot#","name":"IoT ontology", "headline":"The COGITO IoT ontology aims at modelling IoT devices and their measurements in the construction domain.", "datePublished":"Fri Oct 14 18:38:18 CEST 2022", "version":"0.2.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>IoT ontology</h1>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="https://cogito.iot.linkeddata.es/def/iot#">https://cogito.iot.linkeddata.es/def/iot#</a></dd>
+<dt>Revision:</dt>
+<dd>0.2.0</dd>
+<dt>Authors:</dt>
+<dd>María Poveda Villalón</dd><dd>Raúl García Castro</dd><dd>Socorro  Bernardos Galindo</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. IoT ontology. Revision: 0.2.0.</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The COGITO IoT ontology aims at modelling IoT devices and their measurements in the construction domain.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This document describes the results of the IoT ontology for the COGITO project.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>iot</b></td><td>&lt;https://cogito.iot.linkeddata.es/def/iot#&gt;</td></tr>
+<tr><td><b>geo</b></td><td>&lt;http://www.opengis.net/ont/geosparql&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>resource</b></td><td>&lt;https://cogito.iot.linkeddata.es/def/resource&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>saref</b></td><td>&lt;https://saref.etsi.org/core&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+<tr><td><b>dcterms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>dc</b></td><td>&lt;http://purl.org/dc/elements/1.1&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">IoT ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://saref.etsi.org/core#Device" title="https://saref.etsi.org/core#Device">Device</a>
+   </li>
+   <li>
+      <a href="#EquipmentTag"
+         title="https://cogito.iot.linkeddata.es/def/iot#EquipmentTag">Equipment Tag</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/core#FeatureOfInterest" title="https://saref.etsi.org/core#FeatureOfInterest">Feature of Interest</a>
+   </li>
+   <li>
+      <a href="#HumanTag"
+         title="https://cogito.iot.linkeddata.es/def/iot#HumanTag">Human Tag</a>
+   </li>
+   <li>
+      <a href="#LocationMeasurement"
+         title="https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement">Location Measurement</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/core#Measurement" title="https://saref.etsi.org/core#Measurement">Measurement</a>
+   </li>
+   <li>
+      <a href="#http://www.opengis.net/ont/geosparql#Point" title="http://www.opengis.net/ont/geosparql#Point">Point</a>
+   </li>
+   <li>
+      <a href="#https://cogito.iot.linkeddata.es/def/resource#Resource"
+         title="https://cogito.iot.linkeddata.es/def/resource#Resource">
+         <span>resource</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Result" title="https://cogito.iot.linkeddata.es/def/iot#Result">Result</a>
+   </li>
+   <li>
+      <a href="#TrackingTag"
+         title="https://cogito.iot.linkeddata.es/def/iot#TrackingTag">Tracking Tag</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#hasLocation"
+         title="https://cogito.iot.linkeddata.es/def/iot#hasLocation">has location</a>
+   </li>
+   <li>
+      <a href="#hasLocationKF"
+         title="https://cogito.iot.linkeddata.es/def/iot#hasLocationKF">has location KF</a>
+   </li>
+   <li>
+      <a href="#hasLocationMA"
+         title="https://cogito.iot.linkeddata.es/def/iot#hasLocationMA">has location MA</a>
+   </li>
+   <li>
+      <a href="#hasResult"
+         title="https://cogito.iot.linkeddata.es/def/iot#hasResult">has result</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/core#isMeasurementOf" title="https://saref.etsi.org/core#isMeasurementOf">is measurement of</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/core#makesMeasurement" title="https://saref.etsi.org/core#makesMeasurement">makes measurement</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://saref.etsi.org/core#hasTimestamp" title="https://saref.etsi.org/core#hasTimestamp">
+         <span>has timestamp</span>
+      </a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">IoT ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+The following diagram reflects how the classes of the ontology are related
+</span>
+<center><img src="resources/images/diagram.png" alt="General overview of the COGITO IoT ontology." width="90%">  </center>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for IoT ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by IoT ontology.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://saref.etsi.org/core#Device" title="https://saref.etsi.org/core#Device">Device</a>
+      </li>
+      <li>
+         <a href="#EquipmentTag"
+            title="https://cogito.iot.linkeddata.es/def/iot#EquipmentTag">Equipment Tag</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/core#FeatureOfInterest" title="https://saref.etsi.org/core#FeatureOfInterest">Feature of Interest</a>
+      </li>
+      <li>
+         <a href="#HumanTag"
+            title="https://cogito.iot.linkeddata.es/def/iot#HumanTag">Human Tag</a>
+      </li>
+      <li>
+         <a href="#LocationMeasurement"
+            title="https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement">Location Measurement</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/core#Measurement" title="https://saref.etsi.org/core#Measurement">Measurement</a>
+      </li>
+      <li>
+         <a href="#http://www.opengis.net/ont/geosparql#Point" title="http://www.opengis.net/ont/geosparql#Point">Point</a>
+      </li>
+      <li>
+         <a href="#https://cogito.iot.linkeddata.es/def/resource#Resource"
+            title="https://cogito.iot.linkeddata.es/def/resource#Resource">
+            <span>resource</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Result" title="https://cogito.iot.linkeddata.es/def/iot#Result">Result</a>
+      </li>
+      <li>
+         <a href="#TrackingTag"
+            title="https://cogito.iot.linkeddata.es/def/iot#TrackingTag">Tracking Tag</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://saref.etsi.org/core#Device">
+      <h3>Device<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/core#Device</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/core#">https://saref.etsi.org/core#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#TrackingTag"
+               title="https://cogito.iot.linkeddata.es/def/iot#TrackingTag">Tracking Tag</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="EquipmentTag">
+      <h3>Equipment Tag<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/iot#EquipmentTag</p>
+      <div class="comment">
+         <span class="markdown">A tracking tag assigned to a piece of equipment</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#TrackingTag"
+               title="https://cogito.iot.linkeddata.es/def/iot#TrackingTag">Tracking Tag</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/core#FeatureOfInterest">
+      <h3>Feature of Interest<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/core#FeatureOfInterest</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/core#">https://saref.etsi.org/core#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://cogito.iot.linkeddata.es/def/resource#Resource"
+               title="https://cogito.iot.linkeddata.es/def/resource#Resource">resource</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="HumanTag">
+      <h3>Human Tag<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/iot#HumanTag</p>
+      <div class="comment">
+         <span class="markdown">A tracking tag assigned to a human</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#TrackingTag"
+               title="https://cogito.iot.linkeddata.es/def/iot#TrackingTag">Tracking Tag</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="LocationMeasurement">
+      <h3>Location Measurement<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement</p>
+      <div class="comment">
+         <span class="markdown">The location measured by an entity (especially an iot:TrackingTag)</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://saref.etsi.org/core#Measurement" title="https://saref.etsi.org/core#Measurement">Measurement</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/core#Measurement">
+      <h3>Measurement<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/core#Measurement</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/core#">https://saref.etsi.org/core#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#LocationMeasurement"
+               title="https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement">Location Measurement</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.opengis.net/ont/geosparql#Point">
+      <h3>Point<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.opengis.net/ont/geosparql#Point</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.opengis.net/ont/geosparq#">http://www.opengis.net/ont/geosparq#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Result" title="https://cogito.iot.linkeddata.es/def/iot#Result">Result</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://cogito.iot.linkeddata.es/def/resource#Resource">
+      <h3>resource<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/resource#Resource</p>
+      <div class="comment">
+         <span class="markdown">A source of supply, support, or aid, especially one that can be readily drawn upon when needed; and from which a property is measured</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://saref.etsi.org/core#FeatureOfInterest" title="https://saref.etsi.org/core#FeatureOfInterest">Feature of Interest</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Result">
+      <h3>Result<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/iot#Result</p>
+      <div class="comment">
+         <span class="markdown">An entity representing the result of a saref:Measurement</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://www.opengis.net/ont/geosparql#Point" title="http://www.opengis.net/ont/geosparql#Point">Point</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="TrackingTag">
+      <h3>Tracking Tag<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/iot#TrackingTag</p>
+      <div class="comment">
+         <span class="markdown">A subclass of saref:Device and, as such, a tangible object designed to accomplish a particular task; in this case signalling its location</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://saref.etsi.org/core#Device" title="https://saref.etsi.org/core#Device">Device</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#EquipmentTag"
+               title="https://cogito.iot.linkeddata.es/def/iot#EquipmentTag">Equipment Tag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#HumanTag"
+               title="https://cogito.iot.linkeddata.es/def/iot#HumanTag">Human Tag</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hasLocation"
+            title="https://cogito.iot.linkeddata.es/def/iot#hasLocation">has location</a>
+      </li>
+      <li>
+         <a href="#hasLocationKF"
+            title="https://cogito.iot.linkeddata.es/def/iot#hasLocationKF">has location KF</a>
+      </li>
+      <li>
+         <a href="#hasLocationMA"
+            title="https://cogito.iot.linkeddata.es/def/iot#hasLocationMA">has location MA</a>
+      </li>
+      <li>
+         <a href="#hasResult"
+            title="https://cogito.iot.linkeddata.es/def/iot#hasResult">has result</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/core#isMeasurementOf" title="https://saref.etsi.org/core#isMeasurementOf">is measurement of</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/core#makesMeasurement" title="https://saref.etsi.org/core#makesMeasurement">makes measurement</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasLocation">
+      <h3>has location<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/iot#hasLocation</p>
+      <div class="comment">
+         <span class="markdown">Property that relates an entity (especially a saref:Measurement) to the geo:Point it is located at</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasResult"
+                  title="https://cogito.iot.linkeddata.es/def/iot#hasResult">has result</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasLocationKF">
+      <h3>has location KF<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/iot#hasLocationKF</p>
+      <div class="comment">
+         <span class="markdown">Property that relates an entity (especially a saref:Measurement) to the geo:Point it is located at using a KF transformation</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasResult"
+                  title="https://cogito.iot.linkeddata.es/def/iot#hasResult">has result</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasLocationMA">
+      <h3>has location MA<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/iot#hasLocationMA</p>
+      <div class="comment">
+         <span class="markdown">Property that relates an entity (especially a saref:Measurement) to the geo:Point it is located at using a MA transformation</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasResult"
+                  title="https://cogito.iot.linkeddata.es/def/iot#hasResult">has result</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasResult">
+      <h3>has result<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/iot#hasResult</p>
+      <div class="comment">
+         <span class="markdown">Property that relates an entity (especially a saref:MEasurement) to its result</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasLocation"
+                  title="https://cogito.iot.linkeddata.es/def/iot#hasLocation">has location</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#hasLocationKF"
+                  title="https://cogito.iot.linkeddata.es/def/iot#hasLocationKF">has location KF</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#hasLocationMA"
+                  title="https://cogito.iot.linkeddata.es/def/iot#hasLocationMA">has location MA</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/core#isMeasurementOf">
+      <h3>is measurement of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/core#isMeasurementOf</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/core#">https://saref.etsi.org/core#</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/core#makesMeasurement">
+      <h3>makes measurement<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/core#makesMeasurement</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/core#">https://saref.etsi.org/core#</a>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://saref.etsi.org/core#hasTimestamp" title="https://saref.etsi.org/core#hasTimestamp">
+            <span>has timestamp</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://saref.etsi.org/core#hasTimestamp">
+      <h3>has timestamp<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/core#hasTimestamp</p>
+      <div class="comment">
+         <span class="markdown">has timestamp</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/core#">https://saref.etsi.org/core#</a>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
