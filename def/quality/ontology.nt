@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/quality#> <http://purl.org/dc/elements/1.1/description> "The COGITO Quality ontology aims at modelling the construction quality domain." .
 <https://cogito.iot.linkeddata.es/quality#> <http://purl.org/dc/elements/1.1/title> "Quality Ontology" .
 <https://cogito.iot.linkeddata.es/quality#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/quality#> <http://www.w3.org/2002/07/owl#versionInfo> "0.8.0" .
+<https://cogito.iot.linkeddata.es/quality#> <http://www.w3.org/2002/07/owl#versionInfo> "0.9.0" .
 # 
 # 
 # #################################################################
@@ -265,31 +265,32 @@
 # 
 # https://cogito.iot.linkeddata.es/quality#Image
 <https://cogito.iot.linkeddata.es/quality#Image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/quality#Image> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#InformationResource> .
 <https://cogito.iot.linkeddata.es/quality#Image> <http://www.w3.org/2000/01/rdf-schema#comment> "A picture of an entity" .
 <https://cogito.iot.linkeddata.es/quality#Image> <http://www.w3.org/2000/01/rdf-schema#label> "Image" .
 # 
 # https://cogito.iot.linkeddata.es/quality#ImageJob
 <https://cogito.iot.linkeddata.es/quality#ImageJob> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#ImageJob> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#QualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#ImageJob> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#InformationResource> .
 <https://cogito.iot.linkeddata.es/quality#ImageJob> <http://www.w3.org/2000/01/rdf-schema#comment> "Data regarding an image and the results of processing it" .
 <https://cogito.iot.linkeddata.es/quality#ImageJob> <http://www.w3.org/2000/01/rdf-schema#label> "Image Job" .
 # 
+# https://cogito.iot.linkeddata.es/quality#InformationResource
+<https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/2000/01/rdf-schema#comment> "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files" .
+<https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/2000/01/rdf-schema#label> "Quality Information" .
+# 
 # https://cogito.iot.linkeddata.es/quality#Mesh
 <https://cogito.iot.linkeddata.es/quality#Mesh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#Mesh> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#QualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#Mesh> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#InformationResource> .
 <https://cogito.iot.linkeddata.es/quality#Mesh> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of vertices, edges and faces that defines the shape of an object (especially a facility:Element)" .
 <https://cogito.iot.linkeddata.es/quality#Mesh> <http://www.w3.org/2000/01/rdf-schema#label> "Mesh" .
 # 
 # https://cogito.iot.linkeddata.es/quality#PointCoud
 <https://cogito.iot.linkeddata.es/quality#PointCoud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#PointCoud> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#QualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#PointCoud> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#InformationResource> .
 <https://cogito.iot.linkeddata.es/quality#PointCoud> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of data points in space" .
 <https://cogito.iot.linkeddata.es/quality#PointCoud> <http://www.w3.org/2000/01/rdf-schema#label> "Point Cloud" .
-# 
-# https://cogito.iot.linkeddata.es/quality#QualityInformation
-<https://cogito.iot.linkeddata.es/quality#QualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#QualityInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Data regarding  the quality of an entity (especially a facility:Project or facility:Element)" .
-<https://cogito.iot.linkeddata.es/quality#QualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Quality Information" .
 # 
 # https://cogito.iot.linkeddata.es/quality#QualityResult
 <https://cogito.iot.linkeddata.es/quality#QualityResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

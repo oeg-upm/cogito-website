@@ -15,7 +15,7 @@
         <dc:description>The COGITO Quality ontology aims at modelling the construction quality domain.</dc:description>
         <dc:title>Quality Ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.8.0</owl:versionInfo>
+        <owl:versionInfo>0.9.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -504,6 +504,7 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#Image">
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#InformationResource"/>
         <rdfs:comment>A picture of an entity</rdfs:comment>
         <rdfs:label>Image</rdfs:label>
     </owl:Class>
@@ -514,9 +515,19 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#ImageJob">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#QualityInformation"/>
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#InformationResource"/>
         <rdfs:comment>Data regarding an image and the results of processing it</rdfs:comment>
         <rdfs:label>Image Job</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#InformationResource -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#InformationResource">
+        <rdfs:comment>Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files</rdfs:comment>
+        <rdfs:label>Quality Information</rdfs:label>
     </owl:Class>
     
 
@@ -525,7 +536,7 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#Mesh">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#QualityInformation"/>
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#InformationResource"/>
         <rdfs:comment>A collection of vertices, edges and faces that defines the shape of an object (especially a facility:Element)</rdfs:comment>
         <rdfs:label>Mesh</rdfs:label>
     </owl:Class>
@@ -536,19 +547,9 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#PointCoud">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#QualityInformation"/>
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#InformationResource"/>
         <rdfs:comment>A set of data points in space</rdfs:comment>
         <rdfs:label>Point Cloud</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#QualityInformation -->
-
-
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#QualityInformation">
-        <rdfs:comment>Data regarding  the quality of an entity (especially a facility:Project or facility:Element)</rdfs:comment>
-        <rdfs:label>Quality Information</rdfs:label>
     </owl:Class>
     
 

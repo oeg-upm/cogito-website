@@ -11,136 +11,6 @@
   "@id" : "http://purl.org/dc/terms/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/constwinthing#",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://purl.org/dc/elements/1.1/creator" : [ {
-    "@value" : "María Poveda Villalón"
-  }, {
-    "@value" : "Raúl García Castro"
-  }, {
-    "@value" : "Socorro  Bernardos Galindo"
-  } ],
-  "http://purl.org/dc/elements/1.1/description" : [ {
-    "@value" : "The COGITO ConstructionTwin Thing ontology aims at modelling the (WoT) things considered in a construction twin."
-  } ],
-  "http://purl.org/dc/elements/1.1/title" : [ {
-    "@value" : "Construction Twin Thing Ontology"
-  } ],
-  "http://purl.org/dc/terms/license" : [ {
-    "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.2.0"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/constwinthing#ConstructionTwinThing",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A subclass of a td:Thing and, as such, an abstraction of a physical or a virtual entity whose metadata and interfaces are described by a WoT Thing Description. In this case, an entity of a construction twin, namely, a facility:Project, a facility:Element, a qual:Image. a qual:PointCloud and a qual:Mesh."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Construction Twin Thing"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#Thing"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/constwinthing#hasFile",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has file"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#forms"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/constwinthing#hasIRI",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its IRI"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has IRI"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#forms"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/constwinthing#hasIfc",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its IFC file"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has Ifc"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#links"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/constwinthing#hasKnowledgeGraph",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its knowledge graph"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has knowledge graph"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#forms"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/constwinthing#hasMesh",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its mesh file"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has mesh"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#links"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/constwinthing#hasPointCloud",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its point cloud file"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has point cloud"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#links"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/constwinthing#hasSchedule",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its schedule file"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has schedule"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#links"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/constwinthing#relatedTD",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating a related thing description"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "related thing description"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#links"
-  } ]
-}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -150,7 +20,7 @@
     "@value" : "Element"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/constwinthing#ConstructionTwinThing"
+    "@id" : "https://cogito.iot.linkeddata.es/platform#DigitalTwin"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Project",
@@ -162,7 +32,149 @@
     "@value" : "Project"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/constwinthing#ConstructionTwinThing"
+    "@id" : "https://cogito.iot.linkeddata.es/platform#DigitalTwin"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "María Poveda Villalón"
+  }, {
+    "@value" : "Raúl García Castro"
+  }, {
+    "@value" : "Socorro  Bernardos Galindo"
+  } ],
+  "http://purl.org/dc/elements/1.1/description" : [ {
+    "@value" : "The COGITO Platfrom ontology aims at modelling the entities considered in the the Digital Twin Platform, a component of the COGITO architecture"
+  } ],
+  "http://purl.org/dc/elements/1.1/title" : [ {
+    "@value" : "Platform Ontology"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "0.3.0"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#DigitalTwin",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Entity that is a digital twin in the platform"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Digital Twin"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/platform#PlatformThing"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#PlatformThing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A subclass of a td:Thing and, as such, an abstraction of a physical or a virtual entity whose metadata and interfaces are described by a WoT Thing Description. In this case, an entity of a construction twin, namely, a facility:Project, a facility:Element, a qual:Image. a qual:PointCloud and a qual:Mesh."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Construction Twin Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.w3.org/2019/wot/td#Thing"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#hasFile",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has file"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://www.w3.org/2019/wot/td#forms"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#hasIRI",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its IRI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has IRI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://www.w3.org/2019/wot/td#forms"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#hasIfc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its IFC file"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has Ifc"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://www.w3.org/2019/wot/td#links"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#hasKnowledgeGraph",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its knowledge graph"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has knowledge graph"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://www.w3.org/2019/wot/td#forms"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#hasMesh",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its mesh file"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has mesh"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://www.w3.org/2019/wot/td#links"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#hasPointCloud",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its point cloud file"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has point cloud"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://www.w3.org/2019/wot/td#links"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#hasSchedule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its schedule file"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has schedule"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://www.w3.org/2019/wot/td#links"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#relatedTD",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating a related thing description"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "related thing description"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://www.w3.org/2019/wot/td#links"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#AsBuiltMesh",
@@ -172,9 +184,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "As-built Mesh"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#Mesh"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud",
@@ -184,45 +193,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "As-built Point Cloud"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#PointCoud"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#Image",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A picture of an entity"
+    "@value" : "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Image"
+    "@value" : "Information Resource"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/constwinthing#ConstructionTwinThing"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#Mesh",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A collection of vertices, edges and faces that defines the shape of an object (especially a facility:Element)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Mesh"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/constwinthing#ConstructionTwinThing"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#PointCoud",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A set of data points in space"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Point Cloud"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/constwinthing#ConstructionTwinThing"
+    "@id" : "https://cogito.iot.linkeddata.es/platform#PlatformThing"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#RawImage",
@@ -232,9 +214,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Raw Image"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#Image"
   } ]
 }, {
   "@id" : "https://www.w3.org/2019/wot/td#Form",

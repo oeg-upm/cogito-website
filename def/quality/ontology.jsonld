@@ -87,7 +87,7 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.8.0"
+    "@value" : "0.9.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#AsBuiltMesh",
@@ -145,6 +145,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Image"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#ImageJob",
@@ -156,7 +159,16 @@
     "@value" : "Image Job"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#QualityInformation"
+    "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Quality Information"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#Mesh",
@@ -168,7 +180,7 @@
     "@value" : "Mesh"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#QualityInformation"
+    "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#PointCoud",
@@ -180,16 +192,7 @@
     "@value" : "Point Cloud"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#QualityInformation"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#QualityInformation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Data regarding  the quality of an entity (especially a facility:Project or facility:Element)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Quality Information"
+    "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#QualityResult",
