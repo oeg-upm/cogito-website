@@ -267,7 +267,7 @@
 # 
 # https://cogito.iot.linkeddata.es/def/process#progress
 <https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
 <https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the progress of an entity (especially a process:Task)" .
 <https://cogito.iot.linkeddata.es/def/process#progress> <http://www.w3.org/2000/01/rdf-schema#label> "progress" .
 # 

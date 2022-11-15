@@ -493,7 +493,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#progress">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>A property indicating the progress of an entity (especially a process:Task)</rdfs:comment>
         <rdfs:label>progress</rdfs:label>
     </owl:DatatypeProperty>

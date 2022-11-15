@@ -579,7 +579,7 @@
     "@value" : "progress"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/process#quantityNeeded",

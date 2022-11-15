@@ -302,7 +302,7 @@
 
 ###  https://cogito.iot.linkeddata.es/def/process#progress
 :progress rdf:type owl:DatatypeProperty ;
-          rdfs:range xsd:string ;
+          rdfs:range xsd:float ;
           rdfs:comment "A property indicating the progress of an entity (especially a process:Task)" ;
           rdfs:label "progress" .
 
