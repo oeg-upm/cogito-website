@@ -59,13 +59,13 @@
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Project"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/process#WorkOrder",
+  "@id" : "https://cogito.iot.linkeddata.es/process#Task",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A command or instruction authorizing specific work, repairs, etc., to be done"
+    "@value" : "A piece of work, which is performed in a process:Process"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Work Order"
+    "@value" : "Task"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#",
@@ -87,7 +87,7 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.9.0"
+    "@value" : "0.10.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#AsBuiltMesh",
@@ -165,7 +165,7 @@
   "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files"
+    "@value" : "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Quality Information"
@@ -321,16 +321,16 @@
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#isRelatedToTask",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that relates an entity (especially qual:QuqlityInformation) to a process:WorkOrder"
+    "@value" : "Property that relates an entity (especially qual:QuqlityInformation) to a process:Task"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "is related to work order"
+    "@value" : "is related to task"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/process#WorkOrder"
+    "@id" : "https://cogito.iot.linkeddata.es/process#Task"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#materialTypeKeyword",
@@ -349,6 +349,15 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "origin document"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#outcome",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property indicating if a result has been accepted or rejected"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "outcome"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#performedTimestamp",
@@ -480,7 +489,7 @@
   "@id" : "https://cogito.iot.linkeddata.es/quality#status",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property indicating if a result has been reviewed, confirmed or rejected"
+    "@value" : "Property indicating if a result has been checked"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "status"

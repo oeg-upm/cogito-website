@@ -15,7 +15,7 @@
         <dc:description>The COGITO Quality ontology aims at modelling the construction quality domain.</dc:description>
         <dc:title>Quality Ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.9.0</owl:versionInfo>
+        <owl:versionInfo>0.10.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -128,13 +128,13 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder -->
+    <!-- https://cogito.iot.linkeddata.es/quality#isRelatedToTask -->
 
 
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder">
-        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/process#WorkOrder"/>
-        <rdfs:comment>Property that relates an entity (especially qual:QuqlityInformation) to a process:WorkOrder</rdfs:comment>
-        <rdfs:label>is related to work order</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#isRelatedToTask">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/process#Task"/>
+        <rdfs:comment>Property that relates an entity (especially qual:QuqlityInformation) to a process:Task</rdfs:comment>
+        <rdfs:label>is related to task</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -304,6 +304,16 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/quality#outcome -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#outcome">
+        <rdfs:comment>Property indicating if a result has been accepted or rejected</rdfs:comment>
+        <rdfs:label>outcome</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://cogito.iot.linkeddata.es/quality#performedTimestamp -->
 
 
@@ -378,7 +388,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#status">
-        <rdfs:comment>Property indicating if a result has been reviewed, confirmed or rejected</rdfs:comment>
+        <rdfs:comment>Property indicating if a result has been checked</rdfs:comment>
         <rdfs:label>status</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -446,12 +456,12 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/process#WorkOrder -->
+    <!-- https://cogito.iot.linkeddata.es/process#Task -->
 
 
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/process#WorkOrder">
-        <rdfs:comment>A command or instruction authorizing specific work, repairs, etc., to be done</rdfs:comment>
-        <rdfs:label>Work Order</rdfs:label>
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/process#Task">
+        <rdfs:comment>A piece of work, which is performed in a process:Process</rdfs:comment>
+        <rdfs:label>Task</rdfs:label>
     </owl:Class>
     
 
@@ -526,7 +536,7 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#InformationResource">
-        <rdfs:comment>Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files</rdfs:comment>
+        <rdfs:comment>Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform</rdfs:comment>
         <rdfs:label>Quality Information</rdfs:label>
     </owl:Class>
     

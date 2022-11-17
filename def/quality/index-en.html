@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/quality#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/quality#","name":"Quality Ontology", "headline":"The COGITO Quality ontology aims at modelling the construction quality domain.", "datePublished":"Thu Oct 27 08:13:21 CEST 2022", "version":"0.9.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/quality#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/quality#","name":"Quality Ontology", "headline":"The COGITO Quality ontology aims at modelling the construction quality domain.", "datePublished":"Thu Nov 17 09:54:21 CET 2022", "version":"0.10.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -61,13 +61,13 @@ $(function(){
 <dt>Latest version:</dt>
 <dd><a href="https://cogito.iot.linkeddata.es/quality#">https://cogito.iot.linkeddata.es/quality#</a></dd>
 <dt>Revision:</dt>
-<dd>0.9.0</dd>
+<dd>0.10.0</dd>
 <dt>Authors:</dt>
 <dd>María Poveda Villalón</dd><dd>Raúl García Castro</dd><dd>Socorro  Bernardos Galindo</dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. Quality Ontology. Revision: 0.9.0.</dd>
+<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. Quality Ontology. Revision: 0.10.0.</dd>
 </dl>
 <div>
 	<img src="resources/images/logo.jpg" width="300" alt="">
@@ -170,8 +170,7 @@ This ontology has the following classes and properties.</span>
       <a href="#Rule" title="https://cogito.iot.linkeddata.es/quality#Rule">Rule</a>
    </li>
    <li>
-      <a href="#https://cogito.iot.linkeddata.es/process#WorkOrder"
-         title="https://cogito.iot.linkeddata.es/process#WorkOrder">Work Order</a>
+      <a href="#https://cogito.iot.linkeddata.es/process#Task" title="https://cogito.iot.linkeddata.es/process#Task">Task</a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
@@ -195,8 +194,8 @@ This ontology has the following classes and properties.</span>
          title="https://cogito.iot.linkeddata.es/def/quality#isRelatedToProject">is related to project</a>
    </li>
    <li>
-      <a href="#isRelatedToWorkOrder"
-         title="https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder">is related to work order</a>
+      <a href="#isRelatedToTask"
+         title="https://cogito.iot.linkeddata.es/quality#isRelatedToTask">is related to task</a>
    </li>
    <li>
       <a href="#refersToElement"
@@ -252,6 +251,9 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#originDocument"
          title="https://cogito.iot.linkeddata.es/quality#originDocument">origin document</a>
+   </li>
+   <li>
+      <a href="#outcome" title="https://cogito.iot.linkeddata.es/quality#outcome">outcome</a>
    </li>
    <li>
       <a href="#performedTimestamp"
@@ -370,8 +372,7 @@ This section provides details for each class and property defined by Quality Ont
          <a href="#Rule" title="https://cogito.iot.linkeddata.es/quality#Rule">Rule</a>
       </li>
       <li>
-         <a href="#https://cogito.iot.linkeddata.es/process#WorkOrder"
-            title="https://cogito.iot.linkeddata.es/process#WorkOrder">Work Order</a>
+         <a href="#https://cogito.iot.linkeddata.es/process#Task" title="https://cogito.iot.linkeddata.es/process#Task">Task</a>
       </li>
    </ul>
    <div class="entity" id="AsBuiltMesh">
@@ -611,7 +612,7 @@ This section provides details for each class and property defined by Quality Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#InformationResource</p>
       <div class="comment">
-         <span class="markdown">Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files</span>
+         <span class="markdown">Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform</span>
       </div>
       <dl class="description">
          <dt>has sub-classes</dt>
@@ -689,21 +690,21 @@ This section provides details for each class and property defined by Quality Ont
          </dd>
       </dl>
    </div>
-   <div class="entity" id="https://cogito.iot.linkeddata.es/process#WorkOrder">
-      <h3>Work Order<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="https://cogito.iot.linkeddata.es/process#Task">
+      <h3>Task<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/process#WorkOrder</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/process#Task</p>
       <div class="comment">
-         <span class="markdown">A command or instruction authorizing specific work, repairs, etc., to be done</span>
+         <span class="markdown">A piece of work, which is performed in a process:Process</span>
       </div>
       <dl class="description">
          <dt>is in range of</dt>
          <dd>
-            <a href="#isRelatedToWorkOrder"
-               title="https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder">is related to work order</a>
+            <a href="#isRelatedToTask"
+               title="https://cogito.iot.linkeddata.es/quality#isRelatedToTask">is related to task</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -732,8 +733,8 @@ This section provides details for each class and property defined by Quality Ont
             title="https://cogito.iot.linkeddata.es/def/quality#isRelatedToProject">is related to project</a>
       </li>
       <li>
-         <a href="#isRelatedToWorkOrder"
-            title="https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder">is related to work order</a>
+         <a href="#isRelatedToTask"
+            title="https://cogito.iot.linkeddata.es/quality#isRelatedToTask">is related to task</a>
       </li>
       <li>
          <a href="#refersToElement"
@@ -865,22 +866,21 @@ This section provides details for each class and property defined by Quality Ont
          </dl>
       </div>
    </div>
-   <div class="entity" id="isRelatedToWorkOrder">
-      <h3>is related to work order<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="isRelatedToTask">
+      <h3>is related to task<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#isRelatedToTask</p>
       <div class="comment">
-         <span class="markdown">Property that relates an entity (especially qual:QuqlityInformation) to a process:WorkOrder</span>
+         <span class="markdown">Property that relates an entity (especially qual:QuqlityInformation) to a process:Task</span>
       </div>
       <div class="description">
          <dl>
             <dt>has range</dt>
             <dd>
-               <a href="#https://cogito.iot.linkeddata.es/process#WorkOrder"
-                  title="https://cogito.iot.linkeddata.es/process#WorkOrder">Work Order</a>
+               <a href="#https://cogito.iot.linkeddata.es/process#Task" title="https://cogito.iot.linkeddata.es/process#Task">Task</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1041,6 +1041,9 @@ This section provides details for each class and property defined by Quality Ont
             title="https://cogito.iot.linkeddata.es/quality#originDocument">origin document</a>
       </li>
       <li>
+         <a href="#outcome" title="https://cogito.iot.linkeddata.es/quality#outcome">outcome</a>
+      </li>
+      <li>
          <a href="#performedTimestamp"
             title="https://cogito.iot.linkeddata.es/quality#performedTimestamp">performed timestamp</a>
       </li>
@@ -1178,6 +1181,17 @@ This section provides details for each class and property defined by Quality Ont
          <span class="markdown">Property indicating the origin document of an entity (especially a qual:GeometricQualityInformation)</span>
       </div>
    </div>
+   <div class="entity" id="outcome">
+      <h3>outcome<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#outcome</p>
+      <div class="comment">
+         <span class="markdown">Property indicating if a result has been accepted or rejected</span>
+      </div>
+   </div>
    <div class="entity" id="performedTimestamp">
       <h3>performed timestamp<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -1263,7 +1277,7 @@ This section provides details for each class and property defined by Quality Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#status</p>
       <div class="comment">
-         <span class="markdown">Property indicating if a result has been reviewed, confirmed or rejected</span>
+         <span class="markdown">Property indicating if a result has been checked</span>
       </div>
    </div>
    <div class="entity" id="takenAtTime">
