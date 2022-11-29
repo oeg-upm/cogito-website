@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DTP ETL Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This describes a catalog of ontologies authored or contributed to by COGITO.">
+    <meta name="languaje" content="English">
+
+    <meta http-equiv="refresh" content="30">
+
+    <link rel="stylesheet" href="vocab/themes/blue/style.css" type="text/css" media="print, projection, screen" />
+    <script src="vocab/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="vocab/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="vocab/js/jquery.stickytableheaders.js"></script>
+    <script type="text/javascript" src="vocab/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="vocab/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="vocab/css/jquery-ui.css">
+    </link>
+    <script type="text/javascript" id="js">
+        $(document).ready(function () {
+            $("#tablesorter-demo").tablesorter();
+            $("#tablesorter-demo").stickyTableHeaders();
+            $('[data-toggle="tooltip"]').tooltip();
+        }
+        );
+    </script>
+    <script type="text/javascript" id="js2">
+        var url = "https://data.cogito.iot.linkeddata.es/tm/status";
+        var events = [];
+        var completed;
+        var in_progress;
+        var error;
+
+        $(document).ready(function () {
+            var request = new XMLHttpRequest();
+            request.open("GET", url);
+            request.onload = function () {
+                if (request.status === 200) {
+                    events = JSON.parse(request.responseText);
+                    console.log(request.responseText);
+                    completed = events.completed;
+                    in_progress = events.in_process;
+                    error = events.error;
+                    console.log(completed);
+                    console.log(in_progress);
+                    console.log(error);
+
+                    // for completed
+                    if (completed.length > 0) {
+                        for (var i = 0; i < completed.length; i++) {
+                            $("#eventList").append(createListElementForEvent(i, "completed"));
+                        }
+                    }
+                    
+
+                    // for in progress
+                    if (in_progress.length > 0) {
+                        for (var i = 0; i < in_progress.length; i++) {
+                            $("#eventList").append(createListElementForEvent(i, "in_progress"));
+                        }
+                    }
+
+                    // for error
+                    if (error.length > 0) {
+                        console.log("error");
+                        for (var i = 0; i < error.length; i++) {
+                            $("#eventList").append(createListElementForEvent(i, "error"));
+                        }
+                    }
+
+                } else {
+                    console.log("Error loading groups: " + request.status + " - " + request.statusText);
+                }
+            };
+            request.send(null);
+        });
+
+        function createListElementForEvent(eventIndex, type) {
+
+            if (type === "completed") {
+                var event = completed;
+                var progress = $("<td>").text("Completed");
+            } else if (type === "in_progress") {
+                var event = in_progress;
+                var progress = $("<td>").text("In progress");
+            } else if (type === "error") {
+                var event = error;
+                var progress = $("<td>").text("Error");
+            }
+
+            var time = $("<td>").text(event[eventIndex].timestamp);
+            var p_id = $("<td>").text(event[eventIndex].project_id);
+            if (event[eventIndex].file_id === null) {
+                f_id = $("<td>").text("No File ID");
+            }
+            else{
+                f_id = $("<td>").text(event[eventIndex].file_id);
+            }
+            if (event[eventIndex].file_type === null) {
+                f_type = $("<td>").text("No File ID");
+            }
+            else{
+                f_type = $("<td>").text(event[eventIndex].file_type);
+            }
+            if (event[eventIndex].error_message === null) {
+                error_message = $("<td>").text("No Error Message");
+            }
+            else{
+                error_message = $("<td>").text(event[eventIndex].error_message);
+            }
+
+            
+            return $("<tr>").append(time).append(p_id).append(f_id).append(f_type).append(progress).append(error_message);
+            
+            
+        } 
+    </script>
+
+    <!-- Le styles -->
+    <link href="vocab/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <h1><a href="https://cogito-project.eu/"><img src="vocab/logo.jpg" width="500" alt="COGITO logo"
+                        class="img-rounded" class="img-responsive" /></a></h1>
+            <p class="lead">Here you can find the status of COGITO project Knowledge Graph and Thing Description Generation Process</p>
+
+        </div>
+        <hr>
+        <br>
+        <table id="tablesorter-demo" class="tablesorter table table-hover ">
+            <thead>
+                <tr>
+                    <th class="col-md-2">Time</th>
+                    <th class="col-md-2">Project ID</th>
+                    <th class="col-md-2">File ID</th>
+                    <th class="col-md-2">File Type</th>
+                    <th class="col-md-2">Progress</th>
+                    <th class="col-md-2">Error Message</th>
+                </tr>
+            </thead>
+        <tbody id="eventList">
+        </tbody>
+    </table>
+        <p>
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-10">
+                    Developed by <a href="http://oeg-upm.net" target="_blank">Ontology Engineering Group</a>
+                    <br>
+                    Built with <a target="_blank" href="http://getbootstrap.com/">Bootstrap</a>
+                    Icons from <a target="_blank" href="http://glyphicons.com/">Glyphicons</a>
+                    <br>
+                    Latest revision November, 2022
+                    <br>
+                    <p>&copy; Ontology Engineering Group</p>
+                </div>
+                <div class="col-md-2">
+                    <a href="https://oeg.fi.upm.es/" target="_blank"><img src="vocab/logo.gif" alt="OEG logo"
+                            class="img-rounded" class="img-responsive" width="30%" /></a>
+
+                    <a href="http://fi.upm.es/" target="_blank"><img src="vocab/fiLogo.png" alt="FI logo"
+                            class="img-rounded" class="img-responsive" width="30%" /></a>
+
+                    <a href="https://www.upm.es/" target="_blank"><img src="vocab/upmlogo.png" alt="UPM logo"
+                            class="img-rounded" class="img-responsive" width="30%" /></a>
+                </div>
+            </div>
+            <div class="text-nowrap p-4" style="background-color: rgb(0, 0, 0);">
+                <div class="container et-clearfix" style=" -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: Nunito Sans;
+        line-height: 32px;
+        letter-spacing: 0px;
+        color: #616161;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        margin: 0 auto 0 auto;
+        position: relative;
+        width: 93.75%;
+        max-width: 93.75%;
+        z-index: 5;
+        text-align: center;">
+                    <div class="wpb_column vc_column_container vc_col-sm-12 text-align-none">
+                        <div class="vc_column-inner ">
+                            <div class="wpb_wrapper">
+                                <div
+                                    class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_separator_no_text vc_custom_1613828907991  vc_custom_1613828907991">
+                                    <span class="vc_sep_holder vc_sep_holder_l"><span style="border-color:#3d3d3d;"
+                                            class="vc_sep_line"></span></span><span
+                                        class="vc_sep_holder vc_sep_holder_r"><span style="border-color:#3d3d3d;"
+                                            class="vc_sep_line"></span></span>
+                                </div>
+                                <div class="vc_empty_space" style="height: 32px"><span
+                                        class="vc_empty_space_inner"></span></div>
+                                <div class="wpb_text_column wpb_content_element " data-animation-delay="0">
+                                    <div class="wpb_wrapper">
+                                        <div class="row">
+                                            <!--Grid column-->
+                                            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                                                <img class="size-full wp-image-17990 alignleft lazy loaded"
+                                                    src="https://cogito-project.eu/wp-content/uploads/2019/02/EU-flag.jpg"
+                                                    width="90" height="60">
+                                            </div>
+                                            <div class="col-lg-10 col-md-12 mb-4 mb-md-0">
+                                                <p>
+                                                    <span class="" style="color: #ffffff;">The development of the COGITO
+                                                        ontologies has received
+                                                        funding from the European Union’s Horizon
+                                                        2020 research and innovation programme under grant agreement No
+                                                        958310.</span>
+                                                </p>
+                                                <div class="vc_empty_space" style="height: 32px"><span
+                                                        class="vc_empty_space_inner"></span>
+                                                </div>
+                                            </div>
+        </footer>
+
+
+    </div>
+
+    <div class="vc_empty_space" style="height: 80px"><span class="vc_empty_space_inner"></span></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div> <!-- /container -->
+
+
+
+
+    <!-- Scripts -->
+
+    <script>
+        function hideRows(text) {
+            index = 1;
+            tr = document.getElementById('tr' + index);
+            while (tr != null) {
+                valores = document.getElementById('inp' + index).value;
+                if (valores.indexOf(text) == -1) {
+                    tr.style.display = 'none';
+                }
+                index++;
+                tr = document.getElementById('tr' + index);
+            }
+            document.getElementById('remButt').style.display = '';
+        }
+
+        function showRows() {
+            index = 1;
+            tr = document.getElementById('tr' + index);
+            while (tr != null) {
+                tr.style.display = '';
+                index++;
+                tr = document.getElementById('tr' + index);
+            }
+            butt = document.getElementById('remButt').style.display = 'none';
+        }
+
+    </script>
+    <script src="w3-include-HTML.js"></script>
+</body>
+
+</html>

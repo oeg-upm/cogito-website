@@ -1,0 +1,4 @@
+SELECT * WHERE {
+  ?s ?p "https://cogito.iot.linkeddata.es/def/facility#Project".
+} 
+LIMIT 10
