@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/description> "The COGITO Process ontology aims at modelling the construction process." .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/title> "Process Ontology" .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/def/process#> <http://www.w3.org/2002/07/owl#versionInfo> "0.9.0" .
+<https://cogito.iot.linkeddata.es/def/process#> <http://www.w3.org/2002/07/owl#versionInfo> "0.10.0" .
 # 
 # 
 # #################################################################
@@ -247,11 +247,47 @@
 <https://cogito.iot.linkeddata.es/def/process#currencySymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the currency symbol of an entity (especially a process:UnitOfCurrency)" .
 <https://cogito.iot.linkeddata.es/def/process#currencySymbol> <http://www.w3.org/2000/01/rdf-schema#label> "currency symbol" .
 # 
+# https://cogito.iot.linkeddata.es/def/process#duration
+<https://cogito.iot.linkeddata.es/def/process#duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#duration> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://cogito.iot.linkeddata.es/def/process#duration> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the minimal number of days doing a task takes" .
+<https://cogito.iot.linkeddata.es/def/process#duration> <http://www.w3.org/2000/01/rdf-schema#label> "duration" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#isCritical
+<https://cogito.iot.linkeddata.es/def/process#isCritical> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#isCritical> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://cogito.iot.linkeddata.es/def/process#isCritical> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating if an entity (especially a task) is critical" .
+<https://cogito.iot.linkeddata.es/def/process#isCritical> <http://www.w3.org/2000/01/rdf-schema#label> "is critical" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate
+<https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTimeStamp> .
+<https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the earliest  date an entity can end" .
+<https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "planned early end date" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate
+<https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTimeStamp> .
+<https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the earliest  date an entity can start" .
+<https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "planned early start date" .
+# 
 # https://cogito.iot.linkeddata.es/def/process#plannedEndDate
 <https://cogito.iot.linkeddata.es/def/process#plannedEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/def/process#plannedEndDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
 <https://cogito.iot.linkeddata.es/def/process#plannedEndDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the planned end date of an entity" .
 <https://cogito.iot.linkeddata.es/def/process#plannedEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "planned end date" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate
+<https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTimeStamp> .
+<https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the latest  date an entity can end" .
+<https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "planned late end date" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate
+<https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTimeStamp> .
+<https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the latest  date an entity can start" .
+<https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "planned late start date" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#plannedStartDate
 <https://cogito.iot.linkeddata.es/def/process#plannedStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -295,6 +331,12 @@
 <https://cogito.iot.linkeddata.es/def/process#timeWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cogito.iot.linkeddata.es/def/process#timeWindow> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the time window of an entity (especially a process:Process)" .
 <https://cogito.iot.linkeddata.es/def/process#timeWindow> <http://www.w3.org/2000/01/rdf-schema#label> "time window" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#totalFloat
+<https://cogito.iot.linkeddata.es/def/process#totalFloat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#totalFloat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://cogito.iot.linkeddata.es/def/process#totalFloat> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the number of days an entity (especially a task) can be delayed" .
+<https://cogito.iot.linkeddata.es/def/process#totalFloat> <http://www.w3.org/2000/01/rdf-schema#label> "total float" .
 # 
 # 
 # 

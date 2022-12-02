@@ -2,3 +2,12 @@ SELECT * WHERE {
   ?s ?p "https://cogito.iot.linkeddata.es/def/facility#Project".
 } 
 LIMIT 10
+
+
+SELECT * WHERE {
+  ?s <https://www.w3.org/2019/wot/td#title> ?o.
+} 
+LIMIT 10
+
+
+https://meyerweb.com/eric/tools/dencoder/

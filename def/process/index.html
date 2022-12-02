@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/process#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/process#","name":"Process Ontology", "headline":"The COGITO Process ontology aims at modelling the construction process.", "datePublished":"Thu Nov 10 08:18:16 CET 2022", "version":"0.9.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/process#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/process#","name":"Process Ontology", "headline":"The COGITO Process ontology aims at modelling the construction process.", "datePublished":"Fri Dec 02 13:26:08 CET 2022", "version":"0.10.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -61,13 +61,13 @@ $(function(){
 <dt>Latest version:</dt>
 <dd><a href="https://cogito.iot.linkeddata.es/def/process#">https://cogito.iot.linkeddata.es/def/process#</a></dd>
 <dt>Revision:</dt>
-<dd>0.9.0</dd>
+<dd>0.10.0</dd>
 <dt>Authors:</dt>
 <dd>María Poveda Villalón</dd><dd>Raúl García Castro</dd><dd>Socorro  Bernardos Galindo</dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. Process Ontology. Revision: 0.9.0.</dd>
+<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. Process Ontology. Revision: 0.10.0.</dd>
 </dl>
 <div>
 	<img src="resources/images/logo.jpg" width="300" alt="">
@@ -318,11 +318,35 @@ This ontology has the following classes and properties.</span>
          title="https://cogito.iot.linkeddata.es/def/process#currencySymbol">currency symbol</a>
    </li>
    <li>
+      <a href="#duration"
+         title="https://cogito.iot.linkeddata.es/def/process#duration">duration</a>
+   </li>
+   <li>
       <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identifier</a>
+   </li>
+   <li>
+      <a href="#isCritical"
+         title="https://cogito.iot.linkeddata.es/def/process#isCritical">is critical</a>
+   </li>
+   <li>
+      <a href="#plannedEarlyEndDate"
+         title="https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate">planned early end date</a>
+   </li>
+   <li>
+      <a href="#plannedEarlyStartDate"
+         title="https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate">planned early start date</a>
    </li>
    <li>
       <a href="#plannedEndDate"
          title="https://cogito.iot.linkeddata.es/def/process#plannedEndDate">planned end date</a>
+   </li>
+   <li>
+      <a href="#plannedLateEndDate"
+         title="https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate">planned late end date</a>
+   </li>
+   <li>
+      <a href="#plannedLateStartDate"
+         title="https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate">planned late start date</a>
    </li>
    <li>
       <a href="#plannedStartDate"
@@ -358,6 +382,10 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">title</a>
+   </li>
+   <li>
+      <a href="#totalFloat"
+         title="https://cogito.iot.linkeddata.es/def/process#totalFloat">total float</a>
    </li>
 </ul>
 </div>
@@ -1591,11 +1619,35 @@ This section provides details for each class and property defined by Process Ont
             title="https://cogito.iot.linkeddata.es/def/process#currencySymbol">currency symbol</a>
       </li>
       <li>
+         <a href="#duration"
+            title="https://cogito.iot.linkeddata.es/def/process#duration">duration</a>
+      </li>
+      <li>
          <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identifier</a>
+      </li>
+      <li>
+         <a href="#isCritical"
+            title="https://cogito.iot.linkeddata.es/def/process#isCritical">is critical</a>
+      </li>
+      <li>
+         <a href="#plannedEarlyEndDate"
+            title="https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate">planned early end date</a>
+      </li>
+      <li>
+         <a href="#plannedEarlyStartDate"
+            title="https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate">planned early start date</a>
       </li>
       <li>
          <a href="#plannedEndDate"
             title="https://cogito.iot.linkeddata.es/def/process#plannedEndDate">planned end date</a>
+      </li>
+      <li>
+         <a href="#plannedLateEndDate"
+            title="https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate">planned late end date</a>
+      </li>
+      <li>
+         <a href="#plannedLateStartDate"
+            title="https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate">planned late start date</a>
       </li>
       <li>
          <a href="#plannedStartDate"
@@ -1631,6 +1683,10 @@ This section provides details for each class and property defined by Process Ont
       </li>
       <li>
          <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">title</a>
+      </li>
+      <li>
+         <a href="#totalFloat"
+            title="https://cogito.iot.linkeddata.es/def/process#totalFloat">total float</a>
       </li>
    </ul>
    <div class="entity" id="http://purl.org/dc/terms/created">
@@ -1727,6 +1783,27 @@ This section provides details for each class and property defined by Process Ont
          <span class="markdown">A property indicating the currency symbol of an entity (especially a process:UnitOfCurrency)</span>
       </div>
    </div>
+   <div class="entity" id="duration">
+      <h3>duration<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#duration</p>
+      <div class="comment">
+         <span class="markdown">A property indicating the minimal number of days doing a task takes</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="http://purl.org/dc/terms/identifier">
       <h3>identifier<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -1740,6 +1817,69 @@ This section provides details for each class and property defined by Process Ont
             <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
          </dd>
       </dl>
+   </div>
+   <div class="entity" id="isCritical">
+      <h3>is critical<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#isCritical</p>
+      <div class="comment">
+         <span class="markdown">A property indicating if an entity (especially a task) is critical</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="plannedEarlyEndDate">
+      <h3>planned early end date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate</p>
+      <div class="comment">
+         <span class="markdown">A property indicating the earliest  date an entity can end</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTimeStamp">date time stamp</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="plannedEarlyStartDate">
+      <h3>planned early start date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate</p>
+      <div class="comment">
+         <span class="markdown">A property indicating the earliest  date an entity can start</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTimeStamp">date time stamp</a>
+            </dd>
+         </dl>
+      </div>
    </div>
    <div class="entity" id="plannedEndDate">
       <h3>planned end date<sup class="type-dp" title="data property">dp</sup>
@@ -1758,6 +1898,48 @@ This section provides details for each class and property defined by Process Ont
                <a href="http://www.w3.org/2001/XMLSchema#dateTime"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="plannedLateEndDate">
+      <h3>planned late end date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate</p>
+      <div class="comment">
+         <span class="markdown">A property indicating the latest  date an entity can end</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTimeStamp">date time stamp</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="plannedLateStartDate">
+      <h3>planned late start date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate</p>
+      <div class="comment">
+         <span class="markdown">A property indicating the latest  date an entity can start</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTimeStamp">date time stamp</a>
             </dd>
          </dl>
       </div>
@@ -1893,6 +2075,27 @@ This section provides details for each class and property defined by Process Ont
             <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
          </dd>
       </dl>
+   </div>
+   <div class="entity" id="totalFloat">
+      <h3>total float<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#totalFloat</p>
+      <div class="comment">
+         <span class="markdown">A property indicating the number of days an entity (especially a task) can be delayed</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</a>
+            </dd>
+         </dl>
+      </div>
    </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>

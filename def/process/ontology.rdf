@@ -15,7 +15,7 @@
         <dc:description>The COGITO Process ontology aims at modelling the construction process.</dc:description>
         <dc:title>Process Ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.9.0</owl:versionInfo>
+        <owl:versionInfo>0.10.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -456,6 +456,50 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/def/process#duration -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#duration">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>A property indicating the minimal number of days doing a task takes</rdfs:comment>
+        <rdfs:label>duration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#isCritical -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#isCritical">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>A property indicating if an entity (especially a task) is critical</rdfs:comment>
+        <rdfs:label>is critical</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>A property indicating the earliest  date an entity can end</rdfs:comment>
+        <rdfs:label>planned early end date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>A property indicating the earliest  date an entity can start</rdfs:comment>
+        <rdfs:label>planned early start date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://cogito.iot.linkeddata.es/def/process#plannedEndDate -->
 
 
@@ -463,6 +507,28 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>A property indicating the planned end date of an entity</rdfs:comment>
         <rdfs:label>planned end date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>A property indicating the latest  date an entity can end</rdfs:comment>
+        <rdfs:label>planned late end date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>A property indicating the latest  date an entity can start</rdfs:comment>
+        <rdfs:label>planned late start date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -546,6 +612,17 @@
     <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#timeWindow">
         <rdfs:comment>A property indicating the time window of an entity (especially a process:Process)</rdfs:comment>
         <rdfs:label>time window</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#totalFloat -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#totalFloat">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>A property indicating the number of days an entity (especially a task) can be delayed</rdfs:comment>
+        <rdfs:label>total float</rdfs:label>
     </owl:DatatypeProperty>
     
 

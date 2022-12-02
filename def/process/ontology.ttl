@@ -13,7 +13,7 @@
                                                  <http://purl.org/dc/elements/1.1/description> "The COGITO Process ontology aims at modelling the construction process." ;
                                                  <http://purl.org/dc/elements/1.1/title> "Process Ontology" ;
                                                  <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                                 owl:versionInfo "0.9.0" .
+                                                 owl:versionInfo "0.10.0" .
 
 #################################################################
 #    Annotation properties
@@ -279,11 +279,53 @@
                 rdfs:label "currency symbol" .
 
 
+###  https://cogito.iot.linkeddata.es/def/process#duration
+:duration rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:nonNegativeInteger ;
+          rdfs:comment "A property indicating the minimal number of days doing a task takes" ;
+          rdfs:label "duration" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#isCritical
+:isCritical rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "A property indicating if an entity (especially a task) is critical" ;
+            rdfs:label "is critical" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#plannedEarlyEndDate
+:plannedEarlyEndDate rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:dateTimeStamp ;
+                     rdfs:comment "A property indicating the earliest  date an entity can end" ;
+                     rdfs:label "planned early end date" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#plannedEarlyStartDate
+:plannedEarlyStartDate rdf:type owl:DatatypeProperty ;
+                       rdfs:range xsd:dateTimeStamp ;
+                       rdfs:comment "A property indicating the earliest  date an entity can start" ;
+                       rdfs:label "planned early start date" .
+
+
 ###  https://cogito.iot.linkeddata.es/def/process#plannedEndDate
 :plannedEndDate rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:dateTime ;
                 rdfs:comment "A property indicating the planned end date of an entity" ;
                 rdfs:label "planned end date" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#plannedLateEndDate
+:plannedLateEndDate rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:dateTimeStamp ;
+                    rdfs:comment "A property indicating the latest  date an entity can end" ;
+                    rdfs:label "planned late end date" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#plannedLateStartDate
+:plannedLateStartDate rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:dateTimeStamp ;
+                      rdfs:comment "A property indicating the latest  date an entity can start" ;
+                      rdfs:label "planned late start date" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#plannedStartDate
@@ -335,6 +377,13 @@
 :timeWindow rdf:type owl:DatatypeProperty ;
             rdfs:comment "A property indicating the time window of an entity (especially a process:Process)" ;
             rdfs:label "time window" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#totalFloat
+:totalFloat rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:nonNegativeInteger ;
+            rdfs:comment "A property indicating the number of days an entity (especially a task) can be delayed" ;
+            rdfs:label "total float" .
 
 
 #################################################################
