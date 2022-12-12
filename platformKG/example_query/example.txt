@@ -1,13 +1,47 @@
-SELECT * WHERE {
-  ?s ?p "https://cogito.iot.linkeddata.es/def/facility#Project".
-} 
-LIMIT 10
-
-
-SELECT * WHERE {
-  ?s <https://www.w3.org/2019/wot/td#title> ?o.
-} 
-LIMIT 10
-
-
 https://meyerweb.com/eric/tools/dencoder/
+
+Project
+
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?td ?title ?description ?iriHref (group_concat(?relation;separator=', ') as ?relations) WHERE {
+  ?td td:type 'https://cogito.iot.linkeddata.es/def/facility#Project' .
+  ?td td:title ?title .
+  ?td td:description ?description .
+  ?td td:hasPropertyAffordance ?property .
+  ?property td:name 'platform:hasIRI' .
+  ?property td:hasForm ?form .
+  ?form td:href ?iriHref .
+  ?td td:hasLink ?l .
+  ?l td:rel ?rel .
+  ?l td:href ?href .
+  BIND(URI(concat('https://data.cogito.iot.linkeddata.es/tdd/api/things/',?href)) AS ?fileTD) .
+  ?fileTD td:type 'qual:InformationResource' .
+  ?fileTD td:hasPropertyAffordance ?fileProperty .
+  ?fileProperty td:name 'platform:hasFile' .
+  ?fileProperty td:hasForm ?formFile .
+  ?formFile td:href ?fileHref .
+  BIND(concat(?rel,' - ',?fileHref) AS ?relation) .
+} GROUP BY ?td ?title ?description ?iriHref
+
+Elements
+
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?td ?title ?description ?iriHref ?fileHref ?relatedProjectTD WHERE {
+  ?td td:type 'facility:Element' .
+  ?td td:title ?title .
+  ?td td:description ?description .
+  ?td td:hasPropertyAffordance ?property .
+  ?td td:hasPropertyAffordance ?property2 .
+  ?property td:name 'platform:hasIRI' .
+  ?property td:hasForm ?form .
+  ?form td:href ?iriHref .
+  ?property2 td:name 'platform:hasFile' .
+  ?property2 td:hasForm ?form2 .
+  ?form2 td:href ?fileHref .
+  ?td td:hasLink ?l .
+  ?l td:rel 'platform:relatedTD' .
+  ?l td:href ?projectTD .
+  BIND(concat('https://data.cogito.iot.linkeddata.es/tdd/api/things/',?projectTD) AS ?relatedProjectTD) .
+} LIMIT 20
