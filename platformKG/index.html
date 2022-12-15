@@ -129,7 +129,6 @@
             var description = $("<td>").text(td.description.value);
             var relatesToFile = $("<td>").html("<span><a href='" + td.fileHref.value +  "'> File Link </span></a>");
             var relatesToProject = $("<td>").html("<span><a href='" + td.relatedProjectTD.value.replace("https://data.cogito.iot.linkeddata.es/tdd/api/things/https://data.cogito.iot.linkeddata.es/tdd/api/things/", "https://data.cogito.iot.linkeddata.es/tdd/api/things/") +  "'> Project TD Link </span></a>");
-            console.log("hello " + td.relatedProjectTD.value);  
             td_count += 1;
             var root = "root" + td_count;
             var td_link = $("<td class='" + root + "'>" );
