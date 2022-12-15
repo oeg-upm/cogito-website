@@ -45,3 +45,37 @@ SELECT ?td ?title ?description ?iriHref ?fileHref ?relatedProjectTD WHERE {
   ?l td:href ?projectTD .
   BIND(concat('https://data.cogito.iot.linkeddata.es/tdd/api/things/',?projectTD) AS ?relatedProjectTD) .
 } LIMIT 20
+
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+PREFIX facility: <https://cogito.iot.linkeddata.es/def/facility#>
+PREFIX process: <https://cogito.iot.linkeddata.es/def/process#>
+PREFIX props: <https://w3id.org/props#>
+SELECT ?project ?elem ?ifc WHERE {
+    SERVICE <https://data.cogito.iot.linkeddata.es/sparql> {
+        ?project rdf:type facility:Project .
+    	?project facility:projectID ?id .
+    	?project facility:isRelatedToProcess ?process .
+        ?process process:hasTask ?task .
+        ?task facility:isRelatedTo ?elem .
+    	?elem props:hasCompressedGuid ?elemId .
+    }
+    SERVICE <https://data.cogito.iot.linkeddata.es/tdd/api/search/sparql> {
+    	BIND(URI(concat('https://data.cogito.iot.linkeddata.es/tdd/api/things/',?id)) AS ?td) .
+        ?td a td:Thing .
+        ?td td:hasLink ?l .
+    	?l td:rel 'platform:hasIfc' .
+        ?l td:rel ?rel .
+        ?l td:href ?href .
+        BIND(URI(concat('https://data.cogito.iot.linkeddata.es/tdd/api/things/',?href)) AS ?fileTD) .
+        ?fileTD td:type 'qual:InformationResource' .
+        ?fileTD td:hasPropertyAffordance ?fileProperty .
+        ?fileProperty td:name 'platform:hasFile' .
+        ?fileProperty td:hasForm ?formFile .
+        ?formFile td:href ?fileHref .
+    	BIND(URI(?fileHref) as ?ifc) .
+    } 
+} LIMIT 10
