@@ -13,7 +13,7 @@
                                               <http://purl.org/dc/elements/1.1/description> "The COGITO Platfrom ontology aims at modelling the entities considered in the the Digital Twin Platform, a component of the COGITO architecture" ;
                                               <http://purl.org/dc/elements/1.1/title> "Platform Ontology" ;
                                               <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                              owl:versionInfo "0.3.0" .
+                                              owl:versionInfo "0.4.0" .
 
 #################################################################
 #    Annotation properties
@@ -41,72 +41,72 @@
 
 ###  https://cogito.iot.linkeddata.es/platform#hasFile
 :hasFile rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#forms> ;
+         rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasForm> ;
          rdfs:comment "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file" ;
          rdfs:label "has file" .
 
 
 ###  https://cogito.iot.linkeddata.es/platform#hasIRI
 :hasIRI rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#forms> ;
+        rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasForm> ;
         rdfs:comment "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its IRI" ;
         rdfs:label "has IRI" .
 
 
 ###  https://cogito.iot.linkeddata.es/platform#hasIfc
 :hasIfc rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#links> ;
+        rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasLink> ;
         rdfs:comment "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its IFC file" ;
         rdfs:label "has Ifc" .
 
 
 ###  https://cogito.iot.linkeddata.es/platform#hasKnowledgeGraph
 :hasKnowledgeGraph rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#forms> ;
+                   rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasForm> ;
                    rdfs:comment "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its knowledge graph" ;
                    rdfs:label "has knowledge graph" .
 
 
 ###  https://cogito.iot.linkeddata.es/platform#hasMesh
 :hasMesh rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#links> ;
+         rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasLink> ;
          rdfs:comment "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its mesh file" ;
          rdfs:label "has mesh" .
 
 
 ###  https://cogito.iot.linkeddata.es/platform#hasPointCloud
 :hasPointCloud rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#links> ;
+               rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasLink> ;
                rdfs:comment "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its point cloud file" ;
                rdfs:label "has point cloud" .
 
 
 ###  https://cogito.iot.linkeddata.es/platform#hasSchedule
 :hasSchedule rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#links> ;
+             rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasLink> ;
              rdfs:comment "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its schedule file" ;
              rdfs:label "has schedule" .
 
 
 ###  https://cogito.iot.linkeddata.es/platform#relatedTD
 :relatedTD rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#links> ;
+           rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasLink> ;
            rdfs:comment "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating a related thing description" ;
            rdfs:label "related thing description" .
 
 
-###  https://www.w3.org/2019/wot/td#forms
-<https://www.w3.org/2019/wot/td#forms> rdf:type owl:ObjectProperty ;
-                                       rdfs:range <https://www.w3.org/2019/wot/td#Form> ;
-                                       rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
-                                       rdfs:label "forms" .
+###  https://www.w3.org/2019/wot/td#hasForm
+<https://www.w3.org/2019/wot/td#hasForm> rdf:type owl:ObjectProperty ;
+                                         rdfs:range <https://www.w3.org/2019/wot/hypermedia#Form> ;
+                                         rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
+                                         rdfs:label "has form" .
 
 
-###  https://www.w3.org/2019/wot/td#links
-<https://www.w3.org/2019/wot/td#links> rdf:type owl:ObjectProperty ;
-                                       rdfs:range <https://www.w3.org/2019/wot/td#Link> ;
-                                       rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
-                                       rdfs:label "links" .
+###  https://www.w3.org/2019/wot/td#hasLink
+<https://www.w3.org/2019/wot/td#hasLink> rdf:type owl:ObjectProperty ;
+                                         rdfs:range <https://www.w3.org/2019/wot/hypermedia#Link> ;
+                                         rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
+                                         rdfs:label "has link" .
 
 
 #################################################################
@@ -129,53 +129,33 @@
 
 ###  https://cogito.iot.linkeddata.es/platform#DigitalTwin
 :DigitalTwin rdf:type owl:Class ;
-             rdfs:subClassOf :PlatformThing ;
+             rdfs:subClassOf :PlanformThing ;
              rdfs:comment "Entity that is a digital twin in the platform" ;
              rdfs:label "Digital Twin" .
 
 
-###  https://cogito.iot.linkeddata.es/platform#PlatformThing
-:PlatformThing rdf:type owl:Class ;
+###  https://cogito.iot.linkeddata.es/platform#PlanformThing
+:PlanformThing rdf:type owl:Class ;
                rdfs:subClassOf <https://www.w3.org/2019/wot/td#Thing> ;
-               rdfs:comment "A subclass of a td:Thing and, as such, an abstraction of a physical or a virtual entity whose metadata and interfaces are described by a WoT Thing Description. In this case, an entity of a construction twin, namely, a facility:Project, a facility:Element, a qual:Image. a qual:PointCloud and a qual:Mesh." ;
-               rdfs:label "Construction Twin Thing" .
-
-
-###  https://cogito.iot.linkeddata.es/quality#AsBuiltMesh
-<https://cogito.iot.linkeddata.es/quality#AsBuiltMesh> rdf:type owl:Class ;
-                                                       rdfs:comment "A mesh representing a built entity (especially a facility:Element)" ;
-                                                       rdfs:label "As-built Mesh" .
-
-
-###  https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud
-<https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud> rdf:type owl:Class ;
-                                                             rdfs:comment "A point cloud representing a built entity (especially a facility:Element)" ;
-                                                             rdfs:label "As-built Point Cloud" .
+               rdfs:comment "An entity that is a td:thing (entity whose metadata and interfaces are described by a WoT Thing Description) in the platform" ;
+               rdfs:label "Platform Thing" .
 
 
 ###  https://cogito.iot.linkeddata.es/quality#InformationResource
 <https://cogito.iot.linkeddata.es/quality#InformationResource> rdf:type owl:Class ;
-                                                               rdfs:subClassOf :PlatformThing ;
+                                                               rdfs:subClassOf :PlanformThing ;
                                                                rdfs:comment "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform" ;
                                                                rdfs:label "Information Resource" .
 
 
-###  https://cogito.iot.linkeddata.es/quality#RawImage
-<https://cogito.iot.linkeddata.es/quality#RawImage> rdf:type owl:Class ;
-                                                    rdfs:comment "An image that has not been processed" ;
-                                                    rdfs:label "Raw Image" .
+###  https://www.w3.org/2019/wot/hypermedia#Form
+<https://www.w3.org/2019/wot/hypermedia#Form> rdf:type owl:Class ;
+                                              rdfs:label "Form" .
 
 
-###  https://www.w3.org/2019/wot/td#Form
-<https://www.w3.org/2019/wot/td#Form> rdf:type owl:Class ;
-                                      rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
-                                      rdfs:label "Form" .
-
-
-###  https://www.w3.org/2019/wot/td#Link
-<https://www.w3.org/2019/wot/td#Link> rdf:type owl:Class ;
-                                      rdfs:isDefinedBy <https://www.w3.org/2019/wot/td#> ;
-                                      rdfs:label "Link" .
+###  https://www.w3.org/2019/wot/hypermedia#Link
+<https://www.w3.org/2019/wot/hypermedia#Link> rdf:type owl:Class ;
+                                              rdfs:label "Link" .
 
 
 ###  https://www.w3.org/2019/wot/td#Thing

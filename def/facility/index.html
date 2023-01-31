@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/facility#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/facility#","name":"Facility Ontology", "headline":"The COGITO Facility ontology aims at modelling facilities in the construction domain.", "datePublished":"Sat Oct 15 14:02:20 CEST 2022", "version":"0.9.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/facility#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/facility#","name":"Facility Ontology", "headline":"The COGITO Facility ontology aims at modelling facilities in the construction domain.", "datePublished":"Fri Jan 13 12:48:30 CET 2023", "version":"0.10.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -61,7 +61,7 @@ $(function(){
 <dt>Latest version:</dt>
 <dd><a href="https://cogito.iot.linkeddata.es/def/facility#">https://cogito.iot.linkeddata.es/def/facility#</a></dd>
 <dt>Revision:</dt>
-<dd>0.9.0</dd>
+<dd>0.10.0</dd>
 <dt>Authors:</dt>
 <dd>María Poveda Villalón</dd><dd>Raúl García Castro</dd><dd>Socorro  Bernardos Galindo</dd>
 
@@ -70,7 +70,7 @@ $(function(){
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. Facility Ontology. Revision: 0.9.0.</dd>
+<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. Facility Ontology. Revision: 0.10.0.</dd>
 </dl>
 <div>
 	<img src="resources/images/logo.jpg" width="300" alt="">
@@ -204,10 +204,6 @@ This ontology has the following classes and properties.</span>
       <a href="#https://w3id.org/bot#Storey" title="https://w3id.org/bot#Storey">Storey</a>
    </li>
    <li>
-      <a href="#TrackedZone"
-         title="https://cogito.iot.linkeddata.es/def/facility#TrackedZone">Tracked Zone</a>
-   </li>
-   <li>
       <a href="#WalkableZone"
          title="https://cogito.iot.linkeddata.es/def/facility#WalkableZone">Walkable Zone</a>
    </li>
@@ -248,6 +244,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#isRelatedToSite"
          title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite">is related to site</a>
+   </li>
+   <li>
+      <a href="#isRelatedToSapatialZone"
+         title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone">is related to spatial zone</a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
@@ -363,10 +363,6 @@ This section provides details for each class and property defined by Facility On
       </li>
       <li>
          <a href="#https://w3id.org/bot#Storey" title="https://w3id.org/bot#Storey">Storey</a>
-      </li>
-      <li>
-         <a href="#TrackedZone"
-            title="https://cogito.iot.linkeddata.es/def/facility#TrackedZone">Tracked Zone</a>
       </li>
       <li>
          <a href="#WalkableZone"
@@ -851,8 +847,6 @@ street or highway</span>
                title="https://cogito.iot.linkeddata.es/def/facility#Space">Space</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Storey"
                title="https://cogito.iot.linkeddata.es/def/facility#Storey">Storey</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#TrackedZone"
-               title="https://cogito.iot.linkeddata.es/def/facility#TrackedZone">Tracked Zone</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -906,25 +900,6 @@ street or highway</span>
          <dd>
             <a href="#Storey"
                title="https://cogito.iot.linkeddata.es/def/facility#Storey">Storey</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="TrackedZone">
-      <h3>Tracked Zone<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#TrackedZone</p>
-      <div class="comment">
-         <span class="markdown">Something used to represent zones used by the IoT preprocessing module</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#SpatialZone"
-               title="https://cogito.iot.linkeddata.es/def/facility#SpatialZone">Spatial Zone</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1014,6 +989,10 @@ street or highway</span>
       <li>
          <a href="#isRelatedToSite"
             title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite">is related to site</a>
+      </li>
+      <li>
+         <a href="#isRelatedToSapatialZone"
+            title="https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone">is related to spatial zone</a>
       </li>
    </ul>
    <div class="entity" id="https://w3id.org/bot#containsZone">
@@ -1307,6 +1286,17 @@ street or highway</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
+      </div>
+   </div>
+   <div class="entity" id="isRelatedToSapatialZone">
+      <h3>is related to spatial zone<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone</p>
+      <div class="comment">
+         <span class="markdown">A property relating an entity (especially a facility:SpatialZone) to a facility:SpatialZone</span>
       </div>
    </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">

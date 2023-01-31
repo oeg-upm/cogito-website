@@ -270,6 +270,21 @@
     "@value" : "element type keywords"
   } ]
 }, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#hasInformationResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that relates an entity (especially a facility:Element) to a qual:InformationResource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has information resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#isRelatedToElement"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#hasProcessedImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -312,7 +327,7 @@
   "@id" : "https://cogito.iot.linkeddata.es/quality#isRelatedToElement",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that relates an entity (especially qual:QualityInformation) to a facility:Element"
+    "@value" : "Property that relates an entity (especially qual:InformationResource) to a facility:Element"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "is related to element"

@@ -18,7 +18,7 @@
         <dc:description>The COGITO Facility ontology aims at modelling facilities in the construction domain.</dc:description>
         <dc:title>Facility Ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.9.0</owl:versionInfo>
+        <owl:versionInfo>0.10.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -107,6 +107,16 @@
         <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/facility#Element"/>
         <rdfs:comment>A property that relates a facility:Element to another facility:Element it contains</rdfs:comment>
         <rdfs:label>has sub-element</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone">
+        <rdfs:comment>A property relating an entity (especially a facility:SpatialZone) to a facility:SpatialZone</rdfs:comment>
+        <rdfs:label>is related to spatial zone</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -428,17 +438,6 @@ street or highway</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Storey"/>
         <rdfs:comment>A subclass of bot:Storey and, as such, is contained (bot:hasStorey) in one facility:Building, and is intended to contain (bot:hasSpace) one or more facility:Space that are horizontally connected.</rdfs:comment>
         <rdfs:label>Storey</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/def/facility#TrackedZone -->
-
-
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/facility#TrackedZone">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/facility#SpatialZone"/>
-        <rdfs:comment>Something used to represent zones used by the IoT preprocessing module</rdfs:comment>
-        <rdfs:label>Tracked Zone</rdfs:label>
     </owl:Class>
     
 

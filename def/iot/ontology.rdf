@@ -15,7 +15,7 @@
         <dc:description>The COGITO IoT ontology aims at modelling IoT devices and their measurements in the construction domain.</dc:description>
         <dc:title>IoT ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.2.0</owl:versionInfo>
+        <owl:versionInfo>0.4.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -69,6 +69,17 @@
      -->
 
 
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup"/>
+        <rdfs:comment>Property relating an entity (especially an iot:TrackingTag) to an iot:TrackingTag</rdfs:comment>
+        <rdfs:label>belongs to tag group</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -147,6 +158,26 @@
     
 
 
+    <!-- http://purl.org/dc/terms/identifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+        <rdfs:label>identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/titile -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/titile">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+        <rdfs:label>title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://saref.etsi.org/core#hasTimestamp -->
 
 
@@ -180,24 +211,34 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/def/iot#EquipmentTag -->
+    <!-- https://cogito.iot.linkeddata.es/def/facility#SpatialZone -->
 
 
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/iot#EquipmentTag">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/iot#TrackingTag"/>
-        <rdfs:comment>A tracking tag assigned to a piece of equipment</rdfs:comment>
-        <rdfs:label>Equipment Tag</rdfs:label>
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/facility#SpatialZone">
+        <rdfs:comment>A subclass of bot:Zone and, as such, a part of the physical or a virtual world that is inherently both located in this world and has a 3D spatial extent.</rdfs:comment>
+        <rdfs:label>Spatial Zone</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/def/iot#HumanTag -->
+    <!-- https://cogito.iot.linkeddata.es/def/iot#EquipmentTagGroup -->
 
 
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/iot#HumanTag">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/iot#TrackingTag"/>
-        <rdfs:comment>A tracking tag assigned to a human</rdfs:comment>
-        <rdfs:label>Human Tag</rdfs:label>
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/iot#EquipmentTagGroup">
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup"/>
+        <rdfs:comment>A tracking tag group belonging to a piece of equipment</rdfs:comment>
+        <rdfs:label>Equipment Tag Group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/iot#HumanTagGroup -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/iot#HumanTagGroup">
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup"/>
+        <rdfs:comment>A tracking tag group belonging to a human</rdfs:comment>
+        <rdfs:label>Human Tag Group</rdfs:label>
     </owl:Class>
     
 
@@ -206,7 +247,7 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core#Measurement"/>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Measurement"/>
         <rdfs:comment>The location measured by an entity (especially an iot:TrackingTag)</rdfs:comment>
         <rdfs:label>Location Measurement</rdfs:label>
     </owl:Class>
@@ -223,13 +264,35 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/def/iot#TrackedZone -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/iot#TrackedZone">
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/facility#SpatialZone"/>
+        <rdfs:comment>An entity used to represent zones used by the IoT preprocessing module</rdfs:comment>
+        <rdfs:label>Tracked Zone</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://cogito.iot.linkeddata.es/def/iot#TrackingTag -->
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/iot#TrackingTag">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core#Device"/>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:comment>A subclass of saref:Device and, as such, a tangible object designed to accomplish a particular task; in this case signalling its location</rdfs:comment>
+        <rdfs:comment>An entity</rdfs:comment>
         <rdfs:label>Tracking Tag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup">
+        <rdfs:comment>An entity used to group tracking tags</rdfs:comment>
+        <rdfs:label>Tracking Tag Group</rdfs:label>
     </owl:Class>
     
 
@@ -238,36 +301,36 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/resource#Resource">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core#FeatureOfInterest"/>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
         <rdfs:comment>A source of supply, support, or aid, especially one that can be readily drawn upon when needed; and from which a property is measured</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- https://saref.etsi.org/core#Device -->
+    <!-- https://saref.etsi.org/core/Device -->
 
 
-    <owl:Class rdf:about="https://saref.etsi.org/core#Device">
+    <owl:Class rdf:about="https://saref.etsi.org/core/Device">
         <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/core#"/>
         <rdfs:label>Device</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://saref.etsi.org/core#FeatureOfInterest -->
+    <!-- https://saref.etsi.org/core/FeatureOfInterest -->
 
 
-    <owl:Class rdf:about="https://saref.etsi.org/core#FeatureOfInterest">
+    <owl:Class rdf:about="https://saref.etsi.org/core/FeatureOfInterest">
         <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/core#"/>
         <rdfs:label>Feature of Interest</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://saref.etsi.org/core#Measurement -->
+    <!-- https://saref.etsi.org/core/Measurement -->
 
 
-    <owl:Class rdf:about="https://saref.etsi.org/core#Measurement">
+    <owl:Class rdf:about="https://saref.etsi.org/core/Measurement">
         <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/core#"/>
         <rdfs:label>Measurement</rdfs:label>
     </owl:Class>

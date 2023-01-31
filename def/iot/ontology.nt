@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/def/iot#> <http://purl.org/dc/elements/1.1/description> "The COGITO IoT ontology aims at modelling IoT devices and their measurements in the construction domain." .
 <https://cogito.iot.linkeddata.es/def/iot#> <http://purl.org/dc/elements/1.1/title> "IoT ontology" .
 <https://cogito.iot.linkeddata.es/def/iot#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/def/iot#> <http://www.w3.org/2002/07/owl#versionInfo> "0.2.0" .
+<https://cogito.iot.linkeddata.es/def/iot#> <http://www.w3.org/2002/07/owl#versionInfo> "0.4.0" .
 # 
 # 
 # #################################################################
@@ -35,6 +35,12 @@
 # #
 # #################################################################
 # 
+# 
+# https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup
+<https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup> .
+<https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Property relating an entity (especially an iot:TrackingTag) to an iot:TrackingTag" .
+<https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to tag group" .
 # 
 # https://cogito.iot.linkeddata.es/def/iot#hasLocation
 <https://cogito.iot.linkeddata.es/def/iot#hasLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -78,6 +84,16 @@
 # #################################################################
 # 
 # 
+# http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier" .
+# 
+# http://purl.org/dc/terms/titile
+<http://purl.org/dc/terms/titile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/titile> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/dc/terms/titile> <http://www.w3.org/2000/01/rdf-schema#label> "title" .
+# 
 # https://saref.etsi.org/core#hasTimestamp
 <https://saref.etsi.org/core#hasTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://saref.etsi.org/core#hasTimestamp> <http://www.w3.org/2000/01/rdf-schema#comment> "has timestamp" .
@@ -98,21 +114,26 @@
 <http://www.opengis.net/ont/geosparql#Point> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opengis.net/ont/geosparq#> .
 <http://www.opengis.net/ont/geosparql#Point> <http://www.w3.org/2000/01/rdf-schema#label> "Point" .
 # 
-# https://cogito.iot.linkeddata.es/def/iot#EquipmentTag
-<https://cogito.iot.linkeddata.es/def/iot#EquipmentTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/iot#EquipmentTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/iot#TrackingTag> .
-<https://cogito.iot.linkeddata.es/def/iot#EquipmentTag> <http://www.w3.org/2000/01/rdf-schema#comment> "A tracking tag assigned to a piece of equipment" .
-<https://cogito.iot.linkeddata.es/def/iot#EquipmentTag> <http://www.w3.org/2000/01/rdf-schema#label> "Equipment Tag" .
+# https://cogito.iot.linkeddata.es/def/facility#SpatialZone
+<https://cogito.iot.linkeddata.es/def/facility#SpatialZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/facility#SpatialZone> <http://www.w3.org/2000/01/rdf-schema#comment> "A subclass of bot:Zone and, as such, a part of the physical or a virtual world that is inherently both located in this world and has a 3D spatial extent." .
+<https://cogito.iot.linkeddata.es/def/facility#SpatialZone> <http://www.w3.org/2000/01/rdf-schema#label> "Spatial Zone" .
 # 
-# https://cogito.iot.linkeddata.es/def/iot#HumanTag
-<https://cogito.iot.linkeddata.es/def/iot#HumanTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/iot#HumanTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/iot#TrackingTag> .
-<https://cogito.iot.linkeddata.es/def/iot#HumanTag> <http://www.w3.org/2000/01/rdf-schema#comment> "A tracking tag assigned to a human" .
-<https://cogito.iot.linkeddata.es/def/iot#HumanTag> <http://www.w3.org/2000/01/rdf-schema#label> "Human Tag" .
+# https://cogito.iot.linkeddata.es/def/iot#EquipmentTagGroup
+<https://cogito.iot.linkeddata.es/def/iot#EquipmentTagGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/iot#EquipmentTagGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup> .
+<https://cogito.iot.linkeddata.es/def/iot#EquipmentTagGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A tracking tag group belonging to a piece of equipment" .
+<https://cogito.iot.linkeddata.es/def/iot#EquipmentTagGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Equipment Tag Group" .
+# 
+# https://cogito.iot.linkeddata.es/def/iot#HumanTagGroup
+<https://cogito.iot.linkeddata.es/def/iot#HumanTagGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/iot#HumanTagGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup> .
+<https://cogito.iot.linkeddata.es/def/iot#HumanTagGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A tracking tag group belonging to a human" .
+<https://cogito.iot.linkeddata.es/def/iot#HumanTagGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Human Tag Group" .
 # 
 # https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement
 <https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core#Measurement> .
+<https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Measurement> .
 <https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "The location measured by an entity (especially an iot:TrackingTag)" .
 <https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "Location Measurement" .
 # 
@@ -121,30 +142,42 @@
 <https://cogito.iot.linkeddata.es/def/iot#Result> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity representing the result of a saref:Measurement" .
 <https://cogito.iot.linkeddata.es/def/iot#Result> <http://www.w3.org/2000/01/rdf-schema#label> "Result" .
 # 
+# https://cogito.iot.linkeddata.es/def/iot#TrackedZone
+<https://cogito.iot.linkeddata.es/def/iot#TrackedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/iot#TrackedZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#SpatialZone> .
+<https://cogito.iot.linkeddata.es/def/iot#TrackedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity used to represent zones used by the IoT preprocessing module" .
+<https://cogito.iot.linkeddata.es/def/iot#TrackedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Tracked Zone" .
+# 
 # https://cogito.iot.linkeddata.es/def/iot#TrackingTag
 <https://cogito.iot.linkeddata.es/def/iot#TrackingTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/iot#TrackingTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core#Device> .
+<https://cogito.iot.linkeddata.es/def/iot#TrackingTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Device> .
 <https://cogito.iot.linkeddata.es/def/iot#TrackingTag> <http://www.w3.org/2000/01/rdf-schema#comment> "A subclass of saref:Device and, as such, a tangible object designed to accomplish a particular task; in this case signalling its location" .
+<https://cogito.iot.linkeddata.es/def/iot#TrackingTag> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity" .
 <https://cogito.iot.linkeddata.es/def/iot#TrackingTag> <http://www.w3.org/2000/01/rdf-schema#label> "Tracking Tag" .
+# 
+# https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup
+<https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity used to group tracking tags" .
+<https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Tracking Tag Group" .
 # 
 # https://cogito.iot.linkeddata.es/def/resource#Resource
 <https://cogito.iot.linkeddata.es/def/resource#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/resource#Resource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core#FeatureOfInterest> .
+<https://cogito.iot.linkeddata.es/def/resource#Resource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/FeatureOfInterest> .
 <https://cogito.iot.linkeddata.es/def/resource#Resource> <http://www.w3.org/2000/01/rdf-schema#comment> "A source of supply, support, or aid, especially one that can be readily drawn upon when needed; and from which a property is measured" .
 # 
-# https://saref.etsi.org/core#Device
-<https://saref.etsi.org/core#Device> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://saref.etsi.org/core#Device> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/core#> .
-<https://saref.etsi.org/core#Device> <http://www.w3.org/2000/01/rdf-schema#label> "Device" .
+# https://saref.etsi.org/core/Device
+<https://saref.etsi.org/core/Device> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/core#> .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#label> "Device" .
 # 
-# https://saref.etsi.org/core#FeatureOfInterest
-<https://saref.etsi.org/core#FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://saref.etsi.org/core#FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/core#> .
-<https://saref.etsi.org/core#FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Feature of Interest" .
+# https://saref.etsi.org/core/FeatureOfInterest
+<https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/core#> .
+<https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Feature of Interest" .
 # 
-# https://saref.etsi.org/core#Measurement
-<https://saref.etsi.org/core#Measurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://saref.etsi.org/core#Measurement> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/core#> .
-<https://saref.etsi.org/core#Measurement> <http://www.w3.org/2000/01/rdf-schema#label> "Measurement" .
+# https://saref.etsi.org/core/Measurement
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/core#> .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#label> "Measurement" .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

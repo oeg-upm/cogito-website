@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/description> "The COGITO Process ontology aims at modelling the construction process." .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/elements/1.1/title> "Process Ontology" .
 <https://cogito.iot.linkeddata.es/def/process#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/def/process#> <http://www.w3.org/2002/07/owl#versionInfo> "0.10.0" .
+<https://cogito.iot.linkeddata.es/def/process#> <http://www.w3.org/2002/07/owl#versionInfo> "0.11.0" .
 # 
 # 
 # #################################################################
@@ -211,6 +211,11 @@
 <http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
 <http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#label> "creator" .
 # 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/dc/terms" .
+<http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#label> "description" .
+# 
 # http://purl.org/dc/terms/identifier
 <http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
@@ -236,6 +241,21 @@
 <https://cogito.iot.linkeddata.es/def/process#amount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
 <https://cogito.iot.linkeddata.es/def/process#amount> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the amount of an entity" .
 <https://cogito.iot.linkeddata.es/def/process#amount> <http://www.w3.org/2000/01/rdf-schema#label> "amount" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#crewNumber
+<https://cogito.iot.linkeddata.es/def/process#crewNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#crewNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "Property used as resource multiplier factor to specify the number of crews assigned to the task in order to do the work with the provided duration" .
+<https://cogito.iot.linkeddata.es/def/process#crewNumber> <http://www.w3.org/2000/01/rdf-schema#label> "crew number" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#crewProductivity
+<https://cogito.iot.linkeddata.es/def/process#crewProductivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#crewProductivity> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating  \"amount of work / unit of time\". At the moment, we only capture the list of elements to be built, so the productivity values we would use are \"units / time\". But, work quantity is typically measured as: m, m2, m3, units, depending on the type of activity. So, we could have a mixture of productivity metrics, m/time, m2/time, m3/time, depending on the type of activity." .
+<https://cogito.iot.linkeddata.es/def/process#crewProductivity> <http://www.w3.org/2000/01/rdf-schema#label> "crew productivity" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#crewProductivityPenalty
+<https://cogito.iot.linkeddata.es/def/process#crewProductivityPenalty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#crewProductivityPenalty> <http://www.w3.org/2000/01/rdf-schema#comment> "Property used as factor to limit the maximum number of crew working in a task" .
+<https://cogito.iot.linkeddata.es/def/process#crewProductivityPenalty> <http://www.w3.org/2000/01/rdf-schema#label> "crew productivity penalty" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#currencyCode
 <https://cogito.iot.linkeddata.es/def/process#currencyCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -338,6 +358,16 @@
 <https://cogito.iot.linkeddata.es/def/process#totalFloat> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the number of days an entity (especially a task) can be delayed" .
 <https://cogito.iot.linkeddata.es/def/process#totalFloat> <http://www.w3.org/2000/01/rdf-schema#label> "total float" .
 # 
+# https://cogito.iot.linkeddata.es/def/process#workQuantity
+<https://cogito.iot.linkeddata.es/def/process#workQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#workQuantity> <http://www.w3.org/2000/01/rdf-schema#comment> "Property  indicating  the amount of work. Work quantity is typically measured as: m, m2, m3, units, depending on the type of activity. So, we could have a mixture of productivity metrics, m/time, m2/time, m3/time, depending on the type of activity." .
+<https://cogito.iot.linkeddata.es/def/process#workQuantity> <http://www.w3.org/2000/01/rdf-schema#label> "work quantity" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#workQuantityUnit
+<https://cogito.iot.linkeddata.es/def/process#workQuantityUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#workQuantityUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating the unit used to measure wok quantity. Work quantity is typically measured as: m, m2, m3, units, depending on the type of activity." .
+<https://cogito.iot.linkeddata.es/def/process#workQuantityUnit> <http://www.w3.org/2000/01/rdf-schema#label> "work quantity unit" .
+# 
 # 
 # 
 # #################################################################
@@ -402,11 +432,17 @@
 <https://cogito.iot.linkeddata.es/def/process#ResourceTypeRequirement> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity that includes the requitrments that a task has pertaining a resource type" .
 <https://cogito.iot.linkeddata.es/def/process#ResourceTypeRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "Resource Type Requirement" .
 # 
-# https://cogito.iot.linkeddata.es/def/process#SatetyTask
-<https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
-<https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A task related to the safety domain" .
-<https://cogito.iot.linkeddata.es/def/process#SatetyTask> <http://www.w3.org/2000/01/rdf-schema#label> "Safety Task" .
+# https://cogito.iot.linkeddata.es/def/process#SatetyAddingTask
+<https://cogito.iot.linkeddata.es/def/process#SatetyAddingTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#SatetyAddingTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#SatetyAddingTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A task related to the safety domain that adds elements" .
+<https://cogito.iot.linkeddata.es/def/process#SatetyAddingTask> <http://www.w3.org/2000/01/rdf-schema#label> "Safety Adding Task" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#SatetyRemovingTask
+<https://cogito.iot.linkeddata.es/def/process#SatetyRemovingTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/process#SatetyRemovingTask> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/process#Task> .
+<https://cogito.iot.linkeddata.es/def/process#SatetyRemovingTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A task related to the safety domain that removes elements" .
+<https://cogito.iot.linkeddata.es/def/process#SatetyRemovingTask> <http://www.w3.org/2000/01/rdf-schema#label> "Safety Removing Task" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#Task
 <https://cogito.iot.linkeddata.es/def/process#Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

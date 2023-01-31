@@ -13,7 +13,7 @@
                                                  <http://purl.org/dc/elements/1.1/description> "The COGITO Process ontology aims at modelling the construction process." ;
                                                  <http://purl.org/dc/elements/1.1/title> "Process Ontology" ;
                                                  <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                                 owl:versionInfo "0.10.0" .
+                                                 owl:versionInfo "0.11.0" .
 
 #################################################################
 #    Annotation properties
@@ -236,6 +236,12 @@
                                    rdfs:label "creator" .
 
 
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:DatatypeProperty ;
+                                       rdfs:isDefinedBy "http://purl.org/dc/terms" ;
+                                       rdfs:label "description" .
+
+
 ###  http://purl.org/dc/terms/identifier
 <http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty ;
                                       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
@@ -265,6 +271,24 @@
         rdfs:range xsd:float ;
         rdfs:comment "A property indicating the amount of an entity" ;
         rdfs:label "amount" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#crewNumber
+:crewNumber rdf:type owl:DatatypeProperty ;
+            rdfs:comment "Property used as resource multiplier factor to specify the number of crews assigned to the task in order to do the work with the provided duration" ;
+            rdfs:label "crew number" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#crewProductivity
+:crewProductivity rdf:type owl:DatatypeProperty ;
+                  rdfs:comment "Property indicating  \"amount of work / unit of time\". At the moment, we only capture the list of elements to be built, so the productivity values we would use are \"units / time\". But, work quantity is typically measured as: m, m2, m3, units, depending on the type of activity. So, we could have a mixture of productivity metrics, m/time, m2/time, m3/time, depending on the type of activity." ;
+                  rdfs:label "crew productivity" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#crewProductivityPenalty
+:crewProductivityPenalty rdf:type owl:DatatypeProperty ;
+                         rdfs:comment "Property used as factor to limit the maximum number of crew working in a task" ;
+                         rdfs:label "crew productivity penalty" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#currencyCode
@@ -386,6 +410,18 @@
             rdfs:label "total float" .
 
 
+###  https://cogito.iot.linkeddata.es/def/process#workQuantity
+:workQuantity rdf:type owl:DatatypeProperty ;
+              rdfs:comment "Property  indicating  the amount of work. Work quantity is typically measured as: m, m2, m3, units, depending on the type of activity. So, we could have a mixture of productivity metrics, m/time, m2/time, m3/time, depending on the type of activity." ;
+              rdfs:label "work quantity" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#workQuantityUnit
+:workQuantityUnit rdf:type owl:DatatypeProperty ;
+                  rdfs:comment "Property indicating the unit used to measure wok quantity. Work quantity is typically measured as: m, m2, m3, units, depending on the type of activity." ;
+                  rdfs:label "work quantity unit" .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -455,11 +491,18 @@
                          rdfs:label "Resource Type Requirement" .
 
 
-###  https://cogito.iot.linkeddata.es/def/process#SatetyTask
-:SatetyTask rdf:type owl:Class ;
-            rdfs:subClassOf :Task ;
-            rdfs:comment "A task related to the safety domain" ;
-            rdfs:label "Safety Task" .
+###  https://cogito.iot.linkeddata.es/def/process#SatetyAddingTask
+:SatetyAddingTask rdf:type owl:Class ;
+                  rdfs:subClassOf :Task ;
+                  rdfs:comment "A task related to the safety domain that adds elements" ;
+                  rdfs:label "Safety Adding Task" .
+
+
+###  https://cogito.iot.linkeddata.es/def/process#SatetyRemovingTask
+:SatetyRemovingTask rdf:type owl:Class ;
+                    rdfs:subClassOf :Task ;
+                    rdfs:comment "A task related to the safety domain that removes elements" ;
+                    rdfs:label "Safety Removing Task" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/process#Task

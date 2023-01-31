@@ -42,6 +42,13 @@
 <https://cogito.iot.linkeddata.es/def/quality#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially qual:QualityInformation and quel:Rule) to a facility:Project" .
 <https://cogito.iot.linkeddata.es/def/quality#isRelatedToProject> <http://www.w3.org/2000/01/rdf-schema#label> "is related to project" .
 # 
+# https://cogito.iot.linkeddata.es/quality#hasInformationResource
+<https://cogito.iot.linkeddata.es/quality#hasInformationResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#hasInformationResource> <http://www.w3.org/2002/07/owl#inverseOf> <https://cogito.iot.linkeddata.es/quality#isRelatedToElement> .
+<https://cogito.iot.linkeddata.es/quality#hasInformationResource> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/quality#InformationResource> .
+<https://cogito.iot.linkeddata.es/quality#hasInformationResource> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a facility:Element) to a qual:InformationResource" .
+<https://cogito.iot.linkeddata.es/quality#hasInformationResource> <http://www.w3.org/2000/01/rdf-schema#label> "has information resource" .
+# 
 # https://cogito.iot.linkeddata.es/quality#hasProcessedImage
 <https://cogito.iot.linkeddata.es/quality#hasProcessedImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/quality#hasProcessedImage> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/quality#Image> .
@@ -64,7 +71,7 @@
 # https://cogito.iot.linkeddata.es/quality#isRelatedToElement
 <https://cogito.iot.linkeddata.es/quality#isRelatedToElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/quality#isRelatedToElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
-<https://cogito.iot.linkeddata.es/quality#isRelatedToElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially qual:QualityInformation) to a facility:Element" .
+<https://cogito.iot.linkeddata.es/quality#isRelatedToElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially qual:InformationResource) to a facility:Element" .
 <https://cogito.iot.linkeddata.es/quality#isRelatedToElement> <http://www.w3.org/2000/01/rdf-schema#label> "is related to element" .
 # 
 # https://cogito.iot.linkeddata.es/quality#isRelatedToTask

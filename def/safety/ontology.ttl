@@ -13,7 +13,7 @@
                                             <http://purl.org/dc/elements/1.1/description> "The COGITO Safety ontology aims at modelling the safety of the construction  domain." ;
                                             <http://purl.org/dc/elements/1.1/title> "Safety Ontology" ;
                                             <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                            owl:versionInfo "0.3.0" .
+                                            owl:versionInfo "0.4.0" .
 
 #################################################################
 #    Annotation properties
@@ -39,15 +39,53 @@
 #    Object Properties
 #################################################################
 
-###  https://cogito.iot.linkeddata.es/safety#refersToZone
-:refersToZone rdf:type owl:ObjectProperty ;
-              rdfs:comment "Property that relates an entity (especially a safety:SafetyInformation) to a facility:ConstructionZone" ;
-              rdfs:label "refers to zone" .
+###  https://cogito.iot.linkeddata.es/safety#ImpliedByMovement
+:ImpliedByMovement rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :impliedByZone ;
+                   rdfs:range :MovementZone ;
+                   rdfs:comment "A safety:impliedByZone sub-property whose range is a safety:MovementZone" ;
+                   rdfs:label "implied by movement" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#hasSafetyIssue
+:hasSafetyIssue rdf:type owl:ObjectProperty ;
+                rdfs:range :SafetyIssue ;
+                rdfs:comment "Property that relates an entity (especially a safety:HazardZone) to a safety:SafetyIssue" ;
+                rdfs:label "has safety issue" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#impliedByHole
+:impliedByHole rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :impliedByZone ;
+               rdfs:range :HoleZone ;
+               rdfs:comment "A safety:impliedByZone sub-property whose range is a safety:HoleZone" ;
+               rdfs:label "implied by hole" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#impliedByZone
+:impliedByZone rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:range :AnalysisZone ;
+               rdfs:comment "A property relating an entity (especially a safety:HazardZone) to the safety:AnalysisZones that define it" ;
+               rdfs:label "implied by zone" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#isMitigatedByElement
+:isMitigatedByElement rdf:type owl:ObjectProperty ;
+                      rdfs:range :MitigationElement ;
+                      rdfs:comment "A property relating an entity (especially a safety:SafetyIssue) to a safety:MitigationElement used to mitigate it" ;
+                      rdfs:label "is mitigated by element" .
 
 
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:DatatypeProperty ;
+                                       rdfs:isDefinedBy "http://purl.org/dc/terms" ;
+                                       rdfs:label "description" .
+
 
 ###  http://purl.org/dc/terms/identifier
 <http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty ;
@@ -61,12 +99,6 @@
                                  rdfs:label "title" .
 
 
-###  https://cogito.iot.linkeddata.es/safety#mitigation
-:mitigation rdf:type owl:DatatypeProperty ;
-            rdfs:comment "Property indicating a mitigation (for a risk)" ;
-            rdfs:label "mitigation" .
-
-
 ###  https://cogito.iot.linkeddata.es/safety#severity
 :severity rdf:type owl:DatatypeProperty ;
           rdfs:comment "Property indicating de severity of a safety hazard" ;
@@ -77,16 +109,71 @@
 #    Classes
 #################################################################
 
-###  https://cogito.iot.linkeddata.es/def/facility#ConstructionZone
-<https://cogito.iot.linkeddata.es/def/facility#ConstructionZone> rdf:type owl:Class ;
-                                                                 rdfs:comment "An entity used to represent zones used by the Health and Safety module" ;
-                                                                 rdfs:label "Construction Zone" .
+###  https://cogito.iot.linkeddata.es/def/facility#Element
+<https://cogito.iot.linkeddata.es/def/facility#Element> rdf:type owl:Class ;
+                                                        rdfs:comment "A subclass or bot:Element and, as such, a constituent of a construction entity with a characteristic technical function, form, or position." ;
+                                                        rdfs:label "Element" .
 
 
-###  https://cogito.iot.linkeddata.es/safety#SafetyInformation
-:SafetyInformation rdf:type owl:Class ;
-                   rdfs:comment "Data regarding the safety" ;
-                   rdfs:label "Safety Information" .
+###  https://cogito.iot.linkeddata.es/def/facility#SpatialZone
+<https://cogito.iot.linkeddata.es/def/facility#SpatialZone> rdf:type owl:Class ;
+                                                            rdfs:comment "A subclass of bot:Zone and, as such, a part of the physical or a virtual world that is inherently both located in this world and has a 3D spatial extent." ;
+                                                            rdfs:label "Spatial Zone" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#AnalysisZone
+:AnalysisZone rdf:type owl:Class ;
+              rdfs:subClassOf <https://cogito.iot.linkeddata.es/def/facility#SpatialZone> ;
+              rdfs:comment "A spatial zone that is inspected" ;
+              rdfs:label "Analysis Zone" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#FallHazardZone
+:FallHazardZone rdf:type owl:Class ;
+                rdfs:subClassOf :HazardZone ;
+                rdfs:comment "A hazard zone where somebody can fall" ;
+                rdfs:label "Fall Hazard Zone" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#HazardZone
+:HazardZone rdf:type owl:Class ;
+            rdfs:subClassOf <https://cogito.iot.linkeddata.es/def/facility#SpatialZone> ;
+            rdfs:comment "An spatial zone defining a safety hazard" ;
+            rdfs:label "Hazard Zone" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#HoleZone
+:HoleZone rdf:type owl:Class ;
+          rdfs:subClassOf :AnalysisZone ;
+          rdfs:comment "An analysis zone defining a hole" ;
+          rdfs:label "Hole Zone" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#MitigationElement
+:MitigationElement rdf:type owl:Class ;
+                   rdfs:subClassOf <https://cogito.iot.linkeddata.es/def/facility#Element> ;
+                   rdfs:comment "An element used to mitigate a safety hazard" ;
+                   rdfs:label "Mitigation Element" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#MovementZone
+:MovementZone rdf:type owl:Class ;
+              rdfs:subClassOf :AnalysisZone ;
+              rdfs:comment "An analysis zone where somebody can move" ;
+              rdfs:label "Movement Zone" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#NormalElement
+:NormalElement rdf:type owl:Class ;
+               rdfs:subClassOf <https://cogito.iot.linkeddata.es/def/facility#Element> ;
+               rdfs:comment "An element not used for safety during the construction process" ;
+               rdfs:label "Normal Element" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#SafetyIssue
+:SafetyIssue rdf:type owl:Class ;
+             rdfs:comment "Data regarding a safety problem" ;
+             rdfs:label "Safety Issue" .
 
 
 ###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

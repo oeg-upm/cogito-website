@@ -8,8 +8,26 @@
   "@id" : "http://purl.org/dc/elements/1.1/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/terms/identifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "identifier"
+  } ]
+}, {
   "@id" : "http://purl.org/dc/terms/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/titile",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "title"
+  } ]
 }, {
   "@id" : "http://www.opengis.net/ont/geosparql#Point",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -21,6 +39,15 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/iot#Result"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A subclass of bot:Zone and, as such, a part of the physical or a virtual world that is inherently both located in this world and has a 3D spatial extent."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Spatial Zone"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#",
@@ -42,31 +69,31 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.2.0"
+    "@value" : "0.4.0"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/iot#EquipmentTag",
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#EquipmentTagGroup",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A tracking tag assigned to a piece of equipment"
+    "@value" : "A tracking tag group belonging to a piece of equipment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Equipment Tag"
+    "@value" : "Equipment Tag Group"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/iot#TrackingTag"
+    "@id" : "https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/iot#HumanTag",
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#HumanTagGroup",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A tracking tag assigned to a human"
+    "@value" : "A tracking tag group belonging to a human"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Human Tag"
+    "@value" : "Human Tag Group"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/iot#TrackingTag"
+    "@id" : "https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement",
@@ -78,7 +105,7 @@
     "@value" : "Location Measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://saref.etsi.org/core#Measurement"
+    "@id" : "https://saref.etsi.org/core/Measurement"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#Result",
@@ -90,16 +117,51 @@
     "@value" : "Result"
   } ]
 }, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#TrackedZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An entity used to represent zones used by the IoT preprocessing module"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Tracked Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#TrackingTag",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A subclass of saref:Device and, as such, a tangible object designed to accomplish a particular task; in this case signalling its location"
+  }, {
+    "@value" : "An entity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Tracking Tag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://saref.etsi.org/core#Device"
+    "@id" : "https://saref.etsi.org/core/Device"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An entity used to group tracking tags"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Tracking Tag Group"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property relating an entity (especially an iot:TrackingTag) to an iot:TrackingTag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "belongs to tag group"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#hasLocation",
@@ -153,34 +215,7 @@
     "@value" : "A source of supply, support, or aid, especially one that can be readily drawn upon when needed; and from which a property is measured"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://saref.etsi.org/core#FeatureOfInterest"
-  } ]
-}, {
-  "@id" : "https://saref.etsi.org/core#Device",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://saref.etsi.org/core#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Device"
-  } ]
-}, {
-  "@id" : "https://saref.etsi.org/core#FeatureOfInterest",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://saref.etsi.org/core#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Feature of Interest"
-  } ]
-}, {
-  "@id" : "https://saref.etsi.org/core#Measurement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://saref.etsi.org/core#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Measurement"
+    "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
   } ]
 }, {
   "@id" : "https://saref.etsi.org/core#hasTimestamp",
@@ -208,5 +243,32 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "makes measurement"
+  } ]
+}, {
+  "@id" : "https://saref.etsi.org/core/Device",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://saref.etsi.org/core#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Device"
+  } ]
+}, {
+  "@id" : "https://saref.etsi.org/core/FeatureOfInterest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://saref.etsi.org/core#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Feature of Interest"
+  } ]
+}, {
+  "@id" : "https://saref.etsi.org/core/Measurement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://saref.etsi.org/core#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Measurement"
   } ]
 } ]

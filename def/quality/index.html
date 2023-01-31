@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/quality#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/quality#","name":"Quality Ontology", "headline":"The COGITO Quality ontology aims at modelling the construction quality domain.", "datePublished":"Thu Nov 17 09:54:21 CET 2022", "version":"0.10.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/quality#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/quality#","name":"Quality Ontology", "headline":"The COGITO Quality ontology aims at modelling the construction quality domain.", "datePublished":"Fri Jan 13 12:33:25 CET 2023", "version":"0.10.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -173,6 +173,10 @@ This ontology has the following classes and properties.</span>
       <a href="#https://cogito.iot.linkeddata.es/process#Task" title="https://cogito.iot.linkeddata.es/process#Task">Task</a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#hasInformationResource"
+         title="https://cogito.iot.linkeddata.es/quality#hasInformationResource">has information resource</a>
+   </li>
    <li>
       <a href="#hasProcessedImage"
          title="https://cogito.iot.linkeddata.es/quality#hasProcessedImage">has processed image</a>
@@ -625,6 +629,12 @@ This section provides details for each class and property defined by Quality Ont
                title="https://cogito.iot.linkeddata.es/quality#PointCoud">Point Cloud</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasInformationResource"
+               title="https://cogito.iot.linkeddata.es/quality#hasInformationResource">has information resource</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="QualityResult">
@@ -713,6 +723,10 @@ This section provides details for each class and property defined by Quality Ont
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
+         <a href="#hasInformationResource"
+            title="https://cogito.iot.linkeddata.es/quality#hasInformationResource">has information resource</a>
+      </li>
+      <li>
          <a href="#hasProcessedImage"
             title="https://cogito.iot.linkeddata.es/quality#hasProcessedImage">has processed image</a>
       </li>
@@ -757,6 +771,33 @@ This section provides details for each class and property defined by Quality Ont
             title="https://cogito.iot.linkeddata.es/quality#refelctsQualityResult">reflects quality result</a>
       </li>
    </ul>
+   <div class="entity" id="hasInformationResource">
+      <h3>has information resource<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#hasInformationResource</p>
+      <div class="comment">
+         <span class="markdown">Property that relates an entity (especially a facility:Element) to a qual:InformationResource</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#InformationResource"
+                  title="https://cogito.iot.linkeddata.es/quality#InformationResource">Quality Information</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isRelatedToElement"
+                  title="https://cogito.iot.linkeddata.es/quality#isRelatedToElement">is related to element</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasProcessedImage">
       <h3>has processed image<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -832,7 +873,7 @@ This section provides details for each class and property defined by Quality Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#isRelatedToElement</p>
       <div class="comment">
-         <span class="markdown">Property that relates an entity (especially qual:QualityInformation) to a facility:Element</span>
+         <span class="markdown">Property that relates an entity (especially qual:InformationResource) to a facility:Element</span>
       </div>
       <div class="description">
          <dl>
@@ -841,6 +882,12 @@ This section provides details for each class and property defined by Quality Ont
                <a href="#https://cogito.iot.linkeddata.es/def/facility#Element"
                   title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasInformationResource"
+                  title="https://cogito.iot.linkeddata.es/quality#hasInformationResource">has information resource</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>

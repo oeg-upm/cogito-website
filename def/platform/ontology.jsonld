@@ -54,7 +54,7 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.3.0"
+    "@value" : "0.4.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/platform#DigitalTwin",
@@ -66,16 +66,16 @@
     "@value" : "Digital Twin"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/platform#PlatformThing"
+    "@id" : "https://cogito.iot.linkeddata.es/platform#PlanformThing"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/platform#PlatformThing",
+  "@id" : "https://cogito.iot.linkeddata.es/platform#PlanformThing",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A subclass of a td:Thing and, as such, an abstraction of a physical or a virtual entity whose metadata and interfaces are described by a WoT Thing Description. In this case, an entity of a construction twin, namely, a facility:Project, a facility:Element, a qual:Image. a qual:PointCloud and a qual:Mesh."
+    "@value" : "An entity that is a td:thing (entity whose metadata and interfaces are described by a WoT Thing Description) in the platform"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Construction Twin Thing"
+    "@value" : "Platform Thing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://www.w3.org/2019/wot/td#Thing"
@@ -90,7 +90,7 @@
     "@value" : "has file"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#forms"
+    "@id" : "https://www.w3.org/2019/wot/td#hasForm"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/platform#hasIRI",
@@ -102,7 +102,7 @@
     "@value" : "has IRI"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#forms"
+    "@id" : "https://www.w3.org/2019/wot/td#hasForm"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/platform#hasIfc",
@@ -114,7 +114,7 @@
     "@value" : "has Ifc"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#links"
+    "@id" : "https://www.w3.org/2019/wot/td#hasLink"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/platform#hasKnowledgeGraph",
@@ -126,7 +126,7 @@
     "@value" : "has knowledge graph"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#forms"
+    "@id" : "https://www.w3.org/2019/wot/td#hasForm"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/platform#hasMesh",
@@ -138,7 +138,7 @@
     "@value" : "has mesh"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#links"
+    "@id" : "https://www.w3.org/2019/wot/td#hasLink"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/platform#hasPointCloud",
@@ -150,7 +150,7 @@
     "@value" : "has point cloud"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#links"
+    "@id" : "https://www.w3.org/2019/wot/td#hasLink"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/platform#hasSchedule",
@@ -162,7 +162,7 @@
     "@value" : "has schedule"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#links"
+    "@id" : "https://www.w3.org/2019/wot/td#hasLink"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/platform#relatedTD",
@@ -174,25 +174,7 @@
     "@value" : "related thing description"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#links"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#AsBuiltMesh",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A mesh representing a built entity (especially a facility:Element)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "As-built Mesh"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A point cloud representing a built entity (especially a facility:Element)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "As-built Point Cloud"
+    "@id" : "https://www.w3.org/2019/wot/td#hasLink"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource",
@@ -204,32 +186,17 @@
     "@value" : "Information Resource"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/platform#PlatformThing"
+    "@id" : "https://cogito.iot.linkeddata.es/platform#PlanformThing"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#RawImage",
+  "@id" : "https://www.w3.org/2019/wot/hypermedia#Form",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An image that has not been processed"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Raw Image"
-  } ]
-}, {
-  "@id" : "https://www.w3.org/2019/wot/td#Form",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Form"
   } ]
 }, {
-  "@id" : "https://www.w3.org/2019/wot/td#Link",
+  "@id" : "https://www.w3.org/2019/wot/hypermedia#Link",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Link"
   } ]
@@ -243,27 +210,27 @@
     "@value" : "Thing"
   } ]
 }, {
-  "@id" : "https://www.w3.org/2019/wot/td#forms",
+  "@id" : "https://www.w3.org/2019/wot/td#hasForm",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://www.w3.org/2019/wot/td#"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "forms"
+    "@value" : "has form"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#Form"
+    "@id" : "https://www.w3.org/2019/wot/hypermedia#Form"
   } ]
 }, {
-  "@id" : "https://www.w3.org/2019/wot/td#links",
+  "@id" : "https://www.w3.org/2019/wot/td#hasLink",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://www.w3.org/2019/wot/td#"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "links"
+    "@value" : "has link"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://www.w3.org/2019/wot/td#Link"
+    "@id" : "https://www.w3.org/2019/wot/hypermedia#Link"
   } ]
 } ]

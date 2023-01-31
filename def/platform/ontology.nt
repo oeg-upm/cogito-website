@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/platform#> <http://purl.org/dc/elements/1.1/description> "The COGITO Platfrom ontology aims at modelling the entities considered in the the Digital Twin Platform, a component of the COGITO architecture" .
 <https://cogito.iot.linkeddata.es/platform#> <http://purl.org/dc/elements/1.1/title> "Platform Ontology" .
 <https://cogito.iot.linkeddata.es/platform#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/platform#> <http://www.w3.org/2002/07/owl#versionInfo> "0.3.0" .
+<https://cogito.iot.linkeddata.es/platform#> <http://www.w3.org/2002/07/owl#versionInfo> "0.4.0" .
 # 
 # 
 # #################################################################
@@ -38,63 +38,63 @@
 # 
 # https://cogito.iot.linkeddata.es/platform#hasFile
 <https://cogito.iot.linkeddata.es/platform#hasFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/platform#hasFile> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#forms> .
+<https://cogito.iot.linkeddata.es/platform#hasFile> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasForm> .
 <https://cogito.iot.linkeddata.es/platform#hasFile> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file" .
 <https://cogito.iot.linkeddata.es/platform#hasFile> <http://www.w3.org/2000/01/rdf-schema#label> "has file" .
 # 
 # https://cogito.iot.linkeddata.es/platform#hasIRI
 <https://cogito.iot.linkeddata.es/platform#hasIRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/platform#hasIRI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#forms> .
+<https://cogito.iot.linkeddata.es/platform#hasIRI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasForm> .
 <https://cogito.iot.linkeddata.es/platform#hasIRI> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its IRI" .
 <https://cogito.iot.linkeddata.es/platform#hasIRI> <http://www.w3.org/2000/01/rdf-schema#label> "has IRI" .
 # 
 # https://cogito.iot.linkeddata.es/platform#hasIfc
 <https://cogito.iot.linkeddata.es/platform#hasIfc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/platform#hasIfc> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#links> .
+<https://cogito.iot.linkeddata.es/platform#hasIfc> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasLink> .
 <https://cogito.iot.linkeddata.es/platform#hasIfc> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its IFC file" .
 <https://cogito.iot.linkeddata.es/platform#hasIfc> <http://www.w3.org/2000/01/rdf-schema#label> "has Ifc" .
 # 
 # https://cogito.iot.linkeddata.es/platform#hasKnowledgeGraph
 <https://cogito.iot.linkeddata.es/platform#hasKnowledgeGraph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/platform#hasKnowledgeGraph> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#forms> .
+<https://cogito.iot.linkeddata.es/platform#hasKnowledgeGraph> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasForm> .
 <https://cogito.iot.linkeddata.es/platform#hasKnowledgeGraph> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its knowledge graph" .
 <https://cogito.iot.linkeddata.es/platform#hasKnowledgeGraph> <http://www.w3.org/2000/01/rdf-schema#label> "has knowledge graph" .
 # 
 # https://cogito.iot.linkeddata.es/platform#hasMesh
 <https://cogito.iot.linkeddata.es/platform#hasMesh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/platform#hasMesh> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#links> .
+<https://cogito.iot.linkeddata.es/platform#hasMesh> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasLink> .
 <https://cogito.iot.linkeddata.es/platform#hasMesh> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its mesh file" .
 <https://cogito.iot.linkeddata.es/platform#hasMesh> <http://www.w3.org/2000/01/rdf-schema#label> "has mesh" .
 # 
 # https://cogito.iot.linkeddata.es/platform#hasPointCloud
 <https://cogito.iot.linkeddata.es/platform#hasPointCloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/platform#hasPointCloud> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#links> .
+<https://cogito.iot.linkeddata.es/platform#hasPointCloud> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasLink> .
 <https://cogito.iot.linkeddata.es/platform#hasPointCloud> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its point cloud file" .
 <https://cogito.iot.linkeddata.es/platform#hasPointCloud> <http://www.w3.org/2000/01/rdf-schema#label> "has point cloud" .
 # 
 # https://cogito.iot.linkeddata.es/platform#hasSchedule
 <https://cogito.iot.linkeddata.es/platform#hasSchedule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/platform#hasSchedule> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#links> .
+<https://cogito.iot.linkeddata.es/platform#hasSchedule> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasLink> .
 <https://cogito.iot.linkeddata.es/platform#hasSchedule> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating its schedule file" .
 <https://cogito.iot.linkeddata.es/platform#hasSchedule> <http://www.w3.org/2000/01/rdf-schema#label> "has schedule" .
 # 
 # https://cogito.iot.linkeddata.es/platform#relatedTD
 <https://cogito.iot.linkeddata.es/platform#relatedTD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/platform#relatedTD> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#links> .
+<https://cogito.iot.linkeddata.es/platform#relatedTD> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasLink> .
 <https://cogito.iot.linkeddata.es/platform#relatedTD> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:links that relates a ctt:ConstructionTwinThing to a td:Link indicating a related thing description" .
 <https://cogito.iot.linkeddata.es/platform#relatedTD> <http://www.w3.org/2000/01/rdf-schema#label> "related thing description" .
 # 
-# https://www.w3.org/2019/wot/td#forms
-<https://www.w3.org/2019/wot/td#forms> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://www.w3.org/2019/wot/td#forms> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/2019/wot/td#Form> .
-<https://www.w3.org/2019/wot/td#forms> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://www.w3.org/2019/wot/td#> .
-<https://www.w3.org/2019/wot/td#forms> <http://www.w3.org/2000/01/rdf-schema#label> "forms" .
+# https://www.w3.org/2019/wot/td#hasForm
+<https://www.w3.org/2019/wot/td#hasForm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://www.w3.org/2019/wot/td#hasForm> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/2019/wot/hypermedia#Form> .
+<https://www.w3.org/2019/wot/td#hasForm> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://www.w3.org/2019/wot/td#> .
+<https://www.w3.org/2019/wot/td#hasForm> <http://www.w3.org/2000/01/rdf-schema#label> "has form" .
 # 
-# https://www.w3.org/2019/wot/td#links
-<https://www.w3.org/2019/wot/td#links> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://www.w3.org/2019/wot/td#links> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/2019/wot/td#Link> .
-<https://www.w3.org/2019/wot/td#links> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://www.w3.org/2019/wot/td#> .
-<https://www.w3.org/2019/wot/td#links> <http://www.w3.org/2000/01/rdf-schema#label> "links" .
+# https://www.w3.org/2019/wot/td#hasLink
+<https://www.w3.org/2019/wot/td#hasLink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://www.w3.org/2019/wot/td#hasLink> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/2019/wot/hypermedia#Link> .
+<https://www.w3.org/2019/wot/td#hasLink> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://www.w3.org/2019/wot/td#> .
+<https://www.w3.org/2019/wot/td#hasLink> <http://www.w3.org/2000/01/rdf-schema#label> "has link" .
 # 
 # 
 # 
@@ -119,46 +119,29 @@
 # 
 # https://cogito.iot.linkeddata.es/platform#DigitalTwin
 <https://cogito.iot.linkeddata.es/platform#DigitalTwin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/platform#DigitalTwin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/platform#PlatformThing> .
+<https://cogito.iot.linkeddata.es/platform#DigitalTwin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/platform#PlanformThing> .
 <https://cogito.iot.linkeddata.es/platform#DigitalTwin> <http://www.w3.org/2000/01/rdf-schema#comment> "Entity that is a digital twin in the platform" .
 <https://cogito.iot.linkeddata.es/platform#DigitalTwin> <http://www.w3.org/2000/01/rdf-schema#label> "Digital Twin" .
 # 
-# https://cogito.iot.linkeddata.es/platform#PlatformThing
-<https://cogito.iot.linkeddata.es/platform#PlatformThing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/platform#PlatformThing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/2019/wot/td#Thing> .
-<https://cogito.iot.linkeddata.es/platform#PlatformThing> <http://www.w3.org/2000/01/rdf-schema#comment> "A subclass of a td:Thing and, as such, an abstraction of a physical or a virtual entity whose metadata and interfaces are described by a WoT Thing Description. In this case, an entity of a construction twin, namely, a facility:Project, a facility:Element, a qual:Image. a qual:PointCloud and a qual:Mesh." .
-<https://cogito.iot.linkeddata.es/platform#PlatformThing> <http://www.w3.org/2000/01/rdf-schema#label> "Construction Twin Thing" .
-# 
-# https://cogito.iot.linkeddata.es/quality#AsBuiltMesh
-<https://cogito.iot.linkeddata.es/quality#AsBuiltMesh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#AsBuiltMesh> <http://www.w3.org/2000/01/rdf-schema#comment> "A mesh representing a built entity (especially a facility:Element)" .
-<https://cogito.iot.linkeddata.es/quality#AsBuiltMesh> <http://www.w3.org/2000/01/rdf-schema#label> "As-built Mesh" .
-# 
-# https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud
-<https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud> <http://www.w3.org/2000/01/rdf-schema#comment> "A point cloud representing a built entity (especially a facility:Element)" .
-<https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud> <http://www.w3.org/2000/01/rdf-schema#label> "As-built Point Cloud" .
+# https://cogito.iot.linkeddata.es/platform#PlanformThing
+<https://cogito.iot.linkeddata.es/platform#PlanformThing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/platform#PlanformThing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/2019/wot/td#Thing> .
+<https://cogito.iot.linkeddata.es/platform#PlanformThing> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity that is a td:thing (entity whose metadata and interfaces are described by a WoT Thing Description) in the platform" .
+<https://cogito.iot.linkeddata.es/platform#PlanformThing> <http://www.w3.org/2000/01/rdf-schema#label> "Platform Thing" .
 # 
 # https://cogito.iot.linkeddata.es/quality#InformationResource
 <https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/platform#PlatformThing> .
+<https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/platform#PlanformThing> .
 <https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/2000/01/rdf-schema#comment> "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform" .
 <https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/2000/01/rdf-schema#label> "Information Resource" .
 # 
-# https://cogito.iot.linkeddata.es/quality#RawImage
-<https://cogito.iot.linkeddata.es/quality#RawImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#RawImage> <http://www.w3.org/2000/01/rdf-schema#comment> "An image that has not been processed" .
-<https://cogito.iot.linkeddata.es/quality#RawImage> <http://www.w3.org/2000/01/rdf-schema#label> "Raw Image" .
+# https://www.w3.org/2019/wot/hypermedia#Form
+<https://www.w3.org/2019/wot/hypermedia#Form> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.w3.org/2019/wot/hypermedia#Form> <http://www.w3.org/2000/01/rdf-schema#label> "Form" .
 # 
-# https://www.w3.org/2019/wot/td#Form
-<https://www.w3.org/2019/wot/td#Form> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://www.w3.org/2019/wot/td#Form> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://www.w3.org/2019/wot/td#> .
-<https://www.w3.org/2019/wot/td#Form> <http://www.w3.org/2000/01/rdf-schema#label> "Form" .
-# 
-# https://www.w3.org/2019/wot/td#Link
-<https://www.w3.org/2019/wot/td#Link> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://www.w3.org/2019/wot/td#Link> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://www.w3.org/2019/wot/td#> .
-<https://www.w3.org/2019/wot/td#Link> <http://www.w3.org/2000/01/rdf-schema#label> "Link" .
+# https://www.w3.org/2019/wot/hypermedia#Link
+<https://www.w3.org/2019/wot/hypermedia#Link> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.w3.org/2019/wot/hypermedia#Link> <http://www.w3.org/2000/01/rdf-schema#label> "Link" .
 # 
 # https://www.w3.org/2019/wot/td#Thing
 <https://www.w3.org/2019/wot/td#Thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

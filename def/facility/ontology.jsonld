@@ -69,7 +69,7 @@
     "@id" : "https://pi.pauwel.be/voc/buildingelement"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.9.0"
+    "@value" : "0.10.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Bridge",
@@ -253,18 +253,6 @@
     "@id" : "https://w3id.org/bot#Storey"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#TrackedZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Something used to represent zones used by the IoT preprocessing module"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Tracked Zone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
-  } ]
-}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#WalkableZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -320,6 +308,15 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A property relating an entity (especially a facility:SpatialZone) to a facility:SpatialZone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is related to spatial zone"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite",

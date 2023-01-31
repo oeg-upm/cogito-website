@@ -83,6 +83,18 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/quality#hasInformationResource -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#hasInformationResource">
+        <owl:inverseOf rdf:resource="https://cogito.iot.linkeddata.es/quality#isRelatedToElement"/>
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/quality#InformationResource"/>
+        <rdfs:comment>Property that relates an entity (especially a facility:Element) to a qual:InformationResource</rdfs:comment>
+        <rdfs:label>has information resource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://cogito.iot.linkeddata.es/quality#hasProcessedImage -->
 
 
@@ -122,7 +134,7 @@
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#isRelatedToElement">
         <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/facility#Element"/>
-        <rdfs:comment>Property that relates an entity (especially qual:QualityInformation) to a facility:Element</rdfs:comment>
+        <rdfs:comment>Property that relates an entity (especially qual:InformationResource) to a facility:Element</rdfs:comment>
         <rdfs:label>is related to element</rdfs:label>
     </owl:ObjectProperty>
     

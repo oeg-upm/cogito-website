@@ -6,7 +6,7 @@
 <https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/elements/1.1/description> "The COGITO Facility ontology aims at modelling facilities in the construction domain." .
 <https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/elements/1.1/title> "Facility Ontology" .
 <https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/def/facility#> <http://www.w3.org/2002/07/owl#versionInfo> "0.9.0" .
+<https://cogito.iot.linkeddata.es/def/facility#> <http://www.w3.org/2002/07/owl#versionInfo> "0.10.0" .
 # 
 # 
 # #################################################################
@@ -57,6 +57,11 @@
 <https://cogito.iot.linkeddata.es/def/facility#hasSubElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
 <https://cogito.iot.linkeddata.es/def/facility#hasSubElement> <http://www.w3.org/2000/01/rdf-schema#comment> "A property that relates a facility:Element to another facility:Element it contains" .
 <https://cogito.iot.linkeddata.es/def/facility#hasSubElement> <http://www.w3.org/2000/01/rdf-schema#label> "has sub-element" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone> <http://www.w3.org/2000/01/rdf-schema#comment> "A property relating an entity (especially a facility:SpatialZone) to a facility:SpatialZone" .
+<https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone> <http://www.w3.org/2000/01/rdf-schema#label> "is related to spatial zone" .
 # 
 # https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite
 <https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -241,12 +246,6 @@
 <https://cogito.iot.linkeddata.es/def/facility#Storey> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/bot#Storey> .
 <https://cogito.iot.linkeddata.es/def/facility#Storey> <http://www.w3.org/2000/01/rdf-schema#comment> "A subclass of bot:Storey and, as such, is contained (bot:hasStorey) in one facility:Building, and is intended to contain (bot:hasSpace) one or more facility:Space that are horizontally connected." .
 <https://cogito.iot.linkeddata.es/def/facility#Storey> <http://www.w3.org/2000/01/rdf-schema#label> "Storey" .
-# 
-# https://cogito.iot.linkeddata.es/def/facility#TrackedZone
-<https://cogito.iot.linkeddata.es/def/facility#TrackedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/facility#TrackedZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#SpatialZone> .
-<https://cogito.iot.linkeddata.es/def/facility#TrackedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Something used to represent zones used by the IoT preprocessing module" .
-<https://cogito.iot.linkeddata.es/def/facility#TrackedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Tracked Zone" .
 # 
 # https://cogito.iot.linkeddata.es/def/facility#WalkableZone
 <https://cogito.iot.linkeddata.es/def/facility#WalkableZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

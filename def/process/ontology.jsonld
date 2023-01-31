@@ -26,6 +26,15 @@
     "@value" : "creator"
   } ]
 }, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://purl.org/dc/terms"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "description"
+  } ]
+}, {
   "@id" : "http://purl.org/dc/terms/identifier",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
@@ -84,7 +93,7 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.10.0"
+    "@value" : "0.11.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/process#AsIsProcess",
@@ -174,13 +183,25 @@
     "@value" : "Resource Type Requirement"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/process#SatetyTask",
+  "@id" : "https://cogito.iot.linkeddata.es/def/process#SatetyAddingTask",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A task related to the safety domain"
+    "@value" : "A task related to the safety domain that adds elements"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Safety Task"
+    "@value" : "Safety Adding Task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/process#Task"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/process#SatetyRemovingTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A task related to the safety domain that removes elements"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Safety Removing Task"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/process#Task"
@@ -295,6 +316,33 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/process#isControlledByTask"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/process#crewNumber",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property used as resource multiplier factor to specify the number of crews assigned to the task in order to do the work with the provided duration"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "crew number"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/process#crewProductivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property indicating  \"amount of work / unit of time\". At the moment, we only capture the list of elements to be built, so the productivity values we would use are \"units / time\". But, work quantity is typically measured as: m, m2, m3, units, depending on the type of activity. So, we could have a mixture of productivity metrics, m/time, m2/time, m3/time, depending on the type of activity."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "crew productivity"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/process#crewProductivityPenalty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property used as factor to limit the maximum number of crew working in a task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "crew productivity penalty"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/process#currencyCode",
@@ -742,6 +790,24 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/process#workQuantity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property  indicating  the amount of work. Work quantity is typically measured as: m, m2, m3, units, depending on the type of activity. So, we could have a mixture of productivity metrics, m/time, m2/time, m3/time, depending on the type of activity."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "work quantity"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/process#workQuantityUnit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property indicating the unit used to measure wok quantity. Work quantity is typically measured as: m, m2, m3, units, depending on the type of activity."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "work quantity unit"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/resource#Resource",
