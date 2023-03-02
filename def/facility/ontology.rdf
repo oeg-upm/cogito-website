@@ -75,12 +75,23 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/def/facility#belongToSpatialZone -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/facility#belongToSpatialZone">
+        <owl:inverseOf rdf:resource="https://w3id.org/bot#hasElement"/>
+        <rdfs:comment>A property relating an entity, especially a facility:Element to a facility:SpatialZone</rdfs:comment>
+        <rdfs:label>belongs to spatial zone</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://cogito.iot.linkeddata.es/def/facility#hasFacility -->
 
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/facility#hasFacility">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/bot#containsZone"/>
-        <rdfs:comment>A property relating a facility:Zone (especially a facility:Site) to a facility:Facility</rdfs:comment>
+        <rdfs:comment>A property relating a facility:SpatialZone (especially a facility:Site) to a facility:Facility</rdfs:comment>
         <rdfs:label>has facility</rdfs:label>
     </owl:ObjectProperty>
     
@@ -93,7 +104,7 @@
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/bot#containsZone"/>
         <rdfs:domain rdf:resource="https://cogito.iot.linkeddata.es/def/facility#SpatialZone"/>
         <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/facility#FacilityPart"/>
-        <rdfs:comment>A property relating a facility:Zone (especially a facility:Facility or a facility:FacilityPart) to a facility:FacilityPart</rdfs:comment>
+        <rdfs:comment>A property relating a facility:SpatialZone (especially a facility:Facility or a facility:FacilityPart) to a facility:FacilityPart</rdfs:comment>
         <rdfs:label>has facility part</rdfs:label>
     </owl:ObjectProperty>
     
@@ -349,17 +360,6 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/def/facility#FallZone -->
-
-
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/facility#FallZone">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/facility#ConstructionZone"/>
-        <rdfs:comment>A zone where somebody or something can fall through</rdfs:comment>
-        <rdfs:label>Fall Zone</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://cogito.iot.linkeddata.es/def/facility#Project -->
 
 
@@ -442,14 +442,12 @@ street or highway</rdfs:comment>
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/def/facility#WalkableZone -->
+    <!-- https://pi.pauwel.be/voc/buildingelement#BuildingElement -->
 
 
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/facility#WalkableZone">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/facility#ConstructionZone"/>
-        <rdfs:comment>A zone where somebody or something can walk along</rdfs:comment>
-        <rdfs:label>Walkable Zone</rdfs:label>
-    </owl:Class>
+    <rdf:Description rdf:about="https://pi.pauwel.be/voc/buildingelement#BuildingElement">
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/facility#Element"/>
+    </rdf:Description>
     
 
 

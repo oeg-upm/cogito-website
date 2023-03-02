@@ -36,11 +36,17 @@
 # #################################################################
 # 
 # 
-# https://cogito.iot.linkeddata.es/platform#hasFile
-<https://cogito.iot.linkeddata.es/platform#hasFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/platform#hasFile> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasForm> .
-<https://cogito.iot.linkeddata.es/platform#hasFile> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file" .
-<https://cogito.iot.linkeddata.es/platform#hasFile> <http://www.w3.org/2000/01/rdf-schema#label> "has file" .
+# https://cogito.iot.linkeddata.es/platform#hasFileFormat
+<https://cogito.iot.linkeddata.es/platform#hasFileFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/platform#hasFileFormat> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasForm> .
+<https://cogito.iot.linkeddata.es/platform#hasFileFormat> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file format" .
+<https://cogito.iot.linkeddata.es/platform#hasFileFormat> <http://www.w3.org/2000/01/rdf-schema#label> "has file format" .
+# 
+# https://cogito.iot.linkeddata.es/platform#hasFileURL
+<https://cogito.iot.linkeddata.es/platform#hasFileURL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/platform#hasFileURL> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3.org/2019/wot/td#hasForm> .
+<https://cogito.iot.linkeddata.es/platform#hasFileURL> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file URL" .
+<https://cogito.iot.linkeddata.es/platform#hasFileURL> <http://www.w3.org/2000/01/rdf-schema#label> "has file URL" .
 # 
 # https://cogito.iot.linkeddata.es/platform#hasIRI
 <https://cogito.iot.linkeddata.es/platform#hasIRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .

@@ -81,13 +81,25 @@
     "@id" : "https://www.w3.org/2019/wot/td#Thing"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/platform#hasFile",
+  "@id" : "https://cogito.iot.linkeddata.es/platform#hasFileFormat",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file"
+    "@value" : "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file format"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has file"
+    "@value" : "has file format"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://www.w3.org/2019/wot/td#hasForm"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/platform#hasFileURL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file URL"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has file URL"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://www.w3.org/2019/wot/td#hasForm"

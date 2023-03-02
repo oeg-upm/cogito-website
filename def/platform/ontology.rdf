@@ -72,13 +72,24 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/platform#hasFile -->
+    <!-- https://cogito.iot.linkeddata.es/platform#hasFileFormat -->
 
 
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/platform#hasFile">
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/platform#hasFileFormat">
         <rdfs:subPropertyOf rdf:resource="https://www.w3.org/2019/wot/td#hasForm"/>
-        <rdfs:comment>A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file</rdfs:comment>
-        <rdfs:label>has file</rdfs:label>
+        <rdfs:comment>A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file format</rdfs:comment>
+        <rdfs:label>has file format</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/platform#hasFileURL -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/platform#hasFileURL">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/2019/wot/td#hasForm"/>
+        <rdfs:comment>A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file URL</rdfs:comment>
+        <rdfs:label>has file URL</rdfs:label>
     </owl:ObjectProperty>
     
 

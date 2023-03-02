@@ -150,18 +150,6 @@
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#FallZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A zone where somebody or something can fall through"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Fall Zone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#ConstructionZone"
-  } ]
-}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Project",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -253,22 +241,22 @@
     "@id" : "https://w3id.org/bot#Storey"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#WalkableZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#belongToSpatialZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A zone where somebody or something can walk along"
+    "@value" : "A property relating an entity, especially a facility:Element to a facility:SpatialZone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Walkable Zone"
+    "@value" : "belongs to spatial zone"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#ConstructionZone"
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/bot#hasElement"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#hasFacility",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A property relating a facility:Zone (especially a facility:Site) to a facility:Facility"
+    "@value" : "A property relating a facility:SpatialZone (especially a facility:Site) to a facility:Facility"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has facility"
@@ -280,7 +268,7 @@
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#hasFacilityPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A property relating a facility:Zone (especially a facility:Facility or a facility:FacilityPart) to a facility:FacilityPart"
+    "@value" : "A property relating a facility:SpatialZone (especially a facility:Facility or a facility:FacilityPart) to a facility:FacilityPart"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
@@ -338,6 +326,11 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "material"
+  } ]
+}, {
+  "@id" : "https://pi.pauwel.be/voc/buildingelement#BuildingElement",
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
 }, {
   "@id" : "https://saref.etsi.org/saref4bldg#Building",

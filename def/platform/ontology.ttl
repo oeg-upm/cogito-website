@@ -39,11 +39,18 @@
 #    Object Properties
 #################################################################
 
-###  https://cogito.iot.linkeddata.es/platform#hasFile
-:hasFile rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasForm> ;
-         rdfs:comment "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file" ;
-         rdfs:label "has file" .
+###  https://cogito.iot.linkeddata.es/platform#hasFileFormat
+:hasFileFormat rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasForm> ;
+               rdfs:comment "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file format" ;
+               rdfs:label "has file format" .
+
+
+###  https://cogito.iot.linkeddata.es/platform#hasFileURL
+:hasFileURL rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <https://www.w3.org/2019/wot/td#hasForm> ;
+            rdfs:comment "A sub-property of td:forms that relates a ctt:ConstructionTwinThing to a td:Form indicating its file URL" ;
+            rdfs:label "has file URL" .
 
 
 ###  https://cogito.iot.linkeddata.es/platform#hasIRI
