@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/quality#> <http://purl.org/dc/elements/1.1/description> "The COGITO Quality ontology aims at modelling the construction quality domain." .
 <https://cogito.iot.linkeddata.es/quality#> <http://purl.org/dc/elements/1.1/title> "Quality Ontology" .
 <https://cogito.iot.linkeddata.es/quality#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/quality#> <http://www.w3.org/2002/07/owl#versionInfo> "0.10.0" .
+<https://cogito.iot.linkeddata.es/quality#> <http://www.w3.org/2002/07/owl#versionInfo> "0.12.0" .
 # 
 # 
 # #################################################################
@@ -58,6 +58,7 @@
 # https://cogito.iot.linkeddata.es/quality#hasRawImage
 <https://cogito.iot.linkeddata.es/quality#hasRawImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/quality#hasRawImage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#hasRawImage> <http://www.w3.org/2002/07/owl#inverseOf> <https://cogito.iot.linkeddata.es/quality#isRelatedToJob> .
 <https://cogito.iot.linkeddata.es/quality#hasRawImage> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/quality#RawImage> .
 <https://cogito.iot.linkeddata.es/quality#hasRawImage> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially qual:ImageJob to an original qual:Image" .
 <https://cogito.iot.linkeddata.es/quality#hasRawImage> <http://www.w3.org/2000/01/rdf-schema#label> "has raw image" .
@@ -74,16 +75,41 @@
 <https://cogito.iot.linkeddata.es/quality#isRelatedToElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially qual:InformationResource) to a facility:Element" .
 <https://cogito.iot.linkeddata.es/quality#isRelatedToElement> <http://www.w3.org/2000/01/rdf-schema#label> "is related to element" .
 # 
+# https://cogito.iot.linkeddata.es/quality#isRelatedToJob
+<https://cogito.iot.linkeddata.es/quality#isRelatedToJob> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#isRelatedToJob> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a qual:RawImage) to the qual:ImageJob that it is associated to" .
+<https://cogito.iot.linkeddata.es/quality#isRelatedToJob> <http://www.w3.org/2000/01/rdf-schema#label> "is related to job" .
+# 
 # https://cogito.iot.linkeddata.es/quality#isRelatedToTask
 <https://cogito.iot.linkeddata.es/quality#isRelatedToTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/quality#isRelatedToTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/process#Task> .
 <https://cogito.iot.linkeddata.es/quality#isRelatedToTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially qual:QuqlityInformation) to a process:Task" .
 <https://cogito.iot.linkeddata.es/quality#isRelatedToTask> <http://www.w3.org/2000/01/rdf-schema#label> "is related to task" .
 # 
-# https://cogito.iot.linkeddata.es/quality#refelctsQualityResult
-<https://cogito.iot.linkeddata.es/quality#refelctsQualityResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#refelctsQualityResult> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially qual:QuqlityInformation to a qual:QualityResult" .
-<https://cogito.iot.linkeddata.es/quality#refelctsQualityResult> <http://www.w3.org/2000/01/rdf-schema#label> "reflects quality result" .
+# https://cogito.iot.linkeddata.es/quality#isTheResultToJob
+<https://cogito.iot.linkeddata.es/quality#isTheResultToJob> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#isTheResultToJob> <http://www.w3.org/2002/07/owl#inverseOf> <https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#isTheResultToJob> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a qual:VisualQualityInformation ) to the qual:ImageJob that has produced it" .
+<https://cogito.iot.linkeddata.es/quality#isTheResultToJob> <http://www.w3.org/2000/01/rdf-schema#label> "is the result to job" .
+# 
+# https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation
+<https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cogito.iot.linkeddata.es/quality#producesQualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a qual:PointCloud) to the qual:GeometricQualityInformation it produces" .
+<https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "produces geometric quality information" .
+# 
+# https://cogito.iot.linkeddata.es/quality#producesQualityInformation
+<https://cogito.iot.linkeddata.es/quality#producesQualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#producesQualityInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a qual:InformationResource) to the qual:QualityInformation it produces." .
+<https://cogito.iot.linkeddata.es/quality#producesQualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "produces quality information" .
+# 
+# https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation
+<https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cogito.iot.linkeddata.es/quality#producesQualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/quality#VisualQualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a qual:ImageJob) to the qual:VisualQualityInformation it produces" .
+<https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "produces visual quality information" .
 # 
 # https://cogito.iot.linkeddata.es/quality#refersToElement
 <https://cogito.iot.linkeddata.es/quality#refersToElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -97,20 +123,6 @@
 <https://cogito.iot.linkeddata.es/quality#refersToRule> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially qual:Defect) to a qual:Rule" .
 <https://cogito.iot.linkeddata.es/quality#refersToRule> <http://www.w3.org/2000/01/rdf-schema#label> "refers to rule" .
 # 
-# https://cogito.iot.linkeddata.es/quality#reflectsDefect
-<https://cogito.iot.linkeddata.es/quality#reflectsDefect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#reflectsDefect> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cogito.iot.linkeddata.es/quality#refelctsQualityResult> .
-<https://cogito.iot.linkeddata.es/quality#reflectsDefect> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/quality#Defect> .
-<https://cogito.iot.linkeddata.es/quality#reflectsDefect> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially qual:ImageJob) to a qual:Defect" .
-<https://cogito.iot.linkeddata.es/quality#reflectsDefect> <http://www.w3.org/2000/01/rdf-schema#label> "reflects defect" .
-# 
-# https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality
-<https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cogito.iot.linkeddata.es/quality#refelctsQualityResult> .
-<https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation> .
-<https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially qual:PointCloud) to a qual:GeometricQualityInformation" .
-<https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality> <http://www.w3.org/2000/01/rdf-schema#label> "reflects geometric quality" .
-# 
 # 
 # 
 # #################################################################
@@ -122,14 +134,17 @@
 # 
 # http://purl.org/dc/terms/description
 <http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
 <http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#label> "description" .
 # 
 # http://purl.org/dc/terms/identifier
 <http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
 <http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier" .
 # 
 # http://purl.org/dc/terms/title
 <http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
 <http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#label> "title" .
 # 
 # https://cogito.iot.linkeddata.es/quality#captureDevice
@@ -174,7 +189,7 @@
 # 
 # https://cogito.iot.linkeddata.es/quality#performedTimestamp
 <https://cogito.iot.linkeddata.es/quality#performedTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/quality#performedTimestamp> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating the actual time" .
+<https://cogito.iot.linkeddata.es/quality#performedTimestamp> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating the actual time an entity has been performed" .
 <https://cogito.iot.linkeddata.es/quality#performedTimestamp> <http://www.w3.org/2000/01/rdf-schema#label> "performed timestamp" .
 # 
 # https://cogito.iot.linkeddata.es/quality#predictedLabel
@@ -227,6 +242,11 @@
 <https://cogito.iot.linkeddata.es/quality#unit> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating the unit of an entity" .
 <https://cogito.iot.linkeddata.es/quality#unit> <http://www.w3.org/2000/01/rdf-schema#label> "unit" .
 # 
+# https://cogito.iot.linkeddata.es/quality#uploadedTimestamp
+<https://cogito.iot.linkeddata.es/quality#uploadedTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/quality#uploadedTimestamp> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating the actual time an entity has been uploaded" .
+<https://cogito.iot.linkeddata.es/quality#uploadedTimestamp> <http://www.w3.org/2000/01/rdf-schema#label> "uploaded timestamp" .
+# 
 # 
 # 
 # #################################################################
@@ -259,20 +279,14 @@
 # 
 # https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud
 <https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#PointCoud> .
+<https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#PointCloud> .
 <https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud> <http://www.w3.org/2000/01/rdf-schema#comment> "A point cloud representing a built entity (especially a facility:Element)" .
 <https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud> <http://www.w3.org/2000/01/rdf-schema#label> "As-built Point Cloud" .
 # 
-# https://cogito.iot.linkeddata.es/quality#Defect
-<https://cogito.iot.linkeddata.es/quality#Defect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#Defect> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#QualityResult> .
-<https://cogito.iot.linkeddata.es/quality#Defect> <http://www.w3.org/2000/01/rdf-schema#comment> "A shortcoming, fault, or imperfection regarding a particular facility:Element." .
-<https://cogito.iot.linkeddata.es/quality#Defect> <http://www.w3.org/2000/01/rdf-schema#label> "Defect" .
-# 
 # https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation
 <https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#QualityResult> .
-<https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Data informing a particular problem regarding a particular qual:Rule on a facility:Element" .
+<https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#QualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Data informing a particular problem regarding a particular qual:Rule on a facility:Element, and found thanks to a process:GeometricQualityTask" .
 <https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Geometric Quality Information" .
 # 
 # https://cogito.iot.linkeddata.es/quality#Image
@@ -298,16 +312,16 @@
 <https://cogito.iot.linkeddata.es/quality#Mesh> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of vertices, edges and faces that defines the shape of an object (especially a facility:Element)" .
 <https://cogito.iot.linkeddata.es/quality#Mesh> <http://www.w3.org/2000/01/rdf-schema#label> "Mesh" .
 # 
-# https://cogito.iot.linkeddata.es/quality#PointCoud
-<https://cogito.iot.linkeddata.es/quality#PointCoud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#PointCoud> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#InformationResource> .
-<https://cogito.iot.linkeddata.es/quality#PointCoud> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of data points in space" .
-<https://cogito.iot.linkeddata.es/quality#PointCoud> <http://www.w3.org/2000/01/rdf-schema#label> "Point Cloud" .
+# https://cogito.iot.linkeddata.es/quality#PointCloud
+<https://cogito.iot.linkeddata.es/quality#PointCloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/quality#PointCloud> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#InformationResource> .
+<https://cogito.iot.linkeddata.es/quality#PointCloud> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of data points in space" .
+<https://cogito.iot.linkeddata.es/quality#PointCloud> <http://www.w3.org/2000/01/rdf-schema#label> "Point Cloud" .
 # 
-# https://cogito.iot.linkeddata.es/quality#QualityResult
-<https://cogito.iot.linkeddata.es/quality#QualityResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/quality#QualityResult> <http://www.w3.org/2000/01/rdf-schema#comment> "The result of the analysis of  information (especially qual:QuantityInformation)" .
-<https://cogito.iot.linkeddata.es/quality#QualityResult> <http://www.w3.org/2000/01/rdf-schema#label> "Quality Result" .
+# https://cogito.iot.linkeddata.es/quality#QualityInformation
+<https://cogito.iot.linkeddata.es/quality#QualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/quality#QualityInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "The result of the analysis of  information (especially qual:QuantityInformation)" .
+<https://cogito.iot.linkeddata.es/quality#QualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Quality Information" .
 # 
 # https://cogito.iot.linkeddata.es/quality#RawImage
 <https://cogito.iot.linkeddata.es/quality#RawImage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -319,5 +333,11 @@
 <https://cogito.iot.linkeddata.es/quality#Rule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/quality#Rule> <http://www.w3.org/2000/01/rdf-schema#comment> "Information regarding what an entity (especially a faciity:Element) must fulfil" .
 <https://cogito.iot.linkeddata.es/quality#Rule> <http://www.w3.org/2000/01/rdf-schema#label> "Rule" .
+# 
+# https://cogito.iot.linkeddata.es/quality#VisualQualityInformation
+<https://cogito.iot.linkeddata.es/quality#VisualQualityInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/quality#VisualQualityInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/quality#QualityInformation> .
+<https://cogito.iot.linkeddata.es/quality#VisualQualityInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "A shortcoming, fault, or imperfection regarding a particular facility:Element, and found thanks to a process:VisualQualityTask" .
+<https://cogito.iot.linkeddata.es/quality#VisualQualityInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Visual Quality Information" .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

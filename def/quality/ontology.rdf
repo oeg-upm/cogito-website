@@ -15,7 +15,7 @@
         <dc:description>The COGITO Quality ontology aims at modelling the construction quality domain.</dc:description>
         <dc:title>Quality Ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.10.0</owl:versionInfo>
+        <owl:versionInfo>0.12.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -111,6 +111,7 @@
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#hasRawImage">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://cogito.iot.linkeddata.es/quality#isRelatedToJob"/>
         <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/quality#RawImage"/>
         <rdfs:comment>Property that relates an entity (especially qual:ImageJob to an original qual:Image</rdfs:comment>
         <rdfs:label>has raw image</rdfs:label>
@@ -140,6 +141,16 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/quality#isRelatedToJob -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#isRelatedToJob">
+        <rdfs:comment>Property that relates an entity (especially a qual:RawImage) to the qual:ImageJob that it is associated to</rdfs:comment>
+        <rdfs:label>is related to job</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://cogito.iot.linkeddata.es/quality#isRelatedToTask -->
 
 
@@ -151,12 +162,47 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#refelctsQualityResult -->
+    <!-- https://cogito.iot.linkeddata.es/quality#isTheResultToJob -->
 
 
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#refelctsQualityResult">
-        <rdfs:comment>Property that relates an entity (especially qual:QuqlityInformation to a qual:QualityResult</rdfs:comment>
-        <rdfs:label>reflects quality result</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#isTheResultToJob">
+        <owl:inverseOf rdf:resource="https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation"/>
+        <rdfs:comment>Property that relates an entity (especially a qual:VisualQualityInformation ) to the qual:ImageJob that has produced it</rdfs:comment>
+        <rdfs:label>is the result to job</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation">
+        <rdfs:subPropertyOf rdf:resource="https://cogito.iot.linkeddata.es/quality#producesQualityInformation"/>
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation"/>
+        <rdfs:comment>Property that relates an entity (especially a qual:PointCloud) to the qual:GeometricQualityInformation it produces</rdfs:comment>
+        <rdfs:label>produces geometric quality information</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#producesQualityInformation -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#producesQualityInformation">
+        <rdfs:comment>Property that relates an entity (especially a qual:InformationResource) to the qual:QualityInformation it produces.</rdfs:comment>
+        <rdfs:label>produces quality information</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation">
+        <rdfs:subPropertyOf rdf:resource="https://cogito.iot.linkeddata.es/quality#producesQualityInformation"/>
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/quality#VisualQualityInformation"/>
+        <rdfs:comment>Property that relates an entity (especially a qual:ImageJob) to the qual:VisualQualityInformation it produces</rdfs:comment>
+        <rdfs:label>produces visual quality information</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -183,30 +229,6 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#reflectsDefect -->
-
-
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#reflectsDefect">
-        <rdfs:subPropertyOf rdf:resource="https://cogito.iot.linkeddata.es/quality#refelctsQualityResult"/>
-        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/quality#Defect"/>
-        <rdfs:comment>Property that relates an entity (especially qual:ImageJob) to a qual:Defect</rdfs:comment>
-        <rdfs:label>reflects defect</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality -->
-
-
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality">
-        <rdfs:subPropertyOf rdf:resource="https://cogito.iot.linkeddata.es/quality#refelctsQualityResult"/>
-        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation"/>
-        <rdfs:comment>Property that relates an entity (especially qual:PointCloud) to a qual:GeometricQualityInformation</rdfs:comment>
-        <rdfs:label>reflects geometric quality</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -223,6 +245,7 @@
 
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/description">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:label>description</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -232,6 +255,7 @@
 
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:label>identifier</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -241,6 +265,7 @@
 
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:label>title</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -330,7 +355,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#performedTimestamp">
-        <rdfs:comment>Property indicating the actual time</rdfs:comment>
+        <rdfs:comment>Property indicating the actual time an entity has been performed</rdfs:comment>
         <rdfs:label>performed timestamp</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -436,6 +461,16 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/quality#uploadedTimestamp -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#uploadedTimestamp">
+        <rdfs:comment>Property indicating the actual time an entity has been uploaded</rdfs:comment>
+        <rdfs:label>uploaded timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -493,20 +528,9 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#PointCoud"/>
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#PointCloud"/>
         <rdfs:comment>A point cloud representing a built entity (especially a facility:Element)</rdfs:comment>
         <rdfs:label>As-built Point Cloud</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/quality#Defect -->
-
-
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#Defect">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#QualityResult"/>
-        <rdfs:comment>A shortcoming, fault, or imperfection regarding a particular facility:Element.</rdfs:comment>
-        <rdfs:label>Defect</rdfs:label>
     </owl:Class>
     
 
@@ -515,8 +539,8 @@
 
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#QualityResult"/>
-        <rdfs:comment>Data informing a particular problem regarding a particular qual:Rule on a facility:Element</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#QualityInformation"/>
+        <rdfs:comment>Data informing a particular problem regarding a particular qual:Rule on a facility:Element, and found thanks to a process:GeometricQualityTask</rdfs:comment>
         <rdfs:label>Geometric Quality Information</rdfs:label>
     </owl:Class>
     
@@ -565,10 +589,10 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#PointCoud -->
+    <!-- https://cogito.iot.linkeddata.es/quality#PointCloud -->
 
 
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#PointCoud">
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#PointCloud">
         <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#InformationResource"/>
         <rdfs:comment>A set of data points in space</rdfs:comment>
         <rdfs:label>Point Cloud</rdfs:label>
@@ -576,12 +600,12 @@
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/quality#QualityResult -->
+    <!-- https://cogito.iot.linkeddata.es/quality#QualityInformation -->
 
 
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#QualityResult">
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#QualityInformation">
         <rdfs:comment>The result of the analysis of  information (especially qual:QuantityInformation)</rdfs:comment>
-        <rdfs:label>Quality Result</rdfs:label>
+        <rdfs:label>Quality Information</rdfs:label>
     </owl:Class>
     
 
@@ -603,6 +627,17 @@
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#Rule">
         <rdfs:comment>Information regarding what an entity (especially a faciity:Element) must fulfil</rdfs:comment>
         <rdfs:label>Rule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/quality#VisualQualityInformation -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#VisualQualityInformation">
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/quality#QualityInformation"/>
+        <rdfs:comment>A shortcoming, fault, or imperfection regarding a particular facility:Element, and found thanks to a process:VisualQualityTask</rdfs:comment>
+        <rdfs:label>Visual Quality Information</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

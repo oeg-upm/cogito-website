@@ -10,12 +10,18 @@
 }, {
   "@id" : "http://purl.org/dc/terms/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "description"
   } ]
 }, {
   "@id" : "http://purl.org/dc/terms/identifier",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "identifier"
   } ]
@@ -25,6 +31,9 @@
 }, {
   "@id" : "http://purl.org/dc/terms/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "title"
   } ]
@@ -87,7 +96,7 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.10.0"
+    "@value" : "0.12.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#AsBuiltMesh",
@@ -111,31 +120,19 @@
     "@value" : "As-built Point Cloud"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#PointCoud"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#Defect",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A shortcoming, fault, or imperfection regarding a particular facility:Element."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Defect"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#QualityResult"
+    "@id" : "https://cogito.iot.linkeddata.es/quality#PointCloud"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Data informing a particular problem regarding a particular qual:Rule on a facility:Element"
+    "@value" : "Data informing a particular problem regarding a particular qual:Rule on a facility:Element, and found thanks to a process:GeometricQualityTask"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Geometric Quality Information"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#QualityResult"
+    "@id" : "https://cogito.iot.linkeddata.es/quality#QualityInformation"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#Image",
@@ -183,7 +180,7 @@
     "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#PointCoud",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#PointCloud",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A set of data points in space"
@@ -195,13 +192,13 @@
     "@id" : "https://cogito.iot.linkeddata.es/quality#InformationResource"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#QualityResult",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#QualityInformation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "The result of the analysis of  information (especially qual:QuantityInformation)"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Quality Result"
+    "@value" : "Quality Information"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#RawImage",
@@ -223,6 +220,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Rule"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#VisualQualityInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A shortcoming, fault, or imperfection regarding a particular facility:Element, and found thanks to a process:VisualQualityTask"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Visual Quality Information"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#QualityInformation"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#captureDevice",
@@ -310,6 +319,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#isRelatedToJob"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#hasResultImage",
@@ -336,6 +348,15 @@
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
 }, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#isRelatedToJob",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that relates an entity (especially a qual:RawImage) to the qual:ImageJob that it is associated to"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is related to job"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#isRelatedToTask",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -346,6 +367,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/process#Task"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#isTheResultToJob",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that relates an entity (especially a qual:VisualQualityInformation ) to the qual:ImageJob that has produced it"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is the result to job"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#materialTypeKeyword",
@@ -378,7 +411,7 @@
   "@id" : "https://cogito.iot.linkeddata.es/quality#performedTimestamp",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property indicating the actual time"
+    "@value" : "Property indicating the actual time an entity has been performed"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "performed timestamp"
@@ -393,13 +426,43 @@
     "@value" : "predicted label"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#refelctsQualityResult",
+  "@id" : "https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that relates an entity (especially qual:QuqlityInformation to a qual:QualityResult"
+    "@value" : "Property that relates an entity (especially a qual:PointCloud) to the qual:GeometricQualityInformation it produces"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "reflects quality result"
+    "@value" : "produces geometric quality information"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#producesQualityInformation"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#producesQualityInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that relates an entity (especially a qual:InformationResource) to the qual:QualityInformation it produces."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "produces quality information"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that relates an entity (especially a qual:ImageJob) to the qual:VisualQualityInformation it produces"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "produces visual quality information"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#VisualQualityInformation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#producesQualityInformation"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#refersToElement",
@@ -424,36 +487,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/quality#Rule"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#reflectsDefect",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that relates an entity (especially qual:ImageJob) to a qual:Defect"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "reflects defect"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#Defect"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#refelctsQualityResult"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that relates an entity (especially qual:PointCloud) to a qual:GeometricQualityInformation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "reflects geometric quality"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/quality#refelctsQualityResult"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#relationshipTypeKeyword",
@@ -535,5 +568,14 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "unit"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#uploadedTimestamp",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property indicating the actual time an entity has been uploaded"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "uploaded timestamp"
   } ]
 } ]
