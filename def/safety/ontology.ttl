@@ -13,7 +13,7 @@
                                             <http://purl.org/dc/elements/1.1/description> "The COGITO Safety ontology aims at modelling the safety of the construction  domain." ;
                                             <http://purl.org/dc/elements/1.1/title> "Safety Ontology" ;
                                             <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                            owl:versionInfo "0.4.0" .
+                                            owl:versionInfo "0.5.0" .
 
 #################################################################
 #    Annotation properties
@@ -45,6 +45,13 @@
                    rdfs:range :MovementZone ;
                    rdfs:comment "A safety:impliedByZone sub-property whose range is a safety:MovementZone" ;
                    rdfs:label "implied by movement" .
+
+
+###  https://cogito.iot.linkeddata.es/safety#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:range <http://www.opengis.net/ont/sf#Point> ;
+             rdfs:comment "Property that relates an entity (especially a safety:SafetyIssue) to a sf:Point indicating its location" ;
+             rdfs:label "has location" .
 
 
 ###  https://cogito.iot.linkeddata.es/safety#hasSafetyIssue
@@ -108,6 +115,12 @@
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.opengis.net/ont/sf#Point
+<http://www.opengis.net/ont/sf#Point> rdf:type owl:Class ;
+                                      rdfs:isDefinedBy <http://www.opengis.net/ont/sf#> ;
+                                      rdfs:label "Point" .
+
 
 ###  https://cogito.iot.linkeddata.es/def/facility#Element
 <https://cogito.iot.linkeddata.es/def/facility#Element> rdf:type owl:Class ;

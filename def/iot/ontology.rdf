@@ -200,10 +200,10 @@
     
 
 
-    <!-- http://www.opengis.net/ont/geosparql#Point -->
+    <!-- http://www.opengis.net/ont/sfl#Point -->
 
 
-    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Point">
+    <owl:Class rdf:about="http://www.opengis.net/ont/sfl#Point">
         <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/iot#Result"/>
         <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/geosparq#"/>
         <rdfs:label>Point</rdfs:label>

@@ -111,11 +111,11 @@
 #    Classes
 #################################################################
 
-###  http://www.opengis.net/ont/geosparql#Point
-<http://www.opengis.net/ont/geosparql#Point> rdf:type owl:Class ;
-                                             rdfs:subClassOf :Result ;
-                                             rdfs:isDefinedBy <http://www.opengis.net/ont/geosparq#> ;
-                                             rdfs:label "Point" .
+###  http://www.opengis.net/ont/sfl#Point
+<http://www.opengis.net/ont/sfl#Point> rdf:type owl:Class ;
+                                       rdfs:subClassOf :Result ;
+                                       rdfs:isDefinedBy <http://www.opengis.net/ont/geosparq#> ;
+                                       rdfs:label "Point" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/facility#SpatialZone

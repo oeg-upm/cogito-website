@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/safety#> <http://purl.org/dc/elements/1.1/description> "The COGITO Safety ontology aims at modelling the safety of the construction  domain." .
 <https://cogito.iot.linkeddata.es/safety#> <http://purl.org/dc/elements/1.1/title> "Safety Ontology" .
 <https://cogito.iot.linkeddata.es/safety#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/safety#> <http://www.w3.org/2002/07/owl#versionInfo> "0.4.0" .
+<https://cogito.iot.linkeddata.es/safety#> <http://www.w3.org/2002/07/owl#versionInfo> "0.5.0" .
 # 
 # 
 # #################################################################
@@ -42,6 +42,12 @@
 <https://cogito.iot.linkeddata.es/safety#ImpliedByMovement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/safety#MovementZone> .
 <https://cogito.iot.linkeddata.es/safety#ImpliedByMovement> <http://www.w3.org/2000/01/rdf-schema#comment> "A safety:impliedByZone sub-property whose range is a safety:MovementZone" .
 <https://cogito.iot.linkeddata.es/safety#ImpliedByMovement> <http://www.w3.org/2000/01/rdf-schema#label> "implied by movement" .
+# 
+# https://cogito.iot.linkeddata.es/safety#hasLocation
+<https://cogito.iot.linkeddata.es/safety#hasLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/safety#hasLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/sf#Point> .
+<https://cogito.iot.linkeddata.es/safety#hasLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a safety:SafetyIssue) to a sf:Point indicating its location" .
+<https://cogito.iot.linkeddata.es/safety#hasLocation> <http://www.w3.org/2000/01/rdf-schema#label> "has location" .
 # 
 # https://cogito.iot.linkeddata.es/safety#hasSafetyIssue
 <https://cogito.iot.linkeddata.es/safety#hasSafetyIssue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -106,6 +112,11 @@
 # #
 # #################################################################
 # 
+# 
+# http://www.opengis.net/ont/sf#Point
+<http://www.opengis.net/ont/sf#Point> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.opengis.net/ont/sf#Point> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opengis.net/ont/sf#> .
+<http://www.opengis.net/ont/sf#Point> <http://www.w3.org/2000/01/rdf-schema#label> "Point" .
 # 
 # https://cogito.iot.linkeddata.es/def/facility#Element
 <https://cogito.iot.linkeddata.es/def/facility#Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

@@ -15,7 +15,7 @@
         <dc:description>The COGITO Safety ontology aims at modelling the safety of the construction  domain.</dc:description>
         <dc:title>Safety Ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.4.0</owl:versionInfo>
+        <owl:versionInfo>0.5.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -80,6 +80,17 @@
         <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/safety#MovementZone"/>
         <rdfs:comment>A safety:impliedByZone sub-property whose range is a safety:MovementZone</rdfs:comment>
         <rdfs:label>implied by movement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#hasLocation -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/safety#hasLocation">
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/sf#Point"/>
+        <rdfs:comment>Property that relates an entity (especially a safety:SafetyIssue) to a sf:Point indicating its location</rdfs:comment>
+        <rdfs:label>has location</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -191,6 +202,16 @@
      -->
 
 
+    
+
+
+    <!-- http://www.opengis.net/ont/sf#Point -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#Point">
+        <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/sf#"/>
+        <rdfs:label>Point</rdfs:label>
+    </owl:Class>
     
 
 

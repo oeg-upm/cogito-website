@@ -29,7 +29,7 @@
     "@value" : "title"
   } ]
 }, {
-  "@id" : "http://www.opengis.net/ont/geosparql#Point",
+  "@id" : "http://www.opengis.net/ont/sfl#Point",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://www.opengis.net/ont/geosparq#"

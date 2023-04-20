@@ -38,6 +38,15 @@
     "@value" : "title"
   } ]
 }, {
+  "@id" : "http://www.opengis.net/ont/sf#Point",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.opengis.net/ont/sf#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Point"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -75,7 +84,7 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.4.0"
+    "@value" : "0.5.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/safety#AnalysisZone",
@@ -184,6 +193,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Safety Issue"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/safety#hasLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that relates an entity (especially a safety:SafetyIssue) to a sf:Point indicating its location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.opengis.net/ont/sf#Point"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/safety#hasSafetyIssue",
