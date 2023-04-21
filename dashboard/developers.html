@@ -54,6 +54,13 @@
             width: 50%;
             float: right;
         }
+        #gray img {
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
     </style>
 </head>
 
@@ -105,9 +112,9 @@
 
     <div class="container" id="container_position_right">
         <div class="text" id="text_align_center">
-            <h3>Construction + Digital Twin Platform RDF <br> Validator Playground</h3>
+            <h3>Construction + Digital Twin Platform RDF <br> Validator Playground (Deprecated)</h3>
         </div>
-        <div class="image" id="over">
+        <div class="image" id="gray">
             <a href="https://validation.cogito.iot.linkeddata.es/">
                 <img src="vocab/coppola.png" id="link_image" width="485" height="450" class="center img-responsive">
             </a>
@@ -116,30 +123,43 @@
 
     <div> &nbsp;</div>
 
-    <div class="container">
+    <div class="container" id="container_position_left">
         <div class="text" id="text_align_center">
-            <h3>Digital Twin Platform <br> ETL Status</h3>
+            <h3>Project Consisetncy Validation<br>(Provide project_id as parameter)</h3>
         </div>
         <div class="image" id="over">
+            <a href="https://data.cogito.iot.linkeddata.es/validation/api/project_consistency_validation/data?project_id=all_graph">
+                <img src="vocab/project_consistency_validation.png" id="link_image" width="500" height="350" class="center img-responsive">
+            </a>
+        </div>
+    </div>
+  
+    <div class="container" id="container_position_right">
+        <div class="text" id="text_align_center">
+            <h3>Digital Twin Platform <br> ETL Status (Deprecated)</h3>
+        </div>
+        <div class="image" id="gray">
             <a href="https://cogito.iot.linkeddata.es/status">
                 <img src="vocab/status.png" id="link_image" width="500" height="350" class="center img-responsive">
             </a>
         </div>
-    </div>
+        </div>
+    
+    <div> &nbsp;</div>
     <hr>
 
     <div class="container" id="container_position_left">
         <div class="text" id="text_align_center">
-            <h3>Thing Manager <br> API Request Playground <br> (project, ifc, schedule, resources, iot, quality)</h3>
+            <h3>New Modular <br>Thing Manager API Request Playground </h3>
         </div>
         <div class="image" id="over">
-            <a href="https://documenter.getpostman.com/view/7314078/2s8YRnmre4">
-                <img src="vocab/tm.png" id="link_image" width="500" height="450" class="center img-responsive">
+            <a href="https://documenter.getpostman.com/view/7314078/2s93Y3vLw3">
+                <img src="vocab/new_tm.png" id="link_image" width="500" height="350" class="center img-responsive">
             </a>
         </div>
-      </div>
+    </div>
   
-      <div class="container" id="container_position_right">
+    <div class="container" id="container_position_right">
         <div class="text" id="text_align_center">
             <h3>Thing Description Directory <br> API Request Playground</h3>
         </div>
@@ -148,7 +168,20 @@
                 <img src="vocab/tdd.png" id="link_image" width="500" height="450" class="center img-responsive">
             </a>
         </div>
-      </div>
+    </div>
+
+    <div> &nbsp;</div>
+
+    <div class="container">
+        <div class="text" id="text_align_center">
+            <h3>Thing Manager API Request Playground <br> (Deprecated)</h3>
+        </div>
+        <div class="image" id="gray">
+            <a href="https://documenter.getpostman.com/view/7314078/2s8YRnmre4">
+                <img src="vocab/tm.png" id="link_image" width="500" height="450" class="center img-responsive">
+            </a>
+        </div>
+    </div>
 
       <div> &nbsp;</div>
       <div> &nbsp;</div>
