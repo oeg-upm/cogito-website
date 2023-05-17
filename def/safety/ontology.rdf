@@ -15,7 +15,7 @@
         <dc:description>The COGITO Safety ontology aims at modelling the safety of the construction  domain.</dc:description>
         <dc:title>Safety Ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.5.0</owl:versionInfo>
+        <owl:versionInfo>0.6.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -89,7 +89,7 @@
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/safety#hasLocation">
         <rdfs:range rdf:resource="http://www.opengis.net/ont/sf#Point"/>
-        <rdfs:comment>Property that relates an entity (especially a safety:SafetyIssue) to a sf:Point indicating its location</rdfs:comment>
+        <rdfs:comment>Property that relates an entity (especially a safety:ReportedSafetyIssue) to a sf:Point indicating its location</rdfs:comment>
         <rdfs:label>has location</rdfs:label>
     </owl:ObjectProperty>
     
@@ -99,8 +99,8 @@
 
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/safety#hasSafetyIssue">
-        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/safety#SafetyIssue"/>
-        <rdfs:comment>Property that relates an entity (especially a safety:HazardZone) to a safety:SafetyIssue</rdfs:comment>
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue"/>
+        <rdfs:comment>Property that relates an entity (especially a safety:HazardZone) to a safety:DetectedSafetyIssue</rdfs:comment>
         <rdfs:label>has safety issue</rdfs:label>
     </owl:ObjectProperty>
     
@@ -137,6 +137,17 @@
         <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/safety#MitigationElement"/>
         <rdfs:comment>A property relating an entity (especially a safety:SafetyIssue) to a safety:MitigationElement used to mitigate it</rdfs:comment>
         <rdfs:label>is mitigated by element</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#reportedByWorker -->
+
+
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/safety#reportedByWorker">
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/resource#Worker"/>
+        <rdfs:comment>Property that relates an entity (especially a safety:ReportedSafetyIssue) to a resource:Worker indicating the person who has reported it</rdfs:comment>
+        <rdfs:label>reported by worker</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -235,6 +246,16 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/def/resource#Worker -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/resource#Worker">
+        <rdfs:comment>A human resource that works in a project (especially performing a process:Task)</rdfs:comment>
+        <rdfs:label>Worker</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://cogito.iot.linkeddata.es/safety#AnalysisZone -->
 
 
@@ -242,6 +263,17 @@
         <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/facility#SpatialZone"/>
         <rdfs:comment>A spatial zone that is inspected</rdfs:comment>
         <rdfs:label>Analysis Zone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue">
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/safety#SafetyIssue"/>
+        <rdfs:comment>A safey problem that has been automatically detected</rdfs:comment>
+        <rdfs:label>Detected Safety Issue</rdfs:label>
     </owl:Class>
     
 
@@ -308,6 +340,17 @@
         <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/facility#Element"/>
         <rdfs:comment>An element not used for safety during the construction process</rdfs:comment>
         <rdfs:label>Normal Element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue -->
+
+
+    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue">
+        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/safety#SafetyIssue"/>
+        <rdfs:comment>A safey problem that has been reported by a worker</rdfs:comment>
+        <rdfs:label>Reported Safety Issue</rdfs:label>
     </owl:Class>
     
 

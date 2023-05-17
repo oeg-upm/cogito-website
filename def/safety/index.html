@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/safety#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/safety#","name":"Safety Ontology", "headline":"The COGITO Safety ontology aims at modelling the safety of the construction  domain.", "datePublished":"Thu Apr 20 16:15:16 CEST 2023", "version":"0.5.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/safety#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/safety#","name":"Safety Ontology", "headline":"The COGITO Safety ontology aims at modelling the safety of the construction  domain.", "datePublished":"Tue May 16 13:40:11 CEST 2023", "version":"0.6.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -61,13 +61,13 @@ $(function(){
 <dt>Latest version:</dt>
 <dd><a href="https://cogito.iot.linkeddata.es/safety#">https://cogito.iot.linkeddata.es/safety#</a></dd>
 <dt>Revision:</dt>
-<dd>0.5.0</dd>
+<dd>0.6.0</dd>
 <dt>Authors:</dt>
 <dd>María Poveda Villalón</dd><dd>Raúl García Castro</dd><dd>Socorro  Bernardos Galindo</dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. Safety Ontology. Revision: 0.5.0.</dd>
+<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. Safety Ontology. Revision: 0.6.0.</dd>
 </dl>
 <div>
 	<img src="resources/images/logo.jpg" width="300" alt="">
@@ -98,6 +98,7 @@ This document describes the results of the Safety ontology for the COGITO projec
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
 <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
 <tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>resource</b></td><td>&lt;https://cogito.iot.linkeddata.es/def/resource&gt;</td></tr>
 <tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
 <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
 <tr><td><b>dcterms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
@@ -120,6 +121,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#AnalysisZone"
          title="https://cogito.iot.linkeddata.es/safety#AnalysisZone">Analysis Zone</a>
+   </li>
+   <li>
+      <a href="#DetectedSafetyIssue"
+         title="https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue">Detected Safety Issue</a>
    </li>
    <li>
       <a href="#https://cogito.iot.linkeddata.es/def/facility#Element"
@@ -152,12 +157,20 @@ This ontology has the following classes and properties.</span>
       <a href="#http://www.opengis.net/ont/sf#Point" title="http://www.opengis.net/ont/sf#Point">Point</a>
    </li>
    <li>
+      <a href="#ReportedSafetyIssue"
+         title="https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue">Reported Safety Issue</a>
+   </li>
+   <li>
       <a href="#SafetyIssue"
          title="https://cogito.iot.linkeddata.es/safety#SafetyIssue">Safety Issue</a>
    </li>
    <li>
       <a href="#https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
          title="https://cogito.iot.linkeddata.es/def/facility#SpatialZone">Spatial Zone</a>
+   </li>
+   <li>
+      <a href="#https://cogito.iot.linkeddata.es/def/resource#Worker"
+         title="https://cogito.iot.linkeddata.es/def/resource#Worker">Worker</a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
@@ -183,6 +196,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#isMitigatedByElement"
          title="https://cogito.iot.linkeddata.es/safety#isMitigatedByElement">is mitigated by element</a>
+   </li>
+   <li>
+      <a href="#reportedByWorker"
+         title="https://cogito.iot.linkeddata.es/safety#reportedByWorker">reported by worker</a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
@@ -221,6 +238,10 @@ This section provides details for each class and property defined by Safety Onto
             title="https://cogito.iot.linkeddata.es/safety#AnalysisZone">Analysis Zone</a>
       </li>
       <li>
+         <a href="#DetectedSafetyIssue"
+            title="https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue">Detected Safety Issue</a>
+      </li>
+      <li>
          <a href="#https://cogito.iot.linkeddata.es/def/facility#Element"
             title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
       </li>
@@ -251,12 +272,20 @@ This section provides details for each class and property defined by Safety Onto
          <a href="#http://www.opengis.net/ont/sf#Point" title="http://www.opengis.net/ont/sf#Point">Point</a>
       </li>
       <li>
+         <a href="#ReportedSafetyIssue"
+            title="https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue">Reported Safety Issue</a>
+      </li>
+      <li>
          <a href="#SafetyIssue"
             title="https://cogito.iot.linkeddata.es/safety#SafetyIssue">Safety Issue</a>
       </li>
       <li>
          <a href="#https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
             title="https://cogito.iot.linkeddata.es/def/facility#SpatialZone">Spatial Zone</a>
+      </li>
+      <li>
+         <a href="#https://cogito.iot.linkeddata.es/def/resource#Worker"
+            title="https://cogito.iot.linkeddata.es/def/resource#Worker">Worker</a>
       </li>
    </ul>
    <div class="entity" id="AnalysisZone">
@@ -287,6 +316,31 @@ This section provides details for each class and property defined by Safety Onto
          <dd>
             <a href="#impliedByZone"
                title="https://cogito.iot.linkeddata.es/safety#impliedByZone">implied by zone</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DetectedSafetyIssue">
+      <h3>Detected Safety Issue<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue</p>
+      <div class="comment">
+         <span class="markdown">A safey problem that has been automatically detected</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#SafetyIssue"
+               title="https://cogito.iot.linkeddata.es/safety#SafetyIssue">Safety Issue</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSafetyIssue"
+               title="https://cogito.iot.linkeddata.es/safety#hasSafetyIssue">has safety issue</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -472,6 +526,25 @@ This section provides details for each class and property defined by Safety Onto
          </dd>
       </dl>
    </div>
+   <div class="entity" id="ReportedSafetyIssue">
+      <h3>Reported Safety Issue<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue</p>
+      <div class="comment">
+         <span class="markdown">A safey problem that has been reported by a worker</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#SafetyIssue"
+               title="https://cogito.iot.linkeddata.es/safety#SafetyIssue">Safety Issue</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="SafetyIssue">
       <h3>Safety Issue<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -483,11 +556,13 @@ This section provides details for each class and property defined by Safety Onto
          <span class="markdown">Data regarding a safety problem</span>
       </div>
       <dl class="description">
-         <dt>is in range of</dt>
+         <dt>has sub-classes</dt>
          <dd>
-            <a href="#hasSafetyIssue"
-               title="https://cogito.iot.linkeddata.es/safety#hasSafetyIssue">has safety issue</a>
-            <sup class="type-op" title="object property">op</sup>
+            <a href="#DetectedSafetyIssue"
+               title="https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue">Detected Safety Issue</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ReportedSafetyIssue"
+               title="https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue">Reported Safety Issue</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -509,6 +584,25 @@ This section provides details for each class and property defined by Safety Onto
             <sup class="type-c" title="class">c</sup>, <a href="#HazardZone"
                title="https://cogito.iot.linkeddata.es/safety#HazardZone">Hazard Zone</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://cogito.iot.linkeddata.es/def/resource#Worker">
+      <h3>Worker<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/resource#Worker</p>
+      <div class="comment">
+         <span class="markdown">A human resource that works in a project (especially performing a process:Task)</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#reportedByWorker"
+               title="https://cogito.iot.linkeddata.es/safety#reportedByWorker">reported by worker</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -539,6 +633,10 @@ This section provides details for each class and property defined by Safety Onto
          <a href="#isMitigatedByElement"
             title="https://cogito.iot.linkeddata.es/safety#isMitigatedByElement">is mitigated by element</a>
       </li>
+      <li>
+         <a href="#reportedByWorker"
+            title="https://cogito.iot.linkeddata.es/safety#reportedByWorker">reported by worker</a>
+      </li>
    </ul>
    <div class="entity" id="hasLocation">
       <h3>has location<sup class="type-op" title="object property">op</sup>
@@ -548,7 +646,7 @@ This section provides details for each class and property defined by Safety Onto
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/safety#hasLocation</p>
       <div class="comment">
-         <span class="markdown">Property that relates an entity (especially a safety:SafetyIssue) to a sf:Point indicating its location</span>
+         <span class="markdown">Property that relates an entity (especially a safety:ReportedSafetyIssue) to a sf:Point indicating its location</span>
       </div>
       <div class="description">
          <dl>
@@ -568,14 +666,14 @@ This section provides details for each class and property defined by Safety Onto
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/safety#hasSafetyIssue</p>
       <div class="comment">
-         <span class="markdown">Property that relates an entity (especially a safety:HazardZone) to a safety:SafetyIssue</span>
+         <span class="markdown">Property that relates an entity (especially a safety:HazardZone) to a safety:DetectedSafetyIssue</span>
       </div>
       <div class="description">
          <dl>
             <dt>has range</dt>
             <dd>
-               <a href="#SafetyIssue"
-                  title="https://cogito.iot.linkeddata.es/safety#SafetyIssue">Safety Issue</a>
+               <a href="#DetectedSafetyIssue"
+                  title="https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue">Detected Safety Issue</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -685,6 +783,27 @@ This section provides details for each class and property defined by Safety Onto
             <dd>
                <a href="#MitigationElement"
                   title="https://cogito.iot.linkeddata.es/safety#MitigationElement">Mitigation Element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="reportedByWorker">
+      <h3>reported by worker<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/safety#reportedByWorker</p>
+      <div class="comment">
+         <span class="markdown">Property that relates an entity (especially a safety:ReportedSafetyIssue) to a resource:Worker indicating the person who has reported it</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://cogito.iot.linkeddata.es/def/resource#Worker"
+                  title="https://cogito.iot.linkeddata.es/def/resource#Worker">Worker</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>

@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/safety#> <http://purl.org/dc/elements/1.1/description> "The COGITO Safety ontology aims at modelling the safety of the construction  domain." .
 <https://cogito.iot.linkeddata.es/safety#> <http://purl.org/dc/elements/1.1/title> "Safety Ontology" .
 <https://cogito.iot.linkeddata.es/safety#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/safety#> <http://www.w3.org/2002/07/owl#versionInfo> "0.5.0" .
+<https://cogito.iot.linkeddata.es/safety#> <http://www.w3.org/2002/07/owl#versionInfo> "0.6.0" .
 # 
 # 
 # #################################################################
@@ -46,13 +46,13 @@
 # https://cogito.iot.linkeddata.es/safety#hasLocation
 <https://cogito.iot.linkeddata.es/safety#hasLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/safety#hasLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/sf#Point> .
-<https://cogito.iot.linkeddata.es/safety#hasLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a safety:SafetyIssue) to a sf:Point indicating its location" .
+<https://cogito.iot.linkeddata.es/safety#hasLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a safety:ReportedSafetyIssue) to a sf:Point indicating its location" .
 <https://cogito.iot.linkeddata.es/safety#hasLocation> <http://www.w3.org/2000/01/rdf-schema#label> "has location" .
 # 
 # https://cogito.iot.linkeddata.es/safety#hasSafetyIssue
 <https://cogito.iot.linkeddata.es/safety#hasSafetyIssue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/safety#hasSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/safety#SafetyIssue> .
-<https://cogito.iot.linkeddata.es/safety#hasSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a safety:HazardZone) to a safety:SafetyIssue" .
+<https://cogito.iot.linkeddata.es/safety#hasSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue> .
+<https://cogito.iot.linkeddata.es/safety#hasSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a safety:HazardZone) to a safety:DetectedSafetyIssue" .
 <https://cogito.iot.linkeddata.es/safety#hasSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#label> "has safety issue" .
 # 
 # https://cogito.iot.linkeddata.es/safety#impliedByHole
@@ -74,6 +74,12 @@
 <https://cogito.iot.linkeddata.es/safety#isMitigatedByElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/safety#MitigationElement> .
 <https://cogito.iot.linkeddata.es/safety#isMitigatedByElement> <http://www.w3.org/2000/01/rdf-schema#comment> "A property relating an entity (especially a safety:SafetyIssue) to a safety:MitigationElement used to mitigate it" .
 <https://cogito.iot.linkeddata.es/safety#isMitigatedByElement> <http://www.w3.org/2000/01/rdf-schema#label> "is mitigated by element" .
+# 
+# https://cogito.iot.linkeddata.es/safety#reportedByWorker
+<https://cogito.iot.linkeddata.es/safety#reportedByWorker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/safety#reportedByWorker> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/resource#Worker> .
+<https://cogito.iot.linkeddata.es/safety#reportedByWorker> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a safety:ReportedSafetyIssue) to a resource:Worker indicating the person who has reported it" .
+<https://cogito.iot.linkeddata.es/safety#reportedByWorker> <http://www.w3.org/2000/01/rdf-schema#label> "reported by worker" .
 # 
 # 
 # 
@@ -128,11 +134,22 @@
 <https://cogito.iot.linkeddata.es/def/facility#SpatialZone> <http://www.w3.org/2000/01/rdf-schema#comment> "A subclass of bot:Zone and, as such, a part of the physical or a virtual world that is inherently both located in this world and has a 3D spatial extent." .
 <https://cogito.iot.linkeddata.es/def/facility#SpatialZone> <http://www.w3.org/2000/01/rdf-schema#label> "Spatial Zone" .
 # 
+# https://cogito.iot.linkeddata.es/def/resource#Worker
+<https://cogito.iot.linkeddata.es/def/resource#Worker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/def/resource#Worker> <http://www.w3.org/2000/01/rdf-schema#comment> "A human resource that works in a project (especially performing a process:Task)" .
+<https://cogito.iot.linkeddata.es/def/resource#Worker> <http://www.w3.org/2000/01/rdf-schema#label> "Worker" .
+# 
 # https://cogito.iot.linkeddata.es/safety#AnalysisZone
 <https://cogito.iot.linkeddata.es/safety#AnalysisZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/safety#AnalysisZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#SpatialZone> .
 <https://cogito.iot.linkeddata.es/safety#AnalysisZone> <http://www.w3.org/2000/01/rdf-schema#comment> "A spatial zone that is inspected" .
 <https://cogito.iot.linkeddata.es/safety#AnalysisZone> <http://www.w3.org/2000/01/rdf-schema#label> "Analysis Zone" .
+# 
+# https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue
+<https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/safety#SafetyIssue> .
+<https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#comment> "A safey problem that has been automatically detected" .
+<https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#label> "Detected Safety Issue" .
 # 
 # https://cogito.iot.linkeddata.es/safety#FallHazardZone
 <https://cogito.iot.linkeddata.es/safety#FallHazardZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -169,6 +186,12 @@
 <https://cogito.iot.linkeddata.es/safety#NormalElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/facility#Element> .
 <https://cogito.iot.linkeddata.es/safety#NormalElement> <http://www.w3.org/2000/01/rdf-schema#comment> "An element not used for safety during the construction process" .
 <https://cogito.iot.linkeddata.es/safety#NormalElement> <http://www.w3.org/2000/01/rdf-schema#label> "Normal Element" .
+# 
+# https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue
+<https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/safety#SafetyIssue> .
+<https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#comment> "A safey problem that has been reported by a worker" .
+<https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue> <http://www.w3.org/2000/01/rdf-schema#label> "Reported Safety Issue" .
 # 
 # https://cogito.iot.linkeddata.es/safety#SafetyIssue
 <https://cogito.iot.linkeddata.es/safety#SafetyIssue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

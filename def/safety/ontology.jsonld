@@ -65,6 +65,15 @@
     "@value" : "Spatial Zone"
   } ]
 }, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/resource#Worker",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A human resource that works in a project (especially performing a process:Task)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Worker"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/safety#",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/elements/1.1/creator" : [ {
@@ -84,7 +93,7 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.5.0"
+    "@value" : "0.6.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/safety#AnalysisZone",
@@ -97,6 +106,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A safey problem that has been automatically detected"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Detected Safety Issue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/safety#SafetyIssue"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/safety#FallHazardZone",
@@ -186,6 +207,18 @@
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
 }, {
+  "@id" : "https://cogito.iot.linkeddata.es/safety#ReportedSafetyIssue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A safey problem that has been reported by a worker"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Reported Safety Issue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/safety#SafetyIssue"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/safety#SafetyIssue",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -198,7 +231,7 @@
   "@id" : "https://cogito.iot.linkeddata.es/safety#hasLocation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that relates an entity (especially a safety:SafetyIssue) to a sf:Point indicating its location"
+    "@value" : "Property that relates an entity (especially a safety:ReportedSafetyIssue) to a sf:Point indicating its location"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has location"
@@ -210,13 +243,13 @@
   "@id" : "https://cogito.iot.linkeddata.es/safety#hasSafetyIssue",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that relates an entity (especially a safety:HazardZone) to a safety:SafetyIssue"
+    "@value" : "Property that relates an entity (especially a safety:HazardZone) to a safety:DetectedSafetyIssue"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has safety issue"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/safety#SafetyIssue"
+    "@id" : "https://cogito.iot.linkeddata.es/safety#DetectedSafetyIssue"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/safety#impliedByHole",
@@ -259,6 +292,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/safety#MitigationElement"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/safety#reportedByWorker",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that relates an entity (especially a safety:ReportedSafetyIssue) to a resource:Worker indicating the person who has reported it"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "reported by worker"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/resource#Worker"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/safety#severity",
