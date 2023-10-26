@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COGITO Tool Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This describes a catalog of ontologies authored or contributed to by COGITO.">
+    <meta name="languaje" content="English">
+
+    <link rel="stylesheet" href="../vocab/themes/blue/style.css" type="text/css" media="print, projection, screen" />
+    <script src="../vocab/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../vocab/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="../vocab/js/jquery.stickytableheaders.js"></script>
+    <script type="text/javascript" src="../vocab/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../vocab/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../vocab/css/jquery-ui.css">
+    </link>
+    <script type="text/javascript" id="js">
+        $(document).ready(function () {
+            $("#tablesorter-demo").tablesorter();
+            $("#tablesorter-demo").stickyTableHeaders();
+            $('[data-toggle="tooltip"]').tooltip();
+        }
+        );
+    </script>
+
+    <!-- Le styles -->
+    <link href="../vocab/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        #link_image {
+            border: 2px solid rgb(0, 0, 0);
+        }
+
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        #over img {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        #text_align_center {
+            text-align: center;
+            vertical-align: middle;
+            line-height: 90px;
+        }
+        #container_position_left{
+            width: 50%;
+            float: left;
+        }
+        #container_position_right{
+            width: 50%;
+            float: right;
+        }
+        #gray img {
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+
+<body>
+
+  <div class="container">
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <h1><a href="https://cogito-project.eu/"><img src="vocab/logo.png" width="500" alt="COGITO logo"
+                    class="img-rounded" class="img-responsive" /></a></h1>
+        <p class="lead">Here you can find the errors found in the COGITO knowledge graphs</p>
+
+    </div>
+  </div>
+
+    <hr>
+    <div> &nbsp;</div>
+
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+        </style>
+        <table class="tg">
+        <thead>
+          <tr>
+            <th class="tg-7btt">Triple Position</th>
+            <th class="tg-7btt">Resource / Ontology</th>
+            <th class="tg-7btt">Original with Error</th>
+            <th class="tg-c3ow"><span style="font-weight:700;font-style:normal">Modification following best practices</span></th>
+            <th class="tg-c3ow"><span style="font-weight:bold">Add / Replace / Remove + Replace</span></th>
+            <th class="tg-c3ow"><span style="font-weight:bold">Subject in case of needed to add new triples</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://w3id.org/bot#Element</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/facility#Element</td>
+            <td class="tg-c3ow">Add</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/resource#WorkerRole</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/facility#ResourceType</td>
+            <td class="tg-c3ow">Add</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/resource#EquipmentType</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/facility#ResourceType</td>
+            <td class="tg-c3ow">Add</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://w3id.org/bot#Zone</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/facility#SpatialZone</td>
+            <td class="tg-c3ow">Add</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://w3id.org/bot#Storey</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/facility#Storey</td>
+            <td class="tg-c3ow">Add</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://w3id.org/bot#Site</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/facility#Site</td>
+            <td class="tg-c3ow">Add</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://w3id.org/bot#Building</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/facility#Building</td>
+            <td class="tg-c3ow">Add</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">-</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/quality#RawImage</td>
+            <td class="tg-c3ow">Add</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/rawImage/...</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">-</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/resource#Worker</td>
+            <td class="tg-c3ow">Add</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/human/...</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">-</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/resource#Equipment</td>
+            <td class="tg-c3ow">Add</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/equipment/...</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/facility#belongsTo</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/facility#belongsToSpatialZone</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#isPartOfProcess</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#belongsToProcess</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/quality#rawImageFormat</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/platform#hasFileFormat</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/quality#ImageFormat</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/platform#hasFileFormat</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/quality#resultImageFormat</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/platform#hasFileFormat</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/quality#rawImageUrl</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/platform#hasFileUrl</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/quality#resultImageUrl</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/platform#hasFileUrl</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/quality#ImageUrl</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/platform#hasFileUrl</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/resource#hasEmail</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/resource#email</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/resource#hasFirstName</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/resource#firstName</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/resource#hasLastName</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/resource#lastName</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">http://purl.org/dc/terms#</td>
+            <td class="tg-c3ow">http://purl.org/dc/terms/</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#hasParentTask</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#isSubTaskOf</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#hasPredecessor</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#hasSubTask</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">http://www.w3.org/2006/time#hasDuration</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#duration</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#hasStatus</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#status</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/safety#MovementSpace</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/safety#MovementZone</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/safety#FallSpace</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/safety#HoleZone</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/safety#FallHazardSpace</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/safety#FallHazardZone</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate + Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">process:hasType + VISUAL_QUALITY_CONTROL</span></td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#VisualQualityTask</td>
+            <td class="tg-c3ow">Remove + Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">Predicate + Object</span></td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">process:hasType + NORMAL_TASK</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#ConstructionTask</td>
+            <td class="tg-c3ow">Remove + Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate + Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">process:hasType + GEOMETRIC_QUALITY_CONTROL</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#GeometricQualityTask</td>
+            <td class="tg-c3ow">Remove + Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate + Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">process:hasType + SAFETY_ADDED</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#SafetyAddingTask</td>
+            <td class="tg-c3ow">Remove + Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate + Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">process:hasType + SAFETY_REMOVED</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#SafetyRemovingTask</td>
+            <td class="tg-c3ow">Remove + Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate + Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">process:hasType + AsIs</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#AsIsProcess</td>
+            <td class="tg-c3ow">Remove + Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate + Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">process:hasType + AsPlannedEnriched</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#AsPlannedEnrichedProcess</td>
+            <td class="tg-c3ow">Remove + Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Predicate + Object</td>
+            <td class="tg-c3ow">Ontology</td>
+            <td class="tg-c3ow">process:hasType + AsPlannedOriginal</td>
+            <td class="tg-c3ow">https://cogito.iot.linkeddata.es/def/process#AsPlannedOriginalProcess</td>
+            <td class="tg-c3ow">Remove + Replace</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">-</span></td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources#Task_AsPlanned_Enriched_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/task/asPlanned/enriched/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#</span>Task_AsIs_...</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources/task/</span>asIs/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources#Task_AsPlanned_Original_...</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources/</span>task/asPlanned/original/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#</span>AsIs_Process_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/process/asIs/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources#AsPlanned_Original_Process_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/process/asPlanned/original/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#</span>AsPlanned_Enriched_Process_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/process/asPlanned/enriched/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources#AsIsResourceTypeAssignment_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/resourceTypeAssignment/asIs/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#Element_...</span></td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources/element/...</span></td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#Human_...</span></td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources/human/...</span></td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#BuildingStorey_...</span></td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources/buildingStorey/...</span></td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#SpatialZone_...</span></td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources/spatialZone/...</span></td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#RawImage_...</span></td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/rawImage/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#ImageJob_...</span></td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/imageJob/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#ResultImage_...</span></td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources/resultImage/...</span></td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources#VQC_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/vqc/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#SafetyZone_...</span></td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/safetyZone/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources#Image_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/image/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#Equipment_...</span></td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/equipment/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources#Site_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/site/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources#ResourceTypeAssignment_...</span></td>
+            <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">https://data.cogito.iot.linkeddata.es/resources/resourceTypeAssignment/...</span></td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources#ResourceType_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/resourceType/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources#Workorder_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/workorder/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Subject &amp; Object</td>
+            <td class="tg-c3ow">Resource</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources#Building_...</td>
+            <td class="tg-c3ow">https://data.cogito.iot.linkeddata.es/resources/building/...</td>
+            <td class="tg-c3ow">Replace</td>
+            <td class="tg-c3ow">-</td>
+          </tr>
+        </tbody>
+        </table>
+
+    <script>
+        function hideRows(text) {
+          index = 1;
+          tr = document.getElementById('tr' + index);
+          while (tr != null) {
+            valores = document.getElementById('inp' + index).value;
+            if (valores.indexOf(text) == -1) {
+              tr.style.display = 'none';
+            }
+            index++;
+            tr = document.getElementById('tr' + index);
+          }
+          document.getElementById('remButt').style.display = '';
+        }
+    
+        function showRows() {
+          index = 1;
+          tr = document.getElementById('tr' + index);
+          while (tr != null) {
+            tr.style.display = '';
+            index++;
+            tr = document.getElementById('tr' + index);
+          }
+          butt = document.getElementById('remButt').style.display = 'none';
+        }
+    
+      </script>
+
+    <script src="w3-include-HTML.js"></script>
+
+</body>
+</html>
