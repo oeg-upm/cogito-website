@@ -1,0 +1,67 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+PREFIX facility: <https://cogito.iot.linkeddata.es/def/facility#>
+PREFIX process: <https://cogito.iot.linkeddata.es/def/process#>
+PREFIX platform: <https://cogito.iot.linkeddata.es/def/platform#>
+PREFIX qual: <https://cogito.iot.linkeddata.es/def/quality#>
+PREFIX props: <https://w3id.org/props#>
+PREFIX hctl: <https://www.w3.org/2019/wot/hypermedia#>
+SELECT ?td ?infoResTD (group_concat(?elementTD; separator=", ") as ?elementTDs) WHERE {
+  SERVICE <https://data.cogito.iot.linkeddata.es/tdd/api/search/sparql> {
+    ?td a facility:Project .
+    ?td td:title ?title .
+  	?td td:description ?description .
+    ?td td:hasLink ?link .
+    ?link hctl:hasTarget ?target .
+    BIND(URI(?target) AS ?infoResTD) .
+    ?infoResTD a qual:InformationResource .
+    ?infoResTD td:hasLink ?elementLink .
+    ?elementLink hctl:hasTarget ?elementTD .
+  }
+} GROUP BY ?td ?infoResTD
+
+
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+PREFIX facility: <https://cogito.iot.linkeddata.es/def/facility#>
+PREFIX process: <https://cogito.iot.linkeddata.es/def/process#>
+PREFIX platform: <https://cogito.iot.linkeddata.es/def/platform#>
+PREFIX props: <https://w3id.org/props#>
+PREFIX hctl: <https://www.w3.org/2019/wot/hypermedia#>
+SELECT ?td ?title ?description ?iriHref (group_concat(?target; separator=', ') as ?relations) WHERE {
+  SERVICE <https://data.cogito.iot.linkeddata.es/tdd/api/search/sparql> {
+    ?td a facility:Project .
+    ?td td:title ?title .
+  	?td td:description ?description .
+    ?td td:hasPropertyAffordance ?property .
+    ?property td:name "platform:hasIRI" .
+    ?property td:hasForm ?form .
+    ?form hctl:hasTarget ?iriHref .
+    ?td td:hasLink ?link .
+    ?link hctl:hasTarget ?target .
+  }
+} GROUP BY ?td ?title ?description ?iriHref
+
+
+
+
+
+?td td:type 'facility:Element' .
+?td td:title ?title .
+?td td:description ?description .
+?td td:hasPropertyAffordance ?property .
+?td td:hasPropertyAffordance ?property2 .
+?property td:name 'platform:hasIRI' .
+?property td:hasForm ?form .
+?form td:href ?iriHref .
+?property2 td:name 'platform:hasFile' .
+?property2 td:hasForm ?form2 .
+?form2 td:href ?fileHref .
+?td td:hasLink ?l .
+?l td:rel 'platform:relatedTD' .
+?l td:href ?projectTD .
+BIND(concat('https://data.cogito.iot.linkeddata.es/tdd/api/things/',?projectTD) AS ?relatedProjectTD) .

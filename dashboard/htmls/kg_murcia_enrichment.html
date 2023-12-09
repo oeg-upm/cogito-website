@@ -1,0 +1,118 @@
+<p class="lead" align="center">Pilot Knowledge Graph Enrichment</p>
+
+<table align="center">
+    <tr>
+        <td>
+            <form>
+                <label for="fname" align="center">Enter Latitude:</label><br>
+                <input type="text" id="latitude_murcia" name="fname" value="37.972739"><br>
+            </form>
+        </td>
+        <td>
+            <p>&nbsp;</p>
+        </td>
+        <td>
+            <label for="lname" align="center">Enter Longitude:</label><br>
+            <input type="text" id="longitude_murcia" name="lname" value="-1.162673">
+        </td>
+    </tr>
+</table>
+<p> 
+    &nbsp;
+</p>
+<table align="center">
+    <tr>
+        <td>
+            <button class="fa fa-code" onclick="enrichment('55546fd7-5958-45fd-830d-bd73d3cff266', 'latitude_murcia', 'longitude_murcia', 'json', 'output_murcia', 'loading2')"> Get JSON-LD Enrichment</button>
+        </td>
+        <td>
+            <p>&nbsp;</p>
+        </td>
+        <td>
+            <button class="fa fa-share-alt-square" onclick="enrichment('55546fd7-5958-45fd-830d-bd73d3cff266', 'latitude_murcia', 'longitude_murcia', 'turtle', 'output_murcia', 'loading2')"> Get TURTLE Enrichment</button>
+        </td>
+    </tr>
+</table>
+
+<table align="center">
+    <tr>
+        <td>
+            <div class="image" id="loading2" style="display: none;"><img style="width:auto; height:100px;" src="vocab/images/loading.gif"/></div>
+        </td>
+    </tr>
+</table>
+<p> 
+    &nbsp;
+</p>
+
+<div align="center">
+    <textarea type="text" id="output_murcia" placeholder="Enrichment Results" style="width: 1100px; height: 450px;">
+    </textarea>
+    <p> 
+        &nbsp;
+    </p>
+    <button class="fa fa-clipboard" onclick="copyToClipboard('output_murcia')"> Copy to Clipboard</button>
+</div>
+
+
+<p>
+    &nbsp;
+</p>
+
+<hr>
+
+<p class="lead" align="center">Pilot Knowledge Graph Enrichment Query</p>
+
+<div align="center">
+    <textarea type="text" id="output_murcia_query" style="width: 1100px; height: 450px;">PREFIX saref: <https://saref.etsi.org/core&#47;>
+PREFIX process: <https://cogito.iot.linkeddata.es/def/process#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?task ?property ?timeStamp ?value ?unit WHERE {
+    ?task a process:Task .
+    ?task process:plannedStartDate ?startDate .
+    ?task process:plannedEndDate ?endDate .
+    ?measurement a saref:Measurement .
+    ?measurement saref:hasTimeStamp ?timeStamp .
+    ?measurement saref:relatesToProperty ?property .
+    ?measurement saref:hasValue ?value .
+    ?measurement saref:isMeasuredIn ?unit .
+    ?measurement saref:measurementMadeBy ?device .
+    BIND((concat(str(year(?startDate)),'-',
+                str(month(?startDate)),'-',
+                str(day(?startDate)))) as ?start) .
+    BIND((concat(str(year(?endDate)),'-',
+                str(month(?endDate)),'-',
+                str(day(?endDate)))) as ?end).
+    BIND((concat(str(year(?timeStamp)),'-',
+                str(month(?timeStamp)),'-',
+                str(day(?timeStamp)))) as ?time).
+    FILTER(?start >= ?time || ?end <= ?time)
+} ORDER BY ?task ?timeStamp</textarea>
+    <p> 
+        &nbsp;
+    </p>
+    <button class="fa fa-clipboard" onclick="executeQuery('output_murcia_query', 'https://data.cogito.iot.linkeddata.es/validation/api/murcia_enrichment_turtle_rdf/data', 'head_murcia_table', 'body_murcia_table', 'loading_query2', 'scrollable_murcia')"> Send Query</button>
+</div>
+
+<p> 
+    &nbsp;
+</p>
+
+<table align="center">
+    <tr>
+        <td>
+            <div class="image" id="loading_query2" style="display: none;"><img style="width:auto; height:100px;" src="vocab/images/loading.gif"/></div>
+        </td>
+    </tr>
+</table>
+
+<div id="scrollable_murcia" cellspacing="0" cellpadding="0" border="0" style="display: none; height:500px; overflow:auto;">
+    <table id="table-1" class="tablesorter table table-hover "  cellspacing="0" cellpadding="1" border="0" width="300" >
+        <thead id="head_murcia_table">
+        </thead>
+        <tbody id="body_murcia_table">
+        </tbody>
+    </table>
+</div>
+
+<hr>

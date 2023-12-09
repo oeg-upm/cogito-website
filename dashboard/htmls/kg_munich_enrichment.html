@@ -1,0 +1,118 @@
+<p class="lead" align="center">Pilot Knowledge Graph Enrichment</p>
+
+<table align="center">
+    <tr>
+        <td>
+            <form>
+                <label for="fname" align="center">Enter Latitude:</label><br>
+                <input type="text" id="latitude_munich" name="fname" value="48.09935970093403"><br>
+            </form>
+        </td>
+        <td>
+            <p>&nbsp;</p>
+        </td>
+        <td>
+            <label for="lname" align="center">Enter Longitude:</label><br>
+            <input type="text" id="longitude_munich" name="lname" value="11.61068267680862">
+        </td>
+    </tr>
+</table>
+<p> 
+    &nbsp;
+</p>
+<table align="center">
+    <tr>
+        <td>
+            <button class="fa fa-code" onclick="enrichment('b3fe643d-f9f2-4e14-bf3c-95343d63c850', 'latitude_munich', 'longitude_munich', 'json', 'output_munich', 'loading')"> Get JSON-LD Enrichment</button>
+        </td>
+        <td>
+            <p>&nbsp;</p>
+        </td>
+        <td>
+            <button class="fa fa-share-alt-square" onclick="enrichment('b3fe643d-f9f2-4e14-bf3c-95343d63c850', 'latitude_munich', 'longitude_munich', 'turtle', 'output_munich', 'loading')"> Get TURTLE Enrichment</button>
+        </td>
+    </tr>
+</table>
+
+<table align="center">
+    <tr>
+        <td>
+            <div class="image" id="loading" style="display: none;"><img style="width:auto; height:100px;" src="vocab/images/loading.gif"/></div>
+        </td>
+    </tr>
+</table>
+<p> 
+    &nbsp;
+</p>
+
+<div align="center">
+    <textarea type="text" id="output_munich" placeholder="Enrichment Results" style="width: 1100px; height: 450px;">
+    </textarea>
+    <p> 
+        &nbsp;
+    </p>
+    <button class="fa fa-clipboard" onclick="copyToClipboard('output_munich')"> Copy to Clipboard</button>
+</div>
+
+
+<p>
+    &nbsp;
+</p>
+
+<hr>
+
+<p class="lead" align="center">Pilot Knowledge Graph Enrichment Query</p>
+
+<div align="center">
+    <textarea type="text" id="output_munich_query" style="width: 1100px; height: 450px;">PREFIX saref: <https://saref.etsi.org/core&#47;>
+PREFIX process: <https://cogito.iot.linkeddata.es/def/process#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?task ?property ?timeStamp ?value ?unit WHERE {
+    ?task a process:Task .
+    ?task process:plannedStartDate ?startDate .
+    ?task process:plannedEndDate ?endDate .
+    ?measurement a saref:Measurement .
+    ?measurement saref:hasTimeStamp ?timeStamp .
+    ?measurement saref:relatesToProperty ?property .
+    ?measurement saref:hasValue ?value .
+    ?measurement saref:isMeasuredIn ?unit .
+    ?measurement saref:measurementMadeBy ?device .
+    BIND((concat(str(year(?startDate)),'-',
+                str(month(?startDate)),'-',
+                str(day(?startDate)))) as ?start) .
+    BIND((concat(str(year(?endDate)),'-',
+                str(month(?endDate)),'-',
+                str(day(?endDate)))) as ?end).
+    BIND((concat(str(year(?timeStamp)),'-',
+                str(month(?timeStamp)),'-',
+                str(day(?timeStamp)))) as ?time).
+    FILTER(?start >= ?time || ?end <= ?time)
+} ORDER BY ?task ?timeStamp</textarea>
+    <p> 
+        &nbsp;
+    </p>
+    <button class="fa fa-clipboard" onclick="executeQuery('output_munich_query', 'https://data.cogito.iot.linkeddata.es/validation/api/munich_enrichment_turtle_rdf/data', 'head_munich_table', 'body_munich_table', 'loading_query', 'scrollable_munich')"> Send Query</button>
+</div>
+
+<p> 
+    &nbsp;
+</p>
+
+<table align="center">
+    <tr>
+        <td>
+            <div class="image" id="loading_query" style="display: none;"><img style="width:auto; height:100px;" src="vocab/images/loading.gif"/></div>
+        </td>
+    </tr>
+</table>
+
+<div id="scrollable_munich" cellspacing="0" cellpadding="0" border="0" style="display: none; height:500px; overflow:auto;">
+    <table id="table-1" class="tablesorter table table-hover "  cellspacing="0" cellpadding="1" border="0" width="300" >
+        <thead id="head_munich_table">
+        </thead>
+        <tbody id="body_munich_table">
+        </tbody>
+    </table>
+</div>
+
+<hr>
