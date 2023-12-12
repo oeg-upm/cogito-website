@@ -80,7 +80,7 @@ function createListElementForEvent2(resultsIndex, type) {
 
 
 function fillProjectTable2(td){
-    var dt_identifier = $("<td>").html("<span><a href='" + td.iriHref.value.replace("https://data.cogito.iot.linkeddata.es/resources/", "https://data.cogito.iot.linkeddata.es/enriched/murcia/") +  "' target='_blank'>" + td.title.value + "</span></a>");
+    var dt_identifier = $("<td>").html("<span><a href='" + td.iriHref.value.replace("https://data.cogito.iot.linkeddata.es/resources/", "https://data.cogito.iot.linkeddata.es/enriched/") +  "' target='_blank'>" + td.title.value + "</span></a>");
     var description = $("<td>").text(td.description.value);
     var final_files = "";
     for (var elem of td.relations.value.split(', ')) {
