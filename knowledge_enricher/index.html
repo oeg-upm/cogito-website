@@ -105,7 +105,7 @@
             <!-- Brand -->
             <div class="brand-name-wrapper">
               <a class="navbar-brand" href="" onClick="window.location.reload();"">
-                Knowledge Interface
+                Knowledge Enricher
               </a>
             </div>
   
@@ -116,28 +116,26 @@
         <!-- Main Menu -->
         <div class="side-menu-container">
           <ul class="nav navbar-nav">
-  
             <li class="active liactive" onclick="openTab('information')"><a href="#information"><i class="fa fa-info-circle"></i>Information</a></li>
-            <li class="liactive" onclick="openTab('ontologies')""><a href="#ontologies"><i class="fa fa-sun-o"></i>Ontologies</a></li>
-            <!-- <li class="liactive" onclick="openTab('knowledge_graph')""><a href="#knowledge_graph"><i class="fa fa-first-order"></i>Knowledge Graph</a></li> -->
+  
             <li class="liactive" class="panel panel-default" id="dropdown">
               <a data-toggle="collapse" href="#dropdown-lvl1">
-                  <i class="fa fa-first-order"></i> Knowledge Graph
+                  <i class="fa fa-first-order"></i> Enrichment
                 <span class="caret"></span>
               </a>
               <!-- Dropdown level 1 -->
                 <div id="dropdown-lvl1" class="panel-collapse collapse">
                     <div class="panel-body">
                         <ul class="nav navbar-nav">
-                            <li class="liactive" onclick="openTab('kg_munich')"><a href="#munich_knowledge_graph">Munich Pilot KG</a></li>
-                            <li class="liactive" onclick="openTab('kg_murcia')"><a href="#murcia_knowledge_graph">Murcia Pilot KG</a></li>
+                            <li class="liactive" onclick="openTab('kg_munich')"><a href="#munich_knowledge_graph">Munich KG Enrichment</a></li>
+                            <li class="liactive" onclick="openTab('kg_murcia')"><a href="#murcia_knowledge_graph">Murcia KG Enrichment</a></li>
                         </ul>
                     </div>
                 </div>
             </li>
             <li class="liactive" class="panel panel-default" id="dropdown">
               <a data-toggle="collapse" href="#dropdown-lvl2">
-                  <i class="fa fa-check"></i> KG Validation
+                  <i class="fa fa-check"></i> Enrichment Validation
                 <span class="caret"></span>
               </a>
               <!-- Dropdown level 1 -->
@@ -151,7 +149,7 @@
                 </div>
             </li>
 
-            <li class="liactive" onclick="openTab('api_documentation')""><a href="#api_documentation"><i class="fa fa-book"></i>API Documentation</a></li>
+            <li class="liactive" onclick="openTab('sparql_query')""><a href="#sparql_query"><i class="fa fa-code"></i>SPARQL Query</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </nav>  
@@ -160,44 +158,17 @@
   <div class="mcw">
     <div class="container">
       <!-- Jumbotron -->
-          
 
-  
-  
     <!--navigation here-->
     <!--main content view-->
-
     <div id="information" class="tab">
       <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
         class="img-rounded" class="img-responsive" /></a></h1>
-        <p class="lead" align="center">Here you can find the COGITO Digital Twin Platform Knowledge Interface Information</p>
+        <p class="lead" align="center">Here you can find the COGITO Digital Twin Platform Knowledge Enrichment</p>
 
+    </div>
 
         <hr>
-
-      <div class="container" style="border-radius: 10px; padding: 20px;">
-        <div class="container" id="container_position_left" align="center">
-          <p>&nbsp;</p>
-          <table>
-            <tr>
-                <td>
-                    <div> <div class="image" style="float: left;padding: 5px; font-size: large;"> <b>⦿ Project Digital Twins x 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>  &nbsp; <img style="width:auto; height:180px; border: 1px solid black" src="vocab/images/project.jpg"/></div>  </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div> <div class="image" style="float: left;padding: 5px; font-size: large;"> <b>⦿ Element Digital Twins x 4998</b>  &nbsp; <img style="width:auto; height:170px; border: 1px solid black;" src="vocab/images/building_elements.png"/></div></div>
-                </td>
-            </tr>
-        </table>
-        </div>
-
-        <div class="container" id="container_position_right" align="center">
-          <div id="map" style="border-radius: 10px; padding: 20px;"></div>
-        </div>
-      </div>
-      <div id="info_html"></div>
-    </div>
 
     <div id="kg_munich" class="tab" style="display:none">
       <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
@@ -240,24 +211,13 @@
       
     </div>
 
-    <div id="ontologies" class="tab" style="display:none">
+    <div id="sparql_query" class="tab" style="display:none">
       <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
         class="img-rounded" class="img-responsive" /></a></h1>
-        <p class="lead" align="center">Here you can find the list of ontologies developed for COGITO project </p>
-        <p class="lead" align="center"> If you want to contribute developing ontologies please follow the <a
-          href="https://cogito.iot.linkeddata.es/guide.html" target="_blank">guidelines</a> we provide</p>
+        <p class="lead" align="center">Here you can find the COGITO Knowledge Graph SPARQL Endpoint</p>
 
         <hr>
-      <div id="ontologies_html"></div>
-    </div>
-
-    <div id="api_documentation" class="tab" style="display:none">
-      <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
-        class="img-rounded" class="img-responsive" /></a></h1>
-        <p class="lead" align="center">Here you can find the COGITO Knowledge Graph APIs documentarion link table list</p>
-
-        <hr>
-      <div id="api_documentation_html"></div>
+      <div id="sparql_query_html"></div>
     </div>
 
   
@@ -327,13 +287,12 @@
       $(function(){
         $("#info_html").load("./htmls/info.html");
         $("#kg_munich_html").load("./htmls/kg_munich.html");
-        $("#kg_munich_enrichment_html").load("./htmls/kg_munich_enrichment.html");
+        // $("#kg_munich_enrichment_html").load("./htmls/kg_munich_enrichment.html");
         $("#kg_murcia_html").load("./htmls/kg_murcia.html");
-        $("#kg_murcia_enrichment_html").load("./htmls/kg_murcia_enrichment.html");
+        // $("#kg_murcia_enrichment_html").load("./htmls/kg_murcia_enrichment.html");
         $("#kg_munich_validation_html").load("./htmls/kg_munich_validation.html");
         $("#kg_murcia_validation_html").load("./htmls/kg_murcia_validation.html");
-        $("#ontologies_html").load("./htmls/ontologies.html");
-        $("#api_documentation_html").load("./htmls/api_documentation.html");
+        $("#sparql_query_html").load("./htmls/sparql_query.html");
         $("#footer").load("./htmls/footer.html");
       });
     </script> 

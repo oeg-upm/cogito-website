@@ -42,11 +42,11 @@ function copyToClipboard(id){
     navigator.clipboard.writeText(document.getElementById(id).value)
 }
 
-function executeQuery(id, rdf_uri, head_id, body_id, loading_id, table_id){
+function executeQuery(id, head_id, body_id, loading_id, table_id){
     loading(loading_id);
     var value = document.getElementById(id).value
     var query_exe = encodeURIComponent(value)
-    url = "https://data.cogito.iot.linkeddata.es/validation/api/enrichment_query/data?rdf_uri=" + rdf_uri + "&query=" + query_exe;
+    url = "https://data.cogito.iot.linkeddata.es/validation/api/query_graph/data?query=" + query_exe;
     // console.log(url);
     var request = new XMLHttpRequest();
     request.open("GET", url);

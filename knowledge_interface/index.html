@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COGITO DTP Knowledge Graph Interface</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This describes a catalog of ontologies authored or contributed to by COGITO.">
+    <meta name="languaje" content="English">
+
+
+    <link rel="stylesheet" href="../vocab/themes/blue/style.css" type="text/css" media="print, projection, screen" />
+    <script src="../vocab/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../vocab/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="../vocab/js/jquery.stickytableheaders.js"></script>
+    <script type="text/javascript" src="../vocab/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../vocab/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../vocab/css/jquery-ui.css">
+    </link>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <style type="text/css">
+      #map { height: 500px; }
+    </style>
+
+    <link rel="stylesheet" href="vocab/css/style.css">
+
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+
+    <!-- Le styles -->
+    <link href="../vocab/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        #link_image {
+            border: 2px solid rgb(0, 0, 0);
+        }
+
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        #over img {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        #text_align_center {
+            text-align: center;
+            line-height: 90px;
+        }
+        #container_position_left{
+            width: 50%;
+            float: left;
+        }
+        #container_position_right{
+            width: 50%;
+            float: right;
+        }
+        #gray img {
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+
+<body>
+
+  <!-- NavBar top -->
+
+  <nav class="mnb navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="ic fa fa-bars"></i>
+        </button>
+        <div style="padding: 15px 0;">
+           <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+        </div>
+      </div>
+      <!-- <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li style="border-radius: 10px;
+          border: 1px solid black;
+          "><a href="#">COGITO DTP Enhanced Knowledge Graph Enhanced</a></li>
+        </ul>
+      </div> -->
+    </div>
+  </nav>
+
+  <!-- NavBar top -->
+  <!-- BODY -->
+
+    <div class="msb" id="msb">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <div class="brand-wrapper">
+            <!-- Brand -->
+            <div class="brand-name-wrapper">
+              <a class="navbar-brand" href="" onClick="window.location.reload();"">
+                Knowledge Interface
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <!-- Main Menu -->
+        <div class="side-menu-container">
+          <ul class="nav navbar-nav">
+  
+            <li class="active liactive" onclick="openTab('information')"><a href="#information"><i class="fa fa-info-circle"></i>Information</a></li>
+            <li class="liactive" onclick="openTab('ontologies')""><a href="#ontologies"><i class="fa fa-sun-o"></i>Ontologies</a></li>
+            <!-- <li class="liactive" onclick="openTab('knowledge_graph')""><a href="#knowledge_graph"><i class="fa fa-first-order"></i>Knowledge Graph</a></li> -->
+            <li class="liactive" class="panel panel-default" id="dropdown">
+              <a data-toggle="collapse" href="#dropdown-lvl1">
+                  <i class="fa fa-first-order"></i> Knowledge Graph
+                <span class="caret"></span>
+              </a>
+              <!-- Dropdown level 1 -->
+                <div id="dropdown-lvl1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul class="nav navbar-nav">
+                            <li class="liactive" onclick="openTab('kg_munich')"><a href="#munich_knowledge_graph">Munich Pilot KG</a></li>
+                            <li class="liactive" onclick="openTab('kg_murcia')"><a href="#murcia_knowledge_graph">Murcia Pilot KG</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="liactive" class="panel panel-default" id="dropdown">
+              <a data-toggle="collapse" href="#dropdown-lvl2">
+                  <i class="fa fa-check"></i> KG Validation
+                <span class="caret"></span>
+              </a>
+              <!-- Dropdown level 1 -->
+                <div id="dropdown-lvl2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul class="nav navbar-nav">
+                            <li class="liactive" onclick="openTab('kg_munich_validation')"><a href="#munich_knowledge_graph_validation">Munich KG Validation</a></li>
+                            <li class="liactive" onclick="openTab('kg_murcia_validation')"><a href="#murcia_knowledge_graph_validation">Murcia KG Validation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
+            <li class="liactive" onclick="openTab('api_documentation')"><a href="#api_documentation"><i class="fa fa-book"></i>API Documentation</a></li>
+            <li class="liactive" onclick="openTab('sparql_query')"><a href="#sparql_query"><i class="fa fa-code"></i>SPARQL Query</a></li>
+            <li class="liactive"><a href="https://cogito.iot.linkeddata.es/knowledge_enricher/index.html" target="_blank"><i class="fa fa-external-link"></i>Knowledge Enricher</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>  
+  </div>
+<!--main content wrapper-->
+  <div class="mcw">
+    <div class="container">
+      <!-- Jumbotron -->
+          
+
+  
+  
+    <!--navigation here-->
+    <!--main content view-->
+
+    <div id="information" class="tab">
+      <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
+        class="img-rounded" class="img-responsive" /></a></h1>
+        <p class="lead" align="center">Here you can find the COGITO Digital Twin Platform Knowledge Interface Information</p>
+
+
+        <hr>
+
+      <div class="container" style="border-radius: 10px; padding: 20px;">
+        <div class="container" id="container_position_left" align="center">
+          <p>&nbsp;</p>
+          <table>
+            <tr>
+                <td>
+                    <div> <div class="image" style="float: left;padding: 5px; font-size: large;"> <b>⦿ Project Digital Twins x 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>  &nbsp; <img style="width:auto; height:180px; border: 1px solid black" src="vocab/images/project.jpg"/></div>  </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div> <div class="image" style="float: left;padding: 5px; font-size: large;"> <b>⦿ Element Digital Twins x 4998</b>  &nbsp; <img style="width:auto; height:170px; border: 1px solid black;" src="vocab/images/building_elements.png"/></div></div>
+                </td>
+            </tr>
+        </table>
+        </div>
+
+        <div class="container" id="container_position_right" align="center">
+          <div id="map" style="border-radius: 10px; padding: 20px;"></div>
+        </div>
+      </div>
+      <div id="info_html"></div>
+    </div>
+
+    <div id="kg_munich" class="tab" style="display:none">
+      <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
+        class="img-rounded" class="img-responsive" /></a></h1>
+        <p class="lead" align="center">Here you can find the COGITO Munich Pilot Knowledge Graph</p>
+
+        <hr>
+      <div id="kg_munich_html"></div>
+      <!-- <div id="kg_munich_enrichment_html"></div> -->
+      
+    </div>
+  
+    <div id="kg_murcia" class="tab" style="display:none">
+      <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
+        class="img-rounded" class="img-responsive" /></a></h1>
+        <p class="lead" align="center">Here you can find the COGITO Murcia Pilot Knowledge Graph</p>
+
+        <hr>
+      <div id="kg_murcia_html"></div>
+      <!-- <div id="kg_murcia_enrichment_html"></div> -->
+      
+    </div>
+
+    <div id="kg_munich_validation" class="tab" style="display:none">
+      <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
+        class="img-rounded" class="img-responsive" /></a></h1>
+        <p class="lead" align="center">Here you can find the Validation of the COGITO Munich Pilot Knowledge Graph</p>
+
+        <hr>
+      <div id="kg_munich_validation_html"></div>
+      
+    </div>
+  
+    <div id="kg_murcia_validation" class="tab" style="display:none">
+      <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
+        class="img-rounded" class="img-responsive" /></a></h1>
+        <p class="lead" align="center">Here you can find the Validation of the COGITO Murcia Pilot Knowledge Graph</p>
+        <hr>
+      <div id="kg_murcia_validation_html"></div>
+      
+    </div>
+
+    <div id="ontologies" class="tab" style="display:none">
+      <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
+        class="img-rounded" class="img-responsive" /></a></h1>
+        <p class="lead" align="center">Here you can find the list of ontologies developed for COGITO project </p>
+        <p class="lead" align="center"> If you want to contribute developing ontologies please follow the <a
+          href="https://cogito.iot.linkeddata.es/guide.html" target="_blank">guidelines</a> we provide</p>
+
+        <hr>
+      <div id="ontologies_html"></div>
+    </div>
+
+    <div id="api_documentation" class="tab" style="display:none">
+      <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
+        class="img-rounded" class="img-responsive" /></a></h1>
+        <p class="lead" align="center">Here you can find the COGITO Knowledge Graph APIs documentarion link table list</p>
+
+        <hr>
+      <div id="api_documentation_html"></div>
+    </div>
+
+    <div id="sparql_query" class="tab" style="display:none">
+      <h1 align="center"><a href="https://cogito-project.eu/" target="_blank"><img src="../vocab/logo.jpg" width="500" alt="COGITO logo"
+        class="img-rounded" class="img-responsive" /></a></h1>
+        <p class="lead" align="center">Here you can find the COGITO Knowledge Graph SPARQL Endpoint</p>
+
+        <hr>
+      <div id="sparql_query_html"></div>
+    </div>
+
+  
+
+  <div id="footer"></div>
+
+</div>
+
+  
+
+    
+  </div> <!-- mcw -->
+
+  <!-- BODY -->
+
+  </div>
+
+    <!-- Script -->
+
+    <script>
+      
+    </script>
+
+
+    <script>
+        function hideRows(text) {
+          index = 1;
+          tr = document.getElementById('tr' + index);
+          while (tr != null) {
+            valores = document.getElementById('inp' + index).value;
+            if (valores.indexOf(text) == -1) {
+              tr.style.display = 'none';
+            }
+            index++;
+            tr = document.getElementById('tr' + index);
+          }
+          document.getElementById('remButt').style.display = '';
+        }
+    
+        function showRows() {
+          index = 1;
+          tr = document.getElementById('tr' + index);
+          while (tr != null) {
+            tr.style.display = '';
+            index++;
+            tr = document.getElementById('tr' + index);
+          }
+          butt = document.getElementById('remButt').style.display = 'none';
+        }
+    
+      </script>
+
+    <script src="w3-include-HTML.js"></script>
+
+    <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src="vocab/js/code.js"></script>
+
+    <script src="vocab/js/leaflet.js"></script>
+    <script type="text/javascript" src="vocab/js/jsonview.js"></script>
+    <script src="vocab/js/kg_munich_code.js"></script>
+    <script src="vocab/js/kg_murcia_code.js"></script>
+    <script src="vocab/js/enrichment_code.js"></script>
+    <script src="vocab/js/validation_code.js"></script>
+
+    <script> 
+      $(function(){
+        $("#info_html").load("./htmls/info.html");
+        $("#kg_munich_html").load("./htmls/kg_munich.html");
+        $("#kg_munich_enrichment_html").load("./htmls/kg_munich_enrichment.html");
+        $("#kg_murcia_html").load("./htmls/kg_murcia.html");
+        $("#kg_murcia_enrichment_html").load("./htmls/kg_murcia_enrichment.html");
+        $("#kg_munich_validation_html").load("./htmls/kg_munich_validation.html");
+        $("#kg_murcia_validation_html").load("./htmls/kg_murcia_validation.html");
+        $("#ontologies_html").load("./htmls/ontologies.html");
+        $("#api_documentation_html").load("./htmls/api_documentation.html");
+        $("#sparql_query_html").load("./htmls/sparql_query.html");
+        $("#footer").load("./htmls/footer.html");
+      });
+    </script> 
+
+    <script>
+      function openTab(identifier) {
+        var i;
+        var x = document.getElementsByClassName("tab");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        document.getElementById(identifier).style.display = "block";
+      }
+
+      $('document').ready(function (){
+        $('.liactive').click(function (){
+            $('.liactive').removeClass('active');
+            $(this).addClass('active');
+        });
+      });
+      </script>
+
+      
+
+</body>

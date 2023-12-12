@@ -23,7 +23,7 @@ $(document).ready(function () {
             results = events.results.bindings;
             for (var i = 0; i < results.length; i++) {
                 // console.log(results[i]);
-                $("#eventList3").append(createListElementForEvent(i, "Project"));
+                $("#eventList3").append(createListElementForEvent2(i, "Project"));
                 // alert(td_url)
                 // render_td(td_url, class_id);
             }
@@ -49,7 +49,7 @@ $(document).ready(function () {
             results = events.results.bindings;
             for (var i = 0; i < results.length; i++) {
                 // console.log(results[i]);
-                $("#eventList4").append(createListElementForEvent(i, "Element"));
+                $("#eventList4").append(createListElementForEvent2(i, "Element"));
                 // render_td(td_url, class_id);
             }
             if (events.length > 0) {
@@ -65,21 +65,22 @@ $(document).ready(function () {
 });
 
 
-function createListElementForEvent(resultsIndex, type) {
+
+function createListElementForEvent2(resultsIndex, type) {
     
     if (type === "Project"){
-        res = fillProjectTable(results[resultsIndex]);
+        res = fillProjectTable2(results[resultsIndex]);
     }
     if (type === "Element"){
-        res = fillElementsTable(results[resultsIndex]);
+        res = fillElementsTable2(results[resultsIndex]);
     }
 
     return res;
 } 
 
 
-function fillProjectTable(td){
-    var dt_identifier = $("<td>").html("<span><a href='" + td.iriHref.value +  "'>" + td.title.value + "</span></a>");
+function fillProjectTable2(td){
+    var dt_identifier = $("<td>").html("<span><a href='" + td.iriHref.value.replace("https://data.cogito.iot.linkeddata.es/resources/", "https://data.cogito.iot.linkeddata.es/enriched/murcia/") +  "' target='_blank'>" + td.title.value + "</span></a>");
     var description = $("<td>").text(td.description.value);
     var final_files = "";
     for (var elem of td.relations.value.split(', ')) {
@@ -92,7 +93,7 @@ function fillProjectTable(td){
     return $("<tr>").append(dt_identifier).append(description).append(relations).append(td_link);
 }
 
-function fillElementsTable(td){
+function fillElementsTable2(td){
     var dt_identifier = $("<td>").html("<span><a href='" + td.target.value +  "'>" + td.title.value + "</span></a>");
     var description = $("<td>").text(td.description.value);
 
@@ -110,19 +111,3 @@ function fillElementsTable(td){
 
     return $("<tr>").append(dt_identifier).append(description).append(relatedProjectTD).append(relatedProjectKGURI).append(files).append(td_link);
 }
-
-// function render_td(td_url, class_id){
-//     fetch(td_url)
-//     .then((res)=> {
-//         return res.text();
-//     })
-//     .then((data) => {
-//         var tree = jsonview.create(data);
-//         console.log(typeof class_id);
-//         jsonview.render(tree, document.querySelector(class_id));
-//         //jsonview.expand(tree);
-//     })
-//     .catch((err) => {
-//         console.log(err);
-//     })
-// }

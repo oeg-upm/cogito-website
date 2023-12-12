@@ -79,7 +79,7 @@ function createListElementForEvent(resultsIndex, type) {
 
 
 function fillProjectTable(td){
-    var dt_identifier = $("<td>").html("<span><a href='" + td.iriHref.value +  "'>" + td.title.value + "</span></a>");
+    var dt_identifier = $("<td>").html("<span><a href='" + td.iriHref.value +  "' target='_blank'>" + td.title.value + "</span></a>");
     var description = $("<td>").text(td.description.value);
     var final_files = "";
     for (var elem of td.relations.value.split(', ')) {
@@ -93,7 +93,7 @@ function fillProjectTable(td){
 }
 
 function fillElementsTable(td){
-    var dt_identifier = $("<td>").html("<span><a href='" + td.target.value +  "'>" + td.title.value + "</span></a>");
+    var dt_identifier = $("<td>").html("<span><a href='" + td.target.value +  "' target='_blank'>" + td.title.value + "</span></a>");
     var description = $("<td>").text(td.description.value);
 
     var relatedProjectTD = $("<td>").html("<span><a href='" + td.relatedTD.value +  "'> Related Project TD Link </span></a>");
