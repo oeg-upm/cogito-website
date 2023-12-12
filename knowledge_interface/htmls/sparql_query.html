@@ -1,31 +1,37 @@
 <div align="center">
     <textarea type="text" id="output_cogito_kg_query" style="width: 1100px; height: 450px;">PREFIX saref: <https://saref.etsi.org/core&#47;>
 PREFIX process: <https://cogito.iot.linkeddata.es/def/process#>
+PREFIX facility: <https://cogito.iot.linkeddata.es/def/facility#>
+PREFIX quality: <https://cogito.iot.linkeddata.es/def/quality#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX weat: <https://bimerr.iot.linkeddata.es/def/weather#>
-SELECT ?task ?timeStamp ?value ?unit WHERE {
-  SERVICE <https://triplestore.cogito.iot.linkeddata.es/repositories/demo?default-graph-uri=https://data.cogito.iot.linkeddata.es/Munich_enrichment>{
-    ?task a process:Task .
-    ?task process:plannedStartDate ?startDate .
-    ?task process:plannedEndDate ?endDate .
-    ?measurement a saref:Measurement .
-    ?measurement saref:hasTimeStamp ?timeStamp .
-    ?measurement saref:relatesToProperty weat:TempMax .
-    ?measurement saref:hasValue ?value .
-    ?measurement saref:isMeasuredIn ?unit .
-    ?measurement saref:measurementMadeBy ?device .
-}
-    BIND((concat(str(year(?startDate)),'-',
-                str(month(?startDate)),'-',
-                str(day(?startDate)))) as ?start) .
-    BIND((concat(str(year(?endDate)),'-',
-                str(month(?endDate)),'-',
-                str(day(?endDate)))) as ?end).
-    BIND((concat(str(year(?timeStamp)),'-',
-                str(month(?timeStamp)),'-',
-                str(day(?timeStamp)))) as ?time).
-    FILTER(?start >= ?time || ?end <= ?time)
-} ORDER BY ?task ?timeStamp</textarea>
+PREFIX dcterms: <http://purl.org/dc/terms&#47;>
+PREFIX hctl: <https://www.w3.org/2019/wot/hypermedia#>
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+SELECT ?taskID ?elementID ?ifcFile (GROUP_CONCAT(DISTINCT ?target; separator=', ') as ?images) WHERE {
+    SERVICE <https://triplestore.cogito.iot.linkeddata.es/repositories/cogito-triplestore> {
+        ?task a process:Task.
+        ?task dcterms:identifier ?taskID .
+        ?task process:addsElement ?element .
+        ?element dcterms:identifier ?elementID .
+        ?imageJob quality:isRelatedToElement ?element .
+    }
+        BIND(URI(CONCAT('https://data.cogito.iot.linkeddata.es/tdd/api/things/', ?elementID)) AS ?elementTD)
+    SERVICE <https://data.cogito.iot.linkeddata.es/tdd/api/search/sparql> {
+        ?elementTD a facility:Element .
+        ?elementTD td:hasPropertyAffordance ?property .
+        ?elementTD td:hasPropertyAffordance ?ifcProperty .
+        ?property td:name 'platform:hasFileURL' .
+        ?property td:hasForm ?form .
+        ?form hctl:hasTarget ?target .
+        ?form hctl:hintsAtMediaType ?type .
+        ?ifcProperty td:name 'platform:hasFileURL' .
+        ?ifcProperty td:hasForm ?ifcForm .
+        ?ifcForm hctl:hasTarget ?ifcFile .
+        ?ifcForm hctl:hintsAtMediaType ?ifcType .
+    }
+    FILTER (?type != 'construction') .
+    FILTER (?ifcType != 'jpg' && ?ifcType != 'jpeg') .
+} GROUP BY ?taskID ?elementID ?ifcFile</textarea>
     <p> 
         &nbsp;
     </p>
