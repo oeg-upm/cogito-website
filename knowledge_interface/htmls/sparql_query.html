@@ -7,10 +7,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dcterms: <http://purl.org/dc/terms&#47;>
 PREFIX hctl: <https://www.w3.org/2019/wot/hypermedia#>
 PREFIX td: <https://www.w3.org/2019/wot/td#>
-SELECT ?taskID ?elementID ?ifcFile (GROUP_CONCAT(DISTINCT ?target; separator=', ') as ?images) WHERE {
+SELECT ?elementID ?ifcFile (GROUP_CONCAT(DISTINCT ?target; separator=', ') as ?images) WHERE {
     SERVICE <https://triplestore.cogito.iot.linkeddata.es/repositories/cogito-triplestore> {
         ?task a process:Task.
-        ?task dcterms:identifier ?taskID .
+        ?task dcterms:identifier '39' .
         ?task process:addsElement ?element .
         ?element dcterms:identifier ?elementID .
         ?imageJob quality:isRelatedToElement ?element .
@@ -31,7 +31,7 @@ SELECT ?taskID ?elementID ?ifcFile (GROUP_CONCAT(DISTINCT ?target; separator=', 
     }
     FILTER (?type != 'construction') .
     FILTER (?ifcType != 'jpg' && ?ifcType != 'jpeg') .
-} GROUP BY ?taskID ?elementID ?ifcFile</textarea>
+} GROUP BY ?elementID ?ifcFile</textarea>
     <p> 
         &nbsp;
     </p>
@@ -58,7 +58,5 @@ SELECT ?taskID ?elementID ?ifcFile (GROUP_CONCAT(DISTINCT ?target; separator=', 
         </tbody>
     </table>
 </div>
-
-<hr>
 
 <hr>

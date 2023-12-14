@@ -13,10 +13,10 @@ var marker_murcia = L.marker([37.972739, -1.162673]).addTo(map);
 
 // var marker_denmark = L.marker([55.62278242048419, 12.577153064263207]).addTo(map);
 
-var marker_karlsruhe = L.marker([49.007518453764625, 8.401951151725564]).addTo(map);
+// var marker_karlsruhe = L.marker([49.007518453764625, 8.401951151725564]).addTo(map);
 
 marker_murcia.bindPopup("Murcia Pilot")
 // marker_denmark.bindPopup("Denmark Pilot")
-marker_karlsruhe.bindPopup("Karlsruhe Pilot")
+// marker_karlsruhe.bindPopup("Karlsruhe Pilot")
 marker_munich.bindPopup("Munich Pilot")
 

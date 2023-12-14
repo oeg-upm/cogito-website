@@ -3,11 +3,11 @@
 PREFIX process: <https://cogito.iot.linkeddata.es/def/process#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX weat: <https://bimerr.iot.linkeddata.es/def/weather#>
-SELECT ?task ?timeStamp ?value ?unit WHERE {
+SELECT ?timeStamp ?value ?unit WHERE {
   SERVICE <https://triplestore.cogito.iot.linkeddata.es/repositories/demo?default-graph-uri=https://data.cogito.iot.linkeddata.es/Munich_enrichment>{
-    ?task a process:Task .
-    ?task process:plannedStartDate ?startDate .
-    ?task process:plannedEndDate ?endDate .
+    <https://data.cogito.iot.linkeddata.es/resources/task/asIs/Munich_1> a process:Task .
+    <https://data.cogito.iot.linkeddata.es/resources/task/asIs/Munich_1> process:plannedStartDate ?startDate .
+    <https://data.cogito.iot.linkeddata.es/resources/task/asIs/Munich_1> process:plannedEndDate ?endDate .
     ?measurement a saref:Measurement .
     ?measurement saref:hasTimeStamp ?timeStamp .
     ?measurement saref:relatesToProperty weat:TempMax .
@@ -25,7 +25,7 @@ SELECT ?task ?timeStamp ?value ?unit WHERE {
                 str(month(?timeStamp)),'-',
                 str(day(?timeStamp)))) as ?time).
     FILTER(?start >= ?time || ?end <= ?time)
-} ORDER BY ?task ?timeStamp</textarea>
+} ORDER BY ?timeStamp</textarea>
     <p> 
         &nbsp;
     </p>
