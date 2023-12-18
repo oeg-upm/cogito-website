@@ -5,7 +5,7 @@
 <https://cogito.iot.linkeddata.es/def/iot#> <http://purl.org/dc/elements/1.1/description> "The COGITO IoT ontology aims at modelling IoT devices and their measurements in the construction domain." .
 <https://cogito.iot.linkeddata.es/def/iot#> <http://purl.org/dc/elements/1.1/title> "IoT ontology" .
 <https://cogito.iot.linkeddata.es/def/iot#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/def/iot#> <http://www.w3.org/2002/07/owl#versionInfo> "0.4.0" .
+<https://cogito.iot.linkeddata.es/def/iot#> <http://www.w3.org/2002/07/owl#versionInfo> "0.5.0" .
 # 
 # 
 # #################################################################
@@ -39,31 +39,30 @@
 # https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup
 <https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup> .
-<https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Property relating an entity (especially an iot:TrackingTag) to an iot:TrackingTag" .
+<https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Property relating an entity (especially an iot:TrackingTag) to an iot:TrackingTagGroup" .
 <https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to tag group" .
 # 
 # https://cogito.iot.linkeddata.es/def/iot#hasLocation
 <https://cogito.iot.linkeddata.es/def/iot#hasLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/iot#hasLocation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cogito.iot.linkeddata.es/def/iot#hasResult> .
 <https://cogito.iot.linkeddata.es/def/iot#hasLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a saref:Measurement) to the geo:Point it is located at" .
 <https://cogito.iot.linkeddata.es/def/iot#hasLocation> <http://www.w3.org/2000/01/rdf-schema#label> "has location" .
 # 
 # https://cogito.iot.linkeddata.es/def/iot#hasLocationKF
 <https://cogito.iot.linkeddata.es/def/iot#hasLocationKF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/iot#hasLocationKF> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cogito.iot.linkeddata.es/def/iot#hasResult> .
 <https://cogito.iot.linkeddata.es/def/iot#hasLocationKF> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a saref:Measurement) to the geo:Point it is located at using a KF transformation" .
 <https://cogito.iot.linkeddata.es/def/iot#hasLocationKF> <http://www.w3.org/2000/01/rdf-schema#label> "has location KF" .
 # 
 # https://cogito.iot.linkeddata.es/def/iot#hasLocationMA
 <https://cogito.iot.linkeddata.es/def/iot#hasLocationMA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/iot#hasLocationMA> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cogito.iot.linkeddata.es/def/iot#hasResult> .
 <https://cogito.iot.linkeddata.es/def/iot#hasLocationMA> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a saref:Measurement) to the geo:Point it is located at using a MA transformation" .
 <https://cogito.iot.linkeddata.es/def/iot#hasLocationMA> <http://www.w3.org/2000/01/rdf-schema#label> "has location MA" .
 # 
-# https://cogito.iot.linkeddata.es/def/iot#hasResult
-<https://cogito.iot.linkeddata.es/def/iot#hasResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cogito.iot.linkeddata.es/def/iot#hasResult> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that relates an entity (especially a saref:MEasurement) to its result" .
-<https://cogito.iot.linkeddata.es/def/iot#hasResult> <http://www.w3.org/2000/01/rdf-schema#label> "has result" .
+# https://cogito.iot.linkeddata.es/def/iot#measuresLocation
+<https://cogito.iot.linkeddata.es/def/iot#measuresLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cogito.iot.linkeddata.es/def/iot#measuresLocation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/core#makesMeasurement> .
+<https://cogito.iot.linkeddata.es/def/iot#measuresLocation> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement> .
+<https://cogito.iot.linkeddata.es/def/iot#measuresLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Property relating an entity (especially an iot:TrackingTag) to an iot:LocationMeasurement" .
+<https://cogito.iot.linkeddata.es/def/iot#measuresLocation> <http://www.w3.org/2000/01/rdf-schema#label> "measures location" .
 # 
 # https://saref.etsi.org/core#isMeasurementOf
 <https://saref.etsi.org/core#isMeasurementOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -94,6 +93,41 @@
 <http://purl.org/dc/terms/titile> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
 <http://purl.org/dc/terms/titile> <http://www.w3.org/2000/01/rdf-schema#label> "title" .
 # 
+# https://cogito.iot.linkeddata.es/def/iot#coordX
+<https://cogito.iot.linkeddata.es/def/iot#coordX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/iot#coordX> <http://www.w3.org/2000/01/rdf-schema#comment> "Property referring to the coordinate x of a location measured by a tracking tag" .
+<https://cogito.iot.linkeddata.es/def/iot#coordX> <http://www.w3.org/2000/01/rdf-schema#label> "coordinate x" .
+# 
+# https://cogito.iot.linkeddata.es/def/iot#coordY
+<https://cogito.iot.linkeddata.es/def/iot#coordY> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/iot#coordY> <http://www.w3.org/2000/01/rdf-schema#comment> "Property referring to the coordinate y of a location measured by a tracking tag" .
+<https://cogito.iot.linkeddata.es/def/iot#coordY> <http://www.w3.org/2000/01/rdf-schema#label> "coordinate y" .
+# 
+# https://cogito.iot.linkeddata.es/def/iot#coordZ
+<https://cogito.iot.linkeddata.es/def/iot#coordZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/iot#coordZ> <http://www.w3.org/2000/01/rdf-schema#comment> "Property referring to the coordinate z of a location measured by a tracking tag" .
+<https://cogito.iot.linkeddata.es/def/iot#coordZ> <http://www.w3.org/2000/01/rdf-schema#label> "coordinate z" .
+# 
+# https://cogito.iot.linkeddata.es/def/iot#inferredAccuracy
+<https://cogito.iot.linkeddata.es/def/iot#inferredAccuracy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/iot#inferredAccuracy> <http://www.w3.org/2000/01/rdf-schema#comment> "Property referring to the accuracy of a location measured by  a tracking tag" .
+<https://cogito.iot.linkeddata.es/def/iot#inferredAccuracy> <http://www.w3.org/2000/01/rdf-schema#label> "inferred accuracy" .
+# 
+# https://cogito.iot.linkeddata.es/def/iot#inferredMovement
+<https://cogito.iot.linkeddata.es/def/iot#inferredMovement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/iot#inferredMovement> <http://www.w3.org/2000/01/rdf-schema#comment> "Property referring to the movement  associated to a location measured by a tracking tag" .
+<https://cogito.iot.linkeddata.es/def/iot#inferredMovement> <http://www.w3.org/2000/01/rdf-schema#label> "inferred movement" .
+# 
+# https://cogito.iot.linkeddata.es/def/iot#inferredSpeed
+<https://cogito.iot.linkeddata.es/def/iot#inferredSpeed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/iot#inferredSpeed> <http://www.w3.org/2000/01/rdf-schema#comment> "Property referring to the speed  associated to a location measured by a tracking tag" .
+<https://cogito.iot.linkeddata.es/def/iot#inferredSpeed> <http://www.w3.org/2000/01/rdf-schema#label> "inferred speed" .
+# 
+# https://cogito.iot.linkeddata.es/def/iot#locationRadius
+<https://cogito.iot.linkeddata.es/def/iot#locationRadius> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/iot#locationRadius> <http://www.w3.org/2000/01/rdf-schema#comment> "Property referring to the location radius associated to a location measured by a tracking tag" .
+<https://cogito.iot.linkeddata.es/def/iot#locationRadius> <http://www.w3.org/2000/01/rdf-schema#label> "location radius" .
+# 
 # https://saref.etsi.org/core#hasTimestamp
 <https://saref.etsi.org/core#hasTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://saref.etsi.org/core#hasTimestamp> <http://www.w3.org/2000/01/rdf-schema#comment> "has timestamp" .
@@ -110,7 +144,6 @@
 # 
 # http://www.opengis.net/ont/sfl#Point
 <http://www.opengis.net/ont/sfl#Point> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.opengis.net/ont/sfl#Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cogito.iot.linkeddata.es/def/iot#Result> .
 <http://www.opengis.net/ont/sfl#Point> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opengis.net/ont/geosparq#> .
 <http://www.opengis.net/ont/sfl#Point> <http://www.w3.org/2000/01/rdf-schema#label> "Point" .
 # 
@@ -136,11 +169,6 @@
 <https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Measurement> .
 <https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "The location measured by an entity (especially an iot:TrackingTag)" .
 <https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "Location Measurement" .
-# 
-# https://cogito.iot.linkeddata.es/def/iot#Result
-<https://cogito.iot.linkeddata.es/def/iot#Result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cogito.iot.linkeddata.es/def/iot#Result> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity representing the result of a saref:Measurement" .
-<https://cogito.iot.linkeddata.es/def/iot#Result> <http://www.w3.org/2000/01/rdf-schema#label> "Result" .
 # 
 # https://cogito.iot.linkeddata.es/def/iot#TrackedZone
 <https://cogito.iot.linkeddata.es/def/iot#TrackedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

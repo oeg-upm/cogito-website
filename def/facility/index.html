@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/facility#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/facility#","name":"Facility Ontology", "headline":"The COGITO Facility ontology aims at modelling facilities in the construction domain.", "datePublished":"Fri Feb 24 08:28:41 CET 2023", "version":"0.10.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/facility#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/facility#","name":"Facility Ontology", "headline":"The COGITO Facility ontology aims at modelling facilities in the construction domain.", "datePublished":"Thu Dec 07 15:22:54 CET 2023", "version":"0.11.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -61,7 +61,7 @@ $(function(){
 <dt>Latest version:</dt>
 <dd><a href="https://cogito.iot.linkeddata.es/def/facility#">https://cogito.iot.linkeddata.es/def/facility#</a></dd>
 <dt>Revision:</dt>
-<dd>0.10.0</dd>
+<dd>0.11.0</dd>
 <dt>Authors:</dt>
 <dd>María Poveda Villalón</dd><dd>Raúl García Castro</dd><dd>Socorro  Bernardos Galindo</dd>
 
@@ -70,7 +70,7 @@ $(function(){
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. Facility Ontology. Revision: 0.10.0.</dd>
+<dd>María Poveda Villalón,Raúl García Castro,Socorro  Bernardos Galindo. Facility Ontology. Revision: 0.11.0.</dd>
 </dl>
 <div>
 	<img src="resources/images/logo.jpg" width="300" alt="">
@@ -208,13 +208,13 @@ This ontology has the following classes and properties.</span>
          title="https://cogito.iot.linkeddata.es/def/facility#belongToSpatialZone">belongs to spatial zone</a>
    </li>
    <li>
+      <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">contains element</a>
+   </li>
+   <li>
       <a href="#https://w3id.org/bot#containsZone" title="https://w3id.org/bot#containsZone">contains zone</a>
    </li>
    <li>
       <a href="#https://w3id.org/bot#hasBuilding" title="https://w3id.org/bot#hasBuilding">has building</a>
-   </li>
-   <li>
-      <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">has element</a>
    </li>
    <li>
       <a href="#hasFacility"
@@ -247,14 +247,22 @@ This ontology has the following classes and properties.</span>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
+      <a href="#codeUniclassElement"
+         title="https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement">code Uniclass element</a>
+   </li>
+   <li>
+      <a href="#material"
+         title="https://cogito.iot.linkeddata.es/def/facility#material">code Uniclass material</a>
+   </li>
+   <li>
       <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">description</a>
    </li>
    <li>
       <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identifier</a>
    </li>
    <li>
-      <a href="#material"
-         title="https://cogito.iot.linkeddata.es/def/facility#material">material</a>
+      <a href="#ifcType"
+         title="https://cogito.iot.linkeddata.es/def/facility#ifcType">IFC type</a>
    </li>
    <li>
       <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">title</a>
@@ -494,7 +502,7 @@ This section provides details for each class and property defined by Facility On
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">has element</a>
+            <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">contains element</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasSubElement"
                title="https://cogito.iot.linkeddata.es/def/facility#hasSubElement">has sub-element</a>
             <sup class="type-op" title="object property">op</sup>
@@ -881,9 +889,9 @@ street or highway</span>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#https://w3id.org/bot#containsZone" title="https://w3id.org/bot#containsZone">contains zone</a>
+            <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">contains element</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/bot#containsZone" title="https://w3id.org/bot#containsZone">contains zone</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/bot#hasBuilding" title="https://w3id.org/bot#hasBuilding">has building</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">has element</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/bot#hasSpace" title="https://w3id.org/bot#hasSpace">has space</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/bot#hasStorey" title="https://w3id.org/bot#hasStorey">has storey</a>
             <sup class="type-op" title="object property">op</sup>
@@ -903,13 +911,13 @@ street or highway</span>
             title="https://cogito.iot.linkeddata.es/def/facility#belongToSpatialZone">belongs to spatial zone</a>
       </li>
       <li>
+         <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">contains element</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/bot#containsZone" title="https://w3id.org/bot#containsZone">contains zone</a>
       </li>
       <li>
          <a href="#https://w3id.org/bot#hasBuilding" title="https://w3id.org/bot#hasBuilding">has building</a>
-      </li>
-      <li>
-         <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">has element</a>
       </li>
       <li>
          <a href="#hasFacility"
@@ -955,7 +963,42 @@ street or highway</span>
          <dl>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">has element</a>
+               <a href="#https://w3id.org/bot#hasElement" title="https://w3id.org/bot#hasElement">contains element</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/bot#hasElement">
+      <h3>contains element<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/bot#hasElement</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/bot#">https://w3id.org/bot#</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/bot#Zone" title="https://w3id.org/bot#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Element"
+                  title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#belongToSpatialZone"
+                  title="https://cogito.iot.linkeddata.es/def/facility#belongToSpatialZone">belongs to spatial zone</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -1030,41 +1073,6 @@ street or highway</span>
                <a href="#Building"
                   title="https://cogito.iot.linkeddata.es/def/facility#Building">Building</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="https://w3id.org/bot#hasElement">
-      <h3>has element<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/bot#hasElement</p>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="https://w3id.org/bot#">https://w3id.org/bot#</a>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#https://w3id.org/bot#Zone" title="https://w3id.org/bot#Zone">Zone</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Element"
-                  title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#belongToSpatialZone"
-                  title="https://cogito.iot.linkeddata.es/def/facility#belongToSpatialZone">belongs to spatial zone</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -1275,19 +1283,49 @@ street or highway</span>
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
+         <a href="#codeUniclassElement"
+            title="https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement">code Uniclass element</a>
+      </li>
+      <li>
+         <a href="#material"
+            title="https://cogito.iot.linkeddata.es/def/facility#material">code Uniclass material</a>
+      </li>
+      <li>
          <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">description</a>
       </li>
       <li>
          <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identifier</a>
       </li>
       <li>
-         <a href="#material"
-            title="https://cogito.iot.linkeddata.es/def/facility#material">material</a>
+         <a href="#ifcType"
+            title="https://cogito.iot.linkeddata.es/def/facility#ifcType">IFC type</a>
       </li>
       <li>
          <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">title</a>
       </li>
    </ul>
+   <div class="entity" id="codeUniclassElement">
+      <h3>code Uniclass element<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement</p>
+      <div class="comment">
+         <span class="markdown">Property that refers to the Uniclass code corresponding to the element</span>
+      </div>
+   </div>
+   <div class="entity" id="material">
+      <h3>code Uniclass material<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#material</p>
+      <div class="comment">
+         <span class="markdown">Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality. The corresponding Uniclass code is used</span>
+      </div>
+   </div>
    <div class="entity" id="http://purl.org/dc/terms/description">
       <h3>description<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -1316,15 +1354,15 @@ street or highway</span>
          </dd>
       </dl>
    </div>
-   <div class="entity" id="material">
-      <h3>material<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="ifcType">
+      <h3>IFC type<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#material</p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/facility#ifcType</p>
       <div class="comment">
-         <span class="markdown">Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality</span>
+         <span class="markdown">Property that refers to the IFC type correspondign to the element</span>
       </div>
    </div>
    <div class="entity" id="http://purl.org/dc/terms/title">

@@ -93,7 +93,7 @@
 ###  https://cogito.iot.linkeddata.es/quality#isRelatedToTask
 :isRelatedToTask rdf:type owl:ObjectProperty ;
                  rdfs:range <https://cogito.iot.linkeddata.es/process#Task> ;
-                 rdfs:comment "Property that relates an entity (especially qual:QuqlityInformation) to a process:Task" ;
+                 rdfs:comment "Property that relates an entity (especially qual:QuqlityInformation and qual:QualityInformation) to a process:Task" ;
                  rdfs:label "is related to task" .
 
 
@@ -133,6 +133,13 @@
                  rdfs:label "refers to element" .
 
 
+###  https://cogito.iot.linkeddata.es/quality#refersToGeometricQualityInf
+:refersToGeometricQualityInf rdf:type owl:ObjectProperty ;
+                             rdfs:range :GeometricQualityInformation ;
+                             rdfs:comment "Property that relates an entity (especially a facility:Element) to a qual:GeometricQualityInformation" ;
+                             rdfs:label "refers to geometric quality information" .
+
+
 ###  https://cogito.iot.linkeddata.es/quality#refersToRule
 :refersToRule rdf:type owl:ObjectProperty ;
               rdfs:range :Rule ;
@@ -170,7 +177,7 @@
 
 ###  https://cogito.iot.linkeddata.es/quality#confidenceLevel
 :confidenceLevel rdf:type owl:DatatypeProperty ;
-                 rdfs:comment "Property indicating the level of confidence of a result (especially a qual:Defect)" ;
+                 rdfs:comment "Property indicating the level of confidence of a result (especially a qual:QualityInformation)" ;
                  rdfs:label "confidence level" .
 
 
@@ -342,7 +349,7 @@
 ###  https://cogito.iot.linkeddata.es/quality#InformationResource
 :InformationResource rdf:type owl:Class ;
                      rdfs:comment "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform" ;
-                     rdfs:label "Quality Information" .
+                     rdfs:label "Information Resouce" .
 
 
 ###  https://cogito.iot.linkeddata.es/quality#Mesh

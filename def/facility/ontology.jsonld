@@ -69,7 +69,7 @@
     "@id" : "https://pi.pauwel.be/voc/buildingelement"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.10.0"
+    "@value" : "0.11.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Bridge",
@@ -253,6 +253,15 @@
     "@id" : "https://w3id.org/bot#hasElement"
   } ]
 }, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that refers to the Uniclass code corresponding to the element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "code Uniclass element"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#hasFacility",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -298,6 +307,15 @@
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
 }, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#ifcType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that refers to the IFC type correspondign to the element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "IFC type"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -322,10 +340,10 @@
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#material",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality"
+    "@value" : "Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality. The corresponding Uniclass code is used"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "material"
+    "@value" : "code Uniclass material"
   } ]
 }, {
   "@id" : "https://pi.pauwel.be/voc/buildingelement#BuildingElement",
@@ -456,7 +474,7 @@
     "@id" : "https://w3id.org/bot#"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has element"
+    "@value" : "contains element"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"

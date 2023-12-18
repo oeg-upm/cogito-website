@@ -18,7 +18,7 @@
         <dc:description>The COGITO Facility ontology aims at modelling facilities in the construction domain.</dc:description>
         <dc:title>Facility Ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.10.0</owl:versionInfo>
+        <owl:versionInfo>0.11.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -186,7 +186,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
         <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/facility#Element"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/bot#"/>
-        <rdfs:label>has element</rdfs:label>
+        <rdfs:label>contains element</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -259,12 +259,32 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement">
+        <rdfs:comment>Property that refers to the Uniclass code corresponding to the element</rdfs:comment>
+        <rdfs:label>code Uniclass element</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/facility#ifcType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/facility#ifcType">
+        <rdfs:comment>Property that refers to the IFC type correspondign to the element</rdfs:comment>
+        <rdfs:label>IFC type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://cogito.iot.linkeddata.es/def/facility#material -->
 
 
     <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/facility#material">
-        <rdfs:comment>Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality</rdfs:comment>
-        <rdfs:label>material</rdfs:label>
+        <rdfs:comment>Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality. The corresponding Uniclass code is used</rdfs:comment>
+        <rdfs:label>code Uniclass material</rdfs:label>
     </owl:DatatypeProperty>
     
 

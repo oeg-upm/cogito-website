@@ -15,7 +15,7 @@
         <dc:description>The COGITO IoT ontology aims at modelling IoT devices and their measurements in the construction domain.</dc:description>
         <dc:title>IoT ontology</dc:title>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <owl:versionInfo>0.4.0</owl:versionInfo>
+        <owl:versionInfo>0.5.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -77,7 +77,7 @@
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup">
         <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup"/>
-        <rdfs:comment>Property relating an entity (especially an iot:TrackingTag) to an iot:TrackingTag</rdfs:comment>
+        <rdfs:comment>Property relating an entity (especially an iot:TrackingTag) to an iot:TrackingTagGroup</rdfs:comment>
         <rdfs:label>belongs to tag group</rdfs:label>
     </owl:ObjectProperty>
     
@@ -87,7 +87,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#hasLocation">
-        <rdfs:subPropertyOf rdf:resource="https://cogito.iot.linkeddata.es/def/iot#hasResult"/>
         <rdfs:comment>Property that relates an entity (especially a saref:Measurement) to the geo:Point it is located at</rdfs:comment>
         <rdfs:label>has location</rdfs:label>
     </owl:ObjectProperty>
@@ -98,7 +97,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#hasLocationKF">
-        <rdfs:subPropertyOf rdf:resource="https://cogito.iot.linkeddata.es/def/iot#hasResult"/>
         <rdfs:comment>Property that relates an entity (especially a saref:Measurement) to the geo:Point it is located at using a KF transformation</rdfs:comment>
         <rdfs:label>has location KF</rdfs:label>
     </owl:ObjectProperty>
@@ -109,19 +107,20 @@
 
 
     <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#hasLocationMA">
-        <rdfs:subPropertyOf rdf:resource="https://cogito.iot.linkeddata.es/def/iot#hasResult"/>
         <rdfs:comment>Property that relates an entity (especially a saref:Measurement) to the geo:Point it is located at using a MA transformation</rdfs:comment>
         <rdfs:label>has location MA</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cogito.iot.linkeddata.es/def/iot#hasResult -->
+    <!-- https://cogito.iot.linkeddata.es/def/iot#measuresLocation -->
 
 
-    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#hasResult">
-        <rdfs:comment>Property that relates an entity (especially a saref:MEasurement) to its result</rdfs:comment>
-        <rdfs:label>has result</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#measuresLocation">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core#makesMeasurement"/>
+        <rdfs:range rdf:resource="https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement"/>
+        <rdfs:comment>Property relating an entity (especially an iot:TrackingTag) to an iot:LocationMeasurement</rdfs:comment>
+        <rdfs:label>measures location</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -178,6 +177,76 @@
     
 
 
+    <!-- https://cogito.iot.linkeddata.es/def/iot#coordX -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#coordX">
+        <rdfs:comment>Property referring to the coordinate x of a location measured by a tracking tag</rdfs:comment>
+        <rdfs:label>coordinate x</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/iot#coordY -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#coordY">
+        <rdfs:comment>Property referring to the coordinate y of a location measured by a tracking tag</rdfs:comment>
+        <rdfs:label>coordinate y</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/iot#coordZ -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#coordZ">
+        <rdfs:comment>Property referring to the coordinate z of a location measured by a tracking tag</rdfs:comment>
+        <rdfs:label>coordinate z</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/iot#inferredAccuracy -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#inferredAccuracy">
+        <rdfs:comment>Property referring to the accuracy of a location measured by  a tracking tag</rdfs:comment>
+        <rdfs:label>inferred accuracy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/iot#inferredMovement -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#inferredMovement">
+        <rdfs:comment>Property referring to the movement  associated to a location measured by a tracking tag</rdfs:comment>
+        <rdfs:label>inferred movement</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/iot#inferredSpeed -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#inferredSpeed">
+        <rdfs:comment>Property referring to the speed  associated to a location measured by a tracking tag</rdfs:comment>
+        <rdfs:label>inferred speed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/iot#locationRadius -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/iot#locationRadius">
+        <rdfs:comment>Property referring to the location radius associated to a location measured by a tracking tag</rdfs:comment>
+        <rdfs:label>location radius</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://saref.etsi.org/core#hasTimestamp -->
 
 
@@ -204,7 +273,6 @@
 
 
     <owl:Class rdf:about="http://www.opengis.net/ont/sfl#Point">
-        <rdfs:subClassOf rdf:resource="https://cogito.iot.linkeddata.es/def/iot#Result"/>
         <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/geosparq#"/>
         <rdfs:label>Point</rdfs:label>
     </owl:Class>
@@ -250,16 +318,6 @@
         <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Measurement"/>
         <rdfs:comment>The location measured by an entity (especially an iot:TrackingTag)</rdfs:comment>
         <rdfs:label>Location Measurement</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cogito.iot.linkeddata.es/def/iot#Result -->
-
-
-    <owl:Class rdf:about="https://cogito.iot.linkeddata.es/def/iot#Result">
-        <rdfs:comment>An entity representing the result of a saref:Measurement</rdfs:comment>
-        <rdfs:label>Result</rdfs:label>
     </owl:Class>
     
 

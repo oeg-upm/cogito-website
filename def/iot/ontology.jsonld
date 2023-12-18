@@ -36,9 +36,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Point"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/iot#Result"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#SpatialZone",
@@ -69,7 +66,7 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.4.0"
+    "@value" : "0.5.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#EquipmentTagGroup",
@@ -106,15 +103,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://saref.etsi.org/core/Measurement"
-  } ]
-}, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/iot#Result",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An entity representing the result of a saref:Measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Result"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#TrackedZone",
@@ -155,13 +143,40 @@
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#belongsToTagGroup",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property relating an entity (especially an iot:TrackingTag) to an iot:TrackingTag"
+    "@value" : "Property relating an entity (especially an iot:TrackingTag) to an iot:TrackingTagGroup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "belongs to tag group"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/iot#TrackingTagGroup"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#coordX",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property referring to the coordinate x of a location measured by a tracking tag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "coordinate x"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#coordY",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property referring to the coordinate y of a location measured by a tracking tag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "coordinate y"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#coordZ",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property referring to the coordinate z of a location measured by a tracking tag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "coordinate z"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#hasLocation",
@@ -171,9 +186,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has location"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/iot#hasResult"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#hasLocationKF",
@@ -183,9 +195,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has location KF"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/iot#hasResult"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/iot#hasLocationMA",
@@ -195,18 +204,57 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "has location MA"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/iot#hasResult"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/iot#hasResult",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#inferredAccuracy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that relates an entity (especially a saref:MEasurement) to its result"
+    "@value" : "Property referring to the accuracy of a location measured by  a tracking tag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has result"
+    "@value" : "inferred accuracy"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#inferredMovement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property referring to the movement  associated to a location measured by a tracking tag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "inferred movement"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#inferredSpeed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property referring to the speed  associated to a location measured by a tracking tag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "inferred speed"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#locationRadius",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property referring to the location radius associated to a location measured by a tracking tag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "location radius"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/iot#measuresLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property relating an entity (especially an iot:TrackingTag) to an iot:LocationMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "measures location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/iot#LocationMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://saref.etsi.org/core#makesMeasurement"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/resource#Resource",

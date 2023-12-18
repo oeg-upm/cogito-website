@@ -6,7 +6,7 @@
 <https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/elements/1.1/description> "The COGITO Facility ontology aims at modelling facilities in the construction domain." .
 <https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/elements/1.1/title> "Facility Ontology" .
 <https://cogito.iot.linkeddata.es/def/facility#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<https://cogito.iot.linkeddata.es/def/facility#> <http://www.w3.org/2002/07/owl#versionInfo> "0.10.0" .
+<https://cogito.iot.linkeddata.es/def/facility#> <http://www.w3.org/2002/07/owl#versionInfo> "0.11.0" .
 # 
 # 
 # #################################################################
@@ -101,7 +101,7 @@
 <https://w3id.org/bot#hasElement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/bot#Zone> .
 <https://w3id.org/bot#hasElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cogito.iot.linkeddata.es/def/facility#Element> .
 <https://w3id.org/bot#hasElement> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/bot#> .
-<https://w3id.org/bot#hasElement> <http://www.w3.org/2000/01/rdf-schema#label> "has element" .
+<https://w3id.org/bot#hasElement> <http://www.w3.org/2000/01/rdf-schema#label> "contains element" .
 # 
 # https://w3id.org/bot#hasSpace
 <https://w3id.org/bot#hasSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -143,10 +143,20 @@
 <http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
 <http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#label> "title" .
 # 
+# https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement
+<https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that refers to the Uniclass code corresponding to the element" .
+<https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement> <http://www.w3.org/2000/01/rdf-schema#label> "code Uniclass element" .
+# 
+# https://cogito.iot.linkeddata.es/def/facility#ifcType
+<https://cogito.iot.linkeddata.es/def/facility#ifcType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/facility#ifcType> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that refers to the IFC type correspondign to the element" .
+<https://cogito.iot.linkeddata.es/def/facility#ifcType> <http://www.w3.org/2000/01/rdf-schema#label> "IFC type" .
+# 
 # https://cogito.iot.linkeddata.es/def/facility#material
 <https://cogito.iot.linkeddata.es/def/facility#material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/facility#material> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality" .
-<https://cogito.iot.linkeddata.es/def/facility#material> <http://www.w3.org/2000/01/rdf-schema#label> "material" .
+<https://cogito.iot.linkeddata.es/def/facility#material> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality. The corresponding Uniclass code is used" .
+<https://cogito.iot.linkeddata.es/def/facility#material> <http://www.w3.org/2000/01/rdf-schema#label> "code Uniclass material" .
 # 
 # 
 # 

@@ -165,7 +165,7 @@
     "@value" : "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Quality Information"
+    "@value" : "Information Resouce"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#Mesh",
@@ -246,7 +246,7 @@
   "@id" : "https://cogito.iot.linkeddata.es/quality#confidenceLevel",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property indicating the level of confidence of a result (especially a qual:Defect)"
+    "@value" : "Property indicating the level of confidence of a result (especially a qual:QualityInformation)"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "confidence level"
@@ -360,7 +360,7 @@
   "@id" : "https://cogito.iot.linkeddata.es/quality#isRelatedToTask",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that relates an entity (especially qual:QuqlityInformation) to a process:Task"
+    "@value" : "Property that relates an entity (especially qual:QuqlityInformation and qual:QualityInformation) to a process:Task"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "is related to task"
@@ -475,6 +475,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/quality#refersToGeometricQualityInf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that relates an entity (especially a facility:Element) to a qual:GeometricQualityInformation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "refers to geometric quality information"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#refersToRule",
