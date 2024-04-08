@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/process#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/process#","name":"Process Ontology", "headline":"The COGITO Process ontology aims at modelling the construction process.", "datePublished":"Fri Jan 13 12:07:29 CET 2023", "version":"0.11.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/def/process#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/def/process#","name":"Process Ontology", "headline":"The COGITO Process ontology aims at modelling the construction process.", "datePublished":"Tue Mar 28 11:57:19 CEST 2023", "version":"0.11.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -86,7 +86,7 @@ The COGITO Process ontology aims at modelling the construction process.</span>
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This This document describes the results of the Process ontology for the COGITO project.</span>
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
@@ -405,6 +405,12 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#totalFloat"
          title="https://cogito.iot.linkeddata.es/def/process#totalFloat">total float</a>
+   </li>
+   <li>
+      <a href="#validationMessage"
+         title="https://cogito.iot.linkeddata.es/def/process#validationMessage">
+         <span>validation message</span>
+      </a>
    </li>
    <li>
       <a href="#workQuantity"
@@ -1755,6 +1761,12 @@ This section provides details for each class and property defined by Process Ont
             title="https://cogito.iot.linkeddata.es/def/process#totalFloat">total float</a>
       </li>
       <li>
+         <a href="#validationMessage"
+            title="https://cogito.iot.linkeddata.es/def/process#validationMessage">
+            <span>validation message</span>
+         </a>
+      </li>
+      <li>
          <a href="#workQuantity"
             title="https://cogito.iot.linkeddata.es/def/process#workQuantity">work quantity</a>
       </li>
@@ -2156,7 +2168,7 @@ This section provides details for each class and property defined by Process Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#status</p>
       <div class="comment">
-         <span class="markdown">A property indicating the status of an entity (especially a process:WorkOrder)</span>
+         <span class="markdown">A property indicating the status of an entity (especially a process:WorkOrder and a process:Task)</span>
       </div>
    </div>
    <div class="entity" id="timeStep">
@@ -2214,6 +2226,17 @@ This section provides details for each class and property defined by Process Ont
                   title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</a>
             </dd>
          </dl>
+      </div>
+   </div>
+   <div class="entity" id="validationMessage">
+      <h3>validation message<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/def/process#validationMessage</p>
+      <div class="comment">
+         <span class="markdown">A property indicating the validation message of an entity (especially a process:Task)</span>
       </div>
    </div>
    <div class="entity" id="workQuantity">

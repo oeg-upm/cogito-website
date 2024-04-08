@@ -339,7 +339,7 @@
 # 
 # https://cogito.iot.linkeddata.es/def/process#status
 <https://cogito.iot.linkeddata.es/def/process#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/def/process#status> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the status of an entity (especially a process:WorkOrder)" .
+<https://cogito.iot.linkeddata.es/def/process#status> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the status of an entity (especially a process:WorkOrder and a process:Task)" .
 <https://cogito.iot.linkeddata.es/def/process#status> <http://www.w3.org/2000/01/rdf-schema#label> "status" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#timeStep
@@ -357,6 +357,10 @@
 <https://cogito.iot.linkeddata.es/def/process#totalFloat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 <https://cogito.iot.linkeddata.es/def/process#totalFloat> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the number of days an entity (especially a task) can be delayed" .
 <https://cogito.iot.linkeddata.es/def/process#totalFloat> <http://www.w3.org/2000/01/rdf-schema#label> "total float" .
+# 
+# https://cogito.iot.linkeddata.es/def/process#validationMessage
+<https://cogito.iot.linkeddata.es/def/process#validationMessage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cogito.iot.linkeddata.es/def/process#validationMessage> <http://www.w3.org/2000/01/rdf-schema#comment> "A property indicating the validation message of an entity (especially a process:Task)" .
 # 
 # https://cogito.iot.linkeddata.es/def/process#workQuantity
 <https://cogito.iot.linkeddata.es/def/process#workQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .

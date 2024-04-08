@@ -69,7 +69,7 @@
     "@id" : "https://pi.pauwel.be/voc/buildingelement"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.11.0"
+    "@value" : "0.12.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Bridge",
@@ -124,6 +124,8 @@
     "@id" : "http://www.opengis.net/ont/geosparql#SpatialObject"
   }, {
     "@id" : "https://w3id.org/bot#Element"
+  }, {
+    "@id" : "https://w3id.org/def/dtw#Entity"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Facility",
@@ -157,6 +159,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/def/dtw#Entity"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Railway",
@@ -225,6 +230,8 @@
     "@id" : "http://www.opengis.net/ont/geosparql#SpatialObject"
   }, {
     "@id" : "https://w3id.org/bot#Zone"
+  }, {
+    "@id" : "https://w3id.org/def/dtw#Entity"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Storey",
@@ -241,7 +248,7 @@
     "@id" : "https://w3id.org/bot#Storey"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#belongToSpatialZone",
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#belongsToSpatialZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A property relating an entity, especially a facility:Element to a facility:SpatialZone"
@@ -250,7 +257,7 @@
     "@value" : "belongs to spatial zone"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/bot#hasElement"
+    "@id" : "https://w3id.org/bot#containsElement"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#codeUniclassElement",
@@ -260,6 +267,15 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "code Uniclass element"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#codeUniclassMaterial",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality. The corresponding Uniclass code is used"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "code Uniclass material"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#hasFacility",
@@ -316,15 +332,6 @@
     "@value" : "IFC type"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A property relating an entity (especially a facility:SpatialZone) to a facility:SpatialZone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "is related to spatial zone"
-  } ]
-}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -337,16 +344,17 @@
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Site"
   } ]
 }, {
-  "@id" : "https://cogito.iot.linkeddata.es/def/facility#material",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@id" : "https://cogito.iot.linkeddata.es/def/facility#isRelatedToSpatialZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality. The corresponding Uniclass code is used"
+    "@value" : "A property relating an entity (especially a facility:SpatialZone) to a facility:SpatialZone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "code Uniclass material"
+    "@value" : "is related to spatial zone"
   } ]
 }, {
   "@id" : "https://pi.pauwel.be/voc/buildingelement#BuildingElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
@@ -432,6 +440,21 @@
     "@value" : "Zone"
   } ]
 }, {
+  "@id" : "https://w3id.org/bot#containsElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/bot#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/bot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "contains element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
+  } ]
+}, {
   "@id" : "https://w3id.org/bot#containsZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -463,21 +486,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/bot#containsZone"
-  } ]
-}, {
-  "@id" : "https://w3id.org/bot#hasElement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/bot#Zone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/bot#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "contains element"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element"
   } ]
 }, {
   "@id" : "https://w3id.org/bot#hasSpace",
@@ -514,5 +522,14 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/bot#containsZone"
+  } ]
+}, {
+  "@id" : "https://w3id.org/def/dtw#Entity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/def/dtw#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Entity"
   } ]
 } ]

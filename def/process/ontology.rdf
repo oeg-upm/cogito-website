@@ -630,7 +630,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#status">
-        <rdfs:comment>A property indicating the status of an entity (especially a process:WorkOrder)</rdfs:comment>
+        <rdfs:comment>A property indicating the status of an entity (especially a process:WorkOrder and a process:Task)</rdfs:comment>
         <rdfs:label>status</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -663,6 +663,15 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <rdfs:comment>A property indicating the number of days an entity (especially a task) can be delayed</rdfs:comment>
         <rdfs:label>total float</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cogito.iot.linkeddata.es/def/process#validationMessage -->
+
+
+    <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/def/process#validationMessage">
+        <rdfs:comment>A property indicating the validation message of an entity (especially a process:Task)</rdfs:comment>
     </owl:DatatypeProperty>
     
 

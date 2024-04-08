@@ -38,6 +38,15 @@
     "@value" : "title"
   } ]
 }, {
+  "@id" : "http://www.w3.org/ns/dcat#Resource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Resource"
+  } ]
+}, {
   "@id" : "https://cogito.iot.linkeddata.es/def/facility#Element",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -96,7 +105,7 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.12.0"
+    "@value" : "0.13.0"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#AsBuiltMesh",
@@ -166,6 +175,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Information Resouce"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Resource"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/quality#Mesh",

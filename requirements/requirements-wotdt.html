@@ -1,0 +1,173 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Requirements</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="This describes the requirements identified for the ontology">
+      <meta name="languaje" content="English">
+      <link rel="stylesheet" href="../vocab/themes/blue/style.css" type="text/css" media="print, projection, screen" />
+      <script src="../vocab/js/jquery-1.11.0.js"></script>
+      <script type="text/javascript" src="../vocab/js/jquery.tablesorter.min.js"></script>
+      <script type="text/javascript" src="../vocab/js/jquery.stickytableheaders.js"></script>
+      <script type="text/javascript" src="../vocab/js/jquery-ui.js"></script>
+      <script type="text/javascript" src="../vocab/js/bootstrap.js"></script>
+      <link rel="stylesheet" href="../vocab/css/jquery-ui.css">
+      </link>
+      <script type="text/javascript" id="js">
+         $(document).ready(function() 
+             { 
+                 $("#tablesorter-demo").tablesorter(); 
+                 $("#tablesorter-demo").stickyTableHeaders(); 
+                 $('[data-toggle="tooltip"]').tooltip(); 
+             } 
+         ); 
+      </script>
+      <!-- Le styles -->
+      <link href="../vocab/css/bootstrap.css" rel="stylesheet">
+      <style type="text/css">
+         body {
+         padding-top: 60px;
+         padding-bottom: 40px;
+         }
+      </style>
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+      <script src="../vocab/js/html5shiv.js"></script>
+      <![endif]-->
+      <!-- Fav and touch icons -->
+   </head>
+   <body>
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+         <div class="container">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+            </div>
+            <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Ontology requirements</a></li>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+      <div class="container">
+         <!-- Jumbotron -->
+         <div class="jumbotron">
+            <h1><img src="../vocab/logo.jpg" alt="COGITO logo" width="500" alt="OEG logo" class="img-rounded" /></h1>
+            <p class="lead">Here you can find the list of the requirements identified for the COGITO Construction ontology and their main features.      
+         </div>
+         <hr>
+         <div class="row">
+            <div class="ui-widget">
+               <div class="col-md-8" > </div>
+            </div>
+         </div>
+         <br>
+         <div style=" height:600px; overflow:scroll;">
+            <table id="tablesorter-demo" class="tablesorter table table-hover table-responsive">
+                <thead><tr><th title="Field #1">ID</th>
+                <th title="Field #2">Competency Question/Statement</th>
+                <th title="Field #3">Possible Answer</th>
+                </tr></thead>
+                <tbody><tr>
+                <td>WOTDT-1</td>
+                <td>A Digital Twin is a td:Thing.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-2</td>
+                <td>A Digital Twin contains 5 dimensions.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-3</td>
+                <td>Physical Entity is a dimension that represents the real world asset of the Digital Twin.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-4</td>
+                <td>Virtual Entity is a dimension that represents the different models used in the Digital Twin.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-5</td>
+                <td>Digital Twin Data is a dimension where are stored all the data used in the Digital Twin.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-6</td>
+                <td>Digital Twin Services is a dimension where all the services of the Digital Twin are allocated.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-7</td>
+                <td>Digital Twin Connection is a dimension where all the connections between other dimensions in the Digital Twin are described.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-8</td>
+                <td>Physical Entity dimension can have components.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-9</td>
+                <td>Which kind of components can be described in the Physical Entity dimension?</td>
+                <td>The component can be from the physical asset that the Digital Twin is modelling, to the different devices like sensors or actuators that read or act over the specific physical asset.</td>
+                </tr>
+                <tr>
+                <td>WOTDT-10</td>
+                <td>Virtual Entity dimension can have models.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-11</td>
+                <td>Which kind of models can be described in the Virtual Entity dimension?</td>
+                <td>The models can be from rules, behavioral, physical and geometric models to semantic models like ontologies.</td>
+                </tr>
+                <tr>
+                <td>WOTDT-12</td>
+                <td>Digital Twin Data dimension can have resources that can be used to represent the different type of data stored at the Digital Twin.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-13</td>
+                <td>Digital Twin Service dimension can have Interaction Affordances from the WoT Thing Descriptions ontology to represent the different services used at the Digital Twin.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-14</td>
+                <td>Digital Twin Connection dimension can have different connections.</td>
+                <td> </td>
+                </tr>
+                <tr>
+                <td>WOTDT-15</td>
+                <td>Which type of connections the Digital Twin Connection dimension can describe?</td>
+                <td>The connections defined in the Digital Twin Connection dimension are the described with the different existing elements of other dimensions of the Digital Twin such as models, resources and interaction affordances, and the connections with external Things such as other Digital Twins.</td>
+                </tr>
+                </tbody></table>
+         </div>
+         <hr>
+         <footer class="footer">
+            <div class="row">
+               <div class="col-md-10">
+                  Developed by            <a href = "http://oeg-upm.net" target="_blank">Ontology Engineering Group</a>
+                  <br>
+                  Built with <a target="_blank" href="http://getbootstrap.com/">Bootstrap</a>
+                  Icons from <a target="_blank" href="http://glyphicons.com/">Glyphicons</a>
+                  <br>
+                  Latest revision July, 2021
+                  <br>
+                  <p>&copy; Ontology Engineering Group</p>
+               </div>
+               <div class="col-md-2">
+                  <a href="http://www.oeg-upm.net/" target="_blank"><img src="../vocab/logo.gif" alt="OEG logo" class="img-rounded" class="img-responsive" /></a>
+               </div>
+            </div>
+         </footer>
+      </div>
+      <!-- /container -->

@@ -14,7 +14,7 @@
                                                   <http://purl.org/dc/elements/1.1/description> "The COGITO Facility ontology aims at modelling facilities in the construction domain." ;
                                                   <http://purl.org/dc/elements/1.1/title> "Facility Ontology" ;
                                                   <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                                  owl:versionInfo "0.11.0" .
+                                                  owl:versionInfo "0.12.0" .
 
 #################################################################
 #    Annotation properties
@@ -40,11 +40,11 @@
 #    Object Properties
 #################################################################
 
-###  https://cogito.iot.linkeddata.es/def/facility#belongToSpatialZone
-:belongToSpatialZone rdf:type owl:ObjectProperty ;
-                     owl:inverseOf <https://w3id.org/bot#hasElement> ;
-                     rdfs:comment "A property relating an entity, especially a facility:Element to a facility:SpatialZone" ;
-                     rdfs:label "belongs to spatial zone" .
+###  https://cogito.iot.linkeddata.es/def/facility#belongsToSpatialZone
+:belongsToSpatialZone rdf:type owl:ObjectProperty ;
+                      owl:inverseOf <https://w3id.org/bot#containsElement> ;
+                      rdfs:comment "A property relating an entity, especially a facility:Element to a facility:SpatialZone" ;
+                      rdfs:label "belongs to spatial zone" .
 
 
 ###  https://cogito.iot.linkeddata.es/def/facility#hasFacility
@@ -71,12 +71,6 @@
                rdfs:label "has sub-element" .
 
 
-###  https://cogito.iot.linkeddata.es/def/facility#isRelatedToSapatialZone
-:isRelatedToSapatialZone rdf:type owl:ObjectProperty ;
-                         rdfs:comment "A property relating an entity (especially a facility:SpatialZone) to a facility:SpatialZone" ;
-                         rdfs:label "is related to spatial zone" .
-
-
 ###  https://cogito.iot.linkeddata.es/def/facility#isRelatedToSite
 :isRelatedToSite rdf:type owl:ObjectProperty ;
                  rdfs:range :Site ;
@@ -84,11 +78,25 @@
                  rdfs:label "is related to site" .
 
 
+###  https://cogito.iot.linkeddata.es/def/facility#isRelatedToSpatialZone
+:isRelatedToSpatialZone rdf:type owl:ObjectProperty ;
+                        rdfs:comment "A property relating an entity (especially a facility:SpatialZone) to a facility:SpatialZone" ;
+                        rdfs:label "is related to spatial zone" .
+
+
 ###  https://saref.etsi.org/saref4bldg#hasSpace
 <https://saref.etsi.org/saref4bldg#hasSpace> rdf:type owl:ObjectProperty ;
                                              rdfs:range <https://saref.etsi.org/saref4bldg#SpaceBuilding> ;
                                              rdfs:isDefinedBy <https://saref.etsi.org/saref4bldg#> ;
                                              rdfs:label "has space" .
+
+
+###  https://w3id.org/bot#containsElement
+<https://w3id.org/bot#containsElement> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <https://w3id.org/bot#Zone> ;
+                                       rdfs:range :Element ;
+                                       rdfs:isDefinedBy <https://w3id.org/bot#> ;
+                                       rdfs:label "contains element" .
 
 
 ###  https://w3id.org/bot#containsZone
@@ -106,14 +114,6 @@
                                    rdfs:range :Building ;
                                    rdfs:isDefinedBy <https://w3id.org/bot#> ;
                                    rdfs:label "has building" .
-
-
-###  https://w3id.org/bot#hasElement
-<https://w3id.org/bot#hasElement> rdf:type owl:ObjectProperty ;
-                                  rdfs:domain <https://w3id.org/bot#Zone> ;
-                                  rdfs:range :Element ;
-                                  rdfs:isDefinedBy <https://w3id.org/bot#> ;
-                                  rdfs:label "contains element" .
 
 
 ###  https://w3id.org/bot#hasSpace
@@ -162,16 +162,16 @@
                      rdfs:label "code Uniclass element" .
 
 
+###  https://cogito.iot.linkeddata.es/def/facility#codeUniclassMaterial
+:codeUniclassMaterial rdf:type owl:DatatypeProperty ;
+                      rdfs:comment "Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality. The corresponding Uniclass code is used" ;
+                      rdfs:label "code Uniclass material" .
+
+
 ###  https://cogito.iot.linkeddata.es/def/facility#ifcType
 :ifcType rdf:type owl:DatatypeProperty ;
          rdfs:comment "Property that refers to the IFC type correspondign to the element" ;
          rdfs:label "IFC type" .
-
-
-###  https://cogito.iot.linkeddata.es/def/facility#material
-:material rdf:type owl:DatatypeProperty ;
-          rdfs:comment "Property that refers to the outside material of an entity (especially a facility:Element) and is taken into account when processing visual quality. The corresponding Uniclass code is used" ;
-          rdfs:label "code Uniclass material" .
 
 
 #################################################################
@@ -210,7 +210,8 @@
 ###  https://cogito.iot.linkeddata.es/def/facility#Element
 :Element rdf:type owl:Class ;
          rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ,
-                         <https://w3id.org/bot#Element> ;
+                         <https://w3id.org/bot#Element> ,
+                         <https://w3id.org/def/dtw#Entity> ;
          rdfs:comment "A subclass or bot:Element and, as such, a constituent of a construction entity with a characteristic technical function, form, or position." ;
          rdfs:label "Element" .
 
@@ -231,6 +232,7 @@
 
 ###  https://cogito.iot.linkeddata.es/def/facility#Project
 :Project rdf:type owl:Class ;
+         rdfs:subClassOf <https://w3id.org/def/dtw#Entity> ;
          rdfs:comment "A large or major undertaking, especially one involving considerable money, personnel, and equipment." ;
          rdfs:label "Project" .
 
@@ -270,7 +272,8 @@ street or highway""" ;
 ###  https://cogito.iot.linkeddata.es/def/facility#SpatialZone
 :SpatialZone rdf:type owl:Class ;
              rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ,
-                             <https://w3id.org/bot#Zone> ;
+                             <https://w3id.org/bot#Zone> ,
+                             <https://w3id.org/def/dtw#Entity> ;
              rdfs:comment "A subclass of bot:Zone and, as such, a part of the physical or a virtual world that is inherently both located in this world and has a 3D spatial extent." ;
              rdfs:label "Spatial Zone" .
 
@@ -284,7 +287,8 @@ street or highway""" ;
 
 
 ###  https://pi.pauwel.be/voc/buildingelement#BuildingElement
-<https://pi.pauwel.be/voc/buildingelement#BuildingElement> rdfs:subClassOf :Element .
+<https://pi.pauwel.be/voc/buildingelement#BuildingElement> rdf:type owl:Class ;
+                                                           rdfs:subClassOf :Element .
 
 
 ###  https://saref.etsi.org/saref4bldg#Building
@@ -334,4 +338,10 @@ street or highway""" ;
                             rdfs:label "Zone" .
 
 
-###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
+###  https://w3id.org/def/dtw#Entity
+<https://w3id.org/def/dtw#Entity> rdf:type owl:Class ;
+                                  rdfs:isDefinedBy <https://w3id.org/def/dtw#> ;
+                                  rdfs:label "Entity" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

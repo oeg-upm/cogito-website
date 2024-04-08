@@ -756,7 +756,7 @@
   "@id" : "https://cogito.iot.linkeddata.es/def/process#status",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A property indicating the status of an entity (especially a process:WorkOrder)"
+    "@value" : "A property indicating the status of an entity (especially a process:WorkOrder and a process:Task)"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "status"
@@ -790,6 +790,12 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+  } ]
+}, {
+  "@id" : "https://cogito.iot.linkeddata.es/def/process#validationMessage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A property indicating the validation message of an entity (especially a process:Task)"
   } ]
 }, {
   "@id" : "https://cogito.iot.linkeddata.es/def/process#workQuantity",
